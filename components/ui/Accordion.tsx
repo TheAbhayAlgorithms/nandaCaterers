@@ -6,19 +6,32 @@ import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/cn";
 
 export interface AccordionItemData {
-  id: string;
-  question: string;
-  answer: string;
+  id?: string;
+  question?: string;
+  title?: string;
+  answer?: React.ReactNode;
+  content?: React.ReactNode;
 }
 
 interface AccordionProps {
   items: AccordionItemData[];
   allowMultiple?: boolean;
+  defaultOpenIndex?: number;
   className?: string;
 }
 
-export function Accordion({ items, allowMultiple = false, className }: AccordionProps) {
-  const [openIds, setOpenIds] = useState<string[]>([items[0]?.id || ""]);
+export function Accordion({
+  items,
+  allowMultiple = false,
+  defaultOpenIndex,
+  className,
+}: AccordionProps) {
+  const initialOpenId =
+    defaultOpenIndex !== undefined && items[defaultOpenIndex]
+      ? items[defaultOpenIndex].id || `item-${defaultOpenIndex}`
+      : "";
+
+  const [openIds, setOpenIds] = useState<string[]>(initialOpenId ? [initialOpenId] : []);
 
   const toggle = (id: string) => {
     if (allowMultiple) {
@@ -32,22 +45,26 @@ export function Accordion({ items, allowMultiple = false, className }: Accordion
 
   return (
     <div className={cn("space-y-4", className)}>
-      {items.map((item) => {
-        const isOpen = openIds.includes(item.id);
+      {items.map((item, idx) => {
+        const itemId = item.id || `item-${idx}`;
+        const itemHeading = item.question || item.title || "";
+        const itemBody = item.answer || item.content;
+        const isOpen = openIds.includes(itemId);
+
         return (
           <div
-            key={item.id}
+            key={itemId}
             className="rounded-2xl border border-charcoal/10 bg-ivory shadow-sm transition-colors overflow-hidden"
           >
             <button
               type="button"
-              id={`accordion-header-${item.id}`}
-              aria-controls={`accordion-panel-${item.id}`}
+              id={`accordion-header-${itemId}`}
+              aria-controls={`accordion-panel-${itemId}`}
               aria-expanded={isOpen}
-              onClick={() => toggle(item.id)}
-              className="flex w-full items-center justify-between p-5 md:p-6 text-left font-heading font-semibold text-lg md:text-xl text-maroon hover:text-saffron transition-colors cursor-pointer"
+              onClick={() => toggle(itemId)}
+              className="flex w-full items-center justify-between p-5 md:p-6 text-left font-heading font-semibold text-base sm:text-lg text-maroon hover:text-saffron transition-colors cursor-pointer"
             >
-              <span className="pr-4">{item.question}</span>
+              <span className="pr-4">{itemHeading}</span>
               <ChevronDown
                 className={cn(
                   "w-5 h-5 shrink-0 text-saffron transition-transform duration-300",
@@ -59,17 +76,17 @@ export function Accordion({ items, allowMultiple = false, className }: Accordion
             <AnimatePresence initial={false}>
               {isOpen && (
                 <motion.div
-                  id={`accordion-panel-${item.id}`}
+                  id={`accordion-panel-${itemId}`}
                   role="region"
-                  aria-labelledby={`accordion-header-${item.id}`}
+                  aria-labelledby={`accordion-header-${itemId}`}
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
                   className="overflow-hidden"
                 >
-                  <div className="px-5 pb-6 md:px-6 pt-0 text-charcoal/80 text-base leading-relaxed border-t border-charcoal/5">
-                    {item.answer}
+                  <div className="px-5 pb-6 md:px-6 pt-0 text-charcoal/80 text-sm leading-relaxed border-t border-charcoal/5">
+                    {itemBody}
                   </div>
                 </motion.div>
               )}

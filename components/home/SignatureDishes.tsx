@@ -70,7 +70,7 @@ export function SignatureDishes() {
                   Silver, Gold & Royal Wedding Menus
                 </p>
               </div>
-              <Button href="/contact#quote-form" variant="primary" size="sm">
+              <Button href="/packages" variant="primary" size="sm">
                 <span>See Packages</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Button>

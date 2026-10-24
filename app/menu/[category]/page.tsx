@@ -9,6 +9,7 @@ import { CategoryView } from "@/components/menu/CategoryView";
 import { VegBadge } from "@/components/menu/VegBadge";
 import { MandalaWatermark } from "@/components/ui/MandalaWatermark";
 import { OrnamentalDivider } from "@/components/ui/OrnamentalDivider";
+import { RelatedPages } from "@/components/ui/RelatedPages";
 
 interface CategoryPageProps {
   params: Promise<{ category: string }>;
@@ -119,6 +120,38 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
       {/* Category Dishes, Live Search & Actions */}
       <CategoryView category={category} />
+
+      {/* Cross-linking to Packages, Services & Custom Quote */}
+      <RelatedPages
+        title="Pair Your Menu With Our Banqueting Services"
+        subtitle="Combine your customized food selections with royal wedding, corporate, or party setups"
+        links={[
+          {
+            title: "Royal Packages",
+            description: "Explore Silver, Gold, and Royal curated per-plate banqueting packages.",
+            href: "/packages",
+            tag: "Curated Sets",
+          },
+          {
+            title: "Wedding Catering",
+            description: "Lavish multi-course wedding feasts with live counters, sweets & mocktails.",
+            href: "/services/wedding",
+            tag: "Flagship",
+          },
+          {
+            title: "Instant Quotation Wizard",
+            description: "Get a comprehensive per-plate estimate tailored to your guest count.",
+            href: "/quote",
+            tag: "Interactive",
+          },
+          {
+            title: "Event Gallery",
+            description: "View real photos of our live buffet setups, chaat counters, and dessert bars.",
+            href: "/gallery",
+            tag: "Photos",
+          },
+        ]}
+      />
     </div>
   );
 }

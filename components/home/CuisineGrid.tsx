@@ -164,6 +164,17 @@ export function CuisineGrid() {
           </Reveal>
         ))}
       </div>
+
+      {/* Button to full menu */}
+      <div className="mt-12 text-center">
+        <Link
+          href="/menu"
+          className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-maroon text-cream hover:bg-maroon-dark text-xs sm:text-sm font-bold uppercase tracking-wider shadow-warm transition-all"
+        >
+          <span>Explore All 13 Food Categories & 500+ Dishes</span>
+          <ArrowRight className="w-4 h-4 text-turmeric" />
+        </Link>
+      </div>
     </section>
   );
 }

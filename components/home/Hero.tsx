@@ -195,7 +195,7 @@ export function Hero() {
           </Button>
 
           <Button
-            href="/contact#quote-form"
+            href="/quote"
             variant="secondary"
             size="lg"
             className="w-full sm:w-auto min-w-[200px] border-white text-white hover:border-maroon"

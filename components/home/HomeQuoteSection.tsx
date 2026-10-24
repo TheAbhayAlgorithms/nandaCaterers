@@ -80,6 +80,16 @@ export function HomeQuoteSection() {
                         <span className="text-cream/90">{siteConfig.offices[0].address}</span>
                       </div>
                     </div>
+
+                    <div className="pt-4 border-t border-white/10">
+                      <a
+                        href="/quote"
+                        className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-gold-gradient text-charcoal font-bold text-xs shadow-sm hover:brightness-105 transition-all text-center"
+                      >
+                        <span>Launch 5-Step Quote Calculator</span>
+                        <span aria-hidden="true">→</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -7,6 +7,7 @@ import { WhatsAppFab } from "@/components/layout/WhatsAppFab";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { QuoteTray } from "@/components/layout/QuoteTray";
+import { MobileBottomBar } from "@/components/layout/MobileBottomBar";
 import { SplashLoader } from "@/components/layout/SplashLoader";
 import { QuoteSelectionProvider } from "@/context/QuoteSelectionContext";
 import { siteConfig } from "@/data/site";
@@ -118,7 +119,7 @@ export default function RootLayout({
 
   return (
     <html
-      lang="en"
+      lang="en-IN"
       className={`${playfair.variable} ${poppins.variable} ${caveat.variable} scroll-smooth`}
     >
       <head>
@@ -138,8 +139,8 @@ export default function RootLayout({
           {/* Header & Sticky Navigation */}
           <Navbar />
 
-          {/* Main Landmark */}
-          <main id="main-content" className="min-h-screen">
+          {/* Main Landmark with safe padding for mobile bottom bar */}
+          <main id="main-content" className="min-h-screen pb-16 lg:pb-0">
             {children}
           </main>
 
@@ -150,6 +151,7 @@ export default function RootLayout({
           <QuoteTray />
           <ScrollToTop />
           <WhatsAppFab />
+          <MobileBottomBar />
         </QuoteSelectionProvider>
       </body>
     </html>

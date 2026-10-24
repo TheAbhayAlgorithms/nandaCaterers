@@ -67,7 +67,7 @@ export function SpecialtyBand() {
             {/* CTA buttons */}
             <Reveal variant="fadeUp" delay={0.4}>
               <div className="flex flex-wrap items-center gap-4 pt-2">
-                <Button href="/contact#quote-form" variant="primary" size="lg">
+                <Button href="/quote" variant="primary" size="lg">
                   <span>Get Quote</span>
                   <ArrowRight className="w-4 h-4" />
                 </Button>

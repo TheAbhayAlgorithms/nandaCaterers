@@ -63,4 +63,32 @@ export const galleryImages: GalleryImage[] = [
     title: "Festive Ice Cream & Kulfi Bar",
     category: "Desserts",
   },
+  {
+    id: "gal-9",
+    src: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1200&q=80",
+    alt: "Gourmet Fresh Salad and Antipasti Counter",
+    title: "Artisanal Fresh Salad Spread",
+    category: "Buffets",
+  },
+  {
+    id: "gal-10",
+    src: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1200&q=80",
+    alt: "Live Italian Pasta and Wood-Fired Pizza Station",
+    title: "Live Continental Pasta Station",
+    category: "Live Counters",
+  },
+  {
+    id: "gal-11",
+    src: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+    alt: "Executive Corporate Banquet Buffet Setup",
+    title: "Corporate High-Tea & Luncheon",
+    category: "Buffets",
+  },
+  {
+    id: "gal-12",
+    src: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1200&q=80",
+    alt: "Royal Traditional Sangeet Dining Decor",
+    title: "Marigold & Brass Wedding Banqueting",
+    category: "Weddings",
+  },
 ];

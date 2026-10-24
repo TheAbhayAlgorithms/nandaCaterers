@@ -23,7 +23,7 @@ export function WhatWeOffer() {
       image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80",
       description:
         "We provide catering services for wedding events. To serve with newer ideas, we have a list of fine and different menus ready as per your requirement.",
-      link: "/services",
+      link: "/services/wedding",
     },
     {
       title: "Corporate Catering",
@@ -31,7 +31,7 @@ export function WhatWeOffer() {
       image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80",
       description:
         "We are proud to serve reputed, high-profile corporate firms that organise meetings with breakfast, lunch or evening dinners.",
-      link: "/services",
+      link: "/services/corporate",
     },
   ];
 

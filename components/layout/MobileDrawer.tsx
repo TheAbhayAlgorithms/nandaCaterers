@@ -7,6 +7,7 @@ import { X, ChevronDown, Phone, Mail, MapPin } from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
 import { siteConfig } from "@/data/site";
 import { menuCategories } from "@/data/menu";
+import { detailedServices } from "@/data/services";
 
 interface MobileDrawerProps {
   isOpen: boolean;
@@ -14,7 +15,8 @@ interface MobileDrawerProps {
 }
 
 export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
-  const [isMenuAccordionOpen, setIsMenuAccordionOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
@@ -58,7 +60,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
             className="fixed inset-y-0 right-0 w-full max-w-sm bg-cream shadow-2xl flex flex-col justify-between overflow-y-auto safe-bottom"
             role="dialog"
             aria-modal="true"
-            aria-label="Mobile Navigation"
+            aria-label="Mobile Navigation Drawer"
           >
             {/* Drawer Header */}
             <div className="p-5 flex items-center justify-between border-b border-charcoal/10 bg-ivory sticky top-0 z-10">
@@ -81,6 +83,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
               >
                 Home
               </Link>
+              
               <Link
                 href="/about"
                 onClick={onClose}
@@ -88,37 +91,79 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
               >
                 About Us
               </Link>
-              <Link
-                href="/services"
-                onClick={onClose}
-                className="block p-3 rounded-xl font-heading font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
-              >
-                Services
-              </Link>
 
-              {/* Food Menu Accordion */}
+              {/* Services Accordion */}
               <div className="rounded-xl border border-charcoal/10 bg-ivory overflow-hidden">
                 <button
                   type="button"
-                  onClick={() => setIsMenuAccordionOpen((prev) => !prev)}
-                  aria-expanded={isMenuAccordionOpen}
+                  onClick={() => setIsServicesOpen((prev) => !prev)}
+                  aria-expanded={isServicesOpen}
                   className="w-full flex items-center justify-between p-3.5 font-heading font-semibold text-lg text-maroon text-left cursor-pointer"
                 >
-                  <span className="flex items-center gap-2">
-                    <span>Food Menu</span>
-                    <span className="text-[10px] bg-leaf/10 text-leaf px-2 py-0.5 rounded-full uppercase font-sans font-bold">
-                      Pure Veg
-                    </span>
-                  </span>
+                  <span>Catering Services</span>
                   <ChevronDown
                     className={`w-5 h-5 text-saffron transition-transform duration-300 ${
-                      isMenuAccordionOpen ? "rotate-180" : ""
+                      isServicesOpen ? "rotate-180" : ""
                     }`}
                   />
                 </button>
 
                 <AnimatePresence>
-                  {isMenuAccordionOpen && (
+                  {isServicesOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25 }}
+                      className="overflow-hidden bg-cream/50 px-3 pb-3 border-t border-charcoal/5"
+                    >
+                      <Link
+                        href="/services"
+                        onClick={onClose}
+                        className="block py-2 px-3 text-xs font-bold text-maroon uppercase tracking-wider underline mb-1"
+                      >
+                        All Services Overview →
+                      </Link>
+                      <div className="space-y-1">
+                        {detailedServices.map((srv) => (
+                          <Link
+                            key={srv.slug}
+                            href={`/services/${srv.slug}`}
+                            onClick={onClose}
+                            className="block py-1.5 px-3 rounded-lg text-sm font-medium text-charcoal/80 hover:text-maroon hover:bg-ivory transition-colors"
+                          >
+                            {srv.title}
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Food Menu Accordion */}
+              <div className="rounded-xl border border-charcoal/10 bg-ivory overflow-hidden">
+                <button
+                  type="button"
+                  onClick={() => setIsMenuOpen((prev) => !prev)}
+                  aria-expanded={isMenuOpen}
+                  className="w-full flex items-center justify-between p-3.5 font-heading font-semibold text-lg text-maroon text-left cursor-pointer"
+                >
+                  <span className="flex items-center gap-2">
+                    <span>Food Menu</span>
+                    <span className="text-[10px] bg-leaf/10 text-leaf px-2 py-0.5 rounded-full uppercase font-sans font-bold">
+                      100% Veg
+                    </span>
+                  </span>
+                  <ChevronDown
+                    className={`w-5 h-5 text-saffron transition-transform duration-300 ${
+                      isMenuOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                <AnimatePresence>
+                  {isMenuOpen && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
@@ -129,9 +174,9 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
                       <Link
                         href="/menu"
                         onClick={onClose}
-                        className="block py-2 px-3 text-xs font-bold text-maroon uppercase tracking-wider underline mb-2"
+                        className="block py-2 px-3 text-xs font-bold text-maroon uppercase tracking-wider underline mb-1"
                       >
-                        All Cuisines Hub →
+                        All 13 Cuisines Hub →
                       </Link>
                       <div className="space-y-1">
                         {menuCategories.map((cat) => (
@@ -151,12 +196,45 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
               </div>
 
               <Link
-                href="/#gallery"
+                href="/packages"
+                onClick={onClose}
+                className="block p-3 rounded-xl font-heading font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
+              >
+                Catering Packages
+              </Link>
+
+              <Link
+                href="/gallery"
                 onClick={onClose}
                 className="block p-3 rounded-xl font-heading font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
               >
                 Photo Gallery
               </Link>
+
+              <Link
+                href="/testimonials"
+                onClick={onClose}
+                className="block p-3 rounded-xl font-heading font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
+              >
+                Client Reviews
+              </Link>
+
+              <Link
+                href="/service-areas"
+                onClick={onClose}
+                className="block p-3 rounded-xl font-heading font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
+              >
+                Service Areas
+              </Link>
+
+              <Link
+                href="/faq"
+                onClick={onClose}
+                className="block p-3 rounded-xl font-heading font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
+              >
+                FAQs
+              </Link>
+
               <Link
                 href="/contact"
                 onClick={onClose}
@@ -165,19 +243,19 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
                 Contact & Offices
               </Link>
 
-              {/* Get Quote CTA */}
+              {/* Get Instant Quote CTA */}
               <div className="pt-3">
                 <Link
-                  href="/contact#quote-form"
+                  href="/quote"
                   onClick={onClose}
                   className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-gold-gradient text-charcoal font-semibold shadow-warm text-base"
                 >
-                  Get Instant Quote
+                  Start Custom Quotation
                 </Link>
               </div>
             </div>
 
-            {/* Quick Contact Info in Drawer */}
+            {/* Quick Contact Info */}
             <div className="p-5 border-t border-charcoal/10 bg-ivory text-xs text-charcoal/70 space-y-2">
               <a
                 href={`tel:${siteConfig.phone.raw}`}
@@ -195,7 +273,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
               </a>
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-saffron shrink-0 mt-0.5" />
-                <span>Bandra & Khar (East), Mumbai</span>
+                <span>Bandra (East) & Khar (East), Mumbai</span>
               </div>
             </div>
           </motion.div>

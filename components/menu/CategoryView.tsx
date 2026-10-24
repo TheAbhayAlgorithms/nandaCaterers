@@ -2,8 +2,8 @@
 
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Utensils, Sparkles } from "lucide-react";
-import { MenuCategory, menuCategories } from "@/data/menu";
+import { ArrowLeft, ArrowRight, Utensils, Sparkles, Flame, ShieldCheck } from "lucide-react";
+import { MenuCategory, menuCategories, Dish } from "@/data/menu";
 import { DishItem } from "./DishItem";
 import { MenuSearch } from "./MenuSearch";
 import { OrnamentalDivider } from "@/components/ui/OrnamentalDivider";
@@ -13,8 +13,11 @@ interface CategoryViewProps {
   category: MenuCategory;
 }
 
+type FilterTag = "all" | "jain" | "live" | "popular";
+
 export function CategoryView({ category }: CategoryViewProps) {
   const [searchQuery, setSearchQuery] = useState("");
+  const [activeFilter, setActiveFilter] = useState<FilterTag>("all");
 
   // Prev / Next category navigation
   const currentIndex = menuCategories.findIndex((c) => c.slug === category.slug);
@@ -23,25 +26,94 @@ export function CategoryView({ category }: CategoryViewProps) {
   const nextCategory =
     currentIndex < menuCategories.length - 1 ? menuCategories[currentIndex + 1] : menuCategories[0];
 
-  // Filter sections by search query
+  // Filter sections by search query and dietary tags
   const filteredSections = useMemo(() => {
-    if (!searchQuery.trim()) return category.sections;
-
     const query = searchQuery.toLowerCase().trim();
+
     return category.sections
-      .map((sec) => ({
-        ...sec,
-        dishes: sec.dishes.filter((dish) => dish.toLowerCase().includes(query)),
-      }))
+      .map((sec) => {
+        const matchingDishes = sec.dishes.filter((dish: Dish) => {
+          // Dietary tag filter
+          if (activeFilter === "jain" && !dish.isJainAvailable) return false;
+          if (activeFilter === "live" && !dish.isLiveCounter) return false;
+          if (activeFilter === "popular" && !dish.isPopular) return false;
+
+          // Search query filter
+          if (!query) return true;
+          const searchSpace = `${dish.name} ${dish.description || ""}`.toLowerCase();
+          return searchSpace.includes(query);
+        });
+
+        return {
+          ...sec,
+          dishes: matchingDishes,
+        };
+      })
       .filter((sec) => sec.dishes.length > 0);
-  }, [category.sections, searchQuery]);
+  }, [category.sections, searchQuery, activeFilter]);
 
   const totalFilteredDishes = filteredSections.reduce((acc, sec) => acc + sec.dishes.length, 0);
 
   return (
     <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      {/* Search Input */}
-      <MenuSearch value={searchQuery} onChange={setSearchQuery} />
+      {/* Search & Dietary Filter Strip */}
+      <div className="space-y-4 max-w-2xl mx-auto">
+        <MenuSearch value={searchQuery} onChange={setSearchQuery} />
+
+        {/* Dietary Filter Chips */}
+        <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
+          <button
+            type="button"
+            onClick={() => setActiveFilter("all")}
+            className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
+              activeFilter === "all"
+                ? "bg-maroon text-cream shadow-xs"
+                : "bg-cream text-charcoal/70 hover:bg-ivory border border-turmeric/30"
+            }`}
+          >
+            All Items
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setActiveFilter("jain")}
+            className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all flex items-center gap-1.5 ${
+              activeFilter === "jain"
+                ? "bg-emerald-700 text-white shadow-xs"
+                : "bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border border-emerald-300"
+            }`}
+          >
+            <ShieldCheck className="w-3.5 h-3.5" />
+            <span>Jain Available</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setActiveFilter("live")}
+            className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all flex items-center gap-1.5 ${
+              activeFilter === "live"
+                ? "bg-amber-700 text-white shadow-xs"
+                : "bg-amber-50 text-amber-900 hover:bg-amber-100 border border-amber-300"
+            }`}
+          >
+            <Flame className="w-3.5 h-3.5 text-amber-600" />
+            <span>Live Counters</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setActiveFilter("popular")}
+            className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all flex items-center gap-1.5 ${
+              activeFilter === "popular"
+                ? "bg-rose-700 text-white shadow-xs"
+                : "bg-rose-50 text-rose-900 hover:bg-rose-100 border border-rose-300"
+            }`}
+          >
+            <Sparkles className="w-3.5 h-3.5 text-rose-600" />
+            <span>Chef&apos;s Specials</span>
+          </button>
+        </div>
+      </div>
 
       {/* Empty State */}
       {filteredSections.length === 0 ? (
@@ -51,15 +123,22 @@ export function CategoryView({ category }: CategoryViewProps) {
             No dishes found
           </h3>
           <p className="text-charcoal/70 text-sm max-w-sm mx-auto">
-            We couldn&apos;t find any item matching &ldquo;{searchQuery}&rdquo;. Try another word or clear search.
+            We couldn&apos;t find any item matching your current search or dietary filters.
           </p>
-          <Button variant="outline" size="sm" onClick={() => setSearchQuery("")}>
-            Reset Filter
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => {
+              setSearchQuery("");
+              setActiveFilter("all");
+            }}
+          >
+            Reset Filters
           </Button>
         </div>
       ) : (
         /* Sections & Dishes Display */
-        <div className="space-y-16 mt-8">
+        <div className="space-y-16 mt-10">
           {filteredSections.map((sec) => (
             <div key={sec.title} className="bg-ivory rounded-3xl p-6 sm:p-8 md:p-10 border border-charcoal/10 shadow-sm">
               {/* Sub-section Heading with Ornamental Divider */}
@@ -76,12 +155,13 @@ export function CategoryView({ category }: CategoryViewProps) {
                 </span>
               </div>
 
-              {/* Responsive multi-column dish list (1 col mobile, 2 tablet, 3 desktop) */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2">
+              {/* Responsive multi-column dish list */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {sec.dishes.map((dish) => (
                   <DishItem
-                    key={dish}
-                    name={dish}
+                    key={dish.name}
+                    name={dish.name}
+                    dish={dish}
                     searchQuery={searchQuery}
                   />
                 ))}
@@ -91,7 +171,7 @@ export function CategoryView({ category }: CategoryViewProps) {
         </div>
       )}
 
-      {/* End of Category Bottom Band: Planning an event CTA */}
+      {/* End of Category Bottom Band */}
       <div className="mt-20 rounded-3xl bg-maroon text-cream p-8 sm:p-12 text-center relative overflow-hidden shadow-warm">
         <div className="relative z-10 max-w-2xl mx-auto space-y-4">
           <span className="font-accent text-2xl text-turmeric font-semibold block">
@@ -104,8 +184,8 @@ export function CategoryView({ category }: CategoryViewProps) {
             Select your preferred items across our cuisines or request custom regional preparations. We offer full tasting sessions and transparent event quotes.
           </p>
           <div className="pt-4 flex items-center justify-center gap-4">
-            <Button href="/contact#quote-form" variant="primary" size="lg">
-              <span>Get Quotation</span>
+            <Button href="/quote" variant="primary" size="lg">
+              <span>Build Custom Quote</span>
               <ArrowRight className="w-4 h-4" />
             </Button>
           </div>

@@ -6,6 +6,7 @@ import { ArrowRight, Sparkles, Utensils } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { menuCategories } from "@/data/menu";
 import { VegBadge } from "@/components/menu/VegBadge";
+import { RelatedPages } from "@/components/ui/RelatedPages";
 
 export const metadata: Metadata = {
   title: "Food Menus | 100% Pure Veg Cuisines",
@@ -40,7 +41,7 @@ export default function MenuHubPage() {
             </p>
           </div>
           <Link
-            href="/contact#quote-form"
+            href="/quote"
             className="text-xs font-bold text-maroon hover:text-saffron uppercase tracking-wider underline shrink-0"
           >
             Custom Menu Consultation →
@@ -168,6 +169,38 @@ export default function MenuHubPage() {
             })}
           </div>
         </section>
+
+        {/* Cross-linking to Packages, Wedding Services & Quote Wizard */}
+        <RelatedPages
+          title="Complete Your Banquet Experience"
+          subtitle="Explore our curated packages or request a custom quotation tailored to your guest count"
+          links={[
+            {
+              title: "Royal Packages",
+              description: "Silver, Gold, and Royal banqueting packages with per-plate pricing.",
+              href: "/packages",
+              tag: "Curated",
+            },
+            {
+              title: "Wedding Catering",
+              description: "Grand multi-cuisine buffets with live stations, chaat counters, and sweets.",
+              href: "/services/wedding",
+              tag: "Flagship",
+            },
+            {
+              title: "Corporate Catering",
+              description: "Executive high-teas, corporate lunches, and annual convention banquets.",
+              href: "/services/corporate",
+              tag: "Business",
+            },
+            {
+              title: "Interactive Quote Wizard",
+              description: "Select dishes, specify guest count, and receive an instant quotation.",
+              href: "/quote",
+              tag: "Quote Builder",
+            },
+          ]}
+        />
       </div>
     </div>
   );

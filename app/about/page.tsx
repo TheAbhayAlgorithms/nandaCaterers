@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/layout/PageHero";
 import { AboutContent } from "@/components/about/AboutContent";
+import { RelatedPages } from "@/components/ui/RelatedPages";
 
 export const metadata: Metadata = {
   title: "About Us | 15+ Years Catering Excellence in Mumbai",
@@ -23,6 +24,38 @@ export default function AboutPage() {
       />
 
       <AboutContent />
+
+      {/* Cross-linking to Related Pages */}
+      <RelatedPages
+        title="Explore Catering Packages & Menus"
+        subtitle="Turn our 15+ years of pure vegetarian catering mastery into an extraordinary event for you"
+        links={[
+          {
+            title: "Royal Packages",
+            description: "Silver, Gold, and Royal banqueting packages with per-plate pricing.",
+            href: "/packages",
+            tag: "Pricing",
+          },
+          {
+            title: "13 Food Cuisines",
+            description: "Explore 500+ pure veg delicacies across Indian & international spreads.",
+            href: "/menu",
+            tag: "Full Menu",
+          },
+          {
+            title: "Interactive Quote Wizard",
+            description: "Calculate your estimated per-plate investment in 5 quick steps.",
+            href: "/quote",
+            tag: "Calculator",
+          },
+          {
+            title: "Client Testimonials",
+            description: "Read reviews from families and corporate clients who hired us.",
+            href: "/testimonials",
+            tag: "Reviews",
+          },
+        ]}
+      />
     </div>
   );
 }

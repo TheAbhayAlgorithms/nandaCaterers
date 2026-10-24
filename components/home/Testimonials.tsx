@@ -82,10 +82,10 @@ export function Testimonials() {
               {/* Author & Details */}
               <div>
                 <p className="font-heading font-bold text-lg text-maroon">
-                  {activeTestimonial.author}
+                  {activeTestimonial.name}
                 </p>
                 <p className="text-xs sm:text-sm text-charcoal/60 mt-0.5">
-                  {activeTestimonial.role} • {activeTestimonial.location} ({activeTestimonial.occasion})
+                  {activeTestimonial.role} • {activeTestimonial.location} ({activeTestimonial.eventType})
                 </p>
               </div>
             </motion.div>
@@ -123,6 +123,17 @@ export function Testimonials() {
           >
             <ChevronRight className="w-5 h-5" />
           </button>
+        </div>
+
+        {/* Link to dedicated Testimonials page */}
+        <div className="mt-10 text-center">
+          <a
+            href="/testimonials"
+            className="inline-flex items-center gap-2 text-xs font-bold text-maroon hover:text-charcoal uppercase tracking-wider underline"
+          >
+            <span>Read All Verified Client Reviews</span>
+            <ChevronRight className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </section>

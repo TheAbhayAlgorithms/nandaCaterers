@@ -296,7 +296,7 @@ export function AboutContent() {
             Contact us today for custom wedding packages, sample tastings, and direct chef consultations.
           </p>
           <div className="pt-4">
-            <Button href="/contact#quote-form" variant="primary" size="lg">
+            <Button href="/quote" variant="primary" size="lg">
               <span>Request Quotation</span>
               <ArrowRight className="w-4 h-4" />
             </Button>

@@ -50,10 +50,12 @@ export function ServicesContent() {
 
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="font-heading font-bold text-2xl text-maroon group-hover:text-saffron transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm text-charcoal/80 mt-2.5 leading-relaxed">
+                    <Link href={`/services/${service.slug}`}>
+                      <h3 className="font-heading font-bold text-2xl text-maroon hover:text-saffron transition-colors">
+                        {service.title}
+                      </h3>
+                    </Link>
+                    <p className="text-sm text-charcoal/80 mt-2.5 leading-relaxed line-clamp-3">
                       {service.fullDesc}
                     </p>
 
@@ -68,16 +70,25 @@ export function ServicesContent() {
                     </div>
                   </div>
 
-                  {/* Enquire button opening quote form with service pre-selected */}
-                  <div className="pt-6 border-t border-charcoal/5 mt-6">
+                  {/* Actions: View Details & Get Quote */}
+                  <div className="pt-6 border-t border-charcoal/5 mt-6 grid grid-cols-2 gap-2">
                     <Button
-                      href={`/contact?service=${encodeURIComponent(service.serviceTypeParam)}#quote-form`}
+                      href={`/services/${service.slug}`}
+                      variant="outline"
+                      size="sm"
+                      className="w-full text-xs"
+                    >
+                      <span>Explore</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Button>
+                    <Button
+                      href={`/quote?service=${encodeURIComponent(service.serviceTypeParam)}`}
                       variant="primary"
                       size="sm"
-                      className="w-full"
+                      className="w-full text-xs"
                     >
-                      <span>Enquire For This Event</span>
-                      <ArrowRight className="w-4 h-4" />
+                      <span>Quote</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
                     </Button>
                   </div>
                 </div>

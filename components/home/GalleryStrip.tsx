@@ -59,6 +59,17 @@ export function GalleryStrip() {
             </Reveal>
           ))}
         </div>
+
+        {/* Link to dedicated Gallery page */}
+        <div className="mt-12 text-center">
+          <a
+            href="/gallery"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-maroon text-cream hover:bg-maroon-dark text-xs font-bold uppercase tracking-wider shadow-sm transition-colors"
+          >
+            <span>Explore Full Photo Gallery (All Categories)</span>
+            <Eye className="w-4 h-4 text-turmeric" />
+          </a>
+        </div>
       </div>
 
       {/* Accessible Lightbox */}

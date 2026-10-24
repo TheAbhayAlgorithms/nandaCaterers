@@ -195,9 +195,9 @@ export function ContactContent({ initialService, initialDishes }: ContactContent
               </span>
               <div className="flex items-center justify-center gap-4">
                 {[
-                  { name: "Facebook", href: siteConfig.social.facebook },
-                  { name: "Instagram", href: siteConfig.social.instagram },
-                  { name: "X (Twitter)", href: siteConfig.social.twitter },
+                  { name: "Facebook", href: siteConfig.social.facebook.url },
+                  { name: "Instagram", href: siteConfig.social.instagram.url },
+                  { name: "YouTube", href: siteConfig.social.youtube.url },
                 ].map((s) => (
                   <a
                     key={s.name}

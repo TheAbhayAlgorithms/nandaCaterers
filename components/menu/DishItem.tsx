@@ -1,22 +1,24 @@
 "use client";
 
 import React from "react";
-import { Plus, Check } from "lucide-react";
+import { Plus, Check, Sparkles, Flame } from "lucide-react";
 import { useQuoteSelection } from "@/context/QuoteSelectionContext";
+import { Dish } from "@/data/menu";
 import { cn } from "@/lib/cn";
 
 interface DishItemProps {
   name: string;
+  dish?: Dish;
   searchQuery?: string;
   className?: string;
 }
 
-export function DishItem({ name, searchQuery, className }: DishItemProps) {
+export function DishItem({ name, dish, searchQuery, className }: DishItemProps) {
   const { isDishSelected, toggleDish } = useQuoteSelection();
   const isSelected = isDishSelected(name);
 
-  // Check for special notes like (Extra Rs.30/-)
-  const hasExtraCharge = name.includes("(Extra Rs.30/-)");
+  // Check for special notes
+  const hasExtraCharge = name.includes("(Extra Rs.30/-)") || !!dish?.extraPriceNote;
   const cleanName = name.replace("(Extra Rs.30/-)", "").trim();
 
   // Render text with search highlight if applicable
@@ -41,44 +43,76 @@ export function DishItem({ name, searchQuery, className }: DishItemProps) {
   return (
     <div
       className={cn(
-        "group relative flex items-center justify-between py-2 px-3 rounded-xl transition-all duration-200 hover:bg-saffron/10",
-        isSelected && "bg-saffron/15",
+        "group relative flex flex-col justify-between py-2.5 px-3 rounded-xl transition-all duration-200 hover:bg-saffron/10 border border-transparent hover:border-turmeric/20",
+        isSelected && "bg-saffron/15 border-turmeric/30",
         className
       )}
     >
-      {/* Leading Veg Dot & Name */}
-      <div className="flex items-center gap-2.5 min-w-0 pr-2">
-        <span
-          className="w-2 h-2 rounded-full bg-leaf shrink-0 group-hover:scale-125 transition-transform duration-200"
-          aria-hidden="true"
-        />
-        <span className="font-medium text-sm md:text-base text-charcoal truncate">
-          {renderHighlightedName(cleanName, searchQuery)}
-        </span>
-
-        {hasExtraCharge && (
-          <span className="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold bg-maroon/10 text-maroon shrink-0">
-            Extra Rs.30/-
+      <div className="flex items-center justify-between gap-2">
+        {/* Leading Veg Dot & Name */}
+        <div className="flex items-center gap-2 min-w-0 pr-1">
+          <span
+            className="w-2 h-2 rounded-full bg-leaf shrink-0 group-hover:scale-125 transition-transform duration-200"
+            aria-hidden="true"
+          />
+          <span className="font-semibold text-xs sm:text-sm text-charcoal truncate">
+            {renderHighlightedName(cleanName, searchQuery)}
           </span>
-        )}
+        </div>
+
+        {/* Dotted Leader Line */}
+        <div className="flex-1 mx-1 border-b border-dotted border-charcoal/20 group-hover:border-saffron transition-colors" />
+
+        {/* Action Button */}
+        <button
+          type="button"
+          onClick={() => toggleDish(name)}
+          aria-label={isSelected ? `Remove ${cleanName} from quote` : `Add ${cleanName} to quote list`}
+          className={cn(
+            "shrink-0 w-7 h-7 rounded-lg flex items-center justify-center transition-all duration-200 text-xs",
+            isSelected
+              ? "bg-leaf text-white shadow-xs"
+              : "text-charcoal/40 hover:text-maroon hover:bg-white border border-charcoal/10"
+          )}
+        >
+          {isSelected ? <Check className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
+        </button>
       </div>
 
-      {/* Dotted Leader Line */}
-      <div className="flex-1 mx-2 border-b border-dotted border-charcoal/20 group-hover:border-saffron transition-colors" />
+      {/* Description & Tags if available */}
+      {dish && (
+        <div className="pl-4 mt-1 space-y-1">
+          {dish.description && (
+            <p className="text-[11px] text-charcoal/65 leading-tight line-clamp-1">
+              {dish.description}
+            </p>
+          )}
 
-      {/* Add / Added Action Button */}
-      <button
-        onClick={() => toggleDish(name)}
-        aria-label={isSelected ? `Remove ${cleanName} from quote` : `Add ${cleanName} to quote list`}
-        className={cn(
-          "shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-200 text-xs",
-          isSelected
-            ? "bg-leaf text-white shadow-sm"
-            : "text-charcoal/40 hover:text-maroon hover:bg-white"
-        )}
-      >
-        {isSelected ? <Check className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
-      </button>
+          <div className="flex flex-wrap items-center gap-1.5 pt-0.5">
+            {dish.isJainAvailable && (
+              <span className="text-[9px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-1.5 py-0.2 rounded border border-emerald-200">
+                Jain Option
+              </span>
+            )}
+            {dish.isLiveCounter && (
+              <span className="text-[9px] font-bold uppercase tracking-wider text-amber-800 bg-amber-50 px-1.5 py-0.2 rounded border border-amber-200 flex items-center gap-0.5">
+                <Flame className="w-2.5 h-2.5 text-amber-600" />
+                Live Stall
+              </span>
+            )}
+            {dish.isPopular && (
+              <span className="text-[9px] font-bold uppercase tracking-wider text-maroon bg-rose-50 px-1.5 py-0.2 rounded border border-rose-200">
+                Chef&apos;s Special
+              </span>
+            )}
+            {hasExtraCharge && (
+              <span className="text-[9px] font-bold bg-maroon/10 text-maroon px-1.5 py-0.2 rounded">
+                {dish.extraPriceNote || "Extra Rs.30/-"}
+              </span>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

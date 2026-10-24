@@ -5,9 +5,11 @@ export interface QuoteWhatsAppDetails {
   phone?: string;
   location?: string;
   service?: string;
+  serviceType?: string;
   eventDate?: string;
   guestCount?: string;
   message?: string;
+  customMessage?: string;
   selectedDishes?: string[];
 }
 
@@ -33,8 +35,9 @@ export function buildWhatsAppLink(details?: QuoteWhatsAppDetails): string {
   if (details.email) {
     lines.push(`📧 *Email:* ${details.email}`);
   }
-  if (details.service) {
-    lines.push(`🎉 *Event / Service:* ${details.service}`);
+  const srv = details.service || details.serviceType;
+  if (srv) {
+    lines.push(`🎉 *Event / Service:* ${srv}`);
   }
   if (details.eventDate) {
     lines.push(`📅 *Date:* ${details.eventDate}`);
@@ -52,9 +55,10 @@ export function buildWhatsAppLink(details?: QuoteWhatsAppDetails): string {
       lines.push(`  • ${dish}`);
     });
   }
-  if (details.message) {
+  const msg = details.message || details.customMessage;
+  if (msg) {
     lines.push("");
-    lines.push(`💬 *Additional Notes:* ${details.message}`);
+    lines.push(`💬 *Notes:* ${msg}`);
   }
 
   return `https://wa.me/${baseNumber}?text=${encodeURIComponent(lines.join("\n"))}`;

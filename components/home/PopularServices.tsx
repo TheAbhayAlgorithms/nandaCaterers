@@ -14,24 +14,28 @@ export function PopularServices() {
       desc: "Intimate poojas, anniversaries, baby showers, and get-togethers.",
       image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80",
       icon: PartyPopper,
+      href: "/services/family-functions",
     },
     {
       title: "Event Decoration",
       desc: "Theme buffet displays, floral entrance setups, and chafing dishes.",
       image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=600&q=80",
       icon: Flower2,
+      href: "/services/decoration",
     },
     {
       title: "Corporate Events",
       desc: "Executive seminars, breakfast buffets, and annual board dinners.",
       image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80",
       icon: Briefcase,
+      href: "/services/corporate",
     },
     {
       title: "Birthday Party",
       desc: "Fun kids live food counters, pizza stations, shakes, and desserts.",
       image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80",
       icon: Cake,
+      href: "/services/birthday-and-parties",
     },
   ];
 
@@ -52,7 +56,7 @@ export function PopularServices() {
             return (
               <Reveal key={item.title} variant="fadeUp" delay={idx * 0.08} className="h-full">
                 <Link
-                  href="/services"
+                  href={item.href}
                   className="group relative block rounded-2xl overflow-hidden bg-cream border border-charcoal/10 shadow-sm hover:shadow-warm transition-all duration-300 h-full flex flex-col"
                 >
                   <div className="relative aspect-[16/11] overflow-hidden">
