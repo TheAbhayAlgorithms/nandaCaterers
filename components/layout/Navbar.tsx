@@ -78,7 +78,7 @@ export function Navbar() {
       >
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
-          <Logo />
+          <Logo theme={isScrolled ? "dark" : "light"} />
 
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-7">
@@ -101,8 +101,8 @@ export function Navbar() {
                       className={cn(
                         "relative flex items-center gap-1.5 text-sm font-semibold tracking-wide transition-colors py-1 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-saffron rounded-md",
                         isActive || isMegaMenuOpen
-                          ? "text-maroon"
-                          : "text-charcoal hover:text-maroon"
+                          ? (isScrolled ? "text-maroon" : "text-turmeric font-bold")
+                          : (isScrolled ? "text-charcoal hover:text-maroon" : "text-cream/90 hover:text-white")
                       )}
                     >
                       <span>{link.name}</span>
@@ -132,7 +132,9 @@ export function Navbar() {
                   href={link.href}
                   className={cn(
                     "relative py-1 text-sm font-semibold tracking-wide transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-saffron rounded-md",
-                    isActive ? "text-maroon" : "text-charcoal hover:text-maroon"
+                    isActive
+                      ? (isScrolled ? "text-maroon" : "text-turmeric font-bold")
+                      : (isScrolled ? "text-charcoal hover:text-maroon" : "text-cream/90 hover:text-white")
                   )}
                 >
                   <span>{link.name}</span>
@@ -152,7 +154,12 @@ export function Navbar() {
           <div className="hidden lg:flex items-center gap-4">
             <a
               href={`tel:${siteConfig.phone.raw}`}
-              className="flex items-center gap-2 text-xs font-semibold text-charcoal hover:text-maroon transition-colors py-2 px-3 rounded-xl hover:bg-ivory"
+              className={cn(
+                "flex items-center gap-2 text-xs font-semibold transition-colors py-2 px-3 rounded-xl",
+                isScrolled
+                  ? "text-charcoal hover:text-maroon hover:bg-ivory"
+                  : "text-cream hover:text-turmeric hover:bg-white/10"
+              )}
             >
               <Phone className="w-4 h-4 text-saffron" />
               <span>{siteConfig.phone.display}</span>

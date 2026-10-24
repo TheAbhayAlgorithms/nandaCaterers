@@ -104,7 +104,7 @@ function TiltCard({ item }: { item: CuisineCardItem }) {
         transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
         transition: "transform 0.15s ease-out, box-shadow 0.3s ease",
       }}
-      className="group relative block aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden bg-charcoal shadow-warm hover:shadow-warm-lg"
+      className="group relative block aspect-[3/4] sm:aspect-[4/5] min-h-[340px] rounded-3xl overflow-hidden bg-charcoal shadow-warm hover:shadow-warm-lg transition-all duration-300"
     >
       {/* Background Image with scale-110 over 700ms ease-out */}
       <Image
@@ -115,23 +115,23 @@ function TiltCard({ item }: { item: CuisineCardItem }) {
         className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
       />
 
-      {/* Layered Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+      {/* Layered Gradient Overlay for maximum text contrast */}
+      <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent opacity-85 group-hover:opacity-95 transition-opacity duration-300" />
 
       {/* Top Badge: Dish Count */}
       <div className="absolute top-4 left-4 z-10">
-        <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/20 backdrop-blur-md text-white border border-white/20">
+        <span className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-charcoal/70 backdrop-blur-md text-white border border-white/20 shadow-sm">
           {item.itemsCount}
         </span>
       </div>
 
-      {/* Bottom Content */}
-      <div className="absolute bottom-0 inset-x-0 p-5 z-10 flex flex-col justify-end transition-transform duration-300">
-        <h3 className="font-heading font-bold text-xl sm:text-2xl text-white group-hover:text-turmeric transition-colors duration-200">
+      {/* Bottom Content with proper breathing room */}
+      <div className="absolute bottom-0 inset-x-0 p-6 z-10 flex flex-col justify-end transition-transform duration-300">
+        <h3 className="font-heading font-bold text-2xl text-white group-hover:text-turmeric transition-colors duration-200">
           {item.title}
         </h3>
         
-        <p className="text-xs sm:text-sm text-cream/75 line-clamp-1 mt-1 group-hover:text-cream transition-colors">
+        <p className="text-xs sm:text-sm text-cream font-normal line-clamp-2 mt-1.5 leading-relaxed drop-shadow-sm">
           {item.subtitle}
         </p>
 
