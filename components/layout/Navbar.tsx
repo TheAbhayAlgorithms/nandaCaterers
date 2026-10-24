@@ -104,6 +104,46 @@ export function Navbar() {
                   ? pathname === "/"
                   : pathname.startsWith(link.href);
 
+              const hasDropdown = link.isServices || link.isMenu;
+              const isDropdownOpen =
+                (link.isServices && isServicesOpen) || (link.isMenu && isMegaMenuOpen);
+
+              const linkContent = (
+                <Link
+                  href={link.href}
+                  className={cn(
+                    "relative inline-flex items-center gap-1.5 text-sm font-semibold tracking-wide transition-colors py-2 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-saffron rounded-md group leading-none",
+                    isActive || isDropdownOpen
+                      ? isScrolled
+                        ? "text-maroon font-bold"
+                        : "text-turmeric font-bold"
+                      : isScrolled
+                      ? "text-charcoal hover:text-maroon"
+                      : "text-cream/90 hover:text-white"
+                  )}
+                >
+                  <span className="leading-none">{link.name}</span>
+                  {hasDropdown && (
+                    <ChevronDown
+                      className={cn(
+                        "w-3.5 h-3.5 text-saffron shrink-0 transition-transform duration-200",
+                        isDropdownOpen && "rotate-180"
+                      )}
+                      aria-hidden="true"
+                    />
+                  )}
+                  {/* Underline indicator */}
+                  <span
+                    className={cn(
+                      "absolute bottom-0 inset-x-0 h-0.5 bg-saffron rounded-full transition-all duration-300",
+                      isActive || isDropdownOpen
+                        ? "opacity-100"
+                        : "opacity-0 group-hover:opacity-100"
+                    )}
+                  />
+                </Link>
+              );
+
               // Services Dropdown
               if (link.isServices) {
                 return (
@@ -111,33 +151,9 @@ export function Navbar() {
                     key={link.name}
                     onMouseEnter={handleMouseEnterServices}
                     onMouseLeave={handleMouseLeaveServices}
-                    className="relative py-2"
+                    className="relative flex items-center"
                   >
-                    <Link
-                      href={link.href}
-                      className={cn(
-                        "relative flex items-center gap-1 text-sm font-semibold tracking-wide transition-colors py-1 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-saffron rounded-md",
-                        isActive || isServicesOpen
-                          ? isScrolled
-                            ? "text-maroon font-bold"
-                            : "text-turmeric font-bold"
-                          : isScrolled
-                          ? "text-charcoal hover:text-maroon"
-                          : "text-cream/90 hover:text-white"
-                      )}
-                    >
-                      <span>{link.name}</span>
-                      <ChevronDown
-                        className={cn(
-                          "w-4 h-4 text-saffron transition-transform duration-200",
-                          isServicesOpen && "rotate-180"
-                        )}
-                      />
-                      {(isActive || isServicesOpen) && (
-                        <span className="absolute bottom-0 inset-x-0 h-0.5 bg-saffron rounded-full" />
-                      )}
-                    </Link>
-
+                    {linkContent}
                     <ServicesDropdown
                       isOpen={isServicesOpen}
                       onClose={() => setIsServicesOpen(false)}
@@ -153,33 +169,9 @@ export function Navbar() {
                     key={link.name}
                     onMouseEnter={handleMouseEnterMenu}
                     onMouseLeave={handleMouseLeaveMenu}
-                    className="relative py-2"
+                    className="relative flex items-center"
                   >
-                    <Link
-                      href={link.href}
-                      className={cn(
-                        "relative flex items-center gap-1 text-sm font-semibold tracking-wide transition-colors py-1 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-saffron rounded-md",
-                        isActive || isMegaMenuOpen
-                          ? isScrolled
-                            ? "text-maroon font-bold"
-                            : "text-turmeric font-bold"
-                          : isScrolled
-                          ? "text-charcoal hover:text-maroon"
-                          : "text-cream/90 hover:text-white"
-                      )}
-                    >
-                      <span>{link.name}</span>
-                      <ChevronDown
-                        className={cn(
-                          "w-4 h-4 text-saffron transition-transform duration-200",
-                          isMegaMenuOpen && "rotate-180"
-                        )}
-                      />
-                      {(isActive || isMegaMenuOpen) && (
-                        <span className="absolute bottom-0 inset-x-0 h-0.5 bg-saffron rounded-full" />
-                      )}
-                    </Link>
-
+                    {linkContent}
                     <MegaMenu
                       isOpen={isMegaMenuOpen}
                       onClose={() => setIsMegaMenuOpen(false)}
@@ -189,28 +181,9 @@ export function Navbar() {
               }
 
               return (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className={cn(
-                    "relative py-1 text-sm font-semibold tracking-wide transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-saffron rounded-md",
-                    isActive
-                      ? isScrolled
-                        ? "text-maroon font-bold"
-                        : "text-turmeric font-bold"
-                      : isScrolled
-                      ? "text-charcoal hover:text-maroon"
-                      : "text-cream/90 hover:text-white"
-                  )}
-                >
-                  <span>{link.name}</span>
-                  <span
-                    className={cn(
-                      "absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-saffron transition-all duration-300",
-                      isActive ? "w-full" : "w-0 group-hover:w-full"
-                    )}
-                  />
-                </Link>
+                <div key={link.name} className="relative flex items-center">
+                  {linkContent}
+                </div>
               );
             })}
           </nav>
