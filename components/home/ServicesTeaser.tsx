@@ -13,13 +13,16 @@ export function ServicesTeaser() {
   const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
 
   return (
-    <SectionShell className="bg-food-doodle text-ink relative">
-      <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-10">
-        <Eyebrow>OUR SERVICES</Eyebrow>
-        <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-ink">
-          Premium Catering Services for Every Occasion
-        </h2>
-        <Divider align="center" color="bg-accent" />
+    <SectionShell className="bg-food-doodle text-ink relative overflow-visible">
+      {/* Sticky Heading Container: waits at top until this section scrolls past */}
+      <div className="sticky top-[68px] sm:top-[74px] lg:top-[80px] z-20 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 pt-2 pb-4 mb-6 sm:mb-8 bg-[#FDEFE7]/95 backdrop-blur-md transition-all">
+        <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
+          <Eyebrow>OUR SERVICES</Eyebrow>
+          <h2 className="font-heading font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-ink sm:whitespace-nowrap leading-tight mt-1 mb-2">
+            Premium Catering Services for Every Occasion
+          </h2>
+          <Divider align="center" color="bg-accent" />
+        </div>
       </div>
 
       {/* Grid of exactly 6 white cards: 3 cols x 2 rows desktop, 2 cols tablet, 1 col mobile */}

@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { SectionShell } from "@/components/shape/SectionShell";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Divider } from "@/components/shape/Divider";
 import { Button } from "@/components/ui/Button";
@@ -27,16 +26,21 @@ export function GalleryCarousel() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   return (
-    <SectionShell className="bg-paper text-ink overflow-hidden">
-      <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-8">
-        <Eyebrow>OUR GALLERY</Eyebrow>
-        <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-ink">
-          Moments of Joy & Royal Feasts
-        </h2>
-        <Divider align="center" color="bg-accent" />
+    <section className="w-full relative bg-paper text-ink overflow-visible py-12 sm:py-16 md:py-20">
+      {/* Centered Sticky Heading Container */}
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="sticky top-[68px] sm:top-[74px] lg:top-[80px] z-20 pt-2 pb-4 mb-6 sm:mb-8 bg-paper/95 backdrop-blur-md transition-all">
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+            <Eyebrow>OUR GALLERY</Eyebrow>
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-ink whitespace-normal sm:whitespace-nowrap mt-1 mb-2">
+              Moments of Joy & Royal Feasts
+            </h2>
+            <Divider align="center" color="bg-accent" />
+          </div>
+        </div>
       </div>
 
-      {/* Auto-moving continuous marquee with hover-to-pause */}
+      {/* Full-bleed edge-to-edge Marquee: spans 100% of viewport width from left edge to right edge */}
       <div className="relative gallery-marquee-container w-full overflow-hidden mb-10 py-2">
         <div className="animate-gallery-marquee flex gap-4 sm:gap-5">
           {marqueeItems.map((item, idx) => {
@@ -45,13 +49,13 @@ export function GalleryCarousel() {
               <div
                 key={`${item.id}-${idx}`}
                 onClick={() => setLightboxIndex(originalIndex)}
-                className="shrink-0 cursor-pointer select-none rounded-2xl overflow-hidden relative shadow-soft border border-black/5 group aspect-[4/5] w-[240px] sm:w-[280px] lg:w-[300px] transition-all duration-300 hover:scale-[1.02] hover:shadow-warm"
+                className="shrink-0 cursor-pointer select-none rounded-2xl overflow-hidden relative shadow-soft border border-black/5 group aspect-[4/5] w-[240px] sm:w-[280px] lg:w-[320px] transition-all duration-300 hover:scale-[1.02] hover:shadow-warm"
               >
                 <Image
                   src={item.src}
                   alt={item.alt}
                   fill
-                  sizes="(max-width: 640px) 240px, (max-width: 1024px) 280px, 300px"
+                  sizes="(max-width: 640px) 240px, (max-width: 1024px) 280px, 320px"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 {/* Dark gradient at bottom with short caption */}
@@ -67,8 +71,8 @@ export function GalleryCarousel() {
         </div>
       </div>
 
-      {/* Below: small outlined button "View Full Gallery" -> /gallery */}
-      <div className="flex justify-center">
+      {/* Below: small outlined button "View Full Gallery" */}
+      <div className="max-w-[1200px] mx-auto px-4 flex justify-center">
         <Button href="/gallery" variant="outline" size="sm">
           View Full Gallery
         </Button>
@@ -81,6 +85,6 @@ export function GalleryCarousel() {
         onClose={() => setLightboxIndex(null)}
         onIndexChange={(i) => setLightboxIndex(i)}
       />
-    </SectionShell>
+    </section>
   );
 }

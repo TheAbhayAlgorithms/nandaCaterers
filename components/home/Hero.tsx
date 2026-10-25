@@ -2,16 +2,12 @@
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { Divider } from "@/components/shape/Divider";
 import { TornEdge } from "@/components/shape/TornEdge";
 import { Button } from "@/components/ui/Button";
-import { useQuoteSelection } from "@/context/QuoteSelectionContext";
 
 export function Hero() {
-  const { openQuoteSheet } = useQuoteSelection();
-
   return (
     <section className="relative w-full overflow-hidden bg-night text-white flex flex-col justify-center items-center" style={{ minHeight: "min(88svh, 820px)" }}>
       {/* Background Image with slow zoom */}
@@ -74,29 +70,21 @@ export function Hero() {
           Wedding catering with new ideas, served in our own style.
         </motion.p>
 
-        {/* ONE outlined pill button "Get a Quote" */}
+        {/* Outlined pill button "Explore Menu" */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.45 }}
-          className="flex flex-col items-center gap-3"
+          className="flex justify-center"
         >
           <Button
+            href="/menu"
             variant="on-dark"
             size="lg"
-            onClick={() => openQuoteSheet("Wedding")}
-            aria-label="Open catering quote request sheet"
-          >
-            Get a Quote
-          </Button>
-
-          {/* Secondary text link underneath */}
-          <Link
-            href="/menu"
-            className="text-xs sm:text-sm font-medium text-white/80 hover:text-white underline underline-offset-4 transition-colors"
+            aria-label="Explore food menu"
           >
             Explore Menu
-          </Link>
+          </Button>
         </motion.div>
       </div>
 
