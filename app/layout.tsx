@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Playfair_Display, Poppins, Caveat } from "next/font/google";
+import { Playfair_Display, Poppins, Caveat, Lora } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -31,6 +31,14 @@ const caveat = Caveat({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
   variable: "--font-caveat",
+  display: "swap",
+});
+
+const lora = Lora({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-lora",
   display: "swap",
 });
 
@@ -120,7 +128,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-IN"
-      className={`${playfair.variable} ${poppins.variable} ${caveat.variable} scroll-smooth`}
+      className={`${playfair.variable} ${poppins.variable} ${caveat.variable} ${lora.variable} scroll-smooth`}
     >
       <head>
         <script

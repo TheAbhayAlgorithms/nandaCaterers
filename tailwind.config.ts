@@ -30,6 +30,7 @@ const config: Config = {
         heading: ["var(--font-playfair)", "serif"],
         body: ["var(--font-poppins)", "sans-serif"],
         accent: ["var(--font-caveat)", "cursive"],
+        lora: ["var(--font-lora)", "serif"],
       },
       boxShadow: {
         warm: "0 10px 40px -12px rgba(122, 31, 43, 0.18)",

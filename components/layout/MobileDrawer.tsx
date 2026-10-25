@@ -79,7 +79,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
               <Link
                 href="/"
                 onClick={onClose}
-                className="block p-3 rounded-xl font-heading font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
+                className="block p-3 rounded-xl font-lora font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
               >
                 Home
               </Link>
@@ -87,7 +87,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
               <Link
                 href="/about"
                 onClick={onClose}
-                className="block p-3 rounded-xl font-heading font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
+                className="block p-3 rounded-xl font-lora font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
               >
                 About Us
               </Link>
@@ -98,7 +98,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
                   type="button"
                   onClick={() => setIsServicesOpen((prev) => !prev)}
                   aria-expanded={isServicesOpen}
-                  className="w-full flex items-center justify-between p-3.5 font-heading font-semibold text-lg text-maroon text-left cursor-pointer"
+                  className="w-full flex items-center justify-between p-3.5 font-lora font-semibold text-lg text-maroon text-left cursor-pointer"
                 >
                   <span>Catering Services</span>
                   <ChevronDown
@@ -147,7 +147,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
                   type="button"
                   onClick={() => setIsMenuOpen((prev) => !prev)}
                   aria-expanded={isMenuOpen}
-                  className="w-full flex items-center justify-between p-3.5 font-heading font-semibold text-lg text-maroon text-left cursor-pointer"
+                  className="w-full flex items-center justify-between p-3.5 font-lora font-semibold text-lg text-maroon text-left cursor-pointer"
                 >
                   <span className="flex items-center gap-2">
                     <span>Food Menu</span>
@@ -198,7 +198,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
               <Link
                 href="/packages"
                 onClick={onClose}
-                className="block p-3 rounded-xl font-heading font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
+                className="block p-3 rounded-xl font-lora font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
               >
                 Catering Packages
               </Link>
@@ -206,7 +206,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
               <Link
                 href="/gallery"
                 onClick={onClose}
-                className="block p-3 rounded-xl font-heading font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
+                className="block p-3 rounded-xl font-lora font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
               >
                 Photo Gallery
               </Link>
@@ -214,7 +214,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
               <Link
                 href="/testimonials"
                 onClick={onClose}
-                className="block p-3 rounded-xl font-heading font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
+                className="block p-3 rounded-xl font-lora font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
               >
                 Client Reviews
               </Link>
@@ -222,7 +222,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
               <Link
                 href="/service-areas"
                 onClick={onClose}
-                className="block p-3 rounded-xl font-heading font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
+                className="block p-3 rounded-xl font-lora font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
               >
                 Service Areas
               </Link>
@@ -230,7 +230,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
               <Link
                 href="/faq"
                 onClick={onClose}
-                className="block p-3 rounded-xl font-heading font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
+                className="block p-3 rounded-xl font-lora font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
               >
                 FAQs
               </Link>
@@ -238,7 +238,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
               <Link
                 href="/contact"
                 onClick={onClose}
-                className="block p-3 rounded-xl font-heading font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
+                className="block p-3 rounded-xl font-lora font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
               >
                 Contact & Offices
               </Link>

@@ -30,16 +30,16 @@ export function ServicesDropdown({ isOpen, onClose }: ServicesDropdownProps) {
           exit={{ opacity: 0, y: 8 }}
           transition={{ duration: 0.2, ease: "easeOut" }}
           onMouseLeave={onClose}
-          className="absolute top-full left-0 w-80 bg-ivory rounded-2xl shadow-2xl border border-turmeric/25 p-3 overflow-hidden z-50 backdrop-blur-xl"
+          className="absolute top-full left-0 w-84 bg-ivory/96 rounded-3xl shadow-[0_24px_70px_-15px_rgba(42,27,22,0.3),0_1px_0_rgba(255,255,255,0.9)_inset] border border-turmeric/35 p-3.5 overflow-hidden z-50 backdrop-blur-2xl mt-3 before:absolute before:inset-x-0 before:-top-4 before:h-4"
         >
-          <div className="p-2 border-b border-charcoal/10 flex items-center justify-between mb-1">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-saffron">
+          <div className="p-2 border-b border-charcoal/10 flex items-center justify-between mb-2">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-saffron font-lora">
               Our Event Specialities
             </span>
             <Link
               href="/services"
               onClick={onClose}
-              className="text-xs font-semibold text-maroon hover:underline flex items-center gap-1"
+              className="text-xs font-semibold text-maroon hover:text-saffron flex items-center gap-1 transition-colors"
             >
               <span>Overview</span>
               <ArrowRight className="w-3 h-3" />
@@ -54,16 +54,16 @@ export function ServicesDropdown({ isOpen, onClose }: ServicesDropdownProps) {
                   key={service.slug}
                   href={`/services/${service.slug}`}
                   onClick={onClose}
-                  className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-cream transition-colors group"
+                  className="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-cream/90 hover:shadow-[0_2px_8px_rgba(42,27,22,0.04)] border border-transparent hover:border-turmeric/25 transition-all group"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-gold-gradient text-charcoal flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                  <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-turmeric via-saffron to-turmeric text-charcoal flex items-center justify-center shrink-0 group-hover:scale-110 shadow-sm transition-transform duration-200">
                     <Icon className="w-4 h-4 text-charcoal" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-xs font-bold text-charcoal group-hover:text-maroon transition-colors truncate">
                       {service.title}
                     </p>
-                    <p className="text-[10px] text-charcoal/60 truncate">
+                    <p className="text-[10px] text-charcoal/60 truncate mt-0.5">
                       {service.guestRange}
                     </p>
                   </div>

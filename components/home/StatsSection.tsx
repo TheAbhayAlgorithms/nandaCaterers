@@ -27,7 +27,7 @@ export function StatsSection() {
   ];
 
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-r from-maroon via-maroon-dark to-maroon text-cream relative overflow-hidden border-y-2 border-turmeric/40">
+    <section className="py-16 md:py-20 bg-gradient-to-r from-maroon via-maroon-dark to-maroon text-cream relative overflow-hidden border-y-2 border-turmeric/40 font-lora">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {statsList.map((stat, idx) => {
@@ -39,7 +39,7 @@ export function StatsSection() {
                     <Icon className="w-6 h-6" />
                   </div>
 
-                  <div className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight mb-1">
+                  <div className="font-lora font-bold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight mb-1">
                     <Counter value={stat.value} suffix={stat.suffix} />
                   </div>
 
