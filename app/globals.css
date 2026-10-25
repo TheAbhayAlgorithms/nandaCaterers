@@ -105,3 +105,27 @@ button, a, input, select, textarea {
   animation-play-state: paused;
 }
 
+/* Gentle Logo Blinking Animation for WhatsApp Floating Action Button */
+@keyframes gentle-blink {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 10px 30px -5px rgba(37, 211, 102, 0.45);
+  }
+  50% {
+    opacity: 0.72;
+    transform: scale(0.96);
+    box-shadow: 0 4px 14px -3px rgba(37, 211, 102, 0.2);
+  }
+}
+
+.animate-gentle-blink {
+  animation: gentle-blink 2.2s ease-in-out infinite;
+}
+
+.animate-gentle-blink:hover {
+  animation-play-state: paused;
+  opacity: 1;
+  transform: scale(1.05);
+}
+
