@@ -44,7 +44,7 @@ export function SubTabs({
   return (
     <div
       className={cn(
-        "sticky top-[68px] z-20 bg-cream/95 backdrop-blur-md border-b border-accent/15 py-2.5 shadow-xs transition-all",
+        "sticky top-[68px] z-20 bg-[#FFF8EF] border-b border-accent/15 py-2.5 shadow-xs transition-all",
         className
       )}
     >
