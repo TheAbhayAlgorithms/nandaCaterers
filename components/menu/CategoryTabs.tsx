@@ -46,7 +46,7 @@ export function CategoryTabs({ activeSlug }: CategoryTabsProps) {
                 href={`/menu/${cat.slug}`}
                 data-slug={cat.slug}
                 className={cn(
-                  "relative shrink-0 px-4 py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-colors snap-center select-none",
+                  "relative isolate shrink-0 px-4 py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-colors snap-center select-none",
                   isActive
                     ? "text-charcoal"
                     : "text-charcoal/70 hover:text-maroon hover:bg-ivory"
@@ -56,11 +56,11 @@ export function CategoryTabs({ activeSlug }: CategoryTabsProps) {
                 {isActive && (
                   <motion.span
                     layoutId="activeCategoryPill"
-                    className="absolute inset-0 rounded-full bg-gold-gradient shadow-sm -z-10"
+                    className="absolute inset-0 rounded-full bg-gold-gradient shadow-sm"
                     transition={{ type: "spring", stiffness: 350, damping: 30 }}
                   />
                 )}
-                <span>{cat.title}</span>
+                <span className="relative z-10">{cat.title}</span>
               </Link>
             );
           })}

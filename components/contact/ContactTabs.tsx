@@ -100,7 +100,7 @@ export function ContactTabs({ initialService, initialDishes }: ContactTabsProps 
                 aria-selected={isActive}
                 onClick={() => handleTabChange(tab.key)}
                 className={cn(
-                  "relative px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide transition-colors cursor-pointer select-none",
+                  "relative isolate px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide transition-colors cursor-pointer select-none",
                   isActive
                     ? "text-white"
                     : "text-ink/70 hover:text-accent hover:bg-paper/60"
@@ -109,11 +109,11 @@ export function ContactTabs({ initialService, initialDishes }: ContactTabsProps 
                 {isActive && (
                   <motion.span
                     layoutId="contactTabPill"
-                    className="absolute inset-0 rounded-full bg-accent shadow-xs -z-10"
+                    className="absolute inset-0 rounded-full bg-accent shadow-sm"
                     transition={{ type: "spring", stiffness: 380, damping: 28 }}
                   />
                 )}
-                <span>{tab.label}</span>
+                <span className="relative z-10">{tab.label}</span>
               </button>
             );
           })}

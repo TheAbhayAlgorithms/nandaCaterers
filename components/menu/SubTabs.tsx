@@ -68,7 +68,7 @@ export function SubTabs({
                 data-section={encodeURIComponent(sec.title)}
                 onClick={() => onSelectSection(sec.title)}
                 className={cn(
-                  "relative shrink-0 flex items-center gap-2 px-4 py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-colors snap-center select-none cursor-pointer",
+                  "relative isolate shrink-0 flex items-center gap-2 px-4 py-2 rounded-full text-xs md:text-sm font-semibold tracking-wide transition-colors snap-center select-none cursor-pointer",
                   isActive
                     ? "text-white"
                     : "text-ink/75 hover:text-accent hover:bg-paper/80"
@@ -77,11 +77,11 @@ export function SubTabs({
                 {isActive && (
                   <motion.span
                     layoutId="activeSubSectionPill"
-                    className="absolute inset-0 rounded-full bg-accent shadow-xs -z-10"
+                    className="absolute inset-0 rounded-full bg-accent shadow-sm"
                     transition={{ type: "spring", stiffness: 350, damping: 28 }}
                   />
                 )}
-                <span>{sec.title}</span>
+                <span className="relative z-10">{sec.title}</span>
               </button>
             );
           })}
