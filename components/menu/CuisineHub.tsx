@@ -31,7 +31,7 @@ export function CuisineHub() {
             role="tab"
             aria-selected={activeSegment === "Indian"}
           >
-            Indian Food (8)
+            Indian Food
           </button>
           <button
             type="button"
@@ -45,7 +45,7 @@ export function CuisineHub() {
             role="tab"
             aria-selected={activeSegment === "Global"}
           >
-            Global Cuisines (5)
+            Global Cuisines
           </button>
         </div>
       </div>
