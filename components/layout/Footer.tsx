@@ -207,7 +207,7 @@ export function Footer() {
 
         {/* Bottom Row */}
         <div className="pt-6 mt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs leading-none">
-          <p className="text-xs text-[#8fa6c5]/70 m-0 p-0 leading-none">
+          <p className="text-xs text-[#7ea9dc] m-0 p-0 leading-none relative -top-[1.5px]">
             © 2026 Nanda Caterers. All rights reserved.
           </p>
           <div className="flex items-center gap-5 text-xs m-0 p-0 leading-none">
