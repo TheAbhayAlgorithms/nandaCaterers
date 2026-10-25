@@ -134,18 +134,7 @@ export function ContactTabs({ initialService, initialDishes }: ContactTabsProps 
               className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start"
             >
               {/* Left Column: Quote Form */}
-              <div className="lg:col-span-7 bg-paper p-6 sm:p-8 md:p-10 rounded-2xl border border-ink/10 shadow-card">
-                <div className="mb-6">
-                  <Eyebrow text="REQUEST A QUOTE" />
-                  <h2 className="font-heading font-bold text-2xl sm:text-3xl text-ink mt-1">
-                    Tell Us About Your Event
-                  </h2>
-                  <Divider align="left" className="my-2" />
-                  <p className="text-xs sm:text-sm text-ink/70">
-                    Fill out the form below. We will reply within 2 working hours.
-                  </p>
-                </div>
-
+              <div className="lg:col-span-7">
                 <QuoteForm
                   initialService={serviceParam}
                   initialDishes={parsedDishes}
