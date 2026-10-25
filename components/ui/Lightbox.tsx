@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect, useCallback, useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
@@ -19,8 +20,13 @@ export function Lightbox({
   onClose,
   onIndexChange,
 }: LightboxProps) {
+  const [mounted, setMounted] = useState(false);
   const isOpen = currentIndex !== null;
   const currentImage = currentIndex !== null ? images[currentIndex] : null;
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleNext = useCallback(() => {
     if (currentIndex === null) return;
@@ -50,14 +56,16 @@ export function Lightbox({
     };
   }, [isOpen, onClose, handleNext, handlePrev]);
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <AnimatePresence>
       {isOpen && currentImage && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 md:p-8 backdrop-blur-md"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4 md:p-8 backdrop-blur-md"
           role="dialog"
           aria-modal="true"
           aria-label="Image gallery lightbox"
@@ -118,6 +126,7 @@ export function Lightbox({
           </div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 }
