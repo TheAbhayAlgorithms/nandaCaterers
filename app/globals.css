@@ -19,7 +19,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 84px;
-  background-color: var(--paper);
+  background-color: var(--night);
   color: var(--ink);
   font-family: var(--font-poppins), sans-serif;
 }

@@ -41,13 +41,13 @@ export function Navbar() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled
-            ? "bg-[#FFF8EF] shadow-md py-3 border-b border-accent/15 text-ink"
+            ? "bg-[#1B1210]/95 backdrop-blur-md shadow-md py-3 border-b border-white/10 text-white"
             : "bg-transparent py-4 sm:py-5 text-white"
         )}
       >
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo left */}
-          <Logo theme={isScrolled ? "dark" : "light"} />
+          <Logo theme="light" />
 
           {/* Desktop Navigation right in small type */}
           <div className="hidden lg:flex items-center gap-6 xl:gap-8">
@@ -69,9 +69,7 @@ export function Navbar() {
                       "inline-flex items-center py-1 transition-colors hover:text-accent relative",
                       isActive
                         ? "text-accent font-bold"
-                        : isScrolled
-                        ? "text-ink/85"
-                        : "text-white/90"
+                        : "text-white/90 hover:text-white"
                     )}
                   >
                     <span>{link.name}</span>
@@ -85,12 +83,7 @@ export function Navbar() {
               <a
                 href={`tel:${siteConfig.phone.raw}`}
                 aria-label={`Call Nanda Caterers at ${siteConfig.phone.display}`}
-                className={cn(
-                  "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-bold tracking-wide transition-all duration-200 border",
-                  isScrolled
-                    ? "bg-paper text-accent border-accent/25 hover:bg-accent hover:text-white shadow-xs"
-                    : "bg-white/15 text-white border-white/25 hover:bg-accent hover:border-accent shadow-xs"
-                )}
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-bold tracking-wide transition-all duration-200 border bg-white/15 text-white border-white/25 hover:bg-accent hover:border-accent shadow-xs"
               >
                 <Phone className="w-3.5 h-3.5 shrink-0" />
                 <span>{siteConfig.phone.display}</span>
@@ -120,10 +113,7 @@ export function Navbar() {
               type="button"
               onClick={() => setIsMobileDrawerOpen(true)}
               aria-label="Open mobile navigation menu"
-              className={cn(
-                "p-2 rounded-xl transition-colors cursor-pointer",
-                isScrolled ? "text-ink hover:bg-black/5" : "text-white hover:bg-white/10"
-              )}
+              className="p-2 rounded-xl transition-colors cursor-pointer text-white hover:bg-white/10"
             >
               <Menu className="w-6 h-6" />
             </button>
