@@ -116,9 +116,6 @@ export function Footer() {
               <p className="font-semibold text-white/90 pl-6">
                 {siteConfig.workingHours.time}
               </p>
-              <p className="text-xs text-white/50 pl-6 pt-1">
-                {siteConfig.responsePromise}
-              </p>
             </div>
           </div>
 
@@ -182,7 +179,6 @@ export function Footer() {
             {openSection === "hours" && (
               <div className="pb-4 space-y-1 text-xs text-white/70">
                 <p>{siteConfig.workingHours.days}: {siteConfig.workingHours.time}</p>
-                <p className="text-white/50">{siteConfig.responsePromise}</p>
               </div>
             )}
           </div>
@@ -209,14 +205,22 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom Row per Section 4.8 */}
-        <div className="flex flex-col sm:flex-row items-center justify-between text-xs text-white/50 pt-2 gap-2">
-          <p>© 2026 Nanda Caterers. All rights reserved.</p>
-          <div className="flex items-center gap-4">
-            <Link href="/privacy" className="hover:text-white transition-colors">
+        {/* Bottom Row */}
+        <div className="pt-6 mt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs leading-none">
+          <p className="text-xs text-[#8fa6c5]/70 m-0 p-0 leading-none">
+            © 2026 Nanda Caterers. All rights reserved.
+          </p>
+          <div className="flex items-center gap-5 text-xs m-0 p-0 leading-none">
+            <Link
+              href="/privacy"
+              className="text-[#7ea9dc] hover:text-[#a5c7f4] hover:underline transition-colors leading-none"
+            >
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-white transition-colors">
+            <Link
+              href="/terms"
+              className="text-[#7ea9dc] hover:text-[#a5c7f4] hover:underline transition-colors leading-none"
+            >
               Terms & Conditions
             </Link>
           </div>

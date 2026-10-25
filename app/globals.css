@@ -84,3 +84,24 @@ button, a, input, select, textarea {
   scrollbar-width: none;
 }
 
+/* Continuous Gallery Marquee with Hover-to-Pause */
+@keyframes gallery-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-gallery-marquee {
+  display: flex;
+  width: max-content;
+  animation: gallery-marquee 40s linear infinite;
+  will-change: transform;
+}
+
+.gallery-marquee-container:hover .animate-gallery-marquee {
+  animation-play-state: paused;
+}
+
