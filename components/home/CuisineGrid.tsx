@@ -118,12 +118,6 @@ function TiltCard({ item }: { item: CuisineCardItem }) {
       {/* Layered Gradient Overlay for maximum text contrast */}
       <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent opacity-85 group-hover:opacity-95 transition-opacity duration-300" />
 
-      {/* Top Badge: Dish Count */}
-      <div className="absolute top-4 left-4 z-10">
-        <span className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-charcoal/70 backdrop-blur-md text-white border border-white/20 shadow-sm">
-          {item.itemsCount}
-        </span>
-      </div>
 
       {/* Bottom Content with proper breathing room */}
       <div className="absolute bottom-0 inset-x-0 p-6 z-10 flex flex-col justify-end transition-transform duration-300">

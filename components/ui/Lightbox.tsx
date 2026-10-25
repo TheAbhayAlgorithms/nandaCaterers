@@ -63,11 +63,11 @@ export function Lightbox({
           aria-label="Image gallery lightbox"
           onClick={onClose}
         >
-          {/* Close button */}
+          {/* Close button: positioned lower so it doesn't get hidden under browser UI */}
           <button
             onClick={onClose}
             aria-label="Close lightbox"
-            className="absolute top-4 right-4 z-50 rounded-full bg-white/10 p-2.5 text-white hover:bg-white/20 transition-colors focus-visible:ring-2 focus-visible:ring-saffron"
+            className="absolute top-6 sm:top-8 right-6 sm:right-8 z-50 rounded-full bg-black/70 sm:bg-white/15 backdrop-blur-md p-3 text-white border border-white/20 hover:bg-white/30 hover:scale-105 active:scale-95 transition-all focus-visible:ring-2 focus-visible:ring-accent shadow-xl cursor-pointer"
           >
             <X className="w-6 h-6" />
           </button>

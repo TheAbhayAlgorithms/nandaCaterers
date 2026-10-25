@@ -53,16 +53,6 @@ export function CategoryHero({ category }: CategoryHeroProps) {
           <span className="text-white/90">{category.title}</span>
         </nav>
 
-        {/* 100% Vegetarian Leaf Badge & Dish Count */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-leaf/90 text-white text-xs font-bold uppercase tracking-wider shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-white" />
-            <span>100% Vegetarian</span>
-          </div>
-          <span className="px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-white text-xs font-semibold">
-            {totalDishes} Dishes
-          </span>
-        </div>
 
         {/* Centred H1 */}
         <h1 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight">

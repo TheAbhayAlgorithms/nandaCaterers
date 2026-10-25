@@ -122,10 +122,7 @@ export function SignatureDishes() {
                       </p>
                     </div>
 
-                    <div className="pt-4 border-t border-charcoal/5 mt-4 flex items-center justify-between">
-                      <span className="text-[11px] text-leaf font-semibold uppercase tracking-wider">
-                        100% Vegetarian
-                      </span>
+                    <div className="pt-4 border-t border-charcoal/5 mt-4 flex items-center justify-end">
                       <button
                         onClick={() => toggleDish(dish.name)}
                         className="text-xs font-semibold text-maroon hover:text-saffron transition-colors"

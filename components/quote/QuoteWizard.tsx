@@ -631,7 +631,7 @@ export function QuoteWizard() {
                   <span className="font-semibold text-charcoal">Location:</span> {location}
                 </p>
                 <p>
-                  <span className="font-semibold text-charcoal">Dietary:</span> 100% Pure Veg {jainRequired ? "+ Jain Available" : ""}
+                  <span className="font-semibold text-charcoal">Dietary:</span> Pure Veg {jainRequired ? "+ Jain Available" : ""}
                 </p>
                 <p>
                   <span className="font-semibold text-charcoal">Client:</span> {fullName} ({phone})

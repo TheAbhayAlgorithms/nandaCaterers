@@ -45,9 +45,9 @@ export function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
           {/* Top highlight bar */}
           <div className="flex items-center justify-between pb-4 mb-6 border-b border-charcoal/10">
             <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-leaf animate-pulse shadow-[0_0_8px_rgba(47,107,60,0.6)]" />
-              <span className="text-xs uppercase tracking-wider font-semibold text-leaf">
-                100% Pure Vegetarian Catering Menus
+              <span className="w-2.5 h-2.5 rounded-full bg-accent" />
+              <span className="text-xs uppercase tracking-wider font-semibold text-ink">
+                Curated Catering Menus
               </span>
             </div>
             <Link

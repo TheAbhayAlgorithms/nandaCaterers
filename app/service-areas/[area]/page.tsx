@@ -89,9 +89,6 @@ export default async function ServiceAreaDetailPage({ params }: AreaPageProps) {
           />
 
           <div className="flex items-center gap-2">
-            <span className="px-3 py-1 rounded-full bg-saffron text-charcoal text-xs font-bold uppercase tracking-wider">
-              100% Pure Veg
-            </span>
             <span className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-white text-xs font-medium flex items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-turmeric" />
               {area.name}, {area.state}

@@ -28,12 +28,16 @@ interface ContactTabsProps {
   initialDishes?: string[];
 }
 
-export function ContactTabs({ initialService, initialDishes }: ContactTabsProps) {
+export function ContactTabs({ initialService, initialDishes }: ContactTabsProps = {}) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const tabParam = searchParams.get("tab") as ContactTabKey | null;
+
+  const serviceParam = searchParams.get("service") || initialService;
+  const dishesParam = searchParams.get("dishes");
+  const parsedDishes = dishesParam ? dishesParam.split(",") : initialDishes;
 
   const validTabs: ContactTabKey[] = ["enquiry", "visit", "faq"];
+  const tabParam = searchParams.get("tab") as ContactTabKey | null;
   const currentTab: ContactTabKey = validTabs.includes(tabParam || "enquiry")
     ? (tabParam as ContactTabKey) || "enquiry"
     : "enquiry";
@@ -44,14 +48,31 @@ export function ContactTabs({ initialService, initialDishes }: ContactTabsProps)
   useEffect(() => {
     if (tabParam && validTabs.includes(tabParam)) {
       setActiveTab(tabParam);
+    } else if (!tabParam) {
+      setActiveTab("enquiry");
     }
   }, [tabParam]);
+
+  useEffect(() => {
+    const handlePopState = () => {
+      const currentUrl = new URL(window.location.href);
+      const tab = currentUrl.searchParams.get("tab") as ContactTabKey | null;
+      if (tab && validTabs.includes(tab)) {
+        setActiveTab(tab);
+      } else {
+        setActiveTab("enquiry");
+      }
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
 
   const handleTabChange = (key: ContactTabKey) => {
     setActiveTab(key);
     const params = new URLSearchParams(searchParams.toString());
     params.set("tab", key);
-    router.replace(`/contact?${params.toString()}`, { scroll: false });
+    const newUrl = `/contact?${params.toString()}`;
+    window.history.replaceState(null, "", newUrl);
   };
 
   const tabs: { key: ContactTabKey; label: string }[] = [
@@ -126,8 +147,8 @@ export function ContactTabs({ initialService, initialDishes }: ContactTabsProps)
                 </div>
 
                 <QuoteForm
-                  initialService={initialService}
-                  initialDishes={initialDishes}
+                  initialService={serviceParam}
+                  initialDishes={parsedDishes}
                 />
               </div>
 

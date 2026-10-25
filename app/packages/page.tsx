@@ -56,7 +56,7 @@ export default function PackagesPage() {
           <div className="pt-4 flex flex-wrap items-center justify-center gap-4 text-xs text-cream/80">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-turmeric" />
-              100% Pure Vegetarian
+              Dedicated Segregated Kitchens
             </span>
             <span>•</span>
             <span>Custom Jain Adjustments</span>

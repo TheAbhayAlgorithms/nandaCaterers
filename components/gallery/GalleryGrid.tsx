@@ -36,13 +36,9 @@ export function GalleryGrid() {
   return (
     <div className="space-y-10">
       {/* Filter Chips per Section 6.7 */}
-      <div className="flex flex-wrap items-center justify-center gap-2 max-w-2xl mx-auto">
+      <div className="flex flex-wrap items-center justify-center gap-2.5 max-w-2xl mx-auto">
         {FILTER_CHIPS.map((cat) => {
           const isActive = activeCategory === cat;
-          const count =
-            cat === "All"
-              ? galleryImages.length
-              : galleryImages.filter((img) => img.category === cat).length;
 
           return (
             <button
@@ -50,23 +46,13 @@ export function GalleryGrid() {
               type="button"
               onClick={() => handleFilterChange(cat)}
               className={cn(
-                "px-4 py-2 rounded-full text-xs font-semibold transition-all cursor-pointer select-none",
+                "px-5 py-2 rounded-full text-xs font-semibold transition-all cursor-pointer select-none",
                 isActive
                   ? "bg-accent text-white shadow-xs"
                   : "bg-peach/70 text-ink/70 hover:bg-peach hover:text-ink border border-accent/20"
               )}
             >
               <span>{cat}</span>
-              <span
-                className={cn(
-                  "ml-1.5 text-[10px] px-1.5 py-0.5 rounded-full font-bold",
-                  isActive
-                    ? "bg-white/20 text-white"
-                    : "bg-ink/5 text-ink/60"
-                )}
-              >
-                {count}
-              </span>
             </button>
           );
         })}
@@ -132,7 +118,7 @@ export function GalleryGrid() {
             onClick={handleLoadMore}
             className="flex items-center gap-2"
           >
-            <span>Load more photos ({filteredImages.length - visibleCount} remaining)</span>
+            <span>Load More Photos</span>
             <ChevronDown className="w-4 h-4" />
           </Button>
         </div>

@@ -61,15 +61,9 @@ export function CuisineHub() {
             transition={{ duration: 0.25, ease: "easeOut" }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
           >
-            {categories.map((category) => {
-              const dishCount = category.sections.reduce(
-                (acc, s) => acc + s.dishes.length,
-                0
-              );
-
-              return (
-                <Link
-                  key={category.slug}
+            {categories.map((category) => (
+              <Link
+                key={category.slug}
                   href={`/menu/${category.slug}`}
                   className="group rounded-2xl overflow-hidden bg-paper border border-accent/15 shadow-soft hover:shadow-warm transition-all duration-300 flex flex-col justify-between"
                 >
@@ -82,9 +76,6 @@ export function CuisineHub() {
                       className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                    <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-night/80 backdrop-blur-md text-white text-xs font-semibold border border-white/15">
-                      {dishCount} Dishes
-                    </span>
                   </div>
 
                   <div className="p-5 flex-1 flex flex-col justify-between">
@@ -102,9 +93,8 @@ export function CuisineHub() {
                       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
-                </Link>
-              );
-            })}
+              </Link>
+            ))}
           </motion.div>
         </AnimatePresence>
       </div>

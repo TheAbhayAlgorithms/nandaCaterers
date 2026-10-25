@@ -254,7 +254,7 @@ export function AboutContent() {
                 {/* Subtle Social Hover Row */}
                 <div className="pt-6 border-t border-charcoal/10 w-full mt-6 flex items-center justify-center gap-3">
                   <span className="text-[11px] text-charcoal/40 uppercase tracking-widest font-semibold">
-                    100% Pure Veg Culinary Team
+                    Master Culinary Team
                   </span>
                 </div>
               </div>

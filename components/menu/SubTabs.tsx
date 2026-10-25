@@ -82,16 +82,6 @@ export function SubTabs({
                   />
                 )}
                 <span>{sec.title}</span>
-                <span
-                  className={cn(
-                    "text-[10px] font-bold px-1.5 py-0.5 rounded-full transition-colors",
-                    isActive
-                      ? "bg-white/25 text-white"
-                      : "bg-ink/5 text-ink/60"
-                  )}
-                >
-                  {sec.count}
-                </span>
               </button>
             );
           })}

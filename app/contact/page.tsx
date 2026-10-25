@@ -14,18 +14,7 @@ export const metadata: Metadata = {
   },
 };
 
-interface ContactPageProps {
-  searchParams: Promise<{
-    service?: string;
-    dishes?: string;
-  }>;
-}
-
-export default async function ContactPage({ searchParams }: ContactPageProps) {
-  const params = await searchParams;
-  const initialService = params.service;
-  const initialDishes = params.dishes ? params.dishes.split(",") : undefined;
-
+export default function ContactPage() {
   return (
     <main className="w-full min-h-screen">
       {/* Compact hero per Section 6 */}
@@ -43,10 +32,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
           </div>
         }
       >
-        <ContactTabs
-          initialService={initialService}
-          initialDishes={initialDishes}
-        />
+        <ContactTabs />
       </Suspense>
     </main>
   );

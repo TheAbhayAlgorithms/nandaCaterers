@@ -16,7 +16,6 @@ export default function MenuHubPage() {
       <PageHero
         title="Our Food Menu"
         breadcrumb="Menu"
-        badge="100% Pure Vegetarian"
         imageSrc="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1600&q=80"
       />
 
