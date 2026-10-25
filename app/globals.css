@@ -3,21 +3,24 @@
 @tailwind utilities;
 
 :root {
-  --cream: #FFF8EC;
-  --ivory: #FFFDF7;
-  --saffron: #F29A1F;
-  --turmeric: #E8B004;
-  --maroon: #7A1F2B;
-  --chilli: #C8372D;
+  --accent: #B8391B;
+  --accent-dark: #8E2A12;
+  --ink: #2A1B16;
+  --maroon: #5C1A1B;
+  --paper: #FFFFFF;
+  --peach: #FDEFE7;
+  --cream: #FFF8EF;
+  --night: #1B1210;
   --leaf: #2F6B3C;
-  --charcoal: #2A1B16;
+  --turmeric: #E8B004;
+  --saffron: #F29A1F;
 }
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 84px;
-  background-color: var(--cream);
-  color: var(--charcoal);
+  background-color: var(--paper);
+  color: var(--ink);
   font-family: var(--font-poppins), sans-serif;
 }
 
@@ -25,68 +28,62 @@ body {
   min-height: 100svh;
   overflow-x: hidden;
   position: relative;
-  background-color: var(--cream);
-  /* Subtle grain / paper texture overlay */
-  background-image: radial-gradient(rgba(122, 31, 43, 0.03) 1px, transparent 0);
-  background-size: 24px 24px;
+  background-color: var(--paper);
+  color: var(--ink);
 }
 
-/* Fluid type helpers */
-h1 {
-  font-size: clamp(2.4rem, 6vw, 5rem);
-  line-height: 1.15;
+/* Fluid type helpers per Section 5.2 */
+h1, .fluid-h1 {
+  font-size: clamp(2.2rem, 5.5vw, 4.25rem);
+  line-height: 1.1;
 }
 
-h2 {
-  font-size: clamp(1.9rem, 4vw, 3.25rem);
-  line-height: 1.25;
+h2, .fluid-h2 {
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+  line-height: 1.2;
 }
 
-p, body {
-  font-size: clamp(1rem, 1.1vw, 1.125rem);
+p, body, .fluid-body {
+  font-size: clamp(0.95rem, 1.05vw, 1.0625rem);
+  line-height: 1.6;
 }
 
-/* Keyframes for Marquee */
-@keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-100%); }
+/* Eyebrows per Section 5.2 */
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
 }
 
-@keyframes marquee-reverse {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(0%); }
+/* Food doodle background pattern for Services band */
+.bg-food-doodle {
+  background-color: var(--peach);
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 10c2 0 4 2 4 5s-2 5-4 5-4-2-4-5 2-5 4-5zm30 0c2 0 4 2 4 5s-2 5-4 5-4-2-4-5 2-5 4-5zM12 40h6v6h-6v-6zm30 0h6v6h-6v-6zM30 25c3 0 6 3 6 6s-3 6-6 6-6-3-6-6 3-6 6-6z' fill='%23B8391B' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 
-.animate-marquee {
-  animation: marquee 35s linear infinite;
-}
-
-.animate-marquee-reverse {
-  animation: marquee-reverse 35s linear infinite;
-}
-
-/* Safe areas */
+/* Safe areas & Touch targets */
 .safe-bottom {
   padding-bottom: env(safe-area-inset-bottom, 16px);
 }
 
-/* Touch targets */
 button, a, input, select, textarea {
   min-height: 44px;
-  min-width: 44px;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #FFF8EC;
+  background: var(--cream);
 }
 ::-webkit-scrollbar-thumb {
-  background: #E8B004;
+  background: var(--accent);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #F29A1F;
+  background: var(--accent-dark);
 }

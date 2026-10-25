@@ -1,93 +1,96 @@
-// Single source of truth for business configuration and metadata
+// Business configuration and facts per Section 9.1
 
 export const SITE_URL =
   process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || "https://nandacaterers.com";
 
-// Verified official business email (corrected from previous typo nandacateres.com)
-export const CONTACT_EMAIL = "info@nandacaterers.com";
+// Email: published as info@nandacateres.com (looks like a typo of "caterers"). Keep in ONE constant.
+// TODO: confirm with client
+export const CONTACT_EMAIL = "info@nandacateres.com";
 
 export const siteConfig = {
   name: "Nanda Caterers",
   legalName: "Nanda Caterers Mumbai",
+  headline: "A Perfect Blend of Sensational Food",
   tagline: "A Perfect Blend of Sensational Food",
-  subline: "100% pure vegetarian catering crafted with passion, authentic regional traditions, and exemplary hospitality since 2005.",
+  subline: "Wedding catering with new ideas, served in our own style.",
   description:
-    "Mumbai's trusted 100% pure vegetarian wedding and event caterers since 2005. Serving lavish feasts, live counters, and regional delicacies across Mumbai, Thane, Navi Mumbai, Pune & Goa.",
+    "Nanda Caterers: Benchmark 100% pure vegetarian catering in Mumbai, Thane, Navi Mumbai, Pune & Goa. Specializing in lavish wedding feasts, Gujarati & Punjabi delicacies, and corporate events.",
   canonicalUrl: SITE_URL,
   foundedYear: 2005,
   experienceYears: 15,
-  
-  // Single confirmed list of service areas
+
+  // Served areas
   areasServed: ["Mumbai", "Thane", "Navi Mumbai", "Pune", "Goa"],
-  
+
   phone: {
     display: "+91 99678 94979",
     raw: "+919967894979",
     whatsappNumber: "919967894979",
   },
-  
+  phoneTel: "tel:+919967894979",
+  whatsappUrl: "https://wa.me/919967894979",
+  hours: "MON-SAT: 9 AM - 9 PM",
+  mapDirectionsUrl: "https://maps.google.com/?q=Nanda+Caterers+Bandra+East+Mumbai",
+
   email: CONTACT_EMAIL,
-  
+
   workingHours: {
     days: "Monday to Saturday",
     time: "9:00 AM to 9:00 PM",
+    display: "MON-SAT: 9 AM - 9 PM",
     raw: "Mo-Sa 09:00-21:00",
   },
-  
-  // Single consistent response guarantee
-  responsePromise: "We reply within 2 working hours during business hours (Mon-Sat 9 AM - 9 PM)",
-  mapDirectionsUrl: "https://maps.google.com/?q=Nanda+Caterers+Bandra+East+Mumbai",
+
+  // Response promise: "We just need a couple of hours! No more than 2 working days since receiving your enquiry."
+  responsePromise: "We just need a couple of hours! No more than 2 working days since receiving your enquiry.",
+
   mapEmbedUrl: "https://maps.google.com/maps?q=nanda%20caterers&t=m&z=17&output=embed&iwloc=near",
-  
+
   offices: [
     {
-      type: "Headquarters",
-      name: "Bandra Main Office",
+      type: "Main Office",
+      name: "Main Office (Bandra East)",
       address: "Siddhart Colony, Service Road, Near Cardinal Gracious High School, W.E. Highway, Bandra (East), Mumbai 400 051",
       city: "Mumbai",
       pinCode: "400051",
       isPrimary: true,
-      mapUrl: "https://maps.google.com/?q=Nanda+Caterers+Bandra+East+Mumbai",
-      embedUrl: "https://maps.google.com/maps?q=nanda%20caterers&t=m&z=17&output=embed&iwloc=near",
+      directionsUrl: "https://maps.google.com/?q=Nanda+Caterers+Bandra+East+Mumbai",
     },
     {
       type: "Branch Office",
-      name: "Khar Branch",
+      name: "Branch Office (Khar East)",
       address: "Shop No 1, Prajakta Apartment, Nirmal Nagar, Near Nirmal Nagar Police Station, Khar (East), Mumbai 400 051",
       city: "Mumbai",
       pinCode: "400051",
       isPrimary: false,
-      mapUrl: "https://maps.google.com/?q=Shop+No+1+Prajakta+Apartment+Khar+East+Mumbai",
-      embedUrl: "https://maps.google.com/maps?q=Nirmal+Nagar+Khar+East+Mumbai&t=m&z=17&output=embed&iwloc=near",
+      directionsUrl: "https://maps.google.com/?q=Shop+No+1+Prajakta+Apartment+Khar+East+Mumbai",
     },
   ],
-  
-  // Real SSR initial numbers (never renders 0+)
+
+  // Stats: varieties: 500, customers: 5000, years: 15, freshness: 100 with // TODO: confirm with client
   stats: {
-    years: { value: 15, suffix: "+", label: "Years of Excellence" },
-    events: { value: 5000, suffix: "+", label: "Celebrations Catered" },
-    customers: { value: 5000, suffix: "+", label: "Happy Hosts" },
-    dishes: { value: 500, suffix: "+", label: "Pure Veg Dishes" },
-    varieties: { value: 500, suffix: "+", label: "Pure Veg Varieties" },
-    freshness: { value: 100, suffix: "%", label: "Pure Veg Freshness" },
-    rating: { value: 4.9, suffix: "★", label: "Client Satisfaction" },
+    varieties: { value: 500, suffix: "+", label: "Foods Variety" }, // TODO: confirm with client
+    customers: { value: 5000, suffix: "+", label: "Satisfied Customers" }, // TODO: confirm with client
+    years: { value: 15, suffix: "+", label: "Years of Experience" }, // TODO: confirm with client
+    freshness: { value: 100, suffix: "%", label: "Fresh & Tasty Food %" }, // TODO: confirm with client
   },
-  
+
   social: {
     facebook: {
       name: "Facebook",
       url: "https://facebook.com/nandacaterers",
-      ariaLabel: "Follow Nanda Caterers on Facebook",
+    },
+    x: {
+      name: "X",
+      url: "https://x.com/nandacaterers",
     },
     instagram: {
       name: "Instagram",
       url: "https://instagram.com/nandacaterers",
-      ariaLabel: "Follow Nanda Caterers on Instagram",
     },
-    youtube: {
-      name: "YouTube",
-      url: "https://youtube.com/@nandacaterers",
-      ariaLabel: "Watch catering setups on YouTube",
+    whatsapp: {
+      name: "WhatsApp",
+      url: "https://wa.me/919967894979",
     },
   },
 };

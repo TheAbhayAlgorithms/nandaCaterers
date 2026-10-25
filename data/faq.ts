@@ -92,3 +92,13 @@ export const detailedFaqData: FAQCategory[] = [
 
 export const flatFaqList = detailedFaqData.flatMap((cat) => cat.items);
 export const faqList = flatFaqList;
+
+// 5 general Q&As per Section 9.5: minimum guests, advance booking, customised menus, areas served, decoration services
+export const fivePrimaryFaqs = [
+  flatFaqList.find((f) => f.id === "faq-min-guests") || flatFaqList[0],
+  flatFaqList.find((f) => f.id === "faq-advance-booking") || flatFaqList[1],
+  flatFaqList.find((f) => f.id === "faq-customization") || flatFaqList[2],
+  flatFaqList.find((f) => f.id === "faq-areas-served") || flatFaqList[3],
+  flatFaqList.find((f) => f.id === "faq-decor-staff") || flatFaqList[4],
+];
+

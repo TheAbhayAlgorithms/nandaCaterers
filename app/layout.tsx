@@ -7,6 +7,7 @@ import { WhatsAppFab } from "@/components/layout/WhatsAppFab";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { QuoteTray } from "@/components/layout/QuoteTray";
+import { QuoteSheetModal } from "@/components/layout/QuoteSheetModal";
 import { MobileBottomBar } from "@/components/layout/MobileBottomBar";
 import { SplashLoader } from "@/components/layout/SplashLoader";
 import { QuoteSelectionProvider } from "@/context/QuoteSelectionContext";
@@ -157,6 +158,7 @@ export default function RootLayout({
 
           {/* Floating Actions */}
           <QuoteTray />
+          <QuoteSheetModal />
           <ScrollToTop />
           <WhatsAppFab />
           <MobileBottomBar />

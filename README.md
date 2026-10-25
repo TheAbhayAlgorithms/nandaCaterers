@@ -1,28 +1,60 @@
-# Nanda Caterers – Official Website
+# Nanda Caterers – Official Website (Reference-Layout Edition)
 
-A production-ready, high-performance, fully responsive website built for **Nanda Caterers**, Mumbai's premier 100% pure vegetarian wedding and event catering company (founded in 2005).
+A complete, production-ready, fully responsive website built for **Nanda Caterers**, Mumbai's premier wedding and event catering company (founded 2005).
 
-Built with **Next.js 15 (App Router)**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**, delivering an authentic, festive, food-first aesthetic that feels like a warm Indian wedding feast.
-
----
-
-## 🌟 Key Highlights & Architecture
-
-- **100% Pure Vegetarian Focus**: Dedicated badges, green veg indicators, and segregated regional menus.
-- **Rich Indian Visual Identity**: Bespoke color palette (Cream, Ivory, Saffron, Turmeric, Maroon, Chilli, Leaf, Charcoal), subtle grain overlays, inline SVG rangoli/mandala watermarks, and ornamental dividers.
-- **13 Complete Menu Categories**: Breakfast, Starter, Welcome Drink, Main Course, Gujarati, South Indian, Sweets, Ice Cream, Chinese, Continental, Thai, Italian, Mexican.
-- **Interactive "Add to Quote List" Feature**: Allows hosts to browse dishes, select favorite recipes with persistent `localStorage` storage, and hand off selected dishes directly to the quote form and WhatsApp (`wa.me`).
-- **Live Search & Highlights**: Client-side dish filtering with dynamic keyword highlighting and empty states.
-- **Accessible Interactions**: Accessible Lightbox for photo gallery, keyboard navigation, focus trap in mobile drawer, and reduced-motion support.
-- **Rigorous SEO**: JSON-LD `CateringBusiness` / `LocalBusiness` schema, dynamic XML sitemaps, robots.txt, and Open Graph tags.
+Built with **Next.js 15 (App Router)**, **TypeScript (strict)**, **Tailwind CSS**, and **Framer Motion**, strictly following the **Master Prompt v2 (Progressive Disclosure & Reference-Layout Edition)**.
 
 ---
 
-## 🚀 Quick Start & Local Setup
+## 🌟 Progressive Disclosure & Architecture
 
-### Prerequisites
-- Node.js 18+ or 20+
-- npm (or yarn / pnpm / bun)
+1. **Short Teaser Home Page**:
+   - Exactly 5 sections + dark offer band + compact footer:
+     1. **Hero**: Full-bleed photo, 45% dark overlay, centered stack, single outlined pill button ("Get a Quote" opening Quote Sheet), secondary "Explore Menu" link, and signature torn-paper bottom edge.
+     2. **About Bento**: 2-column layout (concise story on left; 2×2 checkerboard photo and terracotta accent bento on right).
+     3. **Services Teaser**: Pale peach doodle pattern background, 3×2 grid of 6 white cards with line-clamp and "Show More" opening accessible Service modal.
+     4. **Gallery Carousel**: Horizontal snap carousel of 8 photo cards with round white overlapping arrows and lightbox trigger.
+     5. **Menu Teaser**: Cream background, row of 8 rounded cuisine cards linking to menu categories.
+     6. **Offer / Quote Band**: Dark full-bleed background, torn-paper top edge, right-aligned content with highlighted "Free Quote" background.
+     7. **Footer**: 3 columns (Contact, Working hours, Quick links), mobile accordions.
+2. **Signature Torn-Paper Edge**:
+   - `<TornEdge position="top|bottom" color="..." />` with deterministic seeded pseudo-random SVG generation in `lib/tornPath.ts` (zero hydration mismatch).
+3. **Small & Focused Inner Pages**:
+   - All inner pages start with a compact hero (240–320px, dark overlay, centered H1, breadcrumb, and torn bottom edge) and contain at most 2 to 3 focused content blocks.
+   - `/about`: Segmented pill control tabs (`Our Story` | `Our Reach` | `Our Crew` | `In Numbers`), URL `?tab=` sync, bento reuse.
+   - `/services`: 3×2 card grid, `ServiceModal`, 4-icon "Why Nanda Caterers" row, and deep-link `/services/[slug]`.
+   - `/menu`: Segmented control (`Indian Food` 8 cards | `Global Cuisines` 5 cards).
+   - `/menu/[category]`: One cuisine, sub-section tabs, paginated dish grid (18 items + "Show more dishes"), category search, category switcher, and floating selection chip.
+   - `/gallery`: 12 photos + filter chips (`All`, `Weddings`, `Corporate`, `Decor`, `Food`), "Load more" for next 12, accessible Lightbox.
+   - `/contact`: Tabs (`Send Enquiry` | `Visit Us` | `FAQ` accordion).
+4. **Interactive Quote Selection Tray**:
+   - Per-dish "+" button saves items to `localStorage`.
+   - Floating chip "Your selection (n)" opens a sheet with remove buttons, "Get Quote with these dishes", and WhatsApp prefilled message.
+5. **Universal One-Strip NextStepStrip**:
+   - Every page ends with a single clean forward-navigation strip (one headline + one or two buttons) rather than long footer stacks.
+
+---
+
+## 🎨 Design Tokens
+
+- `--accent: #B8391B` (rust/terracotta; buttons, tiles, icons, highlighted words)
+- `--accent-dark: #8E2A12` (hover)
+- `--ink: #2A1B16` (text)
+- `--maroon: #5C1A1B` (dark overlays)
+- `--paper: #FFFFFF` (main sections)
+- `--peach: #FDEFE7` (services band with subtle food doodle pattern)
+- `--cream: #FFF8EF` (menu band)
+- `--night: #1B1210` (dark band, footer)
+- `--leaf: #2F6B3C` (100% vegetarian badge only)
+
+**Typography**:
+- Headings: Playfair Display / Cormorant Garamond (`font-heading`)
+- Body & UI: Poppins / DM Sans (`font-body`)
+- Fluid sizes via `clamp()` tokens in `app/globals.css`.
+
+---
+
+## 🚀 Setup & Local Development
 
 ### 1. Install Dependencies
 ```bash
@@ -30,29 +62,29 @@ npm install
 ```
 
 ### 2. Environment Variables
-Copy the example environment configuration:
+Copy `.env.example` to `.env.local`:
 ```bash
 cp .env.example .env.local
 ```
 
-Configure your variables in `.env.local`:
+Configure your variables:
 ```env
-# Optional: Resend API key for emailing quote enquiries
-RESEND_API_KEY=re_your_api_key_here
+# Optional: Resend API credentials for emailing quotes
+RESEND_API_KEY=re_123456789
 QUOTE_TO_EMAIL=info@nandacateres.com
 
-# Site URL for canonical and Open Graph metadata
+# Site URL for canonical metadata & Open Graph
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
-> *Note:* If `RESEND_API_KEY` is not provided or left as default, form submissions will seamlessly log details to your terminal in development without throwing errors.
+*(In development, quote submissions are safely logged to the server terminal if no Resend key is provided).*
 
-### 3. Run Development Server
+### 3. Run Dev Server
 ```bash
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000](http://localhost:3000).
 
-### 4. Build for Production
+### 4. Production Build
 ```bash
 npm run build
 npm run start
@@ -60,85 +92,45 @@ npm run start
 
 ---
 
-## 📁 How to Update Website Content (Data-Driven Architecture)
+## 📁 How to Update Content (Data Files)
 
-All content lives strictly in typed data files under `/data`. You never need to touch core component code to edit dishes, texts, or services:
-
-### 1. Business Info, Offices & Stats
-Edit `data/site.ts`:
-- Change office addresses, phone numbers, WhatsApp lines, or business hours.
-- Update stats counters (`varieties`, `customers`, `years`, `freshness`).
-
-### 2. Food Menu Categories & Dishes
-Edit `data/menu.ts`:
-- Add or modify dishes under any of the 13 categories.
-- Mark optional price notes (e.g., `(Extra Rs.30/-)`).
-- Update category images and descriptions.
-
-### 3. Catering Services & Occasions
-Edit `data/services.ts`:
-- Customize the 6 core service cards (Wedding Event, Family Function, Corporate Events, Outdoor Party, Birthday Party, Social Events).
-- Update the Occasions chip cloud list and "Why Choose Us" feature points.
-
-### 4. Customer Testimonials
-Edit `data/testimonials.ts`:
-- Add genuine wedding and corporate reviews with client names, occasions, ratings, and quotes.
-
-### 5. Photo Gallery
-Edit `data/gallery.ts`:
-- Replace Unsplash imagery with real event photography, adding titles and categories (`Weddings`, `Buffets`, `Live Counters`, `Desserts`, `Decorations`).
-
-### 6. Frequently Asked Questions
-Edit `data/faq.ts`:
-- Add or modify answers regarding guest capacities, booking policies, or dietary accommodations.
-
----
-
-## 🎨 Changing Design Tokens (Colours & Typography)
-
-- **Colors & Spacing**: Configured in `tailwind.config.ts` and `app/globals.css` using CSS custom properties:
-  - `--cream: #FFF8EC` (Background)
-  - `--ivory: #FFFDF7` (Card backgrounds)
-  - `--saffron: #F29A1F` (Primary accents & buttons)
-  - `--turmeric: #E8B004` (Stars & secondary highlights)
-  - `--maroon: #7A1F2B` (Headings & dark bands)
-  - `--leaf: #2F6B3C` (100% Veg indicator)
-  - `--charcoal: #2A1B16` (Body text & footer)
-- **Typography**: Powered by `next/font/google` in `app/layout.tsx`:
-  - **Headings**: Playfair Display
-  - **Body / UI**: Poppins
-  - **Eyebrows / Accents**: Caveat
+All content is strictly isolated under `/data`:
+- `data/site.ts`: Business facts, office addresses, phone/WhatsApp, email, hours, response promise, map URL, stats.
+- `data/about.ts`: Story copy, timeline, reach text, cities, occasions, crew cards.
+- `data/services.ts`: 6 core services (slug, title, icon, short copy ≤110 chars, modal copy, highlights, image) + 4 "Why" features.
+- `data/menu.ts`: 13 cuisine categories (`breakfast`, `starter`, `welcome-drink`, `main-course`, `gujarati`, `south-indian`, `sweets`, `ice-cream`, `chinese`, `continental`, `thai`, `italian`, `mexican`) with sub-sections and dishes.
+- `data/gallery.ts`: 24 gallery items categorized under `Weddings`, `Corporate`, `Decor`, `Food`.
+- `data/testimonials.ts`: Reviews flagged for real client updates.
+- `data/faq.ts`: 5 core Q&As covering minimum guests, advance booking, custom menus, areas served, and decoration.
 
 ---
 
 ## 🚢 Deploying to Vercel
 
-1. Push this repository to GitHub or GitLab.
-2. Go to [Vercel](https://vercel.com) and click **"Add New Project"**.
-3. Select this repository.
-4. Add your Environment Variables:
+1. Push to GitHub.
+2. In [Vercel](https://vercel.com), select **"Add New Project"** and import the repository.
+3. Configure Environment Variables:
    - `RESEND_API_KEY`
    - `QUOTE_TO_EMAIL`
-   - `NEXT_PUBLIC_SITE_URL` (e.g. `https://nandacaterers.com`)
-5. Click **"Deploy"**.
+   - `NEXT_PUBLIC_SITE_URL` (e.g., `https://nandacaterers.com`)
+4. Click **"Deploy"**.
 
 ---
 
-## 📝 TODO List for the Client Before Launch
+## 📋 Client TODO List Before Launch
 
-Please review and confirm the following items before taking the site live:
+Please review and confirm these items before going live:
 
-1. **Email Address Spelling**:
-   - The live site showed `info@nandacateres.com` (missing the second 'r'). Please confirm whether the official inbox is `info@nandacateres.com` or `info@nandacaterers.com`. This is centralized in `CONTACT_EMAIL` in `data/site.ts`.
-2. **Replace Placeholder Testimonials**:
-   - Update `data/testimonials.ts` with authentic client feedback, host names, and verified event reviews.
-3. **Replace Placeholder Team Cards**:
-   - Update `teamMembers` in `components/about/AboutContent.tsx` with actual head chefs, managers, and team member photos.
-4. **Confirm Welcome Drink List**:
-   - The original source page could not be fetched for Welcome Drinks during initial drafting. We populated standard Indian welcome drinks (Mango Lassi, Jaljeera, Aam Panna, Rose Sharbat, etc.) in `data/menu.ts`. Please verify and edit as desired.
-5. **Confirm Business Stats Numbers**:
-   - Current counters are set to: 500+ Varieties, 5,000+ Happy Customers, 15+ Years Experience, 100% Fresh Food in `data/site.ts`. Please confirm exact numbers.
-6. **Provide Official Social Media Links**:
-   - Replace placeholder URLs for Facebook, Instagram, and Twitter in `data/site.ts`.
-7. **Replace Stock Photography with Real Photos**:
-   - Update `data/gallery.ts`, service photos, and hero backgrounds with high-resolution images of your actual banquet setups and live food stalls.
+1. **Confirm Email Spelling**:
+   - The original website listed `info@nandacateres.com` (missing the second 'r'). Confirm whether this typo inbox is active or if `info@nandacaterers.com` should be used. Configured in `data/site.ts`.
+2. **Replace Placeholder Crew & Testimonials**:
+   - `data/about.ts`: Replace the 3 role-based placeholder cards (Head Chef, Event Manager, Kitchen Lead) with actual team members.
+   - `data/testimonials.ts`: Replace placeholder reviews with real client testimonials.
+3. **Confirm Welcome Drink List**:
+   - The original source page for Welcome Drinks was unavailable. `data/menu.ts` contains a placeholder list of standard Indian welcome drinks (Fresh Lime Soda, Mango Lassi, Jaljeera, Aam Panna, Rose Sharbat, Fruit Punch, Masala Chaas, Cold Coffee).
+4. **Confirm Business Stats**:
+   - Current stats: 500 Varieties, 5,000 Customers, 15 Years, 100% Freshness in `data/site.ts`. Confirm exact numbers.
+5. **Add Real Social Media URLs**:
+   - Update Facebook, Instagram, and Twitter URLs in `data/site.ts`.
+6. **Swap Stock Photos for Real Photos**:
+   - Update `data/gallery.ts`, service photos, and hero backgrounds with photographs of real Nanda Caterers banquet setups, dishes, and live counters.

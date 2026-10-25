@@ -13,42 +13,43 @@ export function Logo({ className, theme = "dark", withLink = true }: LogoProps) 
 
   const content = (
     <div className={cn("flex items-center gap-2.5 select-none group", className)}>
-      {/* Monogram Icon */}
-      <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-turmeric via-saffron to-turmeric p-[2px] shadow-warm flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300">
-        <div className="w-full h-full rounded-[10px] bg-maroon-dark flex items-center justify-center shadow-inner">
-          <span className="font-lora font-bold text-2xl text-cream group-hover:text-turmeric transition-colors">
-            N
-          </span>
-        </div>
+      {/* Inline SVG: small cloche/lotus mark per Section 4.1 */}
+      <div className="w-9 h-9 rounded-full bg-accent/15 border border-accent/30 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="w-5 h-5 text-accent"
+        >
+          {/* Cloche / Lotus silhouette */}
+          <path d="M12 3a1.5 1.5 0 0 0-1.5-1.5h-.01" />
+          <path d="M4 17h16a1 1 0 0 0 1-1A9 9 0 0 0 3 16a1 1 0 0 0 1 1z" />
+          <line x1="2" y1="20" x2="22" y2="20" />
+          <circle cx="12" cy="3" r="1.5" />
+          <path d="M8 17c1-3 3-5 4-5s3 2 4 5" />
+        </svg>
       </div>
 
-      {/* Brand Text */}
-      <div className="flex flex-col">
-        <div className="flex items-center gap-1.5">
-          <span
-            className={cn(
-              "font-lora font-bold text-xl md:text-2xl tracking-tight leading-none transition-colors",
-              isLight ? "text-white" : "text-maroon"
-            )}
-          >
-            Nanda
-          </span>
-          <span
-            className={cn(
-              "font-lora font-medium text-xl md:text-2xl tracking-tight leading-none transition-colors",
-              isLight ? "text-turmeric" : "text-saffron"
-            )}
-          >
-            Caterers
-          </span>
-        </div>
+      {/* Wordmark "Nanda Caterers" */}
+      <div className="flex flex-col text-left">
         <span
           className={cn(
-            "text-[9.5px] uppercase tracking-[0.22em] font-semibold leading-none mt-1 transition-colors",
-            isLight ? "text-cream/70" : "text-charcoal/60"
+            "font-heading font-bold text-lg sm:text-xl tracking-tight leading-none transition-colors",
+            isLight ? "text-white" : "text-ink"
           )}
         >
-          Pure Veg • Mumbai
+          Nanda <span className="text-accent font-medium">Caterers</span>
+        </span>
+        <span
+          className={cn(
+            "text-[9px] uppercase tracking-[0.2em] font-semibold leading-none mt-1 transition-colors",
+            isLight ? "text-white/70" : "text-ink/60"
+          )}
+        >
+          Mumbai • Since 2005
         </span>
       </div>
     </div>

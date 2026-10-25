@@ -197,7 +197,7 @@ export function ContactContent({ initialService, initialDishes }: ContactContent
                 {[
                   { name: "Facebook", href: siteConfig.social.facebook.url },
                   { name: "Instagram", href: siteConfig.social.instagram.url },
-                  { name: "YouTube", href: siteConfig.social.youtube.url },
+                  { name: "X (Twitter)", href: siteConfig.social.x.url },
                 ].map((s) => (
                   <a
                     key={s.name}

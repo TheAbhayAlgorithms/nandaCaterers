@@ -16,7 +16,7 @@ export interface MenuSection {
 export interface MenuCategory {
   slug: string;
   title: string;
-  group: "Indian" | "International";
+  group: "Indian" | "Global";
   tagline: string;
   image: string;
   sections: MenuSection[];
@@ -372,7 +372,7 @@ export const menuCategories: MenuCategory[] = [
   {
     slug: "chinese",
     title: "Indo-Chinese Wok Specialities",
-    group: "International",
+    group: "Global",
     tagline: "Wok-tossed noodles, sizzling gravies, spicy schezwan delicacies, and comforting soups.",
     image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1200&q=80",
     sections: [
@@ -399,7 +399,7 @@ export const menuCategories: MenuCategory[] = [
   {
     slug: "continental",
     title: "Continental & European",
-    group: "International",
+    group: "Global",
     tagline: "Gourmet salads, herb pilafs, baked platters, and wholesome vegetable casseroles.",
     image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1200&q=80",
     sections: [
@@ -424,7 +424,7 @@ export const menuCategories: MenuCategory[] = [
   {
     slug: "thai",
     title: "Thai Fragrant Kitchen",
-    group: "International",
+    group: "Global",
     tagline: "Fragrant coconut curries, pad thai noodles, kaffir lime aromas, and crispy satays.",
     image: "https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=1200&q=80",
     sections: [
@@ -442,7 +442,7 @@ export const menuCategories: MenuCategory[] = [
   {
     slug: "italian",
     title: "Italian Artisan Kitchen",
-    group: "International",
+    group: "Global",
     tagline: "Handcrafted pastas, stone-baked thin crust pizzas, aromatic pestos, and antipasti.",
     image: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1200&q=80",
     sections: [
@@ -461,7 +461,7 @@ export const menuCategories: MenuCategory[] = [
   {
     slug: "mexican",
     title: "Mexican Sizzler Fiesta",
-    group: "International",
+    group: "Global",
     tagline: "Loaded nachos, fresh salsa bowls, bean enchiladas, and sizzler burritos.",
     image: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=1200&q=80",
     sections: [

@@ -30,16 +30,16 @@ export function ServicesDropdown({ isOpen, onClose }: ServicesDropdownProps) {
           exit={{ opacity: 0, y: 8 }}
           transition={{ duration: 0.2, ease: "easeOut" }}
           onMouseLeave={onClose}
-          className="absolute top-full left-0 w-84 bg-ivory/96 rounded-3xl shadow-[0_24px_70px_-15px_rgba(42,27,22,0.3),0_1px_0_rgba(255,255,255,0.9)_inset] border border-turmeric/35 p-3.5 overflow-hidden z-50 backdrop-blur-2xl mt-3 before:absolute before:inset-x-0 before:-top-4 before:h-4"
+          className="absolute top-full left-0 w-[340px] bg-ivory bg-[#FFFDF7] rounded-3xl shadow-[0_24px_70px_-15px_rgba(42,27,22,0.35),0_1px_0_rgba(255,255,255,1)_inset] border border-turmeric/40 p-3.5 overflow-hidden z-50 mt-3 before:absolute before:inset-x-0 before:-top-4 before:h-4 text-charcoal"
         >
           <div className="p-2 border-b border-charcoal/10 flex items-center justify-between mb-2">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-saffron font-lora">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-saffron-hover font-lora">
               Our Event Specialities
             </span>
             <Link
               href="/services"
               onClick={onClose}
-              className="text-xs font-semibold text-maroon hover:text-saffron flex items-center gap-1 transition-colors"
+              className="text-xs font-bold text-maroon hover:text-saffron flex items-center gap-1 transition-colors"
             >
               <span>Overview</span>
               <ArrowRight className="w-3 h-3" />

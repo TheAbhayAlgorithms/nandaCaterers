@@ -10,21 +10,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: "#FFF8EC",
-        ivory: "#FFFDF7",
+        accent: {
+          DEFAULT: "var(--accent)",
+          dark: "var(--accent-dark)",
+        },
+        ink: "var(--ink)",
+        maroon: {
+          DEFAULT: "var(--maroon)",
+          dark: "#451213",
+          deep: "#2E0A0B",
+        },
+        paper: "var(--paper)",
+        peach: "var(--peach)",
+        cream: "var(--cream)",
+        night: "var(--night)",
+        leaf: "var(--leaf)",
+        turmeric: "var(--turmeric)",
         saffron: {
-          DEFAULT: "#F29A1F",
+          DEFAULT: "var(--saffron)",
           hover: "#DE8813",
         },
-        turmeric: "#E8B004",
-        maroon: {
-          DEFAULT: "#7A1F2B",
-          dark: "#5B141E",
-          deep: "#420D15",
-        },
-        chilli: "#C8372D",
-        leaf: "#2F6B3C",
-        charcoal: "#2A1B16",
+        ivory: "#FFFDF7",
+        charcoal: "var(--ink)",
       },
       fontFamily: {
         heading: ["var(--font-playfair)", "serif"],
@@ -33,26 +40,13 @@ const config: Config = {
         lora: ["var(--font-lora)", "serif"],
       },
       boxShadow: {
-        warm: "0 10px 40px -12px rgba(122, 31, 43, 0.18)",
-        "warm-lg": "0 16px 50px -10px rgba(122, 31, 43, 0.25)",
+        soft: "0 6px 24px -10px rgba(60, 20, 10, 0.18)",
         card: "0 4px 20px -2px rgba(42, 27, 22, 0.06)",
+        warm: "0 10px 40px -12px rgba(184, 57, 27, 0.2)",
+        "warm-lg": "0 16px 50px -10px rgba(184, 57, 27, 0.3)",
       },
-      backgroundImage: {
-        "gold-gradient": "linear-gradient(135deg, #E8B004 0%, #F29A1F 100%)",
-        "gold-gradient-hover": "linear-gradient(135deg, #F29A1F 0%, #DE8813 100%)",
-        "maroon-gradient": "linear-gradient(135deg, #7A1F2B 0%, #420D15 100%)",
-      },
-      animation: {
-        "spin-slow": "spin 25s linear infinite",
-        "pulse-gentle": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        "float-slow": "float 6s ease-in-out infinite",
-        "float-delayed": "float 7s ease-in-out 2s infinite",
-      },
-      keyframes: {
-        float: {
-          "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
-          "50%": { transform: "translateY(-12px) rotate(3deg)" },
-        },
+      borderRadius: {
+        "2xl": "18px",
       },
     },
   },

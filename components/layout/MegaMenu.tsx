@@ -40,7 +40,7 @@ export function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
           exit={{ opacity: 0, y: 8 }}
           transition={{ duration: 0.22, ease: "easeOut" }}
           onMouseLeave={onClose}
-          className="absolute top-full left-1/2 -translate-x-1/2 w-[92vw] max-w-5xl bg-ivory/96 rounded-3xl shadow-[0_24px_70px_-15px_rgba(42,27,22,0.3),0_1px_0_rgba(255,255,255,0.9)_inset] border border-turmeric/35 p-6 md:p-8 mt-3 overflow-hidden z-50 backdrop-blur-2xl before:absolute before:inset-x-0 before:-top-4 before:h-4"
+          className="absolute top-full left-1/2 -translate-x-1/2 w-[92vw] max-w-5xl bg-ivory bg-[#FFFDF7] rounded-3xl shadow-[0_24px_70px_-15px_rgba(42,27,22,0.35),0_1px_0_rgba(255,255,255,1)_inset] border border-turmeric/40 p-6 md:p-8 mt-3 overflow-hidden z-50 before:absolute before:inset-x-0 before:-top-4 before:h-4 text-charcoal"
         >
           {/* Top highlight bar */}
           <div className="flex items-center justify-between pb-4 mb-6 border-b border-charcoal/10">

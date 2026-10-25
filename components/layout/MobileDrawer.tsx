@@ -149,12 +149,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
                   aria-expanded={isMenuOpen}
                   className="w-full flex items-center justify-between p-3.5 font-lora font-semibold text-lg text-maroon text-left cursor-pointer"
                 >
-                  <span className="flex items-center gap-2">
-                    <span>Food Menu</span>
-                    <span className="text-[10px] bg-leaf/10 text-leaf px-2 py-0.5 rounded-full uppercase font-sans font-bold">
-                      100% Veg
-                    </span>
-                  </span>
+                  <span>Food Menu</span>
                   <ChevronDown
                     className={`w-5 h-5 text-saffron transition-transform duration-300 ${
                       isMenuOpen ? "rotate-180" : ""

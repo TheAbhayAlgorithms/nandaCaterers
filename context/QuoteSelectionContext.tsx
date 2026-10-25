@@ -11,6 +11,10 @@ interface QuoteSelectionContextType {
   clearSelection: () => void;
   isDrawerOpen: boolean;
   setIsDrawerOpen: (open: boolean) => void;
+  isQuoteSheetOpen: boolean;
+  setIsQuoteSheetOpen: (open: boolean) => void;
+  preselectedService: string;
+  openQuoteSheet: (service?: string) => void;
 }
 
 const QuoteSelectionContext = createContext<QuoteSelectionContextType | undefined>(undefined);
@@ -20,6 +24,8 @@ const STORAGE_KEY = "nanda_caterers_selected_dishes";
 export function QuoteSelectionProvider({ children }: { children: ReactNode }) {
   const [selectedDishes, setSelectedDishes] = useState<string[]>([]);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isQuoteSheetOpen, setIsQuoteSheetOpen] = useState(false);
+  const [preselectedService, setPreselectedService] = useState<string>("Wedding");
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -61,6 +67,11 @@ export function QuoteSelectionProvider({ children }: { children: ReactNode }) {
 
   const clearSelection = () => setSelectedDishes([]);
 
+  const openQuoteSheet = (service?: string) => {
+    if (service) setPreselectedService(service);
+    setIsQuoteSheetOpen(true);
+  };
+
   return (
     <QuoteSelectionContext.Provider
       value={{
@@ -72,6 +83,10 @@ export function QuoteSelectionProvider({ children }: { children: ReactNode }) {
         clearSelection,
         isDrawerOpen,
         setIsDrawerOpen,
+        isQuoteSheetOpen,
+        setIsQuoteSheetOpen,
+        preselectedService,
+        openQuoteSheet,
       }}
     >
       {children}
