@@ -130,13 +130,14 @@ export function Navbar() {
                 href={`tel:${siteConfig.phone.raw}`}
                 aria-label={`Call Nanda Caterers at ${siteConfig.phone.display}`}
                 className={cn(
-                  "w-9 h-9 rounded-full flex items-center justify-center transition-all duration-200 border",
+                  "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-bold tracking-wide transition-all duration-200 border",
                   isScrolled
-                    ? "bg-paper text-accent border-accent/25 hover:bg-accent hover:text-white"
-                    : "bg-white/15 text-white border-white/20 hover:bg-accent hover:border-accent"
+                    ? "bg-paper text-accent border-accent/25 hover:bg-accent hover:text-white shadow-xs"
+                    : "bg-white/15 text-white border-white/25 hover:bg-accent hover:border-accent shadow-xs"
                 )}
               >
-                <Phone className="w-4 h-4" />
+                <Phone className="w-3.5 h-3.5 shrink-0" />
+                <span>{siteConfig.phone.display}</span>
               </a>
 
               <button
