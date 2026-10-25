@@ -54,6 +54,7 @@ export function SubTabs({
           role="tablist"
           aria-label="Cuisine Sub-sections"
           className="flex items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth py-1 px-1 snap-x"
+          style={{ scrollbarWidth: "none" }}
         >
           {sections.map((sec) => {
             const isActive = sec.title === activeSection;

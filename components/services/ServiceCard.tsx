@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { ServiceItem } from "@/data/services";
 import { serviceIconMap, ClocheIcon } from "./ServiceIcons";
 import { Button } from "@/components/ui/Button";
@@ -15,10 +14,8 @@ export function ServiceCard({ service, onSelect }: ServiceCardProps) {
   const IconComponent = serviceIconMap[service.iconName] || ClocheIcon;
 
   return (
-    <motion.div
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.2 }}
-      className="bg-paper rounded-2xl p-6 sm:p-7 shadow-soft border border-accent/10 flex flex-col justify-between group hover:shadow-warm transition-all duration-300"
+    <div
+      className="bg-paper rounded-2xl p-6 sm:p-7 shadow-soft border border-ink/10 flex flex-col justify-between group hover:shadow-warm-lg hover:-translate-y-1.5 transition-all duration-300 transform"
     >
       <div>
         {/* Line Icon in Accent Color */}
@@ -48,6 +45,6 @@ export function ServiceCard({ service, onSelect }: ServiceCardProps) {
           Show More
         </Button>
       </div>
-    </motion.div>
+    </div>
   );
 }
