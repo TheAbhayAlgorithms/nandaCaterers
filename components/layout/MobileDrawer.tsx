@@ -141,54 +141,14 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
                 </AnimatePresence>
               </div>
 
-              {/* Food Menu Accordion */}
-              <div className="rounded-xl border border-charcoal/10 bg-ivory overflow-hidden">
-                <button
-                  type="button"
-                  onClick={() => setIsMenuOpen((prev) => !prev)}
-                  aria-expanded={isMenuOpen}
-                  className="w-full flex items-center justify-between p-3.5 font-lora font-semibold text-lg text-maroon text-left cursor-pointer"
-                >
-                  <span>Food Menu</span>
-                  <ChevronDown
-                    className={`w-5 h-5 text-saffron transition-transform duration-300 ${
-                      isMenuOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-
-                <AnimatePresence>
-                  {isMenuOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25 }}
-                      className="overflow-hidden bg-cream/50 px-3 pb-3 border-t border-charcoal/5"
-                    >
-                      <Link
-                        href="/menu"
-                        onClick={onClose}
-                        className="block py-2 px-3 text-xs font-bold text-maroon uppercase tracking-wider underline mb-1"
-                      >
-                        All 13 Cuisines Hub →
-                      </Link>
-                      <div className="space-y-1">
-                        {menuCategories.map((cat) => (
-                          <Link
-                            key={cat.slug}
-                            href={`/menu/${cat.slug}`}
-                            onClick={onClose}
-                            className="block py-1.5 px-3 rounded-lg text-sm font-medium text-charcoal/80 hover:text-maroon hover:bg-ivory transition-colors"
-                          >
-                            {cat.title}
-                          </Link>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+              {/* Food Menu Link */}
+              <Link
+                href="/menu"
+                onClick={onClose}
+                className="block p-3 rounded-xl font-lora font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
+              >
+                Food Menu
+              </Link>
 
               <Link
                 href="/packages"

@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, Menu, Phone } from "lucide-react";
+import { Menu, Phone } from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
-import { MegaMenu } from "./MegaMenu";
 import { MobileDrawer } from "./MobileDrawer";
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/cn";
@@ -14,9 +13,7 @@ import { useQuoteSelection } from "@/context/QuoteSelectionContext";
 export function Navbar() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState(false);
-  const menuTimeout = useRef<NodeJS.Timeout | null>(null);
 
   const { openQuoteSheet } = useQuoteSelection();
 
@@ -28,23 +25,12 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleMouseEnterMenu = () => {
-    if (menuTimeout.current) clearTimeout(menuTimeout.current);
-    setIsMenuOpen(true);
-  };
-
-  const handleMouseLeaveMenu = () => {
-    menuTimeout.current = setTimeout(() => {
-      setIsMenuOpen(false);
-    }, 200);
-  };
-
-  // Header navigation per Section 4.1
+  // Header navigation per Section 4.1 - Food Menu links directly to /menu (no popover)
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
-    { name: "Food Menu", href: "/menu", isMenu: true },
+    { name: "Food Menu", href: "/menu" },
     { name: "Gallery", href: "/gallery" },
     { name: "Contact", href: "/contact" },
   ];
@@ -65,66 +51,36 @@ export function Navbar() {
 
           {/* Desktop Navigation right in small type */}
           <div className="hidden lg:flex items-center gap-6 xl:gap-8">
-            <nav aria-label="Main Navigation" className="flex items-center gap-5 xl:gap-7 text-xs sm:text-[13px] font-semibold tracking-wide uppercase">
+            <nav
+              aria-label="Main Navigation"
+              className="flex items-center gap-5 xl:gap-7 text-xs sm:text-[13px] font-semibold tracking-wide uppercase"
+            >
               {navLinks.map((link) => {
                 const isActive =
                   link.href === "/"
                     ? pathname === "/"
                     : pathname.startsWith(link.href);
 
-                const linkContent = (
+                return (
                   <Link
+                    key={link.name}
                     href={link.href}
                     className={cn(
-                      "inline-flex items-center gap-1 py-1 transition-colors hover:text-accent relative",
+                      "inline-flex items-center py-1 transition-colors hover:text-accent relative",
                       isActive
-                        ? isScrolled
-                          ? "text-accent font-bold"
-                          : "text-accent font-bold"
+                        ? "text-accent font-bold"
                         : isScrolled
                         ? "text-ink/85"
                         : "text-white/90"
                     )}
                   >
                     <span>{link.name}</span>
-                    {link.isMenu && (
-                      <ChevronDown
-                        className={cn(
-                          "w-3.5 h-3.5 shrink-0 transition-transform duration-200",
-                          isMenuOpen ? "rotate-180" : ""
-                        )}
-                        aria-hidden="true"
-                      />
-                    )}
                   </Link>
-                );
-
-                if (link.isMenu) {
-                  return (
-                    <div
-                      key={link.name}
-                      onMouseEnter={handleMouseEnterMenu}
-                      onMouseLeave={handleMouseLeaveMenu}
-                      className="relative flex items-center"
-                    >
-                      {linkContent}
-                      <MegaMenu
-                        isOpen={isMenuOpen}
-                        onClose={() => setIsMenuOpen(false)}
-                      />
-                    </div>
-                  );
-                }
-
-                return (
-                  <div key={link.name} className="relative flex items-center">
-                    {linkContent}
-                  </div>
                 );
               })}
             </nav>
 
-            {/* Far right: round phone icon button (tel:) + pill Get Quote button */}
+            {/* Far right: complete phone number (tel:) + pill Get Quote button */}
             <div className="flex items-center gap-3">
               <a
                 href={`tel:${siteConfig.phone.raw}`}
@@ -143,7 +99,7 @@ export function Navbar() {
               <button
                 type="button"
                 onClick={() => openQuoteSheet("Wedding")}
-                className="rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider bg-accent text-white shadow-soft hover:bg-accent-dark transition-all active:scale-95"
+                className="rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider bg-accent text-white shadow-soft hover:bg-accent-dark transition-all active:scale-95 cursor-pointer"
               >
                 Get Quote
               </button>
@@ -155,16 +111,17 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => openQuoteSheet("Wedding")}
-              className="rounded-full px-3.5 py-1.5 text-xs font-bold bg-accent text-white shadow-sm"
+              className="rounded-full px-3.5 py-1.5 text-xs font-bold bg-accent text-white shadow-sm cursor-pointer"
             >
               Quote
             </button>
 
             <button
+              type="button"
               onClick={() => setIsMobileDrawerOpen(true)}
               aria-label="Open mobile navigation menu"
               className={cn(
-                "p-2 rounded-xl transition-colors",
+                "p-2 rounded-xl transition-colors cursor-pointer",
                 isScrolled ? "text-ink hover:bg-black/5" : "text-white hover:bg-white/10"
               )}
             >
