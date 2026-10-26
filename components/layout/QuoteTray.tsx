@@ -26,21 +26,21 @@ export function QuoteTray() {
 
   return (
     <>
-      {/* Floating Bottom Chip "Your selection (n)" per Section 6.5 */}
+      {/* Floating Bottom Chip "Your selection (n)" centered at bottom */}
       <AnimatePresence>
         {selectedDishes.length > 0 && !isDrawerOpen && (
           <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="fixed bottom-6 left-6 z-40"
+            className="fixed bottom-20 lg:bottom-6 left-1/2 -translate-x-1/2 z-40"
           >
             <button
               type="button"
               onClick={() => setIsDrawerOpen(true)}
-              className="flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-accent text-white shadow-card hover:bg-accent-dark transition-all duration-200 group cursor-pointer"
+              className="flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-accent text-white shadow-warm hover:bg-accent-dark hover:scale-105 active:scale-95 transition-all duration-200 group cursor-pointer whitespace-nowrap"
             >
-              <div className="w-6 h-6 rounded-full bg-white text-accent flex items-center justify-center font-bold text-xs">
+              <div className="w-6 h-6 rounded-full bg-white text-accent flex items-center justify-center font-bold text-xs shrink-0">
                 {selectedDishes.length}
               </div>
               <span className="font-semibold text-xs sm:text-sm">
