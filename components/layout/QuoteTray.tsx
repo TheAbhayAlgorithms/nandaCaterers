@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { UtensilsCrossed, X, Trash2, ArrowRight, MessageCircle } from "lucide-react";
+import { UtensilsCrossed, X, Trash2, ArrowRight, MessageCircle, ShoppingCart } from "lucide-react";
 import { useQuoteSelection } from "@/context/QuoteSelectionContext";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
@@ -26,27 +26,34 @@ export function QuoteTray() {
 
   return (
     <>
-      {/* Floating Bottom Chip "Your selection (n)" centered at bottom */}
+      {/* Floating Cart Button placed directly above WhatsApp FAB */}
       <AnimatePresence>
         {selectedDishes.length > 0 && !isDrawerOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="fixed bottom-20 lg:bottom-6 left-1/2 -translate-x-1/2 z-40"
+            initial={{ opacity: 0, scale: 0.7, y: 15 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.7, y: 15 }}
+            className="fixed bottom-[88px] right-6 z-40 group"
           >
             <button
               type="button"
               onClick={() => setIsDrawerOpen(true)}
-              className="flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-accent text-white shadow-warm hover:bg-accent-dark hover:scale-105 active:scale-95 transition-all duration-200 group cursor-pointer whitespace-nowrap"
+              aria-label={`View selected dishes (${selectedDishes.length})`}
+              className="relative flex items-center justify-center w-14 h-14 rounded-full bg-accent text-white shadow-warm-lg hover:bg-accent-dark hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
             >
-              <div className="w-6 h-6 rounded-full bg-white text-accent flex items-center justify-center font-bold text-xs shrink-0">
+              <ShoppingCart className="w-6 h-6 text-white" />
+
+              {/* Superscript Item Counter Badge */}
+              <span className="absolute -top-1.5 -right-1.5 min-w-[24px] h-[24px] px-1 rounded-full bg-white text-accent font-extrabold text-xs flex items-center justify-center shadow-md border-2 border-accent leading-none">
                 {selectedDishes.length}
-              </div>
-              <span className="font-semibold text-xs sm:text-sm">
-                Your selection ({selectedDishes.length})
               </span>
             </button>
+
+            {/* Hover Tooltip */}
+            <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 hidden md:group-hover:flex items-center px-3 py-1.5 rounded-xl bg-ink text-white text-xs font-medium whitespace-nowrap shadow-md pointer-events-none">
+              View your selection ({selectedDishes.length})
+              <span className="absolute -right-1 top-1/2 -translate-y-1/2 border-4 border-transparent border-l-ink" />
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -145,7 +152,7 @@ export function QuoteTray() {
                     </button>
                   </div>
 
-                  {/* "Get Quote with these dishes" per Section 6.5 */}
+                  {/* Connect with these dishes */}
                   <button
                     type="button"
                     onClick={() => {
@@ -154,7 +161,7 @@ export function QuoteTray() {
                     }}
                     className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-accent text-white font-semibold shadow-xs hover:bg-accent-dark transition-all cursor-pointer text-sm"
                   >
-                    <span>Get Quote with these dishes</span>
+                    <span>Connect with these dishes</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
 

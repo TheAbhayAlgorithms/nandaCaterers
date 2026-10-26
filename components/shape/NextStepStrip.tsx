@@ -16,7 +16,7 @@ interface NextStepStripProps {
 
 export function NextStepStrip({
   headline = "Ready to Plan Your Catering Celebration?",
-  primaryButtonText = "Get a Quote",
+  primaryButtonText = "Connect",
   secondaryButtonText = "View Menu",
   secondaryHref = "/menu",
   primaryAction = "quote",

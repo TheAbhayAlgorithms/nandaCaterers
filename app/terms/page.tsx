@@ -78,7 +78,7 @@ export default function TermsPage() {
 
       <NextStepStrip
         headline="Have questions about your event terms?"
-        primaryButtonText="Get a Quote"
+        primaryButtonText="Connect"
         primaryAction="quote"
         secondaryButtonText="FAQ"
         secondaryHref="/contact?tab=faq"

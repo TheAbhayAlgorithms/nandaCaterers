@@ -39,14 +39,14 @@ export function MobileBottomBar() {
           <span className="text-[11px] font-bold tracking-tight">WhatsApp</span>
         </a>
 
-        {/* Get Instant Quote Button */}
+        {/* Connect Button */}
         <Link
           href="/quote"
-          aria-label="Request custom catering quotation"
+          aria-label="Connect with Nanda Caterers"
           className="flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-gold-gradient text-charcoal shadow-sm active:scale-95 transition-transform"
         >
           <FileText className="w-4 h-4 mb-0.5 text-charcoal" />
-          <span className="text-[11px] font-bold tracking-tight">Get Quote</span>
+          <span className="text-[11px] font-bold tracking-tight">Connect</span>
         </Link>
       </div>
     </div>

@@ -111,7 +111,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         {/* Compact Next Step Strip */}
         <NextStepStrip
           headline="Looking for tailored dishes for this service?"
-          primaryButtonText="Request a Quote"
+          primaryButtonText="Connect"
           secondaryButtonText="Browse All Cuisines"
           secondaryHref="/menu"
         />

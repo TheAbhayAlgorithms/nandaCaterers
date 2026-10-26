@@ -177,7 +177,7 @@ export function CategoryView({ category }: CategoryViewProps) {
       {/* One-strip NextStepStrip CTA strip per Section 6.5 & Rule 5 */}
       <NextStepStrip
         headline="Ready to curate your celebration menu?"
-        primaryButtonText="Get a Quote"
+        primaryButtonText="Connect"
         primaryAction="quote"
         secondaryButtonText="All Cuisines"
         secondaryHref="/menu"

@@ -22,7 +22,7 @@ export default function QuotePage() {
       <section className="bg-maroon text-cream pt-28 pb-12 md:pt-36 md:pb-16 text-center relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 space-y-3">
           <Breadcrumbs
-            items={[{ label: "Get Quote" }]}
+            items={[{ label: "Connect" }]}
             className="text-cream/70 justify-center mb-2 px-0"
           />
           <h1 className="font-serif text-3xl sm:text-5xl font-bold text-white tracking-tight">

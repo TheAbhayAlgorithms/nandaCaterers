@@ -297,7 +297,7 @@ export function AboutContent() {
           </p>
           <div className="pt-4">
             <Button href="/quote" variant="primary" size="lg">
-              <span>Request Quotation</span>
+              <span>Connect</span>
               <ArrowRight className="w-4 h-4" />
             </Button>
           </div>

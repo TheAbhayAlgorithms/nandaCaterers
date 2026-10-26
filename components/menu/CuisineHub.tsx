@@ -103,7 +103,7 @@ export function CuisineHub() {
       <div className="max-w-[1200px] mx-auto px-4 mt-12">
         <NextStepStrip
           headline="Ready to curate your custom event menu?"
-          primaryButtonText="Request a Quote"
+          primaryButtonText="Connect"
           secondaryButtonText="Explore Catering Services"
           secondaryHref="/services"
         />

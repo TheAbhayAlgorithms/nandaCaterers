@@ -49,14 +49,14 @@ export function OfferBand() {
             We just need a couple of hours. Reply within 2 working days.
           </p>
 
-          {/* Filled accent pill "Request a Quote" */}
+          {/* Filled accent pill "Connect" */}
           <Button
             variant="filled"
             size="lg"
             onClick={() => openQuoteSheet("Wedding")}
-            aria-label="Open quotation sheet"
+            aria-label="Connect for custom quotation"
           >
-            Request a Quote
+            Connect
           </Button>
         </div>
       </div>

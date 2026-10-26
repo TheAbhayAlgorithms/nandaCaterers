@@ -337,7 +337,7 @@ export function AboutTabs() {
       <div className="max-w-[1200px] mx-auto px-4 mt-8">
         <NextStepStrip
           headline="Ready to plan your event?"
-          primaryButtonText="Get a Quote"
+          primaryButtonText="Connect"
           secondaryButtonText="View Menu"
           secondaryHref="/menu"
         />

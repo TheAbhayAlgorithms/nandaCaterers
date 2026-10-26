@@ -86,7 +86,7 @@ export function HomeQuoteSection() {
                         href="/quote"
                         className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-gold-gradient text-charcoal font-bold text-xs shadow-sm hover:brightness-105 transition-all text-center"
                       >
-                        <span>Launch 5-Step Quote Calculator</span>
+                        <span>Connect &amp; Calculate</span>
                         <span aria-hidden="true">→</span>
                       </a>
                     </div>

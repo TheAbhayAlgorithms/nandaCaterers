@@ -34,7 +34,7 @@ export default function GalleryPage() {
       {/* One compact NextStepStrip CTA per Section 1 Rule 5 */}
       <NextStepStrip
         headline="Ready to bring this royal culinary spread to your celebration?"
-        primaryButtonText="Get a Quote"
+        primaryButtonText="Connect"
         primaryAction="quote"
         secondaryButtonText="Explore Menu"
         secondaryHref="/menu"

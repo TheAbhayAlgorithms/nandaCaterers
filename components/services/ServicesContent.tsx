@@ -88,7 +88,7 @@ export function ServicesContent() {
       <div className="max-w-[1200px] mx-auto px-4">
         <NextStepStrip
           headline="Have an upcoming occasion in mind?"
-          primaryButtonText="Request a Quote"
+          primaryButtonText="Connect"
           secondaryButtonText="Explore Food Menu"
           secondaryHref="/menu"
         />

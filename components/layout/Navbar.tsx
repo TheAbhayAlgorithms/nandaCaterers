@@ -94,7 +94,7 @@ export function Navbar() {
                 onClick={() => openQuoteSheet("Wedding")}
                 className="rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider bg-accent text-white shadow-soft hover:bg-accent-dark transition-all active:scale-95 cursor-pointer"
               >
-                Get Quote
+                Connect
               </button>
             </div>
           </div>
@@ -106,7 +106,7 @@ export function Navbar() {
               onClick={() => openQuoteSheet("Wedding")}
               className="rounded-full px-3.5 py-1.5 text-xs font-bold bg-accent text-white shadow-sm cursor-pointer"
             >
-              Quote
+              Connect
             </button>
 
             <button

@@ -254,21 +254,6 @@ export function ContactTabs({}: ContactTabsProps = {}) {
                 </Link>
               </div>
 
-              {/* Working Hours & Service Areas Strip */}
-              <div className="p-4 sm:p-5 rounded-2xl bg-cream border border-ink/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-ink/70">
-                <div className="flex items-center gap-2.5">
-                  <Clock className="w-4 h-4 text-accent shrink-0" />
-                  <span>
-                    <strong>Hours:</strong> {siteConfig.hours}
-                  </span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <MapPin className="w-4 h-4 text-accent shrink-0" />
-                  <span>
-                    <strong>Catering Across:</strong> South Mumbai, Western Suburbs, Thane &amp; Navi Mumbai
-                  </span>
-                </div>
-              </div>
             </motion.div>
           )}
 
@@ -429,7 +414,7 @@ export function ContactTabs({}: ContactTabsProps = {}) {
       {/* One-strip NextStepStrip CTA per Section 1 Rule 5 */}
       <NextStepStrip
         headline="Ready to plan an unforgettable culinary feast?"
-        primaryButtonText="Get a Quote"
+        primaryButtonText="Connect"
         primaryAction="quote"
         secondaryButtonText="Explore Menu"
         secondaryHref="/menu"

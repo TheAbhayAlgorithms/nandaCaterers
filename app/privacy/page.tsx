@@ -78,7 +78,7 @@ export default function PrivacyPage() {
 
       <NextStepStrip
         headline="Ready to plan your catering feast?"
-        primaryButtonText="Get a Quote"
+        primaryButtonText="Connect"
         primaryAction="quote"
         secondaryButtonText="Explore Menu"
         secondaryHref="/menu"
