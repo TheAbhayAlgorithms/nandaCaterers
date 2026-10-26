@@ -69,13 +69,13 @@ export function DishItem({ name, dish, searchQuery, className }: DishItemProps) 
           onClick={() => toggleDish(name)}
           aria-label={isSelected ? `Remove ${cleanName} from quote` : `Add ${cleanName} to quote list`}
           className={cn(
-            "shrink-0 w-7 h-7 rounded-lg flex items-center justify-center transition-all duration-200 text-xs",
+            "shrink-0 w-7 h-7 min-w-[28px] min-h-[28px] max-w-[28px] max-h-[28px] aspect-square p-0 rounded-full flex items-center justify-center transition-all duration-200 cursor-pointer",
             isSelected
-              ? "bg-leaf text-white shadow-xs"
-              : "text-charcoal/40 hover:text-maroon hover:bg-white border border-charcoal/10"
+              ? "bg-accent text-white shadow-xs scale-105"
+              : "bg-peach/60 text-ink/60 hover:bg-accent hover:text-white border border-accent/20"
           )}
         >
-          {isSelected ? <Check className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
+          {isSelected ? <Check className="w-3.5 h-3.5 shrink-0" /> : <Plus className="w-3.5 h-3.5 shrink-0" />}
         </button>
       </div>
 

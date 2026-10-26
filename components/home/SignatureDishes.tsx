@@ -102,13 +102,13 @@ export function SignatureDishes() {
                     <button
                       onClick={() => toggleDish(dish.name)}
                       aria-label={selected ? `Remove ${dish.name} from quote` : `Add ${dish.name} to quote`}
-                      className={`absolute top-3 right-3 p-2 rounded-full transition-all duration-200 shadow-md ${
+                      className={`absolute top-3 right-3 w-8 h-8 min-w-[32px] min-h-[32px] max-w-[32px] max-h-[32px] aspect-square p-0 rounded-full flex items-center justify-center transition-all duration-200 shadow-md cursor-pointer ${
                         selected
-                          ? "bg-leaf text-white"
-                          : "bg-white/90 text-charcoal hover:bg-gold-gradient hover:text-charcoal"
+                          ? "bg-accent text-white"
+                          : "bg-white/95 text-ink hover:bg-accent hover:text-white border border-accent/20"
                       }`}
                     >
-                      {selected ? <Check className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                      {selected ? <Check className="w-4 h-4 shrink-0" /> : <Plus className="w-4 h-4 shrink-0" />}
                     </button>
                   </div>
 

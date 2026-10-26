@@ -129,16 +129,16 @@ export function DishList({ dishes, searchQuery, sectionTitle }: DishListProps) {
                       : `Add ${cleanName} to quote list`
                   }
                   className={cn(
-                    "shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 text-xs cursor-pointer",
+                    "shrink-0 w-8 h-8 min-w-[32px] min-h-[32px] max-w-[32px] max-h-[32px] aspect-square p-0 rounded-full flex items-center justify-center transition-all duration-200 cursor-pointer self-start",
                     isSelected
                       ? "bg-accent text-white shadow-xs scale-105"
                       : "bg-peach/60 text-ink/60 hover:bg-accent hover:text-white border border-accent/20"
                   )}
                 >
                   {isSelected ? (
-                    <Check className="w-4 h-4" />
+                    <Check className="w-4 h-4 shrink-0" />
                   ) : (
-                    <Plus className="w-4 h-4" />
+                    <Plus className="w-4 h-4 shrink-0" />
                   )}
                 </button>
               </div>
