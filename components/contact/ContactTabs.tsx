@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import {
   Phone,
   Mail,
@@ -11,56 +12,58 @@ import {
   MapPin,
   ExternalLink,
   ChevronDown,
+  Sparkles,
+  ArrowRight,
 } from "lucide-react";
 import { siteConfig } from "@/data/site";
 import { fivePrimaryFaqs } from "@/data/faq";
-import { QuoteForm } from "./QuoteForm";
 import { SectionShell } from "@/components/shape/SectionShell";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Divider } from "@/components/shape/Divider";
 import { NextStepStrip } from "@/components/shape/NextStepStrip";
 import { cn } from "@/lib/cn";
 
-type ContactTabKey = "enquiry" | "visit" | "faq";
+type ContactTabKey = "direct" | "visit" | "faq";
 
 interface ContactTabsProps {
   initialService?: string;
   initialDishes?: string[];
 }
 
-export function ContactTabs({ initialService, initialDishes }: ContactTabsProps = {}) {
+export function ContactTabs({}: ContactTabsProps = {}) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const serviceParam = searchParams.get("service") || initialService;
-  const dishesParam = searchParams.get("dishes");
-  const parsedDishes = dishesParam ? dishesParam.split(",") : initialDishes;
+  const tabParam = searchParams.get("tab");
+  const validTabs: ContactTabKey[] = ["direct", "visit", "faq"];
+  
+  // Backwards compatibility for 'enquiry'
+  const resolvedTab: ContactTabKey =
+    tabParam === "visit"
+      ? "visit"
+      : tabParam === "faq"
+      ? "faq"
+      : "direct";
 
-  const validTabs: ContactTabKey[] = ["enquiry", "visit", "faq"];
-  const tabParam = searchParams.get("tab") as ContactTabKey | null;
-  const currentTab: ContactTabKey = validTabs.includes(tabParam || "enquiry")
-    ? (tabParam as ContactTabKey) || "enquiry"
-    : "enquiry";
-
-  const [activeTab, setActiveTab] = useState<ContactTabKey>(currentTab);
+  const [activeTab, setActiveTab] = useState<ContactTabKey>(resolvedTab);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0); // First FAQ open by default
 
   useEffect(() => {
-    if (tabParam && validTabs.includes(tabParam)) {
+    if (tabParam === "visit" || tabParam === "faq") {
       setActiveTab(tabParam);
-    } else if (!tabParam) {
-      setActiveTab("enquiry");
+    } else {
+      setActiveTab("direct");
     }
   }, [tabParam]);
 
   useEffect(() => {
     const handlePopState = () => {
       const currentUrl = new URL(window.location.href);
-      const tab = currentUrl.searchParams.get("tab") as ContactTabKey | null;
-      if (tab && validTabs.includes(tab)) {
+      const tab = currentUrl.searchParams.get("tab");
+      if (tab === "visit" || tab === "faq") {
         setActiveTab(tab);
       } else {
-        setActiveTab("enquiry");
+        setActiveTab("direct");
       }
     };
     window.addEventListener("popstate", handlePopState);
@@ -76,7 +79,7 @@ export function ContactTabs({ initialService, initialDishes }: ContactTabsProps 
   };
 
   const tabs: { key: ContactTabKey; label: string }[] = [
-    { key: "enquiry", label: "Send Enquiry" },
+    { key: "direct", label: "Direct Contact" },
     { key: "visit", label: "Visit Us" },
     { key: "faq", label: "FAQ" },
   ];
@@ -123,97 +126,147 @@ export function ContactTabs({ initialService, initialDishes }: ContactTabsProps 
       {/* Tab Panels with AnimatePresence */}
       <SectionShell className="pt-10 sm:pt-14 pb-20">
         <AnimatePresence mode="wait">
-          {/* TAB 1: SEND ENQUIRY */}
-          {activeTab === "enquiry" && (
+          {/* TAB 1: DIRECT CONTACT */}
+          {activeTab === "direct" && (
             <motion.div
-              key="enquiry"
+              key="direct"
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.25 }}
-              className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start"
+              className="max-w-5xl mx-auto space-y-8"
             >
-              {/* Left Column: Quote Form */}
-              <div className="lg:col-span-7">
-                <QuoteForm
-                  initialService={serviceParam}
-                  initialDishes={parsedDishes}
-                />
+              <div className="text-center max-w-2xl mx-auto">
+                <Eyebrow text="DIRECT REACH" />
+                <h2 className="font-heading font-bold text-2xl sm:text-3xl text-ink mt-1">
+                  We&apos;re Here to Help Plan Your Event
+                </h2>
+                <Divider align="center" className="my-2" />
+                <p className="text-xs sm:text-sm text-ink/70">
+                  Whether you have questions about our pure vegetarian menus, minimum guest requirements, or event scheduling, our team is directly accessible across multiple channels.
+                </p>
               </div>
 
-              {/* Right Column: Short Contact Card per Section 6.6 */}
-              <div className="lg:col-span-5 space-y-6">
-                <div className="bg-peach/60 p-6 sm:p-8 rounded-2xl border border-accent/20 shadow-xs space-y-6">
+              {/* 3-card contact grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* 1. Phone Card */}
+                <div className="p-6 rounded-2xl bg-paper border border-ink/10 shadow-xs flex flex-col justify-between hover:shadow-card hover:-translate-y-0.5 transition-all">
                   <div>
-                    <Eyebrow text="DIRECT REACH" />
-                    <h3 className="font-heading font-bold text-xl sm:text-2xl text-ink mt-1">
-                      Quick Assistance
+                    <div className="w-11 h-11 rounded-full bg-accent/10 text-accent flex items-center justify-center mb-4">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    <h3 className="font-heading font-bold text-lg text-ink">
+                      Call Us Directly
                     </h3>
-                    <Divider align="left" className="my-2" />
-                    <p className="text-xs text-ink/75 leading-relaxed">
-                      Prefer speaking with our catering directors directly? We are available Monday to Saturday, 9 AM to 9 PM.
+                    <p className="text-xs text-ink/70 mt-1.5 leading-relaxed">
+                      Speak directly with our senior catering coordinators for immediate bookings and inquiries.
                     </p>
                   </div>
-
-                  <div className="space-y-4 text-xs sm:text-sm">
-                    {/* Phone click-to-call */}
+                  <div className="mt-6 pt-4 border-t border-ink/10">
                     <a
                       href={siteConfig.phoneTel}
-                      className="flex items-center gap-3 p-3 rounded-xl bg-paper border border-ink/10 hover:border-accent/40 transition-colors group"
+                      className="inline-flex items-center gap-2 text-sm font-bold text-accent hover:text-accent-dark transition-colors"
                     >
-                      <div className="w-8 h-8 rounded-full bg-accent/10 text-accent flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:text-white transition-colors">
-                        <Phone className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <span className="text-[10px] uppercase font-bold text-ink/45 block">
-                          Call Us
-                        </span>
-                        <span className="font-semibold text-ink group-hover:text-accent">
-                          {siteConfig.phone.display}
-                        </span>
-                      </div>
+                      <span>{siteConfig.phone.display}</span>
                     </a>
+                    <span className="block text-[10px] text-ink/40 mt-1">
+                      Mon–Sat: 9:00 AM – 9:00 PM
+                    </span>
+                  </div>
+                </div>
 
-                    {/* Email */}
-                    <a
-                      href={`mailto:${siteConfig.email}`}
-                      className="flex items-center gap-3 p-3 rounded-xl bg-paper border border-ink/10 hover:border-accent/40 transition-colors group"
-                    >
-                      <div className="w-8 h-8 rounded-full bg-accent/10 text-accent flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:text-white transition-colors">
-                        <Mail className="w-4 h-4" />
-                      </div>
-                      <div className="min-w-0">
-                        <span className="text-[10px] uppercase font-bold text-ink/45 block">
-                          Email Enquiries
-                        </span>
-                        <span className="font-semibold text-ink group-hover:text-accent truncate block">
-                          {siteConfig.email}
-                        </span>
-                      </div>
-                    </a>
-
-                    {/* WhatsApp Button */}
+                {/* 2. WhatsApp Card */}
+                <div className="p-6 rounded-2xl bg-paper border border-ink/10 shadow-xs flex flex-col justify-between hover:shadow-card hover:-translate-y-0.5 transition-all">
+                  <div>
+                    <div className="w-11 h-11 rounded-full bg-leaf/10 text-leaf flex items-center justify-center mb-4">
+                      <MessageCircle className="w-5 h-5" />
+                    </div>
+                    <h3 className="font-heading font-bold text-lg text-ink">
+                      WhatsApp Chat
+                    </h3>
+                    <p className="text-xs text-ink/70 mt-1.5 leading-relaxed">
+                      Fast, direct chat for quick questions, sample menus, and event consultations.
+                    </p>
+                  </div>
+                  <div className="mt-6 pt-4 border-t border-ink/10">
                     <a
                       href={siteConfig.whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-full bg-leaf text-white font-semibold shadow-xs hover:opacity-95 transition-opacity"
+                      className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-full bg-leaf text-white font-semibold text-xs shadow-xs hover:opacity-95 transition-opacity"
                     >
                       <MessageCircle className="w-4 h-4" />
                       <span>Chat on WhatsApp</span>
                     </a>
-
-                    {/* Hours */}
-                    <div className="flex items-center gap-3 p-3 rounded-xl bg-paper/60 border border-ink/10">
-                      <Clock className="w-4 h-4 text-ink/50 shrink-0" />
-                      <div className="text-xs text-ink/75">
-                        <span className="font-semibold text-ink block">
-                          Working Hours
-                        </span>
-                        <span>{siteConfig.hours}</span>
-                      </div>
-                    </div>
+                    <span className="block text-center text-[10px] text-ink/40 mt-1">
+                      Typically replies in 30 minutes
+                    </span>
                   </div>
+                </div>
+
+                {/* 3. Email Card */}
+                <div className="p-6 rounded-2xl bg-paper border border-ink/10 shadow-xs flex flex-col justify-between hover:shadow-card hover:-translate-y-0.5 transition-all md:col-span-2 lg:col-span-1">
+                  <div>
+                    <div className="w-11 h-11 rounded-full bg-accent/10 text-accent flex items-center justify-center mb-4">
+                      <Mail className="w-5 h-5" />
+                    </div>
+                    <h3 className="font-heading font-bold text-lg text-ink">
+                      Email Inquiries
+                    </h3>
+                    <p className="text-xs text-ink/70 mt-1.5 leading-relaxed">
+                      Send your detailed event briefs, venue documentation, or corporate catering requests.
+                    </p>
+                  </div>
+                  <div className="mt-6 pt-4 border-t border-ink/10">
+                    <a
+                      href={`mailto:${siteConfig.email}`}
+                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-accent hover:underline truncate max-w-full"
+                    >
+                      <span>{siteConfig.email}</span>
+                    </a>
+                    <span className="block text-[10px] text-ink/40 mt-1">
+                      Response within 2 hours
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Banner: Looking for an Instant Menu Quote? */}
+              <div className="p-6 sm:p-8 rounded-2xl bg-peach/60 border border-accent/20 flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div className="space-y-1 text-center sm:text-left">
+                  <div className="flex items-center justify-center sm:justify-start gap-2 text-accent font-bold text-xs uppercase tracking-wider">
+                    <Sparkles className="w-4 h-4" />
+                    <span>Planning a Celebration?</span>
+                  </div>
+                  <h3 className="font-heading font-bold text-lg sm:text-xl text-ink">
+                    Looking for a Custom Catering Quote?
+                  </h3>
+                  <p className="text-xs text-ink/70 max-w-lg">
+                    Build your custom multi-cuisine menu from 13 authentic categories and get transparent pricing estimate online.
+                  </p>
+                </div>
+                <Link
+                  href="/quote"
+                  className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent hover:bg-accent-dark text-white font-semibold text-xs sm:text-sm shadow-xs transition-colors"
+                >
+                  <span>Build Quote Online</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+
+              {/* Working Hours & Service Areas Strip */}
+              <div className="p-4 sm:p-5 rounded-2xl bg-cream border border-ink/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-ink/70">
+                <div className="flex items-center gap-2.5">
+                  <Clock className="w-4 h-4 text-accent shrink-0" />
+                  <span>
+                    <strong>Hours:</strong> {siteConfig.hours}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <MapPin className="w-4 h-4 text-accent shrink-0" />
+                  <span>
+                    <strong>Catering Across:</strong> South Mumbai, Western Suburbs, Thane &amp; Navi Mumbai
+                  </span>
                 </div>
               </div>
             </motion.div>
@@ -319,9 +372,6 @@ export function ContactTabs({ initialService, initialDishes }: ContactTabsProps 
                   Everything You Need to Know
                 </h2>
                 <Divider align="center" className="my-2" />
-                <p className="text-xs sm:text-sm text-ink/70">
-                  Got questions about our catering, bookings, or areas served? Find clear answers below.
-                </p>
               </div>
 
               {/* 5 Q&A Accordion (one open at a time) per Section 6.6 & 9.5 */}
