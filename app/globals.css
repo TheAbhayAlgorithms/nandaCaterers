@@ -105,6 +105,29 @@ button, a, input, select, textarea {
   animation-play-state: paused;
 }
 
+/* Continuous Cuisine Marquee Carousel with Hover-to-Pause */
+@keyframes cuisine-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-cuisine-marquee {
+  display: flex;
+  width: max-content;
+  animation: cuisine-marquee 55s linear infinite;
+  will-change: transform;
+}
+
+.cuisine-marquee-container:hover .animate-cuisine-marquee,
+.animate-cuisine-marquee:hover,
+.cuisine-marquee-container:focus-within .animate-cuisine-marquee {
+  animation-play-state: paused;
+}
+
 /* Gentle Logo Blinking Animation for WhatsApp Floating Action Button */
 @keyframes gentle-blink {
   0%, 100% {
