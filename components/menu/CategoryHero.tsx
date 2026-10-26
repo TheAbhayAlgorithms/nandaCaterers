@@ -69,10 +69,6 @@ export function CategoryHero({ category }: CategoryHeroProps) {
         <div className="animate-cuisine-marquee flex items-center gap-3">
           {marqueeCategories.map((c, index) => {
             const isActive = c.slug === category.slug;
-            const count = c.sections.reduce(
-              (acc, s) => acc + s.dishes.length,
-              0
-            );
 
             return (
               <Link
@@ -86,15 +82,6 @@ export function CategoryHero({ category }: CategoryHeroProps) {
               >
                 {isActive && <Utensils className="w-3.5 h-3.5 text-white" />}
                 <span className="whitespace-nowrap">{c.title}</span>
-                <span
-                  className={`text-[10px] px-2 py-0.5 rounded-full font-mono font-medium ${
-                    isActive
-                      ? "bg-white/25 text-white font-bold"
-                      : "bg-white/10 text-white/70"
-                  }`}
-                >
-                  {count}
-                </span>
               </Link>
             );
           })}
