@@ -47,12 +47,6 @@ export function CategoryHero({ category }: CategoryHeroProps) {
         <h1 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight">
           {category.title}
         </h1>
-
-        {category.tagline && (
-          <p className="mt-2 text-xs sm:text-sm text-white/80 max-w-2xl mx-auto line-clamp-2">
-            {category.tagline}
-          </p>
-        )}
       </div>
 
       {/* Torn-paper bottom edge per Section 5.3 & 6 */}
