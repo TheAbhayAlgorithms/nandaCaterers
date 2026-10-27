@@ -3,8 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Utensils } from "lucide-react";
-import { MenuCategory, menuCategories } from "@/data/menu";
+import { MenuCategory } from "@/data/menu";
 import { TornEdge } from "@/components/shape/TornEdge";
 
 interface CategoryHeroProps {
@@ -12,11 +11,8 @@ interface CategoryHeroProps {
 }
 
 export function CategoryHero({ category }: CategoryHeroProps) {
-  // Duplicate categories to create a seamless infinite loop
-  const marqueeCategories = [...menuCategories, ...menuCategories];
-
   return (
-    <section className="relative w-full overflow-hidden bg-night text-white flex flex-col justify-center items-center min-h-[300px] sm:min-h-[340px] pt-20 pb-14">
+    <section className="relative w-full overflow-hidden bg-night text-white flex flex-col justify-center items-center min-h-[220px] sm:min-h-[260px] pt-20 pb-14">
       {/* Background image with dark overlay */}
       <div className="absolute inset-0 w-full h-full pointer-events-none">
         <Image
@@ -57,35 +53,6 @@ export function CategoryHero({ category }: CategoryHeroProps) {
             {category.tagline}
           </p>
         )}
-      </div>
-
-      {/* Full-width edge-to-edge Marquee Carousel (slow auto-scroll right to left, stops on hover) */}
-      <div className="relative w-full overflow-hidden mt-6 py-2 cuisine-marquee-container group select-none">
-        {/* Soft edge gradient fades at both ends of the screen */}
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-r from-night via-night/70 to-transparent z-10" />
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-l from-night via-night/70 to-transparent z-10" />
-
-        {/* Continuous track */}
-        <div className="animate-cuisine-marquee flex items-center gap-3">
-          {marqueeCategories.map((c, index) => {
-            const isActive = c.slug === category.slug;
-
-            return (
-              <Link
-                key={`${c.slug}-${index}`}
-                href={`/menu/${c.slug}`}
-                className={`shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium transition-all ${
-                  isActive
-                    ? "bg-accent text-white shadow-warm border border-accent ring-2 ring-accent/30 font-semibold scale-[1.03]"
-                    : "bg-white/10 hover:bg-white/20 text-white/90 hover:text-white border border-white/15 backdrop-blur-md hover:border-white/35 hover:scale-105 active:scale-95"
-                }`}
-              >
-                {isActive && <Utensils className="w-3.5 h-3.5 text-white" />}
-                <span className="whitespace-nowrap">{c.title}</span>
-              </Link>
-            );
-          })}
-        </div>
       </div>
 
       {/* Torn-paper bottom edge per Section 5.3 & 6 */}
