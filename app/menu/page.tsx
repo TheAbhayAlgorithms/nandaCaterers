@@ -6,7 +6,7 @@ import { CuisineHub } from "@/components/menu/CuisineHub";
 export const metadata: Metadata = {
   title: "Food Menus | Nanda Caterers – Wedding Caterers in Mumbai",
   description:
-    "Explore Nanda Caterers culinary repertoire. 13 authentic pure vegetarian categories featuring Gujarati, Punjabi, South Indian, sweets, Chinese, Italian, Continental, and Thai.",
+    "Explore Nanda Caterers master catering repertoire. 8 comprehensive pure vegetarian categories with 635+ dishes including Beverages, Soups, Starters, Live Counters, Salads, Main Course, Sweets, and Artisanal Ice Creams.",
 };
 
 export default function MenuHubPage() {

@@ -123,6 +123,10 @@ export default function RootLayout({
     areaServed: siteConfig.areasServed,
     priceRange: "$$",
     servesCuisine: ["Indian", "Vegetarian", "Gujarati", "Punjabi", "Continental", "Chinese", "Italian"],
+    sameAs: [
+      siteConfig.social.facebook.url,
+      siteConfig.social.instagram.url,
+    ],
   };
 
   return (

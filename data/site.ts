@@ -78,7 +78,7 @@ export const siteConfig = {
   social: {
     facebook: {
       name: "Facebook",
-      url: "https://facebook.com/nandacaterers",
+      url: "https://www.facebook.com/nandacaterer",
     },
     x: {
       name: "X",
@@ -86,7 +86,7 @@ export const siteConfig = {
     },
     instagram: {
       name: "Instagram",
-      url: "https://instagram.com/nandacaterers",
+      url: "https://www.instagram.com/nanda_caterers/",
     },
     whatsapp: {
       name: "WhatsApp",

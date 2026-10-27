@@ -10,42 +10,59 @@ import { NextStepStrip } from "@/components/shape/NextStepStrip";
 import { cn } from "@/lib/cn";
 
 export function CuisineHub() {
-  const [activeSegment, setActiveSegment] = useState<"Indian" | "Global">("Indian");
+  const [activeSegment, setActiveSegment] = useState<string>("All");
 
-  const categories = menuCategories.filter((c) => c.group === activeSegment);
+  const categories =
+    activeSegment === "All"
+      ? menuCategories
+      : menuCategories.filter((c) => c.group === activeSegment);
 
   return (
     <div className="w-full">
-      {/* Segmented Control: Indian Food | Global Cuisines per Section 6.3 */}
+      {/* Segmented Control */}
       <div className="flex justify-center my-8 sm:my-10 px-4">
-        <div className="inline-flex p-1.5 rounded-full bg-peach/80 border border-accent/20 gap-1.5">
+        <div className="inline-flex p-1.5 rounded-full bg-peach/80 border border-accent/20 gap-1.5 flex-wrap justify-center">
           <button
             type="button"
-            onClick={() => setActiveSegment("Indian")}
+            onClick={() => setActiveSegment("All")}
             className={cn(
-              "px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 select-none",
-              activeSegment === "Indian"
+              "px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 select-none",
+              activeSegment === "All"
                 ? "bg-accent text-white shadow-soft"
                 : "text-ink/75 hover:text-ink hover:bg-white/40"
             )}
             role="tab"
-            aria-selected={activeSegment === "Indian"}
+            aria-selected={activeSegment === "All"}
           >
-            Indian Food
+            All Menus (8)
           </button>
           <button
             type="button"
-            onClick={() => setActiveSegment("Global")}
+            onClick={() => setActiveSegment("Starters & Live")}
             className={cn(
-              "px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 select-none",
-              activeSegment === "Global"
+              "px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 select-none",
+              activeSegment === "Starters & Live"
                 ? "bg-accent text-white shadow-soft"
                 : "text-ink/75 hover:text-ink hover:bg-white/40"
             )}
             role="tab"
-            aria-selected={activeSegment === "Global"}
+            aria-selected={activeSegment === "Starters & Live"}
           >
-            Global Cuisines
+            Starters & Live Counters
+          </button>
+          <button
+            type="button"
+            onClick={() => setActiveSegment("Mains & Sweets")}
+            className={cn(
+              "px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 select-none",
+              activeSegment === "Mains & Sweets"
+                ? "bg-accent text-white shadow-soft"
+                : "text-ink/75 hover:text-ink hover:bg-white/40"
+            )}
+            role="tab"
+            aria-selected={activeSegment === "Mains & Sweets"}
+          >
+            Mains, Sweets & Desserts
           </button>
         </div>
       </div>
@@ -80,9 +97,14 @@ export function CuisineHub() {
 
                   <div className="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                      <h3 className="font-heading font-bold text-lg text-ink group-hover:text-accent transition-colors">
-                        {category.title}
-                      </h3>
+                      <div className="flex items-center justify-between gap-2">
+                        <h3 className="font-heading font-bold text-lg text-ink group-hover:text-accent transition-colors">
+                          {category.title}
+                        </h3>
+                        <span className="text-[11px] font-semibold text-accent bg-peach px-2 py-0.5 rounded-full border border-accent/20 shrink-0">
+                          {category.sections.reduce((acc, s) => acc + s.dishes.length, 0)} items
+                        </span>
+                      </div>
                       <p className="text-xs text-ink/70 mt-1 line-clamp-2 leading-relaxed">
                         {category.tagline}
                       </p>

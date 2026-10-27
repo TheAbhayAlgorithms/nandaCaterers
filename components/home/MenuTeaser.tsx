@@ -8,47 +8,47 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Divider } from "@/components/shape/Divider";
 import { Button } from "@/components/ui/Button";
 
-// The 8 cuisine chips per Section 4.6
+// The 8 menu categories from Master Catering Menu
 const cuisineTeaserItems = [
   {
-    name: "Indian",
+    name: "Beverages",
+    slug: "beverages",
+    image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    name: "Soups",
+    slug: "soups",
+    image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    name: "Starters",
+    slug: "starters",
+    image: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    name: "Live Counters",
+    slug: "live-counters",
+    image: "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    name: "Salads",
+    slug: "salads-accompaniments",
+    image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    name: "Main Course",
     slug: "main-course",
     image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=400&q=80",
   },
   {
-    name: "Chinese",
-    slug: "chinese",
-    image: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=400&q=80",
+    name: "Sweets",
+    slug: "sweets",
+    image: "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=400&q=80",
   },
   {
-    name: "Continental",
-    slug: "continental",
-    image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=400&q=80",
-  },
-  {
-    name: "Thai",
-    slug: "thai",
-    image: "https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=400&q=80",
-  },
-  {
-    name: "Italian",
-    slug: "italian",
-    image: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=400&q=80",
-  },
-  {
-    name: "Mexican",
-    slug: "mexican",
-    image: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=400&q=80",
-  },
-  {
-    name: "Juices",
-    slug: "welcome-drink",
-    image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=400&q=80",
-  },
-  {
-    name: "Ice-cream",
-    slug: "ice-cream",
-    image: "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=400&q=80",
+    name: "Desserts & Ice Cream",
+    slug: "desserts-ice-cream",
+    image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=400&q=80",
   },
 ];
 

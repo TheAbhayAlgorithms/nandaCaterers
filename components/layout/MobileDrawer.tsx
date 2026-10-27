@@ -1,22 +1,33 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronDown, Phone, Mail, MapPin } from "lucide-react";
+import { X, Phone, Mail, MapPin, ChevronRight } from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
 import { siteConfig } from "@/data/site";
-import { menuCategories } from "@/data/menu";
-import { detailedServices } from "@/data/services";
+import { cn } from "@/lib/cn";
 
 interface MobileDrawerProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "About Us", href: "/about" },
+  { name: "Food Menu", href: "/menu" },
+  { name: "Catering Packages", href: "/packages" },
+  { name: "Photo Gallery", href: "/gallery" },
+  { name: "Client Reviews", href: "/testimonials" },
+  { name: "Service Areas", href: "/service-areas" },
+  { name: "FAQs", href: "/faq" },
+  { name: "Contact & Offices", href: "/contact" },
+];
+
 export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     if (isOpen) {
@@ -68,144 +79,56 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
               <button
                 onClick={onClose}
                 aria-label="Close navigation menu"
-                className="p-2 rounded-xl text-charcoal/70 hover:text-charcoal hover:bg-cream transition-colors"
+                className="p-2 rounded-xl text-charcoal/70 hover:text-maroon hover:bg-cream transition-all duration-200 hover:rotate-90 cursor-pointer"
               >
                 <X className="w-6 h-6" />
               </button>
             </div>
 
             {/* Navigation Links */}
-            <div className="p-5 flex-1 space-y-2">
-              <Link
-                href="/"
-                onClick={onClose}
-                className="block p-3 rounded-xl font-lora font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
-              >
-                Home
-              </Link>
-              
-              <Link
-                href="/about"
-                onClick={onClose}
-                className="block p-3 rounded-xl font-lora font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
-              >
-                About Us
-              </Link>
+            <div className="p-5 flex-1 space-y-1.5">
+              {navLinks.map((link) => {
+                const isActive =
+                  link.href === "/"
+                    ? pathname === "/"
+                    : pathname.startsWith(link.href);
 
-              {/* Services Accordion */}
-              <div className="rounded-xl border border-charcoal/10 bg-ivory overflow-hidden">
-                <button
-                  type="button"
-                  onClick={() => setIsServicesOpen((prev) => !prev)}
-                  aria-expanded={isServicesOpen}
-                  className="w-full flex items-center justify-between p-3.5 font-lora font-semibold text-lg text-maroon text-left cursor-pointer"
-                >
-                  <span>Catering Services</span>
-                  <ChevronDown
-                    className={`w-5 h-5 text-saffron transition-transform duration-300 ${
-                      isServicesOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={onClose}
+                    className={cn(
+                      "group flex items-center justify-between p-3 rounded-2xl font-lora font-semibold text-lg transition-all duration-200 cursor-pointer",
+                      isActive
+                        ? "bg-ivory text-maroon shadow-xs border border-turmeric/35 font-bold translate-x-1"
+                        : "text-charcoal hover:text-maroon hover:bg-ivory hover:shadow-xs border border-transparent hover:border-turmeric/25 hover:translate-x-1.5"
+                    )}
+                  >
+                    <span className="transition-colors duration-200">
+                      {link.name}
+                    </span>
+                    <ChevronRight
+                      className={cn(
+                        "w-4 h-4 transition-all duration-200 shrink-0",
+                        isActive
+                          ? "text-maroon opacity-100 translate-x-0"
+                          : "text-saffron opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0"
+                      )}
+                    />
+                  </Link>
+                );
+              })}
 
-                <AnimatePresence>
-                  {isServicesOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25 }}
-                      className="overflow-hidden bg-cream/50 px-3 pb-3 border-t border-charcoal/5"
-                    >
-                      <Link
-                        href="/services"
-                        onClick={onClose}
-                        className="block py-2 px-3 text-xs font-bold text-maroon uppercase tracking-wider underline mb-1"
-                      >
-                        All Services Overview →
-                      </Link>
-                      <div className="space-y-1">
-                        {detailedServices.map((srv) => (
-                          <Link
-                            key={srv.slug}
-                            href={`/services/${srv.slug}`}
-                            onClick={onClose}
-                            className="block py-1.5 px-3 rounded-lg text-sm font-medium text-charcoal/80 hover:text-maroon hover:bg-ivory transition-colors"
-                          >
-                            {srv.title}
-                          </Link>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-
-              {/* Food Menu Link */}
-              <Link
-                href="/menu"
-                onClick={onClose}
-                className="block p-3 rounded-xl font-lora font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
-              >
-                Food Menu
-              </Link>
-
-              <Link
-                href="/packages"
-                onClick={onClose}
-                className="block p-3 rounded-xl font-lora font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
-              >
-                Catering Packages
-              </Link>
-
-              <Link
-                href="/gallery"
-                onClick={onClose}
-                className="block p-3 rounded-xl font-lora font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
-              >
-                Photo Gallery
-              </Link>
-
-              <Link
-                href="/testimonials"
-                onClick={onClose}
-                className="block p-3 rounded-xl font-lora font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
-              >
-                Client Reviews
-              </Link>
-
-              <Link
-                href="/service-areas"
-                onClick={onClose}
-                className="block p-3 rounded-xl font-lora font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
-              >
-                Service Areas
-              </Link>
-
-              <Link
-                href="/faq"
-                onClick={onClose}
-                className="block p-3 rounded-xl font-lora font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
-              >
-                FAQs
-              </Link>
-
-              <Link
-                href="/contact"
-                onClick={onClose}
-                className="block p-3 rounded-xl font-lora font-semibold text-lg text-charcoal hover:text-maroon hover:bg-ivory transition-colors"
-              >
-                Contact & Offices
-              </Link>
-
-              {/* Get Instant Quote CTA */}
+              {/* CTA Button with hover animations */}
               <div className="pt-3">
                 <Link
                   href="/quote"
                   onClick={onClose}
-                  className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-gold-gradient text-charcoal font-semibold shadow-warm text-base"
+                  className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-2xl bg-gold-gradient text-charcoal font-semibold shadow-warm text-base hover:shadow-warm-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer"
                 >
-                  Start Custom Quotation
+                  <span>Connect</span>
+                  <ChevronRight className="w-4 h-4 text-charcoal/70" />
                 </Link>
               </div>
             </div>

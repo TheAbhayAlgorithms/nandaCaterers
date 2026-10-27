@@ -11,23 +11,18 @@ interface MegaMenuProps {
   onClose: () => void;
 }
 
-const indianCuisines = [
-  { name: "Breakfast", href: "/menu/breakfast", desc: "Idli, parathas, pohe, khaman & chutneys" },
-  { name: "Starter", href: "/menu/starter", desc: "Paneer tikkas, rolls, tandoori & crisp snacks" },
-  { name: "Welcome Drinks", href: "/menu/welcome-drink", desc: "Mocktails, lassi, panna & coolers" },
-  { name: "Main Course", href: "/menu/main-course", desc: "Rich paneer gravies, dals, pulav & breads" },
-  { name: "Gujarati", href: "/menu/gujarati", desc: "Surti undhiyu, farsan, dhokla & sweets" },
-  { name: "South Indian", href: "/menu/south-indian", desc: "Crisp dosas, rasam, curd rice & payasam" },
-  { name: "Sweets & Mithai", href: "/menu/sweets", desc: "Warm halwas, jalebi, kheer & basundi" },
-  { name: "Ice Cream & Kulfi", href: "/menu/ice-cream", desc: "Handcrafted natural kulfis & sundaes" },
+const startersAndLive = [
+  { name: "Beverages", href: "/menu/beverages", desc: "Juices, mocktails, real fruits & hot kadai milk (32 items)" },
+  { name: "Soups", href: "/menu/soups", desc: "Classic creamy, Asian & continental broths (48 items)" },
+  { name: "Starters (Hot & Namkeen)", href: "/menu/starters", desc: "Paneer tikkas, cheese bites, rolls & cutlets (73 items)" },
+  { name: "Live Counters", href: "/menu/live-counters", desc: "Pizza, chaat, wok, chilla, bhel & farsan (114 items)" },
 ];
 
-const globalCuisines = [
-  { name: "Chinese", href: "/menu/chinese", desc: "Hakka noodles, manchurian & hot gravies" },
-  { name: "Continental", href: "/menu/continental", desc: "Baked dishes, gourmet salads & herb pilafs" },
-  { name: "Thai", href: "/menu/thai", desc: "Aromatic green & red curries, pad thai" },
-  { name: "Italian", href: "/menu/italian", desc: "Penne, lasagna, pestos & hand-tossed pizza" },
-  { name: "Mexican", href: "/menu/mexican", desc: "Loaded nachos, bean tacos & fajitas" },
+const mainsAndDesserts = [
+  { name: "Salads & Accompaniments", href: "/menu/salads-accompaniments", desc: "Live fruit salads, papad platters & pickles (30 items)" },
+  { name: "Main Course", href: "/menu/main-course", desc: "Paneer, kofta, Gujarati specials, dals & breads (161 items)" },
+  { name: "Sweets", href: "/menu/sweets", desc: "Dry fruit mithai, halwa, Bengali sweets & rabdi (98 items)" },
+  { name: "Desserts & Ice Cream", href: "/menu/desserts-ice-cream", desc: "Kulfi sticks, falooda counter & fresh milk ice cream (79 items)" },
 ];
 
 export function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
@@ -47,7 +42,7 @@ export function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-accent" />
               <span className="text-xs uppercase tracking-wider font-semibold text-ink">
-                Curated Catering Menus
+                Master Pure-Veg Catering Menu (635+ Items)
               </span>
             </div>
             <Link
@@ -55,23 +50,23 @@ export function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
               onClick={onClose}
               className="text-xs md:text-sm font-semibold text-maroon hover:text-saffron flex items-center gap-1.5 transition-colors group"
             >
-              <span>Explore All 13 Cuisines Hub</span>
+              <span>Explore All 8 Menu Categories</span>
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-            {/* Indian Food Group (8 items) */}
-            <div className="md:col-span-7">
+            {/* Starters & Live Counters Group (4 items) */}
+            <div className="md:col-span-6">
               <div className="flex items-center gap-2 mb-4">
                 <Sparkles className="w-4 h-4 text-saffron" />
                 <h4 className="font-lora font-bold text-base md:text-lg text-maroon uppercase tracking-wide">
-                  Indian Food Specialities
+                  Starters & Live Counters
                 </h4>
               </div>
 
-              <div className="grid grid-cols-2 gap-x-4 gap-y-3">
-                {indianCuisines.map((item) => (
+              <div className="space-y-2">
+                {startersAndLive.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
@@ -92,14 +87,14 @@ export function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
               </div>
             </div>
 
-            {/* Global Cuisines Group (5 items) + Image Card */}
-            <div className="md:col-span-5 flex flex-col justify-between border-t md:border-t-0 md:border-l border-charcoal/10 md:pl-8 pt-4 md:pt-0">
+            {/* Mains, Sweets & Desserts Group (4 items) + Image Card */}
+            <div className="md:col-span-6 flex flex-col justify-between border-t md:border-t-0 md:border-l border-charcoal/10 md:pl-8 pt-4 md:pt-0">
               <div>
                 <h4 className="font-lora font-bold text-base md:text-lg text-maroon uppercase tracking-wide mb-4">
-                  Global Cuisines
+                  Mains, Sweets & Desserts
                 </h4>
                 <div className="space-y-2">
-                  {globalCuisines.map((item) => (
+                  {mainsAndDesserts.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
