@@ -20,13 +20,13 @@ export function CuisineHub() {
   return (
     <div className="w-full">
       {/* Segmented Control */}
-      <div className="flex justify-center my-8 sm:my-10 px-4">
-        <div className="inline-flex p-1.5 rounded-full bg-peach/80 border border-accent/20 gap-1.5 flex-wrap justify-center">
+      <div className="flex justify-center my-6 sm:my-10 px-4">
+        <div className="inline-flex items-center p-1.5 rounded-full bg-peach/80 border border-accent/20 gap-1 sm:gap-1.5 max-w-full overflow-x-auto no-scrollbar scroll-smooth shadow-xs">
           <button
             type="button"
             onClick={() => setActiveSegment("All")}
             className={cn(
-              "px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 select-none",
+              "shrink-0 whitespace-nowrap px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 select-none",
               activeSegment === "All"
                 ? "bg-accent text-white shadow-soft"
                 : "text-ink/75 hover:text-ink hover:bg-white/40"
@@ -34,13 +34,14 @@ export function CuisineHub() {
             role="tab"
             aria-selected={activeSegment === "All"}
           >
-            All Menus (8)
+            <span className="sm:hidden">All (8)</span>
+            <span className="hidden sm:inline">All Menus (8)</span>
           </button>
           <button
             type="button"
             onClick={() => setActiveSegment("Starters & Live")}
             className={cn(
-              "px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 select-none",
+              "shrink-0 whitespace-nowrap px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 select-none",
               activeSegment === "Starters & Live"
                 ? "bg-accent text-white shadow-soft"
                 : "text-ink/75 hover:text-ink hover:bg-white/40"
@@ -48,13 +49,14 @@ export function CuisineHub() {
             role="tab"
             aria-selected={activeSegment === "Starters & Live"}
           >
-            Starters & Live Counters
+            <span className="sm:hidden">Starters & Live</span>
+            <span className="hidden sm:inline">Starters & Live Counters</span>
           </button>
           <button
             type="button"
             onClick={() => setActiveSegment("Mains & Sweets")}
             className={cn(
-              "px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 select-none",
+              "shrink-0 whitespace-nowrap px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 select-none",
               activeSegment === "Mains & Sweets"
                 ? "bg-accent text-white shadow-soft"
                 : "text-ink/75 hover:text-ink hover:bg-white/40"
@@ -62,7 +64,8 @@ export function CuisineHub() {
             role="tab"
             aria-selected={activeSegment === "Mains & Sweets"}
           >
-            Mains, Sweets & Desserts
+            <span className="sm:hidden">Mains & Sweets</span>
+            <span className="hidden sm:inline">Mains, Sweets & Desserts</span>
           </button>
         </div>
       </div>
