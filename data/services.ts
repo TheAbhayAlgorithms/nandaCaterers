@@ -16,9 +16,9 @@ export const servicesData: ServiceItem[] = [
     slug: "wedding",
     title: "Wedding Catering",
     iconName: "wedding",
-    short: "We provide catering services for wedding events with fine and newer menu ideas as per your requirement.",
+    short: "Complete wedding catering for weddings, sangeet and receptions, with live counters, Gujarati and Punjabi menus, Jain options and tasting sessions before you book.",
     long: [
-      "We provide catering services for wedding events. To serve with newer ideas, we have fine and different menus ready as per your requirement.",
+      "Complete wedding catering for weddings, sangeet and receptions, with live counters, Gujarati and Punjabi menus, Jain options and tasting sessions before you book.",
       "From intimate pre-wedding rituals like Haldi and Mehendi to grand receptions with thousands of esteemed guests, our operations team ensures that hot food, impeccable hygiene, and gracious hospitality make your family's biggest day truly unforgettable.",
     ],
     highlights: [
@@ -34,9 +34,9 @@ export const servicesData: ServiceItem[] = [
     slug: "corporate",
     title: "Corporate Catering",
     iconName: "corporate",
-    short: "We are proud to serve reputed, high-profile corporate firms for meetings, breakfast, lunch or dinners.",
+    short: "Meetings, breakfasts, lunches and dinners for corporate events, delivered on time with hygienic, fully vegetarian menus.",
     long: [
-      "We are proud to serve reputed, high-profile corporate firms that organise meetings with breakfast, lunch or evening dinners.",
+      "Meetings, breakfasts, lunches and dinners for corporate events, delivered on time with hygienic, fully vegetarian menus.",
       "Whether it is an executive boardroom luncheon, an annual corporate seminar, or a celebratory office gala, our catering is structured for punctuality, sophisticated presentation, and wholesome, energizing nutrition.",
     ],
     highlights: [
@@ -52,7 +52,7 @@ export const servicesData: ServiceItem[] = [
     slug: "family",
     title: "Family Functions",
     iconName: "family",
-    short: "Warm traditional feasts and pooja meals prepared with devotional purity and homely love for your loved ones.",
+    short: "Pooja meals, family gatherings and traditional feasts prepared with devotional purity and homely taste.",
     long: [
       "Cherished family milestones deserve food cooked with genuine warmth, care, and sacred respect. We cater to Griha Pravesh, Vastu poojas, Upanayanam, and milestone wedding anniversaries with authentic traditional recipes.",
       "Our chefs honor authentic cooking practices, using cold-pressed oils, pure desi ghee, and time-tested spices that carry the nostalgic flavors of grandmother's kitchen.",
@@ -70,7 +70,7 @@ export const servicesData: ServiceItem[] = [
     slug: "party",
     title: "Birthday & Party Catering",
     iconName: "party",
-    short: "Vibrant menus, fun live stations and irresistible treats covering birthdays, kitty parties, and farewells.",
+    short: "Menus with live stations and crowd-favourite treats for birthdays, kitty parties and farewells.",
     long: [
       "Make your celebration the talk of the town with energetic live food stations, crisp savory bites, and handcrafted dessert stations. We cover kids' birthdays, themed teenage parties, kitty party luncheons, and touching farewell gatherings.",
       "From sizzling live pizza and pasta counters to mini sliders and colorful mocktail bars, our menus are interactive, delicious, and tailored to all age groups.",
@@ -88,9 +88,9 @@ export const servicesData: ServiceItem[] = [
     slug: "decoration",
     title: "Event Decoration",
     iconName: "decoration",
-    short: "We offer all types of event catering and decorations, with different types of catering decoration in our own style.",
+    short: "Buffet and counter decoration, table styling and floral setups to complement your catering.",
     long: [
-      "We offer all types of event catering and decorations, with different types of catering decoration served in our own style.",
+      "Buffet and counter decoration, table styling and floral setups to complement your catering.",
       "A feast is as much for the eyes as it is for the palate. Our decor designers complement the culinary presentation with tasteful floral canopies, royal copper food warmers, carved fruit centerpieces, and luminous ambient buffet lighting.",
     ],
     highlights: [
@@ -106,7 +106,7 @@ export const servicesData: ServiceItem[] = [
     slug: "social",
     title: "Social Events & Festivals",
     iconName: "social",
-    short: "Authentic community feasts for Indian festivals, outdoor seasonal parties, and cultural gatherings.",
+    short: "Community feasts and seasonal celebrations for Indian festivals and cultural gatherings.",
     long: [
       "Whether it is Navratri Mahotsav, Diwali Milan, Ganeshotsav banquets, or annual community conclaves, Nanda Caterers brings deep expertise in feeding large crowds with flawless rhythm and joyous festive taste.",
       "We are committed to maintaining high standards of taste and hygiene in food preparation across every festive feast.",

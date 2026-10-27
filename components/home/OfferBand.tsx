@@ -46,17 +46,17 @@ export function OfferBand() {
 
           {/* Response promise sentence */}
           <p className="text-sm sm:text-base text-white/85 mb-8 font-medium">
-            We just need a couple of hours. Reply within 2 working days.
+            Tell us your event date, guest count and city. We&apos;ll send a customised menu and quote within 2 working days.
           </p>
 
-          {/* Filled accent pill "Connect" */}
+          {/* Filled accent pill "Get a Free Quote" */}
           <Button
+            href="/contact#enquiry"
             variant="filled"
             size="lg"
-            onClick={() => openQuoteSheet("Wedding")}
-            aria-label="Connect for custom quotation"
+            aria-label="Get a Free Quote for custom quotation"
           >
-            Connect
+            Get a Free Quote
           </Button>
         </div>
       </div>

@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     template: "%s | Nanda Caterers – Wedding Caterers in Mumbai",
   },
   description:
-    "Nanda Caterers: Benchmark 100% pure vegetarian catering in Mumbai, Thane, Navi Mumbai, Pune & Goa. Specializing in lavish wedding feasts, Gujarati & Punjabi delicacies, and corporate events.",
+    "Nanda Caterers: 100% Pure Vegetarian catering in Mumbai, Thane, Navi Mumbai, Pune & Goa. Specializing in lavish wedding feasts, Gujarati & Punjabi delicacies, and corporate events.",
   keywords: [
     "caterers in mumbai",
     "wedding caterers mumbai",
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     siteName: "Nanda Caterers",
     title: "Nanda Caterers – Wedding Caterers in Mumbai",
     description:
-      "A Perfect Blend of Sensational Food. Benchmark 100% pure vegetarian catering for weddings and celebrations.",
+      "A Perfect Blend of Sensational Food. 100% Pure Vegetarian catering for weddings and celebrations.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nanda Caterers – Wedding Caterers in Mumbai",
     description:
-      "A Perfect Blend of Sensational Food. Benchmark 100% pure vegetarian catering for weddings and celebrations.",
+      "A Perfect Blend of Sensational Food. 100% Pure Vegetarian catering for weddings and celebrations.",
     images: [
       "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
     ],
@@ -105,24 +105,22 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": ["CateringBusiness", "LocalBusiness"],
-    name: siteConfig.name,
+    "@type": ["CateringService", "LocalBusiness"],
+    name: "Nanda Caterers",
     image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
-    telephone: siteConfig.phone.display,
+    telephone: "+91 99678 94979",
     email: siteConfig.email,
     url: "https://nandacaterers.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: siteConfig.offices[0].address,
+      streetAddress:
+        "Siddhart Colony, Service Road, Near Cardinal Gracious High School, W.E. Highway, Bandra East",
       addressLocality: "Mumbai",
       postalCode: "400051",
       addressCountry: "IN",
     },
     openingHours: "Mo-Sa 09:00-21:00",
     foundingDate: "2005",
-    areaServed: siteConfig.areasServed,
-    priceRange: "$$",
-    servesCuisine: ["Indian", "Vegetarian", "Gujarati", "Punjabi", "Continental", "Chinese", "Italian"],
     sameAs: [
       siteConfig.social.facebook.url,
       siteConfig.social.instagram.url,

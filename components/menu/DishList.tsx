@@ -1,9 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { Plus, Check, Sparkles, ChevronDown } from "lucide-react";
 import { useQuoteSelection } from "@/context/QuoteSelectionContext";
 import { Dish } from "@/data/menu";
+import { getSoupDemoDescription } from "@/data/siteContent";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
 
@@ -70,6 +72,7 @@ export function DishList({ dishes, searchQuery, sectionTitle }: DishListProps) {
             dish.extraPriceNote;
 
           const cleanName = dish.name.replace(/\(Extra Rs\.30\/-\)/gi, "").trim();
+          const description = dish.description || getSoupDemoDescription(dish.name);
 
           return (
             <div
@@ -79,6 +82,19 @@ export function DishList({ dishes, searchQuery, sectionTitle }: DishListProps) {
                 isSelected && "border-accent/40 bg-peach/20"
               )}
             >
+              {/* Optional dish image thumbnail if present */}
+              {dish.image && (
+                <div className="relative w-full h-36 rounded-xl overflow-hidden mb-3">
+                  <Image
+                    src={dish.image}
+                    alt={dish.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              )}
+
               <div className="flex items-start justify-between gap-3">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
@@ -92,9 +108,9 @@ export function DishList({ dishes, searchQuery, sectionTitle }: DishListProps) {
                     </h4>
                   </div>
 
-                  {dish.description && (
+                  {description && (
                     <p className="text-xs text-ink/70 mt-1 line-clamp-2 leading-relaxed pl-4">
-                      {dish.description}
+                      {description}
                     </p>
                   )}
 

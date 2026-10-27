@@ -28,7 +28,8 @@ export function AboutBento() {
           {/* Two short paragraphs per Section 4.3 */}
           <div className="space-y-3 text-ink/75 text-sm sm:text-base leading-relaxed mb-6">
             <p>
-              Nanda Caterers makes every occasion memorable, just for you. We believe in leaving lasting impressions with more than 15 years of experience and benchmark kitchen hygiene.
+              {/* TODO: add FSSAI licence no. */}
+              Nanda Caterers makes every occasion memorable, just for you. We believe in leaving lasting impressions with over 20 years of experience and an FSSAI-licensed kitchen.
             </p>
             <p>
               Founded in 2005, Nanda Caterers has specialised in grand wedding banquets, corporate meetings, and joyful family celebrations across Mumbai, Pune, and Goa.

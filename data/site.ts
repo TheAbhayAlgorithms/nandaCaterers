@@ -4,8 +4,8 @@ export const SITE_URL =
   process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || "https://nandacaterers.com";
 
 // Email: published as info@nandacateres.com (looks like a typo of "caterers"). Keep in ONE constant.
-// TODO: confirm with client
-export const CONTACT_EMAIL = "info@nandacateres.com";
+// TODO: confirm correct email
+export const CONTACT_EMAIL = "info@nandacaterers.com";
 
 export const siteConfig = {
   name: "Nanda Caterers",
@@ -14,10 +14,10 @@ export const siteConfig = {
   tagline: "A Perfect Blend of Sensational Food",
   subline: "Wedding catering with new ideas, served in our own style.",
   description:
-    "Nanda Caterers: Benchmark 100% pure vegetarian catering in Mumbai, Thane, Navi Mumbai, Pune & Goa. Specializing in lavish wedding feasts, Gujarati & Punjabi delicacies, and corporate events.",
+    "Nanda Caterers: 100% Pure Vegetarian catering in Mumbai, Thane, Navi Mumbai, Pune & Goa. Specializing in lavish wedding feasts, Gujarati & Punjabi delicacies, and corporate events.",
   canonicalUrl: SITE_URL,
   foundedYear: 2005,
-  experienceYears: 15,
+  experienceYears: 20,
 
   // Served areas
   areasServed: ["Mumbai", "Thane", "Navi Mumbai", "Pune", "Goa"],
@@ -71,7 +71,7 @@ export const siteConfig = {
   stats: {
     varieties: { value: 500, suffix: "+", label: "Foods Variety" }, // TODO: confirm with client
     customers: { value: 5000, suffix: "+", label: "Satisfied Customers" }, // TODO: confirm with client
-    years: { value: 15, suffix: "+", label: "Years of Experience" }, // TODO: confirm with client
+    years: { value: 20, suffix: "+", label: "Years of Experience" }, // TODO: confirm with client
     freshness: { value: 100, suffix: "%", label: "Fresh & Tasty Food %" }, // TODO: confirm with client
   },
 

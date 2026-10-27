@@ -1,30 +1,42 @@
 import React from "react";
 import { Hero } from "@/components/home/Hero";
 import { AboutBento } from "@/components/home/AboutBento";
+import { NumbersStrip } from "@/components/home/NumbersStrip";
 import { ServicesTeaser } from "@/components/home/ServicesTeaser";
+import { HomeTestimonials } from "@/components/home/HomeTestimonials";
 import { GalleryCarousel } from "@/components/home/GalleryCarousel";
 import { MenuTeaser } from "@/components/home/MenuTeaser";
+import { PackagesTeaser } from "@/components/home/PackagesTeaser";
 import { OfferBand } from "@/components/home/OfferBand";
 
 export default function HomePage() {
   return (
     <div className="flex flex-col w-full overflow-hidden">
-      {/* 1. Hero: full-bleed photo, torn bottom edge */}
+      {/* 1. Hero */}
       <Hero />
 
-      {/* 2. About Bento: text left, 2x2 bento right */}
+      {/* 2. About Bento */}
       <AboutBento />
 
-      {/* 3. Services Teaser: pale peach background with doodle pattern, 6 cards + modal */}
+      {/* B3. Numbers Strip (below the About section) */}
+      <NumbersStrip />
+
+      {/* 3. Services Teaser */}
       <ServicesTeaser />
 
-      {/* 4. Gallery Carousel: 8-item snapping photo carousel + lightbox */}
+      {/* B2. Testimonials + Google Rating (after the Services section) */}
+      <HomeTestimonials />
+
+      {/* 4. Gallery Carousel */}
       <GalleryCarousel />
 
-      {/* 5. Menu Teaser: 8 cuisine chips + See Full Menu */}
+      {/* 5. Menu Teaser */}
       <MenuTeaser />
 
-      {/* Offer / Quote Band: dark with torn top edge */}
+      {/* B4. Packages Teaser */}
+      <PackagesTeaser />
+
+      {/* Offer / Quote Band */}
       <OfferBand />
     </div>
   );

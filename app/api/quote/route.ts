@@ -37,7 +37,8 @@ export async function POST(request: NextRequest) {
     const data = parseResult.data;
 
     const resendApiKey = process.env.RESEND_API_KEY;
-    const quoteToEmail = process.env.QUOTE_TO_EMAIL || "info@nandacateres.com";
+    // TODO: confirm correct email
+    const quoteToEmail = process.env.QUOTE_TO_EMAIL || "info@nandacaterers.com";
 
     // If Resend API credentials exist, email the enquiry
     if (resendApiKey && !resendApiKey.startsWith("re_123456789")) {

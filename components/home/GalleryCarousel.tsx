@@ -10,13 +10,13 @@ import { galleryImages } from "@/data/gallery";
 
 const carouselItems = [
   { ...galleryImages[0], caption: "Wedding Buffet" },
-  { ...galleryImages[1], caption: "Live Counter" },
-  { ...galleryImages[2], caption: "Mini Appetizers" },
-  { ...galleryImages[3], caption: "South Indian Breakfast" },
+  { ...galleryImages[1], caption: "Floral Buffet Display" },
+  { ...galleryImages[2], caption: "Tandoori Live Counter" },
+  { ...galleryImages[3], caption: "Corporate Banquet" },
   { ...galleryImages[4], caption: "Sweets Table" },
   { ...galleryImages[5], caption: "Decor Setup" },
   { ...galleryImages[6], caption: "Royal Curries" },
-  { ...galleryImages[7] || galleryImages[0], caption: "Salads & Fruits" },
+  { ...galleryImages[7] || galleryImages[0], caption: "Sangeet Dining Decor" },
 ].slice(0, 8);
 
 // Duplicate the array to create a seamless infinite loop

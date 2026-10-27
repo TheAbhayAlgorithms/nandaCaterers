@@ -90,13 +90,13 @@ export function AboutContent() {
                 The story about us
               </span>
               <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-maroon leading-tight mt-1">
-                Creating Lasting Impressions for Over 15 Years
+                Creating Lasting Impressions for Over 20 Years
               </h2>
             </Reveal>
 
             <Reveal variant="fadeUp" delay={0.1}>
               <p className="text-base sm:text-lg text-charcoal/80 leading-relaxed">
-                Nanda Caterers makes every occasion memorable, just for you. We believe in leaving lasting impressions with more than 15 years of experience. We are committed to maintaining high standards of taste and hygiene in food preparation. Our operations are carried out by our trained chefs, staff and team members, who have well-equipped, best-in-class kitchen facilities, ensuring tasty treats that are always fresh and safe to consume.
+                Nanda Caterers makes every occasion memorable, just for you. We believe in leaving lasting impressions with over 20 years of experience. We are committed to maintaining high standards of taste and hygiene in food preparation. Our operations are carried out by our trained chefs, staff and team members, who have well-equipped, best-in-class kitchen facilities, ensuring tasty treats that are always fresh and safe to consume.
               </p>
             </Reveal>
 
@@ -106,7 +106,7 @@ export function AboutContent() {
                   Our Reach Across Maharashtra & Goa
                 </span>
                 <p className="text-sm text-charcoal/75 leading-relaxed">
-                  In a short span of 15 years we have been working hard to give the best service across Mumbai, Thane, Navi Mumbai, Pune and Goa. Reaching out to each community has also been of utmost importance to us. Nanda Caterers is taking its legacy further with the same passion and commitment.
+                  Over the past 20 years we have been working hard to give the best service across Mumbai, Thane, Navi Mumbai, Pune and Goa. Reaching out to each community has also been of utmost importance to us. Nanda Caterers is taking its legacy further with the same passion and commitment.
                 </p>
               </div>
             </Reveal>

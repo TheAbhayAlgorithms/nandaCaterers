@@ -5,6 +5,8 @@ import { GalleryGrid } from "@/components/gallery/GalleryGrid";
 import { SectionShell } from "@/components/shape/SectionShell";
 import { NextStepStrip } from "@/components/shape/NextStepStrip";
 
+import { GalleryVideoSection } from "@/components/gallery/GalleryVideoSection";
+
 export const metadata: Metadata = {
   title: "Photo Gallery | Nanda Caterers – Wedding Caterers in Mumbai",
   description:
@@ -26,8 +28,9 @@ export default function GalleryPage() {
         imageSrc="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80"
       />
 
-      {/* Block 1: Photo Grid (12 items + filter chips + load more + lightbox) */}
+      {/* Block 1: Video Showcase & Photo Grid */}
       <SectionShell className="pt-10 sm:pt-14 pb-20">
+        <GalleryVideoSection />
         <GalleryGrid />
       </SectionShell>
 
