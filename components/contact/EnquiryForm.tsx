@@ -12,7 +12,6 @@ import {
   Check,
   ChevronRight,
   ChevronLeft,
-  ChevronDown,
   AlertCircle,
   Send,
 } from "lucide-react";
@@ -100,9 +99,6 @@ export function EnquiryForm({ className = "" }: { className?: string }) {
   const [errors, setErrors] = useState<StepErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  // Mobile preview collapsed state
-  const [isMobilePreviewOpen, setIsMobilePreviewOpen] = useState(false);
 
   // Format today's date for native min date (YYYY-MM-DD)
   const todayFormatted = new Date().toISOString().split("T")[0];
@@ -385,31 +381,6 @@ export function EnquiryForm({ className = "" }: { className?: string }) {
                     Mon-Sat: 9 AM - 9 PM
                   </span>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Desktop Live WhatsApp Message Preview in Left Panel */}
-          <div className="relative z-10 mt-8 hidden lg:block">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-white/70 block mb-2">
-              Live Message Preview
-            </span>
-            <div className="rounded-xl bg-[#DCF8C6] text-[#111b21] p-3.5 shadow-sm text-xs font-mono border border-emerald-300/60 leading-relaxed whitespace-pre-wrap select-none relative">
-              <div className="font-bold text-emerald-950 pb-1 border-b border-emerald-600/20 mb-1">
-                New Catering Enquiry - Nanda Caterers
-              </div>
-              <div>Name: {formData.name.trim() || "..."}</div>
-              <div>Phone: {formData.phone.trim() || "..."}</div>
-              <div>Event: {formData.eventType}</div>
-              <div>Menu: {formData.menuPreference}</div>
-              <div>Date: {effectiveDate}</div>
-              <div>Guests: {effectiveGuests}</div>
-              <div>City: {formData.city.trim() || "Mumbai"}</div>
-              <div>Message: {formData.specialRequests.trim() || "None"}</div>
-
-              <div className="text-[10px] text-right text-emerald-800/80 pt-1 flex items-center justify-end gap-1">
-                <span>Preview</span>
-                <span className="text-emerald-700 font-bold">✓✓</span>
               </div>
             </div>
           </div>
@@ -878,39 +849,6 @@ export function EnquiryForm({ className = "" }: { className?: string }) {
                         <AlertCircle className="w-3.5 h-3.5 shrink-0" />
                         <span>{errors.phone}</span>
                       </p>
-                    )}
-                  </div>
-
-                  {/* Mobile-only Collapsible Preview */}
-                  <div className="lg:hidden pt-2 border-t border-ink/10">
-                    <button
-                      type="button"
-                      onClick={() => setIsMobilePreviewOpen(!isMobilePreviewOpen)}
-                      className="w-full flex items-center justify-between text-xs font-bold text-ink/75 hover:text-ink py-2 cursor-pointer"
-                    >
-                      <span>Preview your message</span>
-                      <ChevronDown
-                        className={cn(
-                          "w-4 h-4 transition-transform duration-200",
-                          isMobilePreviewOpen && "rotate-180"
-                        )}
-                      />
-                    </button>
-
-                    {isMobilePreviewOpen && (
-                      <div className="mt-2 rounded-xl bg-[#DCF8C6] text-[#111b21] p-3 text-xs font-mono border border-emerald-300 leading-relaxed whitespace-pre-wrap select-none">
-                        <div className="font-bold text-emerald-950 pb-1 border-b border-emerald-600/20 mb-1">
-                          New Catering Enquiry - Nanda Caterers
-                        </div>
-                        <div>Name: {formData.name.trim() || "..."}</div>
-                        <div>Phone: {formData.phone.trim() || "..."}</div>
-                        <div>Event: {formData.eventType}</div>
-                        <div>Menu: {formData.menuPreference}</div>
-                        <div>Date: {effectiveDate}</div>
-                        <div>Guests: {effectiveGuests}</div>
-                        <div>City: {formData.city.trim() || "Mumbai"}</div>
-                        <div>Message: {formData.specialRequests.trim() || "None"}</div>
-                      </div>
                     )}
                   </div>
 

@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import {
   Phone,
-  Mail,
   Clock,
   MessageCircle,
   MapPin,
@@ -148,7 +147,8 @@ export function ContactTabs({}: ContactTabsProps = {}) {
               </div>
 
               {/* 3-card contact grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* 2-card direct contact channels */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 {/* 1. Phone Card */}
                 <div className="p-6 rounded-2xl bg-paper border border-ink/10 shadow-xs flex flex-col justify-between hover:shadow-card hover:-translate-y-0.5 transition-all">
                   <div>
@@ -200,32 +200,6 @@ export function ContactTabs({}: ContactTabsProps = {}) {
                     </a>
                     <span className="block text-center text-[10px] text-ink/40 mt-1">
                       Typically replies in 30 minutes
-                    </span>
-                  </div>
-                </div>
-
-                {/* 3. Email Card */}
-                <div className="p-6 rounded-2xl bg-paper border border-ink/10 shadow-xs flex flex-col justify-between hover:shadow-card hover:-translate-y-0.5 transition-all md:col-span-2 lg:col-span-1">
-                  <div>
-                    <div className="w-11 h-11 rounded-full bg-accent/10 text-accent flex items-center justify-center mb-4">
-                      <Mail className="w-5 h-5" />
-                    </div>
-                    <h3 className="font-heading font-bold text-lg text-ink">
-                      Email Inquiries
-                    </h3>
-                    <p className="text-xs text-ink/70 mt-1.5 leading-relaxed">
-                      Send your detailed event briefs, venue documentation, or corporate catering requests.
-                    </p>
-                  </div>
-                  <div className="mt-6 pt-4 border-t border-ink/10">
-                    <a
-                      href={`mailto:${siteConfig.email}`}
-                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-accent hover:underline truncate max-w-full"
-                    >
-                      <span>{siteConfig.email}</span>
-                    </a>
-                    <span className="block text-[10px] text-ink/40 mt-1">
-                      Response within 2 hours
                     </span>
                   </div>
                 </div>
