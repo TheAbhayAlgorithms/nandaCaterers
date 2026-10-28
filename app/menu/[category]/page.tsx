@@ -1,4 +1,4 @@
-₹2 import React from "react";
+import React from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { menuCategories, getMenuCategory } from "@/data/menu";
