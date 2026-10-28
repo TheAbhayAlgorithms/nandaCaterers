@@ -21,3 +21,4 @@ export function PublicLayoutWrapper({ children }: PublicLayoutWrapperProps) {
 
   return <>{children}</>;
 }
+
