@@ -49,10 +49,10 @@ export function PackagesTeaser() {
                 </div>
 
                 <div className="space-y-0.5 mb-4">
-                  <div className="text-base font-bold text-accent font-heading">
+                  <div className="text-base font-bold text-accent font-lora">
                     {pkg.vegPriceText}
                   </div>
-                  <div className="text-base font-bold text-ink/80 font-heading">
+                  <div className="text-base font-bold text-ink/80 font-lora">
                     {pkg.nonVegPriceText}
                   </div>
                 </div>

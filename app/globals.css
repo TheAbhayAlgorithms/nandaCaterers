@@ -34,6 +34,14 @@
   font-weight: inherit;
 }
 
+/* Lining Figures for Numbers:
+   Ensures digits (0-9) sit on a flat, uniform baseline without wavy oldstyle ascenders/descenders */
+.lining-numbers {
+  font-family: var(--font-lora), serif;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum" 1, "tnum" 1;
+}
+
 :root {
   --accent: #B8391B;
   --accent-dark: #8E2A12;

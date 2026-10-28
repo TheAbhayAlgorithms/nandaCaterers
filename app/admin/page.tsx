@@ -103,7 +103,7 @@ export default async function AdminDashboardPage() {
               </div>
 
               <div>
-                <span className="font-heading font-extrabold text-3xl sm:text-4xl text-ink block">
+                <span className="font-lora font-bold text-3xl sm:text-4xl text-ink block tracking-tight">
                   {card.count}
                 </span>
                 <h3 className="font-bold text-sm text-ink mt-1">

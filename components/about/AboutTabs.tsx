@@ -293,7 +293,7 @@ export function AboutTabs() {
               {/* 4 Animated Counters per Section 6.1 */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
                 <div className="p-6 rounded-2xl bg-paper border border-accent/15 shadow-soft flex flex-col items-center text-center">
-                  <span className="font-heading font-extrabold text-3xl sm:text-4xl text-accent mb-1">
+                  <span className="font-lora font-bold text-3xl sm:text-4xl text-accent mb-1 tracking-tight">
                     <Counter value={siteConfig.stats.varieties.value} suffix={siteConfig.stats.varieties.suffix} />
                   </span>
                   <span className="text-xs sm:text-sm font-semibold text-ink">
@@ -302,7 +302,7 @@ export function AboutTabs() {
                 </div>
 
                 <div className="p-6 rounded-2xl bg-paper border border-accent/15 shadow-soft flex flex-col items-center text-center">
-                  <span className="font-heading font-extrabold text-3xl sm:text-4xl text-accent mb-1">
+                  <span className="font-lora font-bold text-3xl sm:text-4xl text-accent mb-1 tracking-tight">
                     <Counter value={siteConfig.stats.customers.value} suffix={siteConfig.stats.customers.suffix} />
                   </span>
                   <span className="text-xs sm:text-sm font-semibold text-ink">
@@ -311,7 +311,7 @@ export function AboutTabs() {
                 </div>
 
                 <div className="p-6 rounded-2xl bg-paper border border-accent/15 shadow-soft flex flex-col items-center text-center">
-                  <span className="font-heading font-extrabold text-3xl sm:text-4xl text-accent mb-1">
+                  <span className="font-lora font-bold text-3xl sm:text-4xl text-accent mb-1 tracking-tight">
                     <Counter value={siteConfig.stats.years.value} suffix={siteConfig.stats.years.suffix} />
                   </span>
                   <span className="text-xs sm:text-sm font-semibold text-ink">
@@ -320,7 +320,7 @@ export function AboutTabs() {
                 </div>
 
                 <div className="p-6 rounded-2xl bg-paper border border-accent/15 shadow-soft flex flex-col items-center text-center">
-                  <span className="font-heading font-extrabold text-3xl sm:text-4xl text-accent mb-1">
+                  <span className="font-lora font-bold text-3xl sm:text-4xl text-accent mb-1 tracking-tight">
                     <Counter value={siteConfig.stats.freshness.value} suffix={siteConfig.stats.freshness.suffix} />
                   </span>
                   <span className="text-xs sm:text-sm font-semibold text-ink">

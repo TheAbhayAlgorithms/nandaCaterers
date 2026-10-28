@@ -72,10 +72,10 @@ export default function PackagesPage() {
                       {pkg.name}
                     </h3>
                     <div className="mt-3 space-y-1">
-                      <span className="text-base sm:text-lg font-bold text-accent block font-heading">
+                      <span className="text-base sm:text-lg font-bold text-accent block font-lora">
                         {pkg.vegPriceText}
                       </span>
-                      <span className="text-base sm:text-lg font-bold text-ink/80 block font-heading">
+                      <span className="text-base sm:text-lg font-bold text-ink/80 block font-lora">
                         {pkg.nonVegPriceText}
                       </span>
                       <span className="text-[11px] text-ink/50 block pt-0.5">

@@ -16,7 +16,7 @@ export function NumbersStrip() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
           {activeStats.map((stat) => (
             <div key={stat.id} className="flex flex-col items-center">
-              <span className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-accent tracking-tight">
+              <span className="font-lora font-bold text-2xl sm:text-3xl lg:text-4xl text-accent tracking-tight">
                 {stat.value}
               </span>
               <span className="text-xs sm:text-sm font-semibold text-ink mt-1.5 leading-snug">
