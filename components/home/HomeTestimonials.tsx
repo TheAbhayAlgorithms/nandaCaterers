@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Star, MessageSquareQuote, ExternalLink } from "lucide-react";
+import { Star, MessageSquare, ExternalLink } from "lucide-react";
 import {
   demoTestimonials,
   demoGoogleRating,
@@ -79,7 +79,7 @@ export function HomeTestimonials() {
                       />
                     ))}
                   </div>
-                  <MessageSquareQuote className="w-5 h-5 text-accent/40" />
+                  <MessageSquare className="w-5 h-5 text-accent/40" />
                 </div>
 
                 <p className="text-xs sm:text-sm text-ink/80 leading-relaxed italic">

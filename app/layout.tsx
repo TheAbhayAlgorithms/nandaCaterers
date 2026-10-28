@@ -123,6 +123,7 @@ export default function RootLayout({
     foundingDate: "2005",
     sameAs: [
       siteConfig.social.facebook.url,
+      siteConfig.social.x.url,
       siteConfig.social.instagram.url,
     ],
   };

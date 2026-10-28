@@ -20,18 +20,25 @@ export const metadata: Metadata = {
 };
 
 export default function TestimonialsPage() {
-  const jsonLd = {
+  const verifiedNonDemoReviews = testimonialsData.filter(
+    (t: any) => !t.isPlaceholder && !t.isDemo
+  );
+
+  const jsonLd: Record<string, any> = {
     "@context": "https://schema.org",
     "@type": "CateringBusiness",
     name: siteConfig.name,
-    aggregateRating: {
+  };
+
+  if (verifiedNonDemoReviews.length > 0) {
+    jsonLd.aggregateRating = {
       "@type": "AggregateRating",
       ratingValue: "4.9",
-      reviewCount: "520",
+      reviewCount: verifiedNonDemoReviews.length.toString(),
       bestRating: "5",
       worstRating: "1",
-    },
-    review: testimonialsData.map((t) => ({
+    };
+    jsonLd.review = verifiedNonDemoReviews.map((t) => ({
       "@type": "Review",
       author: {
         "@type": "Person",
@@ -44,8 +51,8 @@ export default function TestimonialsPage() {
         ratingValue: t.rating.toString(),
         bestRating: "5",
       },
-    })),
-  };
+    }));
+  }
 
   const whatsappHref = buildWhatsAppLink({
     customMessage: "Hello Nanda Caterers, I read your client reviews and would like to inquire about booking catering for our event.",

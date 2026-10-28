@@ -768,7 +768,7 @@ export function EnquiryForm({ className = "" }: { className?: string }) {
                       htmlFor={`${formId}-special-requests`}
                       className="block text-xs font-bold uppercase tracking-wider text-ink mb-1.5"
                     >
-                      Special Requests / Notes (Optional)
+                      Special Requests / Dietary Preferences (Optional)
                     </label>
                     <textarea
                       id={`${formId}-special-requests`}
