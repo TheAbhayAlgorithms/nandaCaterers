@@ -2,12 +2,18 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Phone, Mail, MapPin, Clock, ChevronDown } from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
 import { siteConfig } from "@/data/site";
 
 export function Footer() {
+  const pathname = usePathname();
   const [openSection, setOpenSection] = useState<string | null>(null);
+
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
 
   const toggleSection = (name: string) => {
     setOpenSection((prev) => (prev === name ? null : name));

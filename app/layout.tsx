@@ -9,6 +9,7 @@ import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { QuoteTray } from "@/components/layout/QuoteTray";
 import { QuoteSheetModal } from "@/components/layout/QuoteSheetModal";
 import { SplashLoader } from "@/components/layout/SplashLoader";
+import { PublicLayoutWrapper } from "@/components/layout/PublicLayoutWrapper";
 import { QuoteSelectionProvider } from "@/context/QuoteSelectionContext";
 import { siteConfig } from "@/data/site";
 
@@ -141,28 +142,32 @@ export default function RootLayout({
       </head>
       <body className="antialiased selection:bg-saffron selection:text-charcoal">
         <QuoteSelectionProvider>
-          {/* Top Scroll Progress Indicator */}
-          <ScrollProgress />
+          <PublicLayoutWrapper>
+            {/* Top Scroll Progress Indicator */}
+            <ScrollProgress />
 
-          {/* First Load Splash Screen */}
-          <SplashLoader />
+            {/* First Load Splash Screen */}
+            <SplashLoader />
 
-          {/* Header & Sticky Navigation */}
-          <Navbar />
+            {/* Header & Sticky Navigation */}
+            <Navbar />
+          </PublicLayoutWrapper>
 
           {/* Main Landmark */}
           <main id="main-content" className="min-h-screen">
             {children}
           </main>
 
-          {/* Footer */}
-          <Footer />
+          <PublicLayoutWrapper>
+            {/* Footer */}
+            <Footer />
 
-          {/* Floating Actions */}
-          <QuoteTray />
-          <QuoteSheetModal />
-          <ScrollToTop />
-          <WhatsAppFab />
+            {/* Floating Actions */}
+            <QuoteTray />
+            <QuoteSheetModal />
+            <ScrollToTop />
+            <WhatsAppFab />
+          </PublicLayoutWrapper>
         </QuoteSelectionProvider>
       </body>
     </html>

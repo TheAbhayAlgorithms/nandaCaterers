@@ -25,6 +25,10 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
+
   // Header navigation per Section 4.1 - Food Menu links directly to /menu (no popover)
   const navLinks = [
     { name: "Home", href: "/" },
