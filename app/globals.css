@@ -7,7 +7,7 @@
    while replacing the obscure decorative ampersand with a natural, clear serif glyph */
 @font-face {
   font-family: 'HeadingAmpersand';
-  src: local('Baskerville-SemiBold'), local('Baskerville-Bold'), local('Baskerville'), local('Georgia-Bold'), local('Georgia'), serif;
+  src: local('Georgia Bold'), local('Georgia-Bold'), local('Georgia'), local('Baskerville Bold'), local('Baskerville-Bold'), local('Baskerville'), local('Palatino Bold'), local('Palatino'), local('Noto Serif Bold'), local('Noto Serif');
   unicode-range: U+0026;
   font-weight: 500 900;
   font-style: normal;
@@ -15,10 +15,23 @@
 
 @font-face {
   font-family: 'HeadingAmpersand';
-  src: local('Baskerville-Italic'), local('Georgia-Italic'), serif;
+  src: local('Georgia Italic'), local('Georgia-Italic'), local('Baskerville Italic'), local('Baskerville-Italic'), local('Palatino Italic');
   unicode-range: U+0026;
   font-weight: 100 900;
   font-style: italic;
+}
+
+@font-face {
+  font-family: 'HeadingAmpersand';
+  src: local('Georgia'), local('Baskerville'), local('Palatino'), local('Noto Serif');
+  unicode-range: U+0026;
+  font-weight: 100 400;
+  font-style: normal;
+}
+
+.natural-amp {
+  font-family: "Georgia", "Baskerville", "Palatino", var(--font-lora), serif;
+  font-weight: inherit;
 }
 
 :root {
