@@ -88,7 +88,7 @@ export function QuoteTray() {
                       Selected Dishes
                     </h3>
                     <p className="text-xs text-ink/60">
-                      {selectedDishes.length} items selected for quote
+                      {selectedDishes.length} items selected for enquiry
                     </p>
                   </div>
                 </div>

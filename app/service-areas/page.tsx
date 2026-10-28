@@ -11,11 +11,11 @@ import { RelatedPages } from "@/components/ui/RelatedPages";
 export const metadata: Metadata = {
   title: "Service Areas | Mumbai, Thane, Navi Mumbai, Pune & Goa",
   description:
-    "Explore Nanda Caterers regional catering coverage. Providing 100% pure vegetarian catering across Mumbai, Thane, Navi Mumbai, Pune, and destination weddings in Goa.",
+    "Explore Nanda Caterers regional catering coverage. Providing catering services across Mumbai, Thane, Navi Mumbai, Pune, and destination weddings in Goa.",
   openGraph: {
     title: "Service Areas | Nanda Caterers Mumbai",
     description:
-      "Pure vegetarian wedding and corporate catering across Mumbai, Thane, Navi Mumbai, Pune, and Goa.",
+      "Wedding and corporate catering across Mumbai, Thane, Navi Mumbai, Pune, and Goa.",
   },
 };
 
@@ -114,7 +114,7 @@ export default function ServiceAreasPage() {
       {/* Cross-linking to Related Pages */}
       <RelatedPages
         title="Explore Catering Packages & Menus"
-        subtitle="Custom pure vegetarian menus available across all our service locations"
+        subtitle="Custom catering menus available across all our service locations"
         links={[
           {
             title: "Royal Packages",
@@ -129,7 +129,7 @@ export default function ServiceAreasPage() {
             tag: "Flagship",
           },
           {
-            title: "Interactive Quote Wizard",
+            title: "Interactive Pricing Wizard",
             description: "Calculate your estimated per-plate investment in 5 quick steps.",
             href: "/quote",
             tag: "Calculator",

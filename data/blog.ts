@@ -38,7 +38,7 @@ export const blogPosts: BlogPost[] = [
     author: "Head Chef, Nanda Caterers",
     coverImage: "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1200&q=80",
     content: [
-      "One of the most common worries for any event host is running out of food or suffering excessive wastage. Over 15 years and 5,000+ catered events, Nanda Caterers has perfected the science of banquet portion planning.",
+      "One of the most common worries for any event host is running out of food or suffering excessive wastage. Over 20 years and 5,000+ catered events, Nanda Caterers has perfected the science of banquet portion planning.",
       "Appetizers & Starters: If serving appetizers during a 90-minute cocktail or sangeet session before dinner, budget 4 to 6 appetizer pieces per guest. For evening parties where starters ARE the main meal, increase to 8 to 10 pieces across 4 to 5 varieties.",
       "Main Course Curries: For a 3-curry spread, plan approximately 180g to 220g of cooked vegetable and paneer curry per guest in total. Paneer dishes typically experience 20% higher pickup.",
       "Breads & Rice: Expect an average of 2 to 2.5 rotis/naans per person, accompanied by 75g to 100g of biryani or pulav.",
@@ -47,7 +47,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "jain-catering-menu-ideas",
-    title: "Creative Pure Vegetarian & Jain Menu Ideas for Modern Receptions",
+    title: "Creative Wedding & Jain Menu Ideas for Modern Receptions",
     excerpt: "Proving that strict Jain catering without onion, garlic, or potatoes can be as decadent, rich, and visually stunning as any gourmet spread.",
     publishedDate: "February 10, 2026",
     readTime: "4 min read",

@@ -24,8 +24,8 @@ export const detailedFaqData: FAQCategory[] = [
           "For peak Mumbai wedding season dates (November through February), we advise booking 2 to 4 months in advance to ensure date exclusivity and kitchen bandwidth. For corporate seminars or family gatherings, 1 to 2 weeks advance notice is typically sufficient.",
       },
       {
-        id: "faq-after-quote",
-        question: "What happens after I submit a quote request on your website?",
+        id: "faq-after-enquiry",
+        question: "What happens after I submit an enquiry on your website?",
         answer:
           "Our senior banquet manager reviews your requirements and calls or WhatsApps you within 2 working hours with a customized itemized proposal. Once aligned on the menu framework, we schedule a complimentary tasting session and venue walkthrough before formalizing the booking.",
       },
@@ -38,7 +38,7 @@ export const detailedFaqData: FAQCategory[] = [
         id: "faq-jain-food",
         question: "Do you provide authentic strict Jain and Swaminarayan food?",
         answer:
-          "Yes, absolutely. Being a 100% pure vegetarian caterer since 2005, we have dedicated sections in our kitchens with segregated utensils, kadhais, and ladles specifically reserved for strict Jain and Swaminarayan cooking—completely free from onion, garlic, potatoes, and root vegetables.",
+          "Yes, absolutely. Since 2005, we have dedicated sections in our kitchens with segregated utensils, kadhais, and ladles specifically reserved for strict Jain and Swaminarayan cooking—completely free from onion, garlic, potatoes, and root vegetables.",
       },
       {
         id: "faq-customization",
@@ -84,7 +84,7 @@ export const detailedFaqData: FAQCategory[] = [
         id: "faq-cancellation",
         question: "What is your cancellation and date postponement policy?",
         answer:
-          "In case of unforeseen circumstances, we permit date postponements at no additional penalty if notified at least 21 days prior to the original date, subject to calendar availability. Full cancellation details are outlined transparently in your official quotation agreement.",
+          "In case of unforeseen circumstances, we permit date postponements at no additional penalty if notified at least 21 days prior to the original date, subject to calendar availability. Full cancellation details are outlined transparently in your official booking agreement.",
       },
     ],
   },

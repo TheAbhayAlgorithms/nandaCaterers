@@ -141,7 +141,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </p>
           <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
             <Button href="/quote" variant="primary" size="md">
-              <span>Calculate Per-Plate Quote</span>
+              <span>Calculate Per-Plate Pricing</span>
               <ArrowRight className="w-4 h-4" />
             </Button>
             <Button href="/menu" variant="outline" size="md">
@@ -180,7 +180,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             tag: "Flagship",
           },
           {
-            title: "Interactive Quote Wizard",
+            title: "Interactive Pricing Wizard",
             description: "Calculate your estimated per-plate investment in 5 quick steps.",
             href: "/quote",
             tag: "Calculator",

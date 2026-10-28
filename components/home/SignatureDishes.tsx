@@ -98,10 +98,10 @@ export function SignatureDishes() {
                       <span>{dish.category}</span>
                     </div>
 
-                    {/* Add to Quote Button */}
+                    {/* Add to Selection Button */}
                     <button
                       onClick={() => toggleDish(dish.name)}
-                      aria-label={selected ? `Remove ${dish.name} from quote` : `Add ${dish.name} to quote`}
+                      aria-label={selected ? `Remove ${dish.name} from menu selection` : `Add ${dish.name} to menu selection`}
                       className={`absolute top-3 right-3 w-8 h-8 min-w-[32px] min-h-[32px] max-w-[32px] max-h-[32px] aspect-square p-0 rounded-full flex items-center justify-center transition-all duration-200 shadow-md cursor-pointer ${
                         selected
                           ? "bg-accent text-white"
@@ -127,7 +127,7 @@ export function SignatureDishes() {
                         onClick={() => toggleDish(dish.name)}
                         className="text-xs font-semibold text-maroon hover:text-saffron transition-colors"
                       >
-                        {selected ? "In Quote Tray" : "+ Add to Quote"}
+                        {selected ? "In Selection Tray" : "+ Add to Selection"}
                       </button>
                     </div>
                   </div>

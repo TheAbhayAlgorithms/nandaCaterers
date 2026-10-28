@@ -36,7 +36,7 @@ export default function HomePage() {
       {/* B4. Packages Teaser */}
       <PackagesTeaser />
 
-      {/* Offer / Quote Band */}
+      {/* Offer / Enquiry Band */}
       <OfferBand />
     </div>
   );

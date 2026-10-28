@@ -565,7 +565,7 @@ export function QuoteWizard() {
               <Button
                 onClick={() => {
                   if (!fullName.trim() || !phone.trim()) {
-                    alert("Please provide your Name and Phone/WhatsApp number so we can prepare your quote.");
+                    alert("Please provide your Name and Phone/WhatsApp number so we can prepare your pricing.");
                     return;
                   }
                   setStep(5);
@@ -631,7 +631,7 @@ export function QuoteWizard() {
                   <span className="font-semibold text-charcoal">Location:</span> {location}
                 </p>
                 <p>
-                  <span className="font-semibold text-charcoal">Dietary:</span> Pure Veg {jainRequired ? "+ Jain Available" : ""}
+                  <span className="font-semibold text-charcoal">Dietary:</span> Veg & Non-Veg {jainRequired ? "+ Jain Available" : ""}
                 </p>
                 <p>
                   <span className="font-semibold text-charcoal">Client:</span> {fullName} ({phone})
@@ -651,7 +651,7 @@ export function QuoteWizard() {
                 className="w-full flex items-center justify-center gap-2.5 py-4 px-6 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all"
               >
                 <MessageCircle className="w-5 h-5" />
-                <span>Lock In This Quote On WhatsApp (Instant Reply)</span>
+                <span>Lock In This Pricing On WhatsApp (Instant Reply)</span>
               </a>
 
               <div className="text-center">

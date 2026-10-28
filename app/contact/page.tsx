@@ -8,7 +8,7 @@ import { ContactFaq } from "@/components/contact/ContactFaq";
 export const metadata: Metadata = {
   title: "Contact Us | Nanda Caterers – Wedding Caterers in Mumbai",
   description:
-    "Get in touch with Nanda Caterers Mumbai for wedding and party catering quotations. Visit our Bandra and Khar offices or call +91 99678 94979.",
+    "Get in touch with Nanda Caterers Mumbai for wedding and party catering pricing and enquiries. Visit our Bandra and Khar offices or call +91 99678 94979.",
   openGraph: {
     title: "Contact Us | Nanda Caterers – Wedding Caterers in Mumbai",
     description:
@@ -26,9 +26,9 @@ export default function ContactPage() {
         imageSrc="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1600&q=80"
       />
 
-      {/* B1: Enquiry Form with #enquiry anchor */}
-      <section className="py-12 sm:py-16 bg-cream border-b border-ink/10">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Enquiry Form Container Section */}
+      <section id="enquiry" className="py-12 sm:py-16 lg:py-20 bg-cream border-b border-ink/10">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <EnquiryForm />
         </div>
       </section>

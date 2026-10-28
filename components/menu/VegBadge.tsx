@@ -5,6 +5,6 @@ interface VegBadgeProps {
 }
 
 export function VegBadge({ className }: VegBadgeProps) {
-  // Removed 100% vegetarian tag per user request
+  // Badge removed per requirements
   return null;
 }

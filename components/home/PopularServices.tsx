@@ -46,7 +46,7 @@ export function PopularServices() {
           <SectionHeading
             eyebrow="Other services"
             title="Popular Services"
-            subtitle="We offer all types of event catering and decorations with customized themes and benchmark presentation."
+            subtitle="We offer all types of event catering and decorations with customized themes and elegant presentation."
           />
         </Reveal>
 

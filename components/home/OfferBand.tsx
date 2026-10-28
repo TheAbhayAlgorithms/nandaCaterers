@@ -4,11 +4,8 @@ import React from "react";
 import Image from "next/image";
 import { TornEdge } from "@/components/shape/TornEdge";
 import { Button } from "@/components/ui/Button";
-import { useQuoteSelection } from "@/context/QuoteSelectionContext";
 
 export function OfferBand() {
-  const { openQuoteSheet } = useQuoteSelection();
-
   return (
     <section className="relative w-full bg-night text-white overflow-hidden py-24 sm:py-28 md:py-32">
       {/* Torn-paper top edge cut from previous cream section */}
@@ -18,7 +15,7 @@ export function OfferBand() {
       <div className="absolute inset-0 w-full h-full pointer-events-none">
         <Image
           src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=1920&q=80"
-          alt="Warm Indian pure vegetarian catering banquet"
+          alt="Warm Indian catering banquet"
           fill
           sizes="100vw"
           className="object-cover"
@@ -35,28 +32,28 @@ export function OfferBand() {
             PLANNING AN EVENT?
           </p>
 
-          {/* H2 with highlighted background on "Free Quote" */}
+          {/* H2 with highlighted background on "Free Pricing" */}
           <h2 className="font-heading font-extrabold text-2xl sm:text-4xl md:text-5xl text-white leading-tight mb-4">
-            Get a{" "}
+            Get{" "}
             <span className="inline-block bg-accent px-3 py-1 rounded-lg text-white font-bold my-1">
-              Free Quote
+              Free Pricing
             </span>{" "}
             for Your Wedding or Event Menu
           </h2>
 
           {/* Response promise sentence */}
           <p className="text-sm sm:text-base text-white/85 mb-8 font-medium">
-            Tell us your event date, guest count and city. We&apos;ll send a customised menu and quote within 2 working days.
+            Tell us your event date, guest count and city. We&apos;ll send a customised menu and pricing within 2 working days.
           </p>
 
-          {/* Filled accent pill "Get a Free Quote" */}
+          {/* Filled accent pill "Plan My Event" */}
           <Button
             href="/contact#enquiry"
             variant="filled"
             size="lg"
-            aria-label="Get a Free Quote for custom quotation"
+            aria-label="Plan My Event"
           >
-            Get a Free Quote
+            Plan My Event
           </Button>
         </div>
       </div>

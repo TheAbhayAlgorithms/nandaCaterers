@@ -22,7 +22,7 @@ export interface TestimonialItem {
   id: string;
   name: string;
   eventType: string;
-  quote: string;
+  text: string;
   isDemo: boolean;
 }
 
@@ -32,7 +32,7 @@ export const demoTestimonials: TestimonialItem[] = [
     id: "demo-t1",
     name: "Demo Client 1",
     eventType: "Wedding Reception",
-    quote:
+    text:
       "The catering was executed with great taste, authentic flavours, and punctuality. Our guests loved the live counters and sweets.",
     isDemo: true,
   },
@@ -41,8 +41,8 @@ export const demoTestimonials: TestimonialItem[] = [
     id: "demo-t2",
     name: "Demo Client 2",
     eventType: "Corporate Luncheon",
-    quote:
-      "Professional setup and hygienic pure vegetarian spread delivered on time. Highly recommended for corporate events.",
+    text:
+      "Professional setup and hygienic catering spread delivered on time. Highly recommended for corporate events.",
     isDemo: true,
   },
   // DEMO - replace with real data
@@ -50,7 +50,7 @@ export const demoTestimonials: TestimonialItem[] = [
     id: "demo-t3",
     name: "Demo Client 3",
     eventType: "Family Function",
-    quote:
+    text:
       "Homely taste and devotional purity in every preparation. Gracious hospitality that made our celebration memorable.",
     isDemo: true,
   },
@@ -104,8 +104,8 @@ export const numbersStripStats: StatItem[] = [
 export interface PackageCardItem {
   id: string;
   name: string;
-  pricePerPlateText: string;
-  startingPrice: number;
+  vegPriceText: string;
+  nonVegPriceText: string;
   badge?: string;
   includedItems: string[];
   isDemo: boolean;
@@ -116,14 +116,14 @@ export const demoPackages: PackageCardItem[] = [
   {
     id: "silver",
     name: "Silver Package",
-    pricePerPlateText: "Starting from ₹650 per plate",
-    startingPrice: 650,
+    vegPriceText: "Veg: Starting from ₹650 / plate",
+    nonVegPriceText: "Non-Veg: Starting from ₹850 / plate",
     includedItems: [
       "2 Welcome Drinks / Mocktails",
-      "3 Veg Starters (Dry & Fritters)",
+      "3 Starters & Fritters",
       "1 Live Chaat Counter",
       "2 Fresh Salads & Papad Basket",
-      "2 Main Course Curries (1 Paneer + 1 Seasonal Veg)",
+      "2 Main Course Curries (1 Paneer + 1 Seasonal Special)",
       "Assorted Indian Breads & Steamed Rice",
       "1 Dal / Authentic Kadhi",
       "1 Warm Traditional Sweet",
@@ -135,8 +135,8 @@ export const demoPackages: PackageCardItem[] = [
   {
     id: "gold",
     name: "Gold Package",
-    pricePerPlateText: "Starting from ₹950 per plate",
-    startingPrice: 950,
+    vegPriceText: "Veg: Starting from ₹950 / plate",
+    nonVegPriceText: "Non-Veg: Starting from ₹1,200 / plate",
     badge: "Most Popular",
     includedItems: [
       "3 Welcome Drinks & Fresh Juices",
@@ -155,8 +155,8 @@ export const demoPackages: PackageCardItem[] = [
   {
     id: "premium",
     name: "Premium Package",
-    pricePerPlateText: "Starting from ₹1,450 per plate",
-    startingPrice: 1450,
+    vegPriceText: "Veg: Starting from ₹1,450 / plate",
+    nonVegPriceText: "Non-Veg: Starting from ₹1,750 / plate",
     badge: "Grand Feast",
     includedItems: [
       "4 Signature Mocktails & Hot Kadai Brews",
@@ -203,10 +203,10 @@ export const demoFaqItems: FaqItem[] = [
   },
   // DEMO - replace with real data
   {
-    id: "faq-jain-satvik",
-    question: "Can you provide strict Jain and no-onion-no-garlic preparations?",
+    id: "faq-menus-available",
+    question: "Do you offer veg, non-veg, and Jain menus?",
     answer:
-      "Absolutely. We have over 20 years of experience with 100% pure vegetarian, strict Jain, and Swaminarayan catering with dedicated preparation protocols, zero root vegetables, and separate cookware.",
+      "Yes, we provide extensive vegetarian and non-vegetarian menus, as well as strict Jain and no-onion-no-garlic preparations with dedicated kitchen segregation.",
     isDemo: true,
   },
   // DEMO - replace with real data
@@ -222,7 +222,7 @@ export const demoFaqItems: FaqItem[] = [
     id: "faq-staff-crockery",
     question: "Are service staff, crockery, and live counters included in the catering package?",
     answer:
-      "Yes, our comprehensive catering quotes include professional uniformed service stewards, premium crockery, cutlery, glassware, live counter setup, and warmers with complete hygiene management.",
+      "Yes, our comprehensive catering packages include professional uniformed service stewards, premium crockery, cutlery, glassware, live counter setup, and warmers with complete hygiene management.",
     isDemo: true,
   },
   // DEMO - replace with real data

@@ -10,13 +10,13 @@ import { RelatedPages } from "@/components/ui/RelatedPages";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions (FAQ) | Pure Veg Catering Mumbai",
+  title: "Frequently Asked Questions (FAQ) | Catering Mumbai",
   description:
     "Find answers about booking notice, guest capacities, Jain catering standards, tasting sessions, payment terms, and service areas across Mumbai, Pune & Goa with Nanda Caterers.",
   openGraph: {
     title: "Catering FAQ | Nanda Caterers Mumbai",
     description:
-      "All your pure vegetarian catering questions answered: menu customization, live counters, Jain food segregation, and pricing.",
+      "All your catering questions answered: menu customization, live counters, Jain food segregation, and pricing.",
   },
 };
 
@@ -135,7 +135,7 @@ export default function FAQPage() {
       {/* Cross-linking to Related Pages */}
       <RelatedPages
         title="Continue Planning Your Banquet"
-        subtitle="Explore our food repertoires, banqueting packages, and quote builder"
+        subtitle="Explore our food repertoires, banqueting packages, and pricing builder"
         links={[
           {
             title: "Royal Packages",
@@ -144,14 +144,14 @@ export default function FAQPage() {
             tag: "Pricing",
           },
           {
-            title: "Interactive Quote Wizard",
+            title: "Interactive Pricing Wizard",
             description: "Calculate your estimated per-plate investment in 5 quick steps.",
             href: "/quote",
             tag: "Calculator",
           },
           {
             title: "13 Food Cuisines",
-            description: "Explore 500+ pure veg delicacies across Indian & international spreads.",
+            description: "Explore 500+ delicacies across Indian & international spreads.",
             href: "/menu",
             tag: "Full Menu",
           },

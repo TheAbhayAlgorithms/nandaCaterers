@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Client Testimonials | Nanda Caterers Mumbai",
     description:
-      "4.9 / 5.0 rated pure veg caterer in Mumbai. Verified reviews from wedding receptions, corporate galas, and family milestones.",
+      "4.9 / 5.0 rated caterer in Mumbai. Verified reviews from wedding receptions, corporate galas, and family milestones.",
   },
 };
 
@@ -38,7 +38,7 @@ export default function TestimonialsPage() {
         name: t.name,
       },
       datePublished: "2026-01-15",
-      reviewBody: t.quote,
+      reviewBody: t.text,
       reviewRating: {
         "@type": "Rating",
         ratingValue: t.rating.toString(),
@@ -76,7 +76,7 @@ export default function TestimonialsPage() {
           </h1>
 
           <p className="text-sm sm:text-base text-cream/85 max-w-2xl mx-auto leading-relaxed">
-            Over 5,000 successful banquets catered since 2005. Here is what hosts have to say about our benchmark taste, meticulous hygiene, and gracious service.
+            Over 5,000 successful banquets catered since 2005. Here is what hosts have to say about our taste, meticulous hygiene, and gracious service.
           </p>
 
           {/* Aggregate Rating Pill */}
@@ -117,9 +117,9 @@ export default function TestimonialsPage() {
                   )}
                 </div>
 
-                {/* Quote Text */}
+                {/* Review Text */}
                 <p className="text-xs sm:text-sm text-charcoal/85 leading-relaxed italic mb-6">
-                  &ldquo;{item.quote}&rdquo;
+                  &ldquo;{item.text}&rdquo;
                 </p>
               </div>
 
@@ -151,11 +151,11 @@ export default function TestimonialsPage() {
             Ready to Plan an Unforgettable Feast?
           </h2>
           <p className="text-sm text-charcoal/75 max-w-xl mx-auto leading-relaxed">
-            Experience our benchmark culinary quality firsthand with a complimentary pre-event tasting session.
+            Experience our culinary quality firsthand with a complimentary pre-event tasting session.
           </p>
           <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
             <Button href="/quote" variant="primary" size="lg">
-              <span>Request Custom Quotation</span>
+              <span>Request Custom Pricing</span>
               <ArrowRight className="w-4 h-4" />
             </Button>
             <a
@@ -184,7 +184,7 @@ export default function TestimonialsPage() {
           },
           {
             title: "13 Food Cuisines",
-            description: "Explore 500+ pure veg delicacies across Indian & international spreads.",
+            description: "Explore 500+ delicacies across Indian & international spreads.",
             href: "/menu",
             tag: "Full Menu",
           },

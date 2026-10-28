@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Catering Guides & Banqueting Tips | Nanda Caterers Mumbai",
     description:
-      "Insider advice on planning flawless 100% pure vegetarian weddings and banquets in Mumbai.",
+      "Insider advice on planning flawless weddings and banquets in Mumbai.",
   },
 };
 
@@ -110,7 +110,7 @@ export default function BlogHubPage() {
       {/* Cross-linking to Related Pages */}
       <RelatedPages
         title="Turn Inspiration Into Reality"
-        subtitle="Explore our food repertoires, banqueting packages, and quote builder"
+        subtitle="Explore our food repertoires, banqueting packages, and pricing builder"
         links={[
           {
             title: "Royal Packages",
@@ -119,14 +119,14 @@ export default function BlogHubPage() {
             tag: "Pricing",
           },
           {
-            title: "Interactive Quote Wizard",
+            title: "Interactive Pricing Wizard",
             description: "Calculate your estimated per-plate investment in 5 quick steps.",
             href: "/quote",
             tag: "Calculator",
           },
           {
             title: "13 Food Cuisines",
-            description: "Explore 500+ pure veg delicacies across Indian & international spreads.",
+            description: "Explore 500+ delicacies across Indian & international spreads.",
             href: "/menu",
             tag: "Full Menu",
           },

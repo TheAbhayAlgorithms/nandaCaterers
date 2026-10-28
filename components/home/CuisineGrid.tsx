@@ -146,7 +146,7 @@ export function CuisineGrid() {
         <SectionHeading
           eyebrow="we offer"
           title="Food Cuisine"
-          subtitle="We have experience of making all types of food. Crafted with royal spices, traditional recipes, and pure vegetarian ingredients."
+          subtitle="We have experience of making all types of food. Crafted with royal spices, traditional recipes, and finest ingredients."
         />
       </Reveal>
 

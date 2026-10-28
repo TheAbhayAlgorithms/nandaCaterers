@@ -178,7 +178,7 @@ export function CategoryView({ category }: CategoryViewProps) {
       <NextStepStrip
         headline="Ready to curate your celebration menu?"
         primaryButtonText="Connect"
-        primaryAction="quote"
+        primaryAction="enquiry"
         secondaryButtonText="All Cuisines"
         secondaryHref="/menu"
       />

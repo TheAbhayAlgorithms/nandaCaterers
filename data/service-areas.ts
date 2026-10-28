@@ -15,7 +15,7 @@ export const serviceAreasData: ServiceArea[] = [
     slug: "mumbai",
     name: "Mumbai",
     state: "Maharashtra",
-    headline: "Premier Pure Vegetarian Wedding & Event Catering in Mumbai",
+    headline: "Premier Wedding & Event Catering in Mumbai",
     description:
       "Since 2005, Nanda Caterers has been based in Bandra East and Khar East, serving prestigious wedding banquets, corporate summits, and family gatherings across South Mumbai, Bandra, BKC, Juhu, Andheri, Powai, and Borivali.",
     popularVenues: [
@@ -39,7 +39,7 @@ export const serviceAreasData: ServiceArea[] = [
     slug: "thane",
     name: "Thane",
     state: "Maharashtra",
-    headline: "Benchmark Pure Veg Catering Across Thane & Ghodbunder Road",
+    headline: "Premier Catering Across Thane & Ghodbunder Road",
     description:
       "Serving high-profile residential complexes, banquet lawns, and clubhouses across Majiwada, Ghodbunder Road, Hiranandani Estate, and Pokhran Road with dedicated transport caravans.",
     popularVenues: [
@@ -60,7 +60,7 @@ export const serviceAreasData: ServiceArea[] = [
     slug: "navi-mumbai",
     name: "Navi Mumbai",
     state: "Maharashtra",
-    headline: "Authentic Pure Veg Event Catering in Vashi, Belapur & Kharghar",
+    headline: "Authentic Event Catering in Vashi, Belapur & Kharghar",
     description:
       "Catering to technology parks, grand wedding grounds, and residential townships across Vashi, Sanpada, Nerul, Seawoods, and Kharghar.",
     popularVenues: [
@@ -72,7 +72,7 @@ export const serviceAreasData: ServiceArea[] = [
     keyHighlights: [
       "High-capacity mobile kitchens capable of serving 3,000+ guests at open exhibition grounds",
       "Executive corporate meal setups for Vashi and Mahape IT corridor companies",
-      "Strict Jain and Swaminarayan pure vegetarian food protocols",
+      "Strict Jain and Swaminarayan dietary food protocols",
     ],
     typicalEvents: ["Exhibition Buffet Catering", "Destination Receptions", "Corporate High-Tea", "Family Gatherings"],
     image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
@@ -102,16 +102,16 @@ export const serviceAreasData: ServiceArea[] = [
     slug: "goa",
     name: "Goa",
     state: "Goa",
-    headline: "Pure Vegetarian Beach & Resort Wedding Catering in Goa",
+    headline: "Beach & Resort Wedding Catering in Goa",
     description:
-      "For families desiring a breathtaking coastal wedding in North or South Goa without compromising on 100% pure vegetarian culinary authenticity. We bring our master maharajs and signature recipes straight to Goa's beachfront properties.",
+      "For families desiring a breathtaking coastal wedding in North or South Goa without compromising on culinary authenticity. We bring our master maharajs and signature recipes straight to Goa's beachfront properties.",
     popularVenues: [
       "South Goa Beach Resorts (Benaulim, Cavelossim)",
       "North Goa Heritage Lawns & Villas (Candolim, Vagator)",
       "Grand Hyatt Lawns, Bambolim",
     ],
     keyHighlights: [
-      "Completely segregated pure-veg catering at premier Goa resort venues",
+      "Dedicated segregated catering arrangements at premier Goa resort venues",
       "Master chefs skilled in Gujarati, Marwari, and North Indian destination feasts",
       "Full logistical transport of specialty ingredients, traditional utensils, and copper warmers",
     ],

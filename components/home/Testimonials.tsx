@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight, MessageSquare } from "lucide-react";
 import { testimonialsData } from "@/data/testimonials";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
@@ -62,9 +62,9 @@ export function Testimonials() {
               transition={{ duration: 0.45, ease: "easeInOut" }}
               className="w-full rounded-3xl bg-cream p-8 sm:p-12 md:p-14 border border-turmeric/30 shadow-warm relative text-center"
             >
-              {/* Quote Icon */}
+              {/* Review Icon */}
               <div className="w-12 h-12 rounded-full bg-saffron/10 text-maroon mx-auto flex items-center justify-center mb-6">
-                <Quote className="w-6 h-6 rotate-180 text-saffron" />
+                <MessageSquare className="w-6 h-6 text-saffron" />
               </div>
 
               {/* Stars */}
@@ -74,9 +74,9 @@ export function Testimonials() {
                 ))}
               </div>
 
-              {/* Quote text */}
+              {/* Review text */}
               <p className="font-heading italic text-lg sm:text-2xl text-charcoal leading-relaxed max-w-2xl mx-auto mb-8">
-                &ldquo;{activeTestimonial.quote}&rdquo;
+                &ldquo;{activeTestimonial.text}&rdquo;
               </p>
 
               {/* Author & Details */}

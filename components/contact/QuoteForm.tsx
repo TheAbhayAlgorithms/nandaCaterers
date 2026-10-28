@@ -101,7 +101,7 @@ export function QuoteForm({ initialService, initialDishes, className }: QuoteFor
       const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.error || "Failed to submit quotation request");
+        throw new Error(result.error || "Failed to submit enquiry request");
       }
 
       setSubmittedData(data);
@@ -139,7 +139,7 @@ export function QuoteForm({ initialService, initialDishes, className }: QuoteFor
             Thank You, {submittedData.firstName}!
           </h3>
           <p className="text-charcoal/80 text-base max-w-md mx-auto">
-            Your quotation request has been received. Our banquet team will review your requirements and respond within a couple of hours.
+            Your catering enquiry has been received. Our banquet team will review your requirements and respond within a couple of hours.
           </p>
         </div>
 
@@ -181,14 +181,14 @@ export function QuoteForm({ initialService, initialDishes, className }: QuoteFor
 
   return (
     <form
-      id="quote-form"
+      id="pricing-form"
       onSubmit={handleSubmit(onSubmit)}
       className={`rounded-2xl bg-ivory p-6 sm:p-8 md:p-10 border border-turmeric/30 shadow-warm space-y-5 ${className || ""}`}
       noValidate
     >
       <div className="border-b border-charcoal/10 pb-4 mb-2">
         <h3 className="font-heading font-bold text-2xl text-maroon">
-          Request Catering Quotation
+          Request Catering Pricing
         </h3>
         <p className="text-xs sm:text-sm text-charcoal/70 mt-1">
           Custom packages for weddings, corporate meetings & celebrations across Mumbai.
@@ -398,11 +398,11 @@ export function QuoteForm({ initialService, initialDishes, className }: QuoteFor
         isLoading={isSubmitting}
         className="w-full"
       >
-        Submit Quotation Request
+        Submit Enquiry Request
       </Button>
 
       <p className="text-[11px] text-center text-charcoal/60">
-        🔒 Your personal details are completely private and used exclusively for your catering quote.
+        🔒 Your personal details are completely private and used exclusively for your catering enquiry.
       </p>
     </form>
   );

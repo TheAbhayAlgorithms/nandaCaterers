@@ -8,13 +8,13 @@ import { demoPackages, SHOW_DEMO_CONTENT } from "@/data/siteContent";
 import { NextStepStrip } from "@/components/shape/NextStepStrip";
 
 export const metadata: Metadata = {
-  title: "Catering Packages | Silver, Gold & Premium Pure Veg Banquets",
+  title: "Catering Packages | Silver, Gold & Premium Banquets",
   description:
     "Explore sample per-plate catering packages in Mumbai by Nanda Caterers. Compare our Silver, Gold, and Premium feast tiers for weddings and celebrations.",
   openGraph: {
     title: "Catering Packages | Nanda Caterers Mumbai",
     description:
-      "Curated 100% pure vegetarian catering packages with live counters, sweets, and complete hospitality management.",
+      "Curated catering packages with live counters, sweets, and complete hospitality management.",
   },
 };
 
@@ -42,7 +42,7 @@ export default function PackagesPage() {
             Sample Banqueting Tiers
           </h2>
           <p className="text-xs sm:text-sm text-ink/70 mt-2">
-            Tailored vegetarian packages designed for celebrations of all sizes. All packages can be customized with Jain and regional specialties.
+            Tailored packages designed for celebrations of all sizes. All packages can be customized with Jain and regional specialties.
           </p>
         </div>
 
@@ -71,11 +71,14 @@ export default function PackagesPage() {
                     <h3 className="font-heading font-extrabold text-2xl text-ink">
                       {pkg.name}
                     </h3>
-                    <div className="mt-3">
-                      <span className="text-2xl sm:text-3xl font-extrabold text-accent block font-heading">
-                        {pkg.pricePerPlateText}
+                    <div className="mt-3 space-y-1">
+                      <span className="text-base sm:text-lg font-bold text-accent block font-heading">
+                        {pkg.vegPriceText}
                       </span>
-                      <span className="text-[11px] text-ink/50 block mt-0.5">
+                      <span className="text-base sm:text-lg font-bold text-ink/80 block font-heading">
+                        {pkg.nonVegPriceText}
+                      </span>
+                      <span className="text-[11px] text-ink/50 block pt-0.5">
                         *Customizable based on guest count and venue.
                       </span>
                     </div>
@@ -106,7 +109,7 @@ export default function PackagesPage() {
                     size="md"
                     className="w-full flex items-center justify-center gap-2"
                   >
-                    <span>Get a Quote</span>
+                    <span>Get Pricing</span>
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 </div>
@@ -119,8 +122,8 @@ export default function PackagesPage() {
       {/* Next Step CTA */}
       <NextStepStrip
         headline="Looking for a custom combination of cuisines?"
-        primaryButtonText="Get a Custom Quote"
-        primaryAction="quote"
+        primaryButtonText="Get Pricing"
+        primaryHref="/contact#enquiry"
         secondaryButtonText="Explore Menu"
         secondaryHref="/menu"
       />

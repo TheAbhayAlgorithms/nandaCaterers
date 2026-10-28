@@ -40,10 +40,10 @@ export async function generateMetadata({ params }: AreaPageProps): Promise<Metad
   }
 
   return {
-    title: `Best Pure Veg Caterers in ${area.name} | Wedding & Event Catering`,
-    description: `${area.headline}. 100% pure vegetarian catering for weddings, corporate events & parties in ${area.name} by Nanda Caterers.`,
+    title: `Best Caterers in ${area.name} | Wedding & Event Catering`,
+    description: `${area.headline}. Catering for weddings, corporate events & parties in ${area.name} by Nanda Caterers.`,
     openGraph: {
-      title: `Pure Veg Caterers in ${area.name} | Nanda Caterers`,
+      title: `Caterers in ${area.name} | Nanda Caterers`,
       description: area.description,
       images: [{ url: area.image, width: 1200, height: 630, alt: `${area.name} Catering` }],
     },
@@ -109,7 +109,7 @@ export default async function ServiceAreaDetailPage({ params }: AreaPageProps) {
               variant="primary"
               size="lg"
             >
-              <span>Get Quotation for {area.name}</span>
+              <span>Get Pricing for {area.name}</span>
               <ArrowRight className="w-4 h-4" />
             </Button>
             <a
@@ -209,7 +209,7 @@ export default async function ServiceAreaDetailPage({ params }: AreaPageProps) {
                 variant="primary"
                 className="w-full justify-center"
               >
-                <span>Calculate Per-Plate Quote</span>
+                <span>Calculate Per-Plate Pricing</span>
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </div>
@@ -220,7 +220,7 @@ export default async function ServiceAreaDetailPage({ params }: AreaPageProps) {
       {/* Cross-linking to Related Pages */}
       <RelatedPages
         title={`Explore Menus & Packages for ${area.name}`}
-        subtitle="Browse our 13 authentic pure veg cuisines and banquet tiers"
+        subtitle="Browse our 13 authentic cuisines and banquet tiers"
         links={[
           {
             title: "Royal Packages",
@@ -236,7 +236,7 @@ export default async function ServiceAreaDetailPage({ params }: AreaPageProps) {
           },
           {
             title: "13 Food Cuisines",
-            description: "Explore 500+ pure veg delicacies across Indian & international spreads.",
+            description: "Explore 500+ delicacies across Indian & international spreads.",
             href: "/menu",
             tag: "Full Menu",
           },

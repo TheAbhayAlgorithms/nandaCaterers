@@ -23,10 +23,10 @@ export default function TermsPage() {
         <div className="p-8 sm:p-10 rounded-2xl bg-paper border border-ink/10 shadow-card space-y-8 text-xs sm:text-sm text-ink/80 leading-relaxed">
           <section className="space-y-2">
             <h2 className="font-heading font-bold text-xl text-ink">
-              1. 100% Pure Vegetarian Assurance
+              1. Dietary and Quality Assurance
             </h2>
             <p>
-              Nanda Caterers is strictly a 100% pure vegetarian catering service. Under no circumstances do our kitchens handle, prepare, or transport non-vegetarian items, eggs, or seafood. Dedicated utensils and cookware are maintained for strict Jain and Swaminarayan preparations.
+              Nanda Caterers prepares delicious vegetarian and non-vegetarian menus under strict hygienic standards. Dedicated utensils and cookware are maintained for strict Jain and Swaminarayan preparations.
             </p>
           </section>
 
@@ -79,7 +79,7 @@ export default function TermsPage() {
       <NextStepStrip
         headline="Have questions about your event terms?"
         primaryButtonText="Connect"
-        primaryAction="quote"
+        primaryAction="enquiry"
         secondaryButtonText="FAQ"
         secondaryHref="/contact?tab=faq"
       />

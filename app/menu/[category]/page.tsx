@@ -1,4 +1,4 @@
-import React from "react";
+₹2 import React from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { menuCategories, getMenuCategory } from "@/data/menu";
@@ -29,7 +29,7 @@ export async function generateMetadata({
 
   return {
     title: `${category.title} Food Menu | Nanda Caterers – Wedding Caterers in Mumbai`,
-    description: `${category.tagline} Authentic 100% pure vegetarian ${category.title} catering menu by Nanda Caterers Mumbai.`,
+    description: `${category.tagline} Authentic ${category.title} catering menu by Nanda Caterers Mumbai.`,
     openGraph: {
       title: `${category.title} Menu | Nanda Caterers Mumbai`,
       description: category.tagline,
@@ -55,7 +55,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
   return (
     <main className="w-full min-h-screen">
-      {/* Compact hero with photo, 100% Veg badge, dish count, and All Cuisines dropdown */}
+      {/* Compact hero with photo, dish count, and All Cuisines dropdown */}
       <CategoryHero category={category} />
 
       {/* Sub-section tabs, Search input, paginated dish grid, category switcher, and CTA strip */}

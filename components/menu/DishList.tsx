@@ -98,11 +98,16 @@ export function DishList({ dishes, searchQuery, sectionTitle }: DishListProps) {
               <div className="flex items-start justify-between gap-3">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
-                    {/* Tiny leaf dot */}
-                    <span
-                      className="w-2 h-2 rounded-full bg-leaf shrink-0 mt-0.5"
-                      aria-hidden="true"
-                    />
+                    {/* Standard veg or non-veg indicator dot when type is set */}
+                    {dish.type && (
+                      <span
+                        className={cn(
+                          "w-2.5 h-2.5 rounded-full shrink-0 mt-0.5",
+                          dish.type === "veg" ? "bg-leaf" : "bg-red-600"
+                        )}
+                        aria-label={dish.type === "veg" ? "Vegetarian" : "Non-Vegetarian"}
+                      />
+                    )}
                     <h4 className="font-heading font-semibold text-sm sm:text-base text-ink break-words hyphens-auto leading-snug">
                       {renderHighlightedName(cleanName, searchQuery)}
                     </h4>
@@ -135,14 +140,14 @@ export function DishList({ dishes, searchQuery, sectionTitle }: DishListProps) {
                   </div>
                 </div>
 
-                {/* + to add to Quote list */}
+                {/* + to add to selection list */}
                 <button
                   type="button"
                   onClick={() => toggleDish(dish.name)}
                   aria-label={
                     isSelected
-                      ? `Remove ${cleanName} from quote`
-                      : `Add ${cleanName} to quote list`
+                      ? `Remove ${cleanName} from menu selection`
+                      : `Add ${cleanName} to menu selection`
                   }
                   className={cn(
                     "shrink-0 w-8 h-8 min-w-[32px] min-h-[32px] max-w-[32px] max-h-[32px] aspect-square p-0 rounded-full flex items-center justify-center transition-all duration-200 cursor-pointer self-start",

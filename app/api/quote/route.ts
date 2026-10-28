@@ -90,7 +90,7 @@ ${data.message || "No additional message provided."}
 
     return NextResponse.json({
       success: true,
-      message: "Quotation request successfully received.",
+      message: "Enquiry request successfully received.",
     });
   } catch (error) {
     console.error("API quote error:", error);

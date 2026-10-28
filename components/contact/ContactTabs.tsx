@@ -143,7 +143,7 @@ export function ContactTabs({}: ContactTabsProps = {}) {
                 </h2>
                 <Divider align="center" className="my-2" />
                 <p className="text-xs sm:text-sm text-ink/70">
-                  Whether you have questions about our pure vegetarian menus, minimum guest requirements, or event scheduling, our team is directly accessible across multiple channels.
+                  Whether you have questions about our catering menus, minimum guest requirements, or event scheduling, our team is directly accessible across multiple channels.
                 </p>
               </div>
 
@@ -239,7 +239,7 @@ export function ContactTabs({}: ContactTabsProps = {}) {
                     <span>Planning a Celebration?</span>
                   </div>
                   <h3 className="font-heading font-bold text-lg sm:text-xl text-ink">
-                    Looking for a Custom Catering Quote?
+                    Looking for Custom Catering Pricing?
                   </h3>
                   <p className="text-xs text-ink/70 max-w-lg">
                     Build your custom multi-cuisine menu from 13 authentic categories and get transparent pricing estimate online.
@@ -249,7 +249,7 @@ export function ContactTabs({}: ContactTabsProps = {}) {
                   href="/quote"
                   className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent hover:bg-accent-dark text-white font-semibold text-xs sm:text-sm shadow-xs transition-colors"
                 >
-                  <span>Build Quote Online</span>
+                  <span>Build Estimate Online</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -415,7 +415,7 @@ export function ContactTabs({}: ContactTabsProps = {}) {
       <NextStepStrip
         headline="Ready to plan an unforgettable culinary feast?"
         primaryButtonText="Connect"
-        primaryAction="quote"
+        primaryAction="enquiry"
         secondaryButtonText="Explore Menu"
         secondaryHref="/menu"
       />

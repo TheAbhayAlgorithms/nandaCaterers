@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Photo Gallery | Nanda Caterers Mumbai",
     description:
-      "Visual showcase of luxury pure vegetarian wedding feasts, live food stations, and event dining decor.",
+      "Visual showcase of luxury wedding feasts, live food stations, and event dining decor.",
   },
 };
 
@@ -38,7 +38,7 @@ export default function GalleryPage() {
       <NextStepStrip
         headline="Ready to bring this royal culinary spread to your celebration?"
         primaryButtonText="Connect"
-        primaryAction="quote"
+        primaryAction="enquiry"
         secondaryButtonText="Explore Menu"
         secondaryHref="/menu"
       />

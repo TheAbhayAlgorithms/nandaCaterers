@@ -6,7 +6,7 @@ import { ServicesContent } from "@/components/services/ServicesContent";
 export const metadata: Metadata = {
   title: "Catering Services | Nanda Caterers – Wedding Caterers in Mumbai",
   description:
-    "Explore our benchmark wedding catering, family functions, corporate events, birthday parties, and outdoor feasts in Mumbai, Thane, Navi Mumbai, Pune & Goa.",
+    "Explore our wedding catering, family functions, corporate events, birthday parties, and outdoor feasts in Mumbai, Thane, Navi Mumbai, Pune & Goa.",
 };
 
 export default function ServicesPage() {

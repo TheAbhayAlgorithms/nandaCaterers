@@ -18,21 +18,21 @@ export const galleryImages: GalleryImage[] = [
     id: "gal-2",
     src: "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1200&q=80",
     alt: "Lavish Buffet Presentation with Floral Decoration",
-    title: "Festive Buffet Presentation",
+    title: "Floral Buffet Display",
     category: "Food",
   },
   {
     id: "gal-3",
     src: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=1200&q=80",
     alt: "Tandoori Skewers and Starters Live Counter",
-    title: "Tandoori Starters Live Station",
+    title: "Tandoori Live Counter",
     category: "Food",
   },
   {
     id: "gal-4",
     src: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
     alt: "Executive Corporate Banquet Buffet Setup",
-    title: "Corporate High-Tea & Luncheon",
+    title: "Corporate Banquet",
     category: "Corporate",
   },
   {
@@ -60,7 +60,7 @@ export const galleryImages: GalleryImage[] = [
     id: "gal-8",
     src: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1200&q=80",
     alt: "Royal Traditional Sangeet Dining Decor",
-    title: "Marigold & Brass Wedding Banqueting",
+    title: "Sangeet Dining Decor",
     category: "Weddings",
   },
   {

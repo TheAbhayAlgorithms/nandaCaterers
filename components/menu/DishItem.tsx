@@ -1,9 +1,11 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Plus, Check, Sparkles, Flame } from "lucide-react";
 import { useQuoteSelection } from "@/context/QuoteSelectionContext";
 import { Dish } from "@/data/menu";
+import { getSoupDemoDescription } from "@/data/siteContent";
 import { cn } from "@/lib/cn";
 
 interface DishItemProps {
@@ -20,6 +22,7 @@ export function DishItem({ name, dish, searchQuery, className }: DishItemProps) 
   // Check for special notes
   const hasExtraCharge = name.includes("(Extra Rs.30/-)") || !!dish?.extraPriceNote;
   const cleanName = name.replace("(Extra Rs.30/-)", "").trim();
+  const description = dish?.description || getSoupDemoDescription(cleanName) || getSoupDemoDescription(name);
 
   // Render text with search highlight if applicable
   const renderHighlightedName = (text: string, query?: string) => {
@@ -51,10 +54,15 @@ export function DishItem({ name, dish, searchQuery, className }: DishItemProps) 
       <div className="flex items-center justify-between gap-2">
         {/* Leading Veg Dot & Name */}
         <div className="flex items-center gap-2 min-w-0 pr-1">
-          <span
-            className="w-2 h-2 rounded-full bg-leaf shrink-0 group-hover:scale-125 transition-transform duration-200"
-            aria-hidden="true"
-          />
+          {dish?.type && (
+            <span
+              className={cn(
+                "w-2 h-2 rounded-full shrink-0 group-hover:scale-125 transition-transform duration-200",
+                dish.type === "veg" ? "bg-leaf" : "bg-red-600"
+              )}
+              aria-label={dish.type === "veg" ? "Vegetarian" : "Non-Vegetarian"}
+            />
+          )}
           <span className="font-semibold text-xs sm:text-sm text-charcoal truncate">
             {renderHighlightedName(cleanName, searchQuery)}
           </span>
@@ -67,7 +75,7 @@ export function DishItem({ name, dish, searchQuery, className }: DishItemProps) 
         <button
           type="button"
           onClick={() => toggleDish(name)}
-          aria-label={isSelected ? `Remove ${cleanName} from quote` : `Add ${cleanName} to quote list`}
+          aria-label={isSelected ? `Remove ${cleanName} from menu selection` : `Add ${cleanName} to menu selection`}
           className={cn(
             "shrink-0 w-7 h-7 min-w-[28px] min-h-[28px] max-w-[28px] max-h-[28px] aspect-square p-0 rounded-full flex items-center justify-center transition-all duration-200 cursor-pointer",
             isSelected
@@ -79,35 +87,48 @@ export function DishItem({ name, dish, searchQuery, className }: DishItemProps) 
         </button>
       </div>
 
+      {/* Optional image if present */}
+      {dish?.image && (
+        <div className="relative w-full h-32 rounded-lg overflow-hidden my-2">
+          <Image
+            src={dish.image}
+            alt={cleanName}
+            fill
+            sizes="(max-width: 640px) 100vw, 300px"
+            className="object-cover"
+          />
+        </div>
+      )}
+
       {/* Description & Tags if available */}
-      {dish && (
+      {(dish || description) && (
         <div className="pl-4 mt-1 space-y-1">
-          {dish.description && (
+          {description && (
             <p className="text-[11px] text-charcoal/65 leading-tight line-clamp-1">
-              {dish.description}
+              {description}
             </p>
           )}
 
           <div className="flex flex-wrap items-center gap-1.5 pt-0.5">
-            {dish.isJainAvailable && (
+            {dish?.isJainAvailable && (
               <span className="text-[9px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-1.5 py-0.2 rounded border border-emerald-200">
                 Jain Option
               </span>
             )}
-            {dish.isLiveCounter && (
+            {dish?.isLiveCounter && (
               <span className="text-[9px] font-bold uppercase tracking-wider text-amber-800 bg-amber-50 px-1.5 py-0.2 rounded border border-amber-200 flex items-center gap-0.5">
                 <Flame className="w-2.5 h-2.5 text-amber-600" />
                 Live Stall
               </span>
             )}
-            {dish.isPopular && (
+            {dish?.isPopular && (
               <span className="text-[9px] font-bold uppercase tracking-wider text-maroon bg-rose-50 px-1.5 py-0.2 rounded border border-rose-200">
                 Chef&apos;s Special
               </span>
             )}
             {hasExtraCharge && (
               <span className="text-[9px] font-bold bg-maroon/10 text-maroon px-1.5 py-0.2 rounded">
-                {dish.extraPriceNote || "Extra Rs.30/-"}
+                {dish?.extraPriceNote || "Extra Rs.30/-"}
               </span>
             )}
           </div>

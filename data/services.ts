@@ -16,9 +16,9 @@ export const servicesData: ServiceItem[] = [
     slug: "wedding",
     title: "Wedding Catering",
     iconName: "wedding",
-    short: "Complete wedding catering for weddings, sangeet and receptions, with live counters, Gujarati and Punjabi menus, Jain options and tasting sessions before you book.",
+    short: "Complete wedding catering for weddings, sangeet and receptions, with veg and non-veg menus, live counters, Gujarati and Punjabi favourites, Jain options and tasting sessions before you book.",
     long: [
-      "Complete wedding catering for weddings, sangeet and receptions, with live counters, Gujarati and Punjabi menus, Jain options and tasting sessions before you book.",
+      "Complete wedding catering for weddings, sangeet and receptions, with veg and non-veg menus, live counters, Gujarati and Punjabi favourites, Jain options and tasting sessions before you book.",
       "From intimate pre-wedding rituals like Haldi and Mehendi to grand receptions with thousands of esteemed guests, our operations team ensures that hot food, impeccable hygiene, and gracious hospitality make your family's biggest day truly unforgettable.",
     ],
     highlights: [
@@ -34,9 +34,9 @@ export const servicesData: ServiceItem[] = [
     slug: "corporate",
     title: "Corporate Catering",
     iconName: "corporate",
-    short: "Meetings, breakfasts, lunches and dinners for corporate events, delivered on time with hygienic, fully vegetarian menus.",
+    short: "Meetings, breakfasts, lunches and dinners for corporate events, delivered on time with hygienic, freshly prepared veg and non-veg menus.",
     long: [
-      "Meetings, breakfasts, lunches and dinners for corporate events, delivered on time with hygienic, fully vegetarian menus.",
+      "Meetings, breakfasts, lunches and dinners for corporate events, delivered on time with hygienic, freshly prepared veg and non-veg menus.",
       "Whether it is an executive boardroom luncheon, an annual corporate seminar, or a celebratory office gala, our catering is structured for punctuality, sophisticated presentation, and wholesome, energizing nutrition.",
     ],
     highlights: [
@@ -136,12 +136,12 @@ export const whyChooseUs = [
   },
   {
     title: "Quick Booking",
-    desc: "Hassle-free quotation and menu confirmation within hours.",
+    desc: "Hassle-free pricing and menu confirmation within hours.",
     icon: "booking",
   },
   {
     title: "Food Quality",
-    desc: "100% pure vegetarian dishes cooked with freshest market produce.",
+    desc: "Dishes cooked with freshest market produce.",
     icon: "quality",
   },
 ];

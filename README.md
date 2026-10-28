@@ -45,7 +45,7 @@ Built with **Next.js 15 (App Router)**, **TypeScript (strict)**, **Tailwind CSS*
 - `--peach: #FDEFE7` (services band with subtle food doodle pattern)
 - `--cream: #FFF8EF` (menu band)
 - `--night: #1B1210` (dark band, footer)
-- `--leaf: #2F6B3C` (100% vegetarian badge only)
+- `--leaf: #2F6B3C` (vegetarian badge)
 
 **Typography**:
 - Headings: Playfair Display / Cormorant Garamond (`font-heading`)

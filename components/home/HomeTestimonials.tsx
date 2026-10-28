@@ -83,7 +83,7 @@ export function HomeTestimonials() {
                 </div>
 
                 <p className="text-xs sm:text-sm text-ink/80 leading-relaxed italic">
-                  &ldquo;{item.quote}&rdquo;
+                  &ldquo;{item.text}&rdquo;
                 </p>
               </div>
 

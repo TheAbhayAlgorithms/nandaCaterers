@@ -14,7 +14,7 @@ export const siteConfig = {
   tagline: "A Perfect Blend of Sensational Food",
   subline: "Wedding catering with new ideas, served in our own style.",
   description:
-    "Nanda Caterers: 100% Pure Vegetarian catering in Mumbai, Thane, Navi Mumbai, Pune & Goa. Specializing in lavish wedding feasts, Gujarati & Punjabi delicacies, and corporate events.",
+    "Nanda Caterers: Veg and non-veg catering in Mumbai, Thane, Navi Mumbai, Pune & Goa. Specializing in lavish wedding feasts, Gujarati & Punjabi delicacies, and corporate events.",
   canonicalUrl: SITE_URL,
   foundedYear: 2005,
   experienceYears: 20,

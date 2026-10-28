@@ -42,7 +42,7 @@ export const packagesData: PackageTier[] = [
     serviceStaff: "Uniformed stewards + 1 station supervisor",
     crockeryAndCutlery: "High-grade melamine or eco-friendly palmware",
     highlights: [
-      "100% Pure Vegetarian Segregated Kitchen",
+      "Dedicated Segregated Kitchen Facilities",
       "Jain / Swaminarayan Options Available",
       "Freshly Prepared On-Site Refills",
       "Punctual Delivery & Complete Cleanup",

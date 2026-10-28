@@ -20,9 +20,9 @@ export function HomeQuoteSection() {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Reveal variant="fadeUp">
           <SectionHeading
-            eyebrow="Get Best Quotations"
+            eyebrow="Get Best Pricing"
             title="Contact Us For Your Celebration"
-            subtitle="Tell us about your wedding date, guest count, or venue requirements, and we will formulate an all-inclusive culinary quote."
+            subtitle="Tell us about your wedding date, guest count, or venue requirements, and we will formulate an all-inclusive culinary proposal."
           />
         </Reveal>
 

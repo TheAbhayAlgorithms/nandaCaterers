@@ -6,6 +6,7 @@ export interface Dish {
   isPopular?: boolean;
   extraPriceNote?: string;
   image?: string;
+  type?: "veg" | "non-veg";
 }
 
 export interface MenuSection {

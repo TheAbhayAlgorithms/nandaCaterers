@@ -7,9 +7,10 @@ import { useQuoteSelection } from "@/context/QuoteSelectionContext";
 interface NextStepStripProps {
   headline?: string;
   primaryButtonText?: string;
+  primaryHref?: string;
   secondaryButtonText?: string;
   secondaryHref?: string;
-  primaryAction?: "quote" | "contact";
+  primaryAction?: "enquiry" | "contact";
   onPrimaryClick?: () => void;
   serviceCategory?: string;
 }
@@ -17,9 +18,10 @@ interface NextStepStripProps {
 export function NextStepStrip({
   headline = "Ready to Plan Your Catering Celebration?",
   primaryButtonText = "Connect",
+  primaryHref,
   secondaryButtonText = "View Menu",
   secondaryHref = "/menu",
-  primaryAction = "quote",
+  primaryAction = "enquiry",
   onPrimaryClick,
   serviceCategory = "Wedding",
 }: NextStepStripProps) {
@@ -40,9 +42,15 @@ export function NextStepStrip({
           {headline}
         </h3>
         <div className="flex flex-wrap items-center justify-center gap-3">
-          <Button variant="filled" size="md" onClick={handlePrimary}>
-            {primaryButtonText}
-          </Button>
+          {primaryHref ? (
+            <Button variant="filled" size="md" href={primaryHref}>
+              {primaryButtonText}
+            </Button>
+          ) : (
+            <Button variant="filled" size="md" onClick={handlePrimary}>
+              {primaryButtonText}
+            </Button>
+          )}
           {secondaryButtonText && secondaryHref && (
             <Button variant="outline" size="md" href={secondaryHref}>
               {secondaryButtonText}

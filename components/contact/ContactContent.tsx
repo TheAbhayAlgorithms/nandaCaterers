@@ -144,7 +144,7 @@ export function ContactContent({ initialService, initialDishes }: ContactContent
         </div>
       </section>
 
-      {/* Quote Form & Google Map Side-by-Side */}
+      {/* Pricing Form & Google Map Side-by-Side */}
       <section className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           {/* Form (7 cols) */}

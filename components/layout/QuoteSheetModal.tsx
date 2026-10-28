@@ -13,8 +13,8 @@ export function QuoteSheetModal() {
     <Sheet
       isOpen={isQuoteSheetOpen}
       onClose={() => setIsQuoteSheetOpen(false)}
-      title="Request a Catering Quotation"
-      description="Tell us about your event. We will reply with an itemized quote within 2 working hours."
+      title="Request Catering Pricing"
+      description="Tell us about your event. We will reply with an itemized estimate within 2 working hours."
     >
       <div className="space-y-4">
         {selectedDishes.length > 0 && (

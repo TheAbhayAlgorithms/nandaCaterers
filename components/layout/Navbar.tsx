@@ -78,7 +78,7 @@ export function Navbar() {
               })}
             </nav>
 
-            {/* Far right: complete phone number (tel:) + pill Get Quote button */}
+            {/* Far right: complete phone number (tel:) + pill Connect button */}
             <div className="flex items-center gap-3">
               <a
                 href={`tel:${siteConfig.phone.raw}`}

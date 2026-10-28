@@ -27,7 +27,7 @@ const teamMembers = [
   {
     role: "Quality & Kitchen Lead",
     initials: "KL",
-    tagline: "Overseeing 100% Pure Veg Hygiene & Raw Ingredient Sourcing",
+    tagline: "Overseeing Kitchen Hygiene & Raw Ingredient Sourcing",
     experience: "14+ years food safety standards",
   },
 ];
@@ -50,8 +50,8 @@ const timelineEvents = [
   },
   {
     year: "Today",
-    title: "15+ Years of Benchmark Taste",
-    desc: "Over 5,000 satisfied wedding and corporate hosts, with a 500+ dish pure vegetarian culinary catalogue.",
+    title: "20+ Years of Exceptional Taste",
+    desc: "Over 5,000 satisfied wedding and corporate hosts, with a 500+ dish culinary catalogue.",
   },
 ];
 
@@ -283,7 +283,7 @@ export function AboutContent() {
         </div>
       </section>
 
-      {/* CTA Band to Quote */}
+      {/* CTA Band to Enquiry */}
       <section className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl bg-maroon text-cream p-8 sm:p-14 text-center shadow-warm space-y-4">
           <span className="font-accent text-2xl text-turmeric font-semibold block">
@@ -296,7 +296,7 @@ export function AboutContent() {
             Contact us today for custom wedding packages, sample tastings, and direct chef consultations.
           </p>
           <div className="pt-4">
-            <Button href="/quote" variant="primary" size="lg">
+            <Button href="/contact#enquiry" variant="primary" size="lg">
               <span>Connect</span>
               <ArrowRight className="w-4 h-4" />
             </Button>

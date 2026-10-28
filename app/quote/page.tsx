@@ -5,11 +5,11 @@ import { QuoteWizard } from "@/components/quote/QuoteWizard";
 import { RelatedPages } from "@/components/ui/RelatedPages";
 
 export const metadata: Metadata = {
-  title: "Get an Instant Catering Quotation | Multi-Step Wizard",
+  title: "Get Instant Catering Pricing | Multi-Step Wizard",
   description:
-    "Calculate your per-plate pure veg catering estimate in seconds. Customize guest count, cuisine selections, live food counters, and request a WhatsApp quote from Nanda Caterers Mumbai.",
+    "Calculate your per-plate catering estimate in seconds. Customize guest count, cuisine selections, live food counters, and request an estimate on WhatsApp from Nanda Caterers Mumbai.",
   openGraph: {
-    title: "Instant Catering Quote Wizard | Nanda Caterers Mumbai",
+    title: "Instant Catering Pricing Wizard | Nanda Caterers Mumbai",
     description:
       "Interactive 5-step catering estimate builder for weddings, corporate banquets, and family parties in Mumbai.",
   },
@@ -26,7 +26,7 @@ export default function QuotePage() {
             className="text-cream/70 justify-center mb-2 px-0"
           />
           <h1 className="font-serif text-3xl sm:text-5xl font-bold text-white tracking-tight">
-            Event Quotation Wizard
+            Event Pricing Wizard
           </h1>
           <p className="text-sm sm:text-base text-cream/85 max-w-xl mx-auto">
             Calculate your estimated per-plate investment, specify dietary requirements, and receive a formal breakdown directly from our master planners.
@@ -38,7 +38,7 @@ export default function QuotePage() {
       <Suspense
         fallback={
           <div className="py-20 text-center text-charcoal/60 font-serif">
-            Loading interactive quotation builder...
+            Loading interactive pricing builder...
           </div>
         }
       >
@@ -58,7 +58,7 @@ export default function QuotePage() {
           },
           {
             title: "13 Food Cuisines",
-            description: "Explore 500+ pure veg delicacies across Indian & international spreads.",
+            description: "Explore 500+ delicacies across Indian & international spreads.",
             href: "/menu",
             tag: "Full Menu",
           },

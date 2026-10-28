@@ -6,7 +6,7 @@ import { AboutTabs } from "@/components/about/AboutTabs";
 export const metadata: Metadata = {
   title: "About Us | Nanda Caterers – Wedding Caterers in Mumbai",
   description:
-    "Learn about Nanda Caterers journey since 2005. Founded in Bandra East, delivering benchmark pure vegetarian culinary hospitality across Mumbai, Thane, Pune & Goa.",
+    "Learn about Nanda Caterers journey since 2005. Founded in Bandra East, delivering culinary hospitality across Mumbai, Thane, Pune & Goa.",
 };
 
 export default function AboutPage() {

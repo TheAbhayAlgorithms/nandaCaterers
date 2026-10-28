@@ -20,7 +20,7 @@ export function MenuCTA() {
                 See our all type of foods menu
               </h2>
               <p className="text-cream/80 text-base sm:text-lg leading-relaxed">
-                Explore our full 13-category pure vegetarian repertoire featuring over 500 delicacies, from traditional Kathiyawadi farsan to live Italian pasta counters.
+                Explore our full 13-category culinary repertoire featuring over 500 delicacies, from traditional Kathiyawadi farsan to live Italian pasta counters.
               </p>
               <div className="pt-4">
                 <Button href="/menu" variant="primary" size="lg">

@@ -51,15 +51,15 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://nandacaterers.com"),
   title: {
-    default: "Nanda Caterers | Best Wedding Caterers in Mumbai (100% Pure Veg)",
+    default: "Nanda Caterers | Best Wedding Caterers in Mumbai",
     template: "%s | Nanda Caterers – Wedding Caterers in Mumbai",
   },
   description:
-    "Nanda Caterers: 100% Pure Vegetarian catering in Mumbai, Thane, Navi Mumbai, Pune & Goa. Specializing in lavish wedding feasts, Gujarati & Punjabi delicacies, and corporate events.",
+    "Nanda Caterers: Veg and non-veg catering in Mumbai, Thane, Navi Mumbai, Pune & Goa. Specializing in lavish wedding feasts, Gujarati & Punjabi delicacies, and corporate events.",
   keywords: [
     "caterers in mumbai",
     "wedding caterers mumbai",
-    "pure veg caterers",
+    "veg and non veg caterers mumbai",
     "gujarati caterers bandra",
     "nanda caterers",
     "corporate catering mumbai",
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     siteName: "Nanda Caterers",
     title: "Nanda Caterers – Wedding Caterers in Mumbai",
     description:
-      "A Perfect Blend of Sensational Food. 100% Pure Vegetarian catering for weddings and celebrations.",
+      "A Perfect Blend of Sensational Food. Veg and non-veg catering for weddings and celebrations.",
     images: [
       {
         url: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nanda Caterers – Wedding Caterers in Mumbai",
     description:
-      "A Perfect Blend of Sensational Food. 100% Pure Vegetarian catering for weddings and celebrations.",
+      "A Perfect Blend of Sensational Food. Veg and non-veg catering for weddings and celebrations.",
     images: [
       "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
     ],

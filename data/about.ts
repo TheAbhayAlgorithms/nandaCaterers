@@ -25,7 +25,7 @@ export const aboutData = {
     {
       year: "2005",
       title: "Founded in Mumbai",
-      description: "Started with a vision for 100% Pure Vegetarian wedding feasts.",
+      description: "Started with a vision for lavish wedding feasts.",
     },
     {
       year: "2015",
@@ -35,7 +35,7 @@ export const aboutData = {
     {
       year: "2026",
       title: "20+ Years of Trust",
-      description: "Celebrated 5,000+ happy hosts with 500+ authentic vegetarian delicacies.",
+      description: "Celebrated 5,000+ happy hosts with 500+ authentic delicacies.",
     },
   ] as TimelineNode[],
 

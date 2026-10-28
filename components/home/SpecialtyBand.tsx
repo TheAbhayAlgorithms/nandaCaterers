@@ -16,7 +16,7 @@ export function SpecialtyBand() {
             <Reveal variant="fadeUp">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-saffron/10 border border-saffron/20 text-maroon text-xs font-semibold uppercase tracking-wider">
                 <Sparkles className="w-3.5 h-3.5 text-saffron" />
-                <span>Benchmark Royal Hospitality</span>
+                <span>Royal Banqueting Hospitality</span>
               </div>
             </Reveal>
 
@@ -41,7 +41,7 @@ export function SpecialtyBand() {
                       We Delight to Serve You
                     </h3>
                     <p className="text-sm text-charcoal/75 mt-0.5 leading-relaxed">
-                      With our benchmark style and quality, every preparation brings unforgettable taste and pristine hygiene.
+                      With our signature style and quality, every preparation brings unforgettable taste and pristine hygiene.
                     </p>
                   </div>
                 </div>

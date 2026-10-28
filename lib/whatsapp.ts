@@ -1,4 +1,4 @@
-export interface QuoteWhatsAppDetails {
+export interface CateringWhatsAppDetails {
   firstName?: string;
   lastName?: string;
   email?: string;
@@ -13,7 +13,7 @@ export interface QuoteWhatsAppDetails {
   selectedDishes?: string[];
 }
 
-export function buildWhatsAppLink(details?: QuoteWhatsAppDetails): string {
+export function buildWhatsAppLink(details?: CateringWhatsAppDetails): string {
   const baseNumber = "919967894979";
   
   if (!details) {

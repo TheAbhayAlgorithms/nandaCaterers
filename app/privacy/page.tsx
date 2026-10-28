@@ -26,7 +26,7 @@ export default function PrivacyPage() {
               1. Information We Collect
             </h2>
             <p className="text-xs sm:text-sm text-ink/80 leading-relaxed">
-              When you submit an enquiry through our quote form or contact us via WhatsApp, we collect details such as your name, phone number, email address, event date, guest count, and catering menu selections.
+              When you submit an enquiry through our website or contact us via WhatsApp, we collect details such as your name, phone number, email address, event date, guest count, and catering menu selections.
             </p>
           </section>
 
@@ -79,7 +79,7 @@ export default function PrivacyPage() {
       <NextStepStrip
         headline="Ready to plan your catering feast?"
         primaryButtonText="Connect"
-        primaryAction="quote"
+        primaryAction="enquiry"
         secondaryButtonText="Explore Menu"
         secondaryHref="/menu"
       />

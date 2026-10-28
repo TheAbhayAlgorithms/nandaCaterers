@@ -48,8 +48,13 @@ export function PackagesTeaser() {
                   )}
                 </div>
 
-                <div className="text-xl font-extrabold text-accent font-heading mb-4">
-                  {pkg.pricePerPlateText}
+                <div className="space-y-0.5 mb-4">
+                  <div className="text-base font-bold text-accent font-heading">
+                    {pkg.vegPriceText}
+                  </div>
+                  <div className="text-base font-bold text-ink/80 font-heading">
+                    {pkg.nonVegPriceText}
+                  </div>
                 </div>
 
                 <ul className="space-y-2 text-xs text-ink/75 mb-6">

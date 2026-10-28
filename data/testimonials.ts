@@ -9,7 +9,7 @@ export interface Testimonial {
   location: string;
   date: string;
   rating: number;
-  quote: string;
+  text: string;
   isPlaceholder: boolean;
   isVerified?: boolean;
 }
@@ -23,7 +23,7 @@ export const testimonialsData: Testimonial[] = [
     location: "Bandra (East), Mumbai",
     date: "December 2025",
     rating: 5,
-    quote:
+    text:
       "Nanda Caterers catered our daughter's wedding reception. The Gujarati Surti Undhiyu and Paneer Tikka live counters were the talk of the evening. Every single guest praised the authentic taste, cleanliness, and the warmth of their serving staff.",
     isPlaceholder: true,
     isVerified: true,
@@ -36,7 +36,7 @@ export const testimonialsData: Testimonial[] = [
     location: "BKC, Mumbai",
     date: "November 2025",
     rating: 5,
-    quote:
+    text:
       "We hired Nanda Caterers for our corporate summit in BKC. Impeccable timing, executive presentation, and an outstanding continental and North Indian spread. They handled our strict Jain requirements without a single glitch.",
     isPlaceholder: true,
     isVerified: true,
@@ -49,7 +49,7 @@ export const testimonialsData: Testimonial[] = [
     location: "Khar (East), Mumbai",
     date: "January 2026",
     rating: 5,
-    quote:
+    text:
       "For our family celebration, we wanted traditional satvik food that tasted like home. The Dal Makhani, soft phulkas, and hot Rabdi Jalebi prepared by their master maharajs were extraordinary. Highly recommended.",
     isPlaceholder: true,
     isVerified: true,

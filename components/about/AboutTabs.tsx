@@ -76,7 +76,7 @@ export function AboutTabs() {
                   Since 2005
                 </span>
                 <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-ink">
-                  A Legacy of Pure Vegetarian Excellence
+                  A Legacy of Culinary Excellence
                 </h2>
 
                 <div className="space-y-3 text-ink/80 text-sm sm:text-base leading-relaxed">
@@ -121,8 +121,8 @@ export function AboutTabs() {
                   />
                   <BentoTile type="accent" className="bg-accent text-white">
                     <ClocheIcon className="w-8 h-8 text-white mb-2" />
-                    <span className="font-heading font-bold text-lg text-white">15+ Years</span>
-                    <span className="text-xs text-white/80">Benchmark Purity</span>
+                    <span className="font-heading font-bold text-lg text-white">20+ Years</span>
+                    <span className="text-xs text-white/80">Culinary Purity</span>
                   </BentoTile>
                   <BentoTile type="accent" className="bg-accent text-white">
                     <span className="font-heading font-bold text-2xl text-white">5,000+</span>
@@ -286,7 +286,7 @@ export function AboutTabs() {
                   Track Record
                 </span>
                 <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-ink mt-1">
-                  15+ Years of Benchmark Statistics
+                  20+ Years of Excellence in Numbers
                 </h2>
               </div>
 

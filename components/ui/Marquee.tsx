@@ -19,7 +19,7 @@ const defaultItems = [
   "Mexican Delights",
   "Fresh Welcome Coolers",
   "Traditional Kulfi & Mithai",
-  "Pure Vegetarian Banquets",
+  "Royal Wedding Banquets",
   "Live Tandoor & Chaat",
 ];
 
