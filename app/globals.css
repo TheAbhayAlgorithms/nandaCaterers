@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Natural Ampersand for Headings:
+   Targets ONLY unicode U+0026 ('&') so all letters stay in Playfair Display,
+   while replacing the obscure decorative ampersand with a natural, clear serif glyph */
+@font-face {
+  font-family: 'HeadingAmpersand';
+  src: local('Baskerville-SemiBold'), local('Baskerville-Bold'), local('Baskerville'), local('Georgia-Bold'), local('Georgia'), serif;
+  unicode-range: U+0026;
+  font-weight: 500 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HeadingAmpersand';
+  src: local('Baskerville-Italic'), local('Georgia-Italic'), serif;
+  unicode-range: U+0026;
+  font-weight: 100 900;
+  font-style: italic;
+}
+
 :root {
   --accent: #B8391B;
   --accent-dark: #8E2A12;

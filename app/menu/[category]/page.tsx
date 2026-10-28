@@ -1,7 +1,8 @@
 import React from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { menuCategories, getMenuCategory } from "@/data/menu";
+import { menuCategories } from "@/data/menu";
+import { getPublicMenuCategory, getPublicMenuCategories } from "@/lib/supabase/data";
 import { CategoryHero } from "@/components/menu/CategoryHero";
 import { CategoryView } from "@/components/menu/CategoryView";
 
@@ -10,7 +11,8 @@ interface CategoryPageProps {
 }
 
 export async function generateStaticParams() {
-  return menuCategories.map((cat) => ({
+  const categories = await getPublicMenuCategories();
+  return categories.map((cat) => ({
     category: cat.slug,
   }));
 }
@@ -19,7 +21,7 @@ export async function generateMetadata({
   params,
 }: CategoryPageProps): Promise<Metadata> {
   const { category: slug } = await params;
-  const category = getMenuCategory(slug);
+  const category = await getPublicMenuCategory(slug);
 
   if (!category) {
     return {
@@ -47,7 +49,7 @@ export async function generateMetadata({
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
   const { category: slug } = await params;
-  const category = getMenuCategory(slug);
+  const category = await getPublicMenuCategory(slug);
 
   if (!category) {
     notFound();

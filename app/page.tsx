@@ -8,8 +8,27 @@ import { GalleryCarousel } from "@/components/home/GalleryCarousel";
 import { MenuTeaser } from "@/components/home/MenuTeaser";
 import { PackagesTeaser } from "@/components/home/PackagesTeaser";
 import { OfferBand } from "@/components/home/OfferBand";
+import { getPublicMenuCategories, getPublicGalleryImages } from "@/lib/supabase/data";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const [categories, images] = await Promise.all([
+    getPublicMenuCategories(),
+    getPublicGalleryImages(),
+  ]);
+
+  const menuItems = categories.slice(0, 8).map((cat) => ({
+    name: cat.title,
+    slug: cat.slug,
+    image: cat.image,
+  }));
+
+  const carouselItems = images.slice(0, 8).map((img) => ({
+    id: img.id,
+    src: img.src,
+    alt: img.alt,
+    caption: img.title,
+  }));
+
   return (
     <div className="flex flex-col w-full overflow-hidden">
       {/* 1. Hero */}
@@ -28,10 +47,10 @@ export default function HomePage() {
       <HomeTestimonials />
 
       {/* 4. Gallery Carousel */}
-      <GalleryCarousel />
+      <GalleryCarousel items={carouselItems} />
 
       {/* 5. Menu Teaser */}
-      <MenuTeaser />
+      <MenuTeaser items={menuItems} />
 
       {/* B4. Packages Teaser */}
       <PackagesTeaser />

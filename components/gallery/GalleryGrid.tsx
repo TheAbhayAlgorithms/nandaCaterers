@@ -11,15 +11,15 @@ import { cn } from "@/lib/cn";
 const FILTER_CHIPS = ["All", "Weddings", "Corporate", "Decor", "Food"] as const;
 type FilterChip = (typeof FILTER_CHIPS)[number];
 
-export function GalleryGrid() {
+export function GalleryGrid({ images = galleryImages }: { images?: GalleryImage[] }) {
   const [activeCategory, setActiveCategory] = useState<FilterChip>("All");
   const [visibleCount, setVisibleCount] = useState<number>(12);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const filteredImages = useMemo(() => {
-    if (activeCategory === "All") return galleryImages;
-    return galleryImages.filter((img) => img.category === activeCategory);
-  }, [activeCategory]);
+    if (activeCategory === "All") return images;
+    return images.filter((img) => img.category === activeCategory);
+  }, [activeCategory, images]);
 
   const visibleImages = filteredImages.slice(0, visibleCount);
   const hasMore = visibleCount < filteredImages.length;
@@ -61,7 +61,7 @@ export function GalleryGrid() {
       {/* Uniform 3/2/1 Columns Grid per Section 6.7 & 8 */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {visibleImages.map((img) => {
-          const globalIdx = galleryImages.findIndex((item) => item.id === img.id);
+          const globalIdx = images.findIndex((item) => item.id === img.id);
 
           return (
             <div
@@ -126,7 +126,7 @@ export function GalleryGrid() {
 
       {/* Lightbox component */}
       <Lightbox
-        images={galleryImages}
+        images={images}
         currentIndex={lightboxIndex}
         onClose={() => setLightboxIndex(null)}
         onIndexChange={(newIdx) => setLightboxIndex(newIdx)}

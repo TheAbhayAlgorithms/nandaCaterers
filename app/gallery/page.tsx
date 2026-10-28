@@ -6,6 +6,7 @@ import { SectionShell } from "@/components/shape/SectionShell";
 import { NextStepStrip } from "@/components/shape/NextStepStrip";
 
 import { GalleryVideoSection } from "@/components/gallery/GalleryVideoSection";
+import { getPublicGalleryImages } from "@/lib/supabase/data";
 
 export const metadata: Metadata = {
   title: "Photo Gallery | Nanda Caterers – Wedding Caterers in Mumbai",
@@ -18,7 +19,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function GalleryPage() {
+export default async function GalleryPage() {
+  const images = await getPublicGalleryImages();
+
   return (
     <main className="w-full min-h-screen">
       {/* Compact Hero with torn bottom edge per Section 6 */}
@@ -31,7 +34,7 @@ export default function GalleryPage() {
       {/* Block 1: Video Showcase & Photo Grid */}
       <SectionShell className="pt-10 sm:pt-14 pb-20">
         <GalleryVideoSection />
-        <GalleryGrid />
+        <GalleryGrid images={images} />
       </SectionShell>
 
       {/* One compact NextStepStrip CTA per Section 1 Rule 5 */}

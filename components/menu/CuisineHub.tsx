@@ -5,10 +5,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { menuCategories } from "@/data/menu";
+import { menuCategories, MenuCategory } from "@/data/menu";
 import { NextStepStrip } from "@/components/shape/NextStepStrip";
 
-export function CuisineHub() {
+interface CuisineHubProps {
+  categories?: MenuCategory[];
+}
+
+export function CuisineHub({ categories = menuCategories }: CuisineHubProps) {
   return (
     <div className="w-full">
       {/* Cuisine Cards Grid */}
@@ -19,7 +23,7 @@ export function CuisineHub() {
           transition={{ duration: 0.3, ease: "easeOut" }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
         >
-          {menuCategories.map((category) => (
+          {categories.map((category) => (
             <Link
               key={category.slug}
               href={`/menu/${category.slug}`}

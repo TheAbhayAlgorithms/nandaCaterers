@@ -20,10 +20,15 @@ const carouselItems = [
 ].slice(0, 8);
 
 // Duplicate the array to create a seamless infinite loop
-const marqueeItems = [...carouselItems, ...carouselItems];
+const defaultMarqueeItems = [...carouselItems, ...carouselItems];
 
-export function GalleryCarousel() {
+export function GalleryCarousel({
+  items = carouselItems,
+}: {
+  items?: Array<{ id: string; src: string; alt: string; caption: string }>;
+}) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const marqueeItems = items.length > 0 ? [...items, ...items] : defaultMarqueeItems;
 
   return (
     <section className="w-full relative bg-paper text-ink overflow-visible py-12 sm:py-16 md:py-20">
@@ -44,7 +49,7 @@ export function GalleryCarousel() {
       <div className="relative gallery-marquee-container w-full overflow-hidden mb-10 py-2">
         <div className="animate-gallery-marquee flex gap-4 sm:gap-5">
           {marqueeItems.map((item, idx) => {
-            const originalIndex = idx % carouselItems.length;
+            const originalIndex = idx % (items.length || 1);
             return (
               <div
                 key={`${item.id}-${idx}`}
@@ -80,7 +85,7 @@ export function GalleryCarousel() {
 
       {/* Lightbox Component */}
       <Lightbox
-        images={carouselItems}
+        images={items as any}
         currentIndex={lightboxIndex}
         onClose={() => setLightboxIndex(null)}
         onIndexChange={(i) => setLightboxIndex(i)}

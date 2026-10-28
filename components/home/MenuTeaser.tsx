@@ -52,7 +52,13 @@ const cuisineTeaserItems = [
   },
 ];
 
-export function MenuTeaser() {
+export interface MenuTeaserItem {
+  name: string;
+  slug: string;
+  image: string;
+}
+
+export function MenuTeaser({ items = cuisineTeaserItems }: { items?: MenuTeaserItem[] }) {
   return (
     <SectionShell className="bg-cream text-ink">
       <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-10">
@@ -68,7 +74,7 @@ export function MenuTeaser() {
         className="flex lg:grid lg:grid-cols-8 gap-3 sm:gap-4 overflow-x-auto lg:overflow-visible snap-x snap-mandatory pt-3 pb-6 px-1 mb-8 no-scrollbar"
         style={{ scrollbarWidth: "none" }}
       >
-        {cuisineTeaserItems.map((item) => (
+        {items.map((item) => (
           <Link
             key={item.slug}
             href={`/menu/${item.slug}`}
