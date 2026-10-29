@@ -12,9 +12,14 @@ export function NumbersStrip() {
   if (activeStats.length === 0) return null;
 
   return (
-    <section className="relative w-full bg-peach/40 border-b border-ink/10 pt-12 sm:pt-14 pb-10 sm:pb-12 overflow-hidden">
-      {/* Torn-paper top edge cut from previous white section */}
-      <TornEdge position="top" color="var(--paper)" variant={1} />
+    <section className="relative w-full bg-gradient-to-b from-[#E5CFBF] via-[#EEDCCD] to-[#F5E7DB] border-b border-ink/10 pt-12 sm:pt-14 pb-10 sm:pb-12 overflow-hidden">
+      {/* Torn-paper top edge cut from previous white section with subtle paper drop-shadow */}
+      <TornEdge
+        position="top"
+        color="var(--paper)"
+        variant={1}
+        className="overflow-visible drop-shadow-[0_4px_8px_rgba(42,27,22,0.12)]"
+      />
 
       <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
