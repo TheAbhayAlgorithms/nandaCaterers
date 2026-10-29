@@ -52,10 +52,10 @@ export function AboutBento() {
               imageAlt="Luxury wedding buffet arrangement"
             />
 
-            {/* Tile 2: Accent tile (top-right: Fresh, Hygienic, Always -> /about?tab=story) */}
+            {/* Tile 2: Accent tile (top-right: Fresh, Hygienic, Always -> /about#story) */}
             <BentoTile
               type="accent"
-              href="/about?tab=story"
+              href="/about#story"
               className="bg-accent text-white"
             >
               <div className="w-10 h-10 rounded-full bg-white/15 flex items-center justify-center mb-2.5">
