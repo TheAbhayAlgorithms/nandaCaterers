@@ -14,6 +14,8 @@ import {
   ChevronLeft,
   AlertCircle,
   Send,
+  MapPin,
+  ExternalLink,
 } from "lucide-react";
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/cn";
@@ -364,6 +366,28 @@ export function EnquiryForm({ className = "" }: { className?: string }) {
                   </span>
                   <span className="text-sm font-bold text-white group-hover:text-emerald-300">
                     +91 99678 94979 (Instant)
+                  </span>
+                </div>
+              </a>
+
+              {/* Map Location / Visit Us */}
+              <a
+                href={siteConfig.mapDirectionsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Nanda Caterers on Google Maps"
+                className="flex items-center gap-3 p-3 rounded-xl bg-white/10 hover:bg-white/15 border border-white/10 transition-colors group"
+              >
+                <div className="w-10 h-10 rounded-lg bg-[#B8391B] text-white flex items-center justify-center shrink-0 shadow-xs">
+                  <MapPin className="w-5 h-5 text-turmeric" />
+                </div>
+                <div>
+                  <span className="text-[11px] uppercase tracking-wider text-white/60 block font-medium">
+                    Map Location
+                  </span>
+                  <span className="text-sm font-bold text-white group-hover:text-turmeric flex items-center gap-1.5 transition-colors">
+                    <span>Visit Us (Bandra East, Mumbai)</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-white/60 group-hover:text-turmeric shrink-0" />
                   </span>
                 </div>
               </a>
