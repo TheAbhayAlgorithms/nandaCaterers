@@ -342,13 +342,178 @@ export const demoSoupDescriptions: SoupDescriptionItem[] = [
     description: "Authentic Gujarati-style spiced lentil broth tempered with mustard, curry leaves, and asafoetida.",
     isDemo: true,
   },
+  // Asian & Oriental Soups
+  {
+    dishName: "Manchow Soup",
+    description: "Classic Indo-Chinese dark broth infused with garlic, ginger, and finely diced vegetables, crowned with crispy fried noodles.",
+    isDemo: true,
+  },
+  {
+    dishName: "Lime Coriander Soup",
+    description: "Zesty and invigorating clear broth bursting with fresh crushed coriander leaves, lemon juice, and tender vegetable slivers.",
+    isDemo: true,
+  },
+  {
+    dishName: "Wakame Soup",
+    description: "Delicate Japanese oceanic broth steeped with nutrient-rich wakame sea greens, silken tofu, and subtle toasted sesame.",
+    isDemo: true,
+  },
+  {
+    dishName: "Korean Noodle Soup",
+    description: "Robust umami-rich broth loaded with springy noodles, bok choy, scallions, and a warming touch of Korean chili paste.",
+    isDemo: true,
+  },
+  {
+    dishName: "Thai Tom Yum Soup",
+    description: "Hot and sour aromatic Thai soup infused with lemongrass, kaffir lime leaves, galangal, straw mushrooms, and fresh chili.",
+    isDemo: true,
+  },
+  {
+    dishName: "Dumpling Soup",
+    description: "Clear simmering vegetable broth harboring delicate handmade steamed dumplings packed with spiced cabbage and water chestnuts.",
+    isDemo: true,
+  },
+  {
+    dishName: "Miso Butternut Soup",
+    description: "Velvety roasted butternut squash soup balanced harmoniously with fermented white miso paste, ginger, and scallions.",
+    isDemo: true,
+  },
+  {
+    dishName: "Miso Shiro Soup",
+    description: "Traditional Kyoto-style cloudy white miso broth simmered gently with spring scallions, seaweed, and tender soft tofu.",
+    isDemo: true,
+  },
+  {
+    dishName: "Kimchi Soup",
+    description: "Fiery and tangy Korean broth crafted from fermented cabbage kimchi, scallions, and silken tofu for a comforting warmth.",
+    isDemo: true,
+  },
+  {
+    dishName: "Veg Yaki Soup",
+    description: "Wok-seared Japanese vegetable soup featuring charred greens, scallions, baby corn, and a dash of sweet mirin broth.",
+    isDemo: true,
+  },
+  {
+    dishName: "Purple Cabbage Paneer Soup",
+    description: "Vibrant nutrient-dense soup of braised red cabbage and tender paneer cubes scented with cracked black pepper.",
+    isDemo: true,
+  },
+  {
+    dishName: "Orange Coriander Soup",
+    description: "Bright and citrusy fusion broth blending fresh winter orange juice with fragrant coriander root and mild green chilies.",
+    isDemo: true,
+  },
+  {
+    dishName: "Spicy Edamame Basil Soup",
+    description: "Creamy green soup prepared with shelled young edamame beans, sweet Italian basil, and a subtle crushed peppercorn heat.",
+    isDemo: true,
+  },
+  {
+    dishName: "Tomkha Soup",
+    description: "Silky Thai coconut broth perfumed with fresh galangal, lemongrass, lime juice, and wild button mushrooms.",
+    isDemo: true,
+  },
+  // Mexican, Mediterranean & Continental Soups
+  {
+    dishName: "Tuscan Bean Soup",
+    description: "Traditional Italian rustic stew simmered slowly with cannellini beans, rosemary, roasted garlic, and vine-ripened tomatoes.",
+    isDemo: true,
+  },
+  {
+    dishName: "Mexican Veg Soup",
+    description: "Festive Latin-style tomato broth packed with sweet corn kernels, black beans, bell peppers, and fresh cilantro.",
+    isDemo: true,
+  },
+  {
+    dishName: "Mexican Gumbo Soup",
+    description: "Hearty Southern Mexican stew thickened with okra, sweet bell peppers, celery, and warm Creole spices.",
+    isDemo: true,
+  },
+  {
+    dishName: "Mexican Chunky Chilli Bean Soup",
+    description: "Spicy slow-simmered kidney bean and pinto bean stew with roasted cumin, tomatoes, and diced jalapeños.",
+    isDemo: true,
+  },
+  {
+    dishName: "Smokey Chili Quinoa Bean Soup",
+    description: "Wholesome and protein-packed soup made with toasted organic quinoa, pinto beans, and smoked Spanish paprika.",
+    isDemo: true,
+  },
+  {
+    dishName: "Morrocan Chickpea Soup",
+    description: "Aromatic North African soup featuring tender chickpeas simmered in saffron broth with cumin and fresh mint.",
+    isDemo: true,
+  },
+  {
+    dishName: "Kabacha Squash & Chestnut Soup",
+    description: "Luxurious sweet Japanese kabocha squash velouté blended smoothly with roasted chestnuts and a hint of nutmeg.",
+    isDemo: true,
+  },
+  {
+    dishName: "Rosemary Bean & Lemon Soup",
+    description: "Earthy white beans gently stewed with fresh garden rosemary and finished with a bright squeeze of sun-ripened lemon.",
+    isDemo: true,
+  },
+  {
+    dishName: "Oyster Mississippi Soup",
+    description: "Rich Continental chowder loaded with braised oyster mushrooms, celery root, and golden shallots in a velvety sauce.",
+    isDemo: true,
+  },
+  {
+    dishName: "Vegan Borscht Soup",
+    description: "Classic Eastern European ruby beet soup flavored with dill, shredded root vegetables, and a gentle tangy apple cider kick.",
+    isDemo: true,
+  },
+  {
+    dishName: "Samau Soup",
+    description: "Wholesome Mediterranean spiced broth infused with wild greens, mountain oregano, and roasted garlic.",
+    isDemo: true,
+  },
+  {
+    dishName: "Millet Exotic Veg. Soup",
+    description: "Nutritious ancient grain soup featuring slow-cooked barnyard millet, baby asparagus, zucchini, and aromatic bay leaves.",
+    isDemo: true,
+  },
+  {
+    dishName: "Feminine Soup",
+    description: "Delicate floral-infused herbal broth brewed with beetroot petals, tender pink lotus root, and soothing mild herbs.",
+    isDemo: true,
+  },
+  // Chilled & Hearty Veg Soups
+  {
+    dishName: "Bulgarian Walnut Chilled Soup",
+    description: "Traditional Tarator-style refreshing cold yogurt soup with crushed walnuts, crunchy cucumbers, fresh dill, and garlic.",
+    isDemo: true,
+  },
+  {
+    dishName: "Chilled Market Veg. Soup",
+    description: "Invigorating chilled gazpacho-style soup pressed from ripe plum tomatoes, bell peppers, cucumbers, and extra virgin olive oil.",
+    isDemo: true,
+  },
+  {
+    dishName: "Freezer Veg. Soup",
+    description: "Ultra-crisp frozen garden vegetable gazpacho served chilled with mint leaves and crushed Himalayan pink salt.",
+    isDemo: true,
+  },
+  {
+    dishName: "Spiced Lentil & Veg. Soup",
+    description: "Soul-warming slow-simmered yellow and brown lentils finished with a fragrant tempering of cumin, ginger, and turmeric.",
+    isDemo: true,
+  },
+  {
+    dishName: "Rich & Flavorful Veg. Soup",
+    description: "Deeply comforting country-style vegetable broth brimming with root vegetables, leeks, and roasted garlic.",
+    isDemo: true,
+  },
 ];
 
 // Helper to look up soup demo description
 export function getSoupDemoDescription(dishName: string): string | undefined {
   if (!SHOW_DEMO_CONTENT) return undefined;
+  const normalize = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const target = normalize(dishName);
   const match = demoSoupDescriptions.find(
-    (item) => item.dishName.toLowerCase().trim() === dishName.toLowerCase().trim()
+    (item) => normalize(item.dishName) === target
   );
   return match?.description;
 }
