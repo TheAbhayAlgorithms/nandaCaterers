@@ -33,16 +33,16 @@ export function OfferBand() {
             PLANNING AN EVENT?
           </p>
 
-          {/* H2 with highlighted background on "Free Pricing" */}
+          {/* H2 with highlighted background on "Your Own Menu" */}
           <h2 className="font-heading font-extrabold text-2xl sm:text-4xl md:text-5xl text-white leading-tight mb-8">
-            Get{" "}
+            Cook{" "}
             <span className="inline-block bg-accent px-3 py-1 rounded-lg text-white font-bold my-1">
-              Free Pricing
+              Your Own Menu
             </span>{" "}
-            for Your Wedding or Event Menu
+            for Your Wedding or Event
           </h2>
 
-          {/* Animated Effect Button: Build Your Own Menu */}
+          {/* Animated Effect Button: Cook Your Menu */}
           <div className="relative inline-flex items-center justify-center group">
             {/* Ambient radiant glow behind button */}
             <span
@@ -61,7 +61,7 @@ export function OfferBand() {
               />
 
               <Sparkles className="w-5 h-5 text-turmeric shrink-0" />
-              <span className="tracking-wide">Build Your Own Menu</span>
+              <span className="tracking-wide">Cook Your Menu</span>
               <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1.5 shrink-0" />
             </Link>
           </div>
