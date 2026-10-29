@@ -122,11 +122,11 @@ export function AboutTabs() {
                   <BentoTile type="accent" className="bg-accent text-white">
                     <ClocheIcon className="w-8 h-8 text-white mb-2" />
                     <span className="font-heading font-bold text-lg text-white">20+ Years</span>
-                    <span className="text-xs text-white/80">Culinary Purity</span>
+                    <span className="text-xs text-white/85 font-merriweather">Culinary Purity</span>
                   </BentoTile>
                   <BentoTile type="accent" className="bg-accent text-white">
                     <span className="font-heading font-bold text-2xl text-white">5,000+</span>
-                    <span className="text-xs text-white/80">Satisfied Hosts</span>
+                    <span className="text-xs text-white/85 font-merriweather">Satisfied Hosts</span>
                   </BentoTile>
                   <BentoTile
                     type="photo"
@@ -205,11 +205,11 @@ export function AboutTabs() {
                   />
                   <BentoTile type="accent" className="bg-accent text-white">
                     <span className="font-heading font-bold text-lg text-white">Destination</span>
-                    <span className="text-xs text-white/80">Goa & Pune Caravans</span>
+                    <span className="text-xs text-white/85 font-merriweather">Goa & Pune Caravans</span>
                   </BentoTile>
                   <BentoTile type="accent" className="bg-accent text-white">
                     <span className="font-heading font-bold text-lg text-white">Mumbai & Thane</span>
-                    <span className="text-xs text-white/80">Express Hubs</span>
+                    <span className="text-xs text-white/85 font-merriweather">Express Hubs</span>
                   </BentoTile>
                   <BentoTile
                     type="photo"
