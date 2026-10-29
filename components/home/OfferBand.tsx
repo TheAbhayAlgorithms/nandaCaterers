@@ -2,8 +2,9 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { Sparkles, ArrowRight } from "lucide-react";
 import { TornEdge } from "@/components/shape/TornEdge";
-import { Button } from "@/components/ui/Button";
 
 export function OfferBand() {
   return (
@@ -33,7 +34,7 @@ export function OfferBand() {
           </p>
 
           {/* H2 with highlighted background on "Free Pricing" */}
-          <h2 className="font-heading font-extrabold text-2xl sm:text-4xl md:text-5xl text-white leading-tight mb-4">
+          <h2 className="font-heading font-extrabold text-2xl sm:text-4xl md:text-5xl text-white leading-tight mb-8">
             Get{" "}
             <span className="inline-block bg-accent px-3 py-1 rounded-lg text-white font-bold my-1">
               Free Pricing
@@ -41,20 +42,29 @@ export function OfferBand() {
             for Your Wedding or Event Menu
           </h2>
 
-          {/* Response promise sentence */}
-          <p className="text-sm sm:text-base text-white/85 mb-8 font-medium">
-            Tell us your event date, guest count and city. We&apos;ll send a customised menu and pricing within 2 working days.
-          </p>
+          {/* Animated Effect Button: Build Your Own Menu */}
+          <div className="relative inline-flex items-center justify-center group">
+            {/* Ambient radiant glow behind button */}
+            <span
+              aria-hidden="true"
+              className="absolute -inset-1 rounded-full bg-gradient-to-r from-accent via-saffron to-accent opacity-60 blur-lg group-hover:opacity-100 transition-opacity duration-300"
+            />
 
-          {/* Filled accent pill "Plan My Event" */}
-          <Button
-            href="/contact#enquiry"
-            variant="filled"
-            size="lg"
-            aria-label="Plan My Event"
-          >
-            Plan My Event
-          </Button>
+            <Link
+              href="/menu"
+              className="relative inline-flex items-center gap-3 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-accent via-[#C8401E] to-accent text-white font-bold text-base sm:text-lg shadow-warm-lg hover:shadow-[0_12px_45px_rgba(184,57,27,0.7)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-300 overflow-hidden cursor-pointer"
+            >
+              {/* Animated Light Sweep Shimmer Effect */}
+              <span
+                aria-hidden="true"
+                className="absolute inset-0 w-1/3 h-full bg-gradient-to-r from-transparent via-white/35 to-transparent animate-shimmer pointer-events-none"
+              />
+
+              <Sparkles className="w-5 h-5 text-turmeric shrink-0" />
+              <span className="tracking-wide">Build Your Own Menu</span>
+              <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1.5 shrink-0" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>

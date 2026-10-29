@@ -208,3 +208,17 @@ button, a, input, select, textarea {
   transform: scale(1.05);
 }
 
+/* Shimmer Light Sweep Effect for CTA Buttons */
+@keyframes shimmer-sweep {
+  0% {
+    transform: translateX(-150%) skewX(-25deg);
+  }
+  100% {
+    transform: translateX(350%) skewX(-25deg);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer-sweep 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
