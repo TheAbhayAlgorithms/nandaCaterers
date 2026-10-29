@@ -77,7 +77,7 @@ html {
   scroll-padding-top: 84px;
   background-color: var(--night);
   color: var(--ink);
-  font-family: var(--font-poppins), sans-serif;
+  font-family: var(--font-merriweather), Georgia, serif;
 }
 
 body {
@@ -86,6 +86,11 @@ body {
   position: relative;
   background-color: var(--paper);
   color: var(--ink);
+  font-family: var(--font-merriweather), Georgia, serif;
+}
+
+main {
+  font-family: var(--font-merriweather), Georgia, serif;
 }
 
 /* Fluid type helpers per Section 5.2 */
@@ -104,13 +109,28 @@ p, body, .fluid-body {
   line-height: 1.6;
 }
 
-/* Content / Paragraph typography: Merriweather */
-p:not(.font-heading):not(.font-accent):not(.font-lora):not(.font-poppins):not(.uppercase),
-article p,
-.prose p,
+/* Content typography: Merriweather across all content elements, chips, spans, articles, and paragraphs */
+p,
+span:not(.font-heading):not(.font-accent):not(.font-lora):not(.font-poppins),
+article,
+.prose,
 .content-font,
 .font-merriweather {
   font-family: var(--font-merriweather), Georgia, serif;
+}
+
+/* UI Elements & Controls: Poppins */
+header nav,
+header nav *,
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+header .font-heading {
+  font-family: HeadingAmpersand, var(--font-playfair), serif !important;
 }
 
 /* Explicitly preserve Poppins everywhere in the footer */
