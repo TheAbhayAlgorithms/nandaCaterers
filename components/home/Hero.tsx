@@ -10,20 +10,20 @@ import { TornEdge } from "@/components/shape/TornEdge";
 export function Hero() {
   return (
     <section className="relative w-full overflow-hidden bg-night text-white flex flex-col justify-center items-center" style={{ minHeight: "min(88svh, 820px)" }}>
-      {/* Background Image with slow zoom */}
+      {/* Background Image with slow zoom focused on the crisp in-focus catering feast */}
       <motion.div
         initial={{ scale: 1 }}
-        animate={{ scale: 1.06 }}
+        animate={{ scale: 1.05 }}
         transition={{ duration: 12, ease: "easeOut" }}
-        className="absolute inset-0 w-full h-full pointer-events-none"
+        className="absolute inset-0 w-full h-full pointer-events-none origin-top"
       >
         <Image
-          src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1920&q=85"
+          src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&crop=top&w=1920&h=750&q=85"
           alt="Lavish top-down table of catering dishes"
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-top"
         />
         {/* Dark overlay: 45% maroon-black */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-[#451213]/60 to-black/75" />
