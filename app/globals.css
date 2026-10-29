@@ -104,6 +104,31 @@ p, body, .fluid-body {
   line-height: 1.6;
 }
 
+/* Content / Paragraph typography: Merriweather */
+p:not(.font-heading):not(.font-accent):not(.font-lora):not(.font-poppins):not(.uppercase),
+article p,
+.prose p,
+.content-font,
+.font-merriweather {
+  font-family: var(--font-merriweather), Georgia, serif;
+}
+
+/* Explicitly preserve Poppins everywhere in the footer */
+footer,
+footer * {
+  font-family: var(--font-poppins), sans-serif !important;
+}
+
+footer .font-heading {
+  font-family: HeadingAmpersand, var(--font-playfair), serif !important;
+}
+
+/* Admin portal preserves clean sans-serif */
+.admin-portal,
+.admin-portal * {
+  font-family: var(--font-poppins), sans-serif !important;
+}
+
 /* Eyebrows per Section 5.2 */
 .eyebrow {
   text-transform: uppercase;

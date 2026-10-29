@@ -16,7 +16,7 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-cream text-ink flex flex-col font-sans">
+    <div className="min-h-screen bg-cream text-ink flex flex-col font-sans admin-portal">
       {/* Top Admin Navigation Bar */}
       <AdminNavbar />
 

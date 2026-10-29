@@ -36,6 +36,8 @@ const config: Config = {
       fontFamily: {
         heading: ["HeadingAmpersand", "var(--font-playfair)", "serif"],
         body: ["var(--font-poppins)", "sans-serif"],
+        merriweather: ["var(--font-merriweather)", "serif"],
+        poppins: ["var(--font-poppins)", "sans-serif"],
         accent: ["var(--font-caveat)", "cursive"],
         lora: ["var(--font-lora)", "serif"],
       },
