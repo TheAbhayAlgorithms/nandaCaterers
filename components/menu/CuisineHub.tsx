@@ -46,9 +46,6 @@ export function CuisineHub({ categories = menuCategories }: CuisineHubProps) {
                     <h3 className="font-heading font-bold text-lg text-ink group-hover:text-accent transition-colors">
                       {category.title}
                     </h3>
-                    <span className="text-[11px] font-semibold text-accent bg-peach px-2 py-0.5 rounded-full border border-accent/20 shrink-0">
-                      {category.sections.reduce((acc, s) => acc + s.dishes.length, 0)} items
-                    </span>
                   </div>
                   <p className="text-xs text-ink/70 mt-1 line-clamp-2 leading-relaxed">
                     {category.tagline}
