@@ -10,13 +10,15 @@ interface PageHeroProps {
   breadcrumb: string;
   imageSrc?: string;
   badge?: string;
+  bottomColor?: string;
 }
 
 export function PageHero({
   title,
   breadcrumb,
-  imageSrc = "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1600&q=80",
+  imageSrc = "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&crop=top&w=1920&h=750&q=80",
   badge,
+  bottomColor = "var(--paper)",
 }: PageHeroProps) {
   return (
     <section className="relative w-full overflow-hidden bg-night text-white flex flex-col justify-center items-center h-[260px] sm:h-[300px]">
@@ -28,7 +30,7 @@ export function PageHero({
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-top"
         />
         <div className="absolute inset-0 bg-night/80 backdrop-blur-[1px]" />
       </div>
@@ -56,8 +58,8 @@ export function PageHero({
         )}
       </div>
 
-      {/* Torn-paper bottom edge */}
-      <TornEdge position="bottom" color="var(--paper)" variant={0} />
+      {/* Torn-paper bottom edge matching section below */}
+      <TornEdge position="bottom" color={bottomColor} variant={0} />
     </section>
   );
 }

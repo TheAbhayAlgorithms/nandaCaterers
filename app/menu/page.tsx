@@ -19,7 +19,7 @@ export default async function MenuHubPage() {
       <PageHero
         title="Our Food Menu"
         breadcrumb="Menu"
-        imageSrc="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1600&q=80"
+        imageSrc="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&crop=top&w=1920&h=750&q=80"
       />
 
       {/* Segmented Control & Cuisine Cards */}
