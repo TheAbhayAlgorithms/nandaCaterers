@@ -87,7 +87,7 @@ export function CategoryView({ category }: CategoryViewProps) {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder={`Search dishes in ${category.title}...`}
-              className="w-full pl-11 pr-10 py-2.5 rounded-full bg-paper border border-ink/15 text-sm text-ink placeholder:text-ink/45 shadow-xs focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+              className="w-full pl-11 pr-10 py-2.5 rounded-full bg-paper border border-ink/15 text-base sm:text-sm text-ink placeholder:text-ink/45 shadow-xs focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/40 transition-colors"
             />
             {searchQuery && (
               <button

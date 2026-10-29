@@ -42,6 +42,22 @@
   font-feature-settings: "lnum" 1, "tnum" 1;
 }
 
+/* Prevent iOS auto-zoom on input focus:
+   iOS Safari automatically zooms the screen on inputs with font-size < 16px.
+   Enforcing 16px font-size on mobile inputs disables this auto-zoom and keeps behavior normal. */
+@media screen and (max-width: 768px) {
+  input[type="text"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="number"],
+  input[type="date"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
 :root {
   --accent: #B8391B;
   --accent-dark: #8E2A12;

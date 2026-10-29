@@ -24,7 +24,7 @@ export function MenuSearch({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
-          className="w-full pl-12 pr-10 py-3 rounded-2xl bg-ivory border border-charcoal/15 text-sm text-charcoal placeholder:text-charcoal/40 shadow-sm focus:outline-none focus:ring-2 focus:ring-saffron focus:border-transparent transition-all"
+          className="w-full pl-12 pr-10 py-3 rounded-2xl bg-ivory border border-charcoal/15 text-base sm:text-sm text-charcoal placeholder:text-charcoal/40 shadow-sm focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron/40 transition-colors"
         />
 
         {value && (
