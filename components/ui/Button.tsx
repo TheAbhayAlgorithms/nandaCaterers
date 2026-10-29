@@ -53,8 +53,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     const isTextVariant = variant === "text";
     const baseStyles = isTextVariant
-      ? "inline-flex items-center gap-1 cursor-pointer transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent select-none"
-      : "relative rounded-full inline-flex items-center justify-center gap-2 cursor-pointer transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none select-none text-center overflow-hidden";
+      ? "font-poppins inline-flex items-center gap-1 cursor-pointer transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent select-none"
+      : "font-poppins relative rounded-full inline-flex items-center justify-center gap-2 cursor-pointer transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none select-none text-center overflow-hidden";
 
     const content = (
       <>

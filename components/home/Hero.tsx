@@ -87,7 +87,7 @@ export function Hero() {
             <Link
               href="/menu"
               aria-label="Explore food menu"
-              className="relative inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-white/80 bg-white/10 backdrop-blur-sm text-white font-semibold text-base shadow-soft hover:bg-white/20 hover:border-white hover:shadow-[0_0_30px_rgba(255,255,255,0.35)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-300 overflow-hidden cursor-pointer"
+              className="font-poppins relative inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-white/80 bg-white/10 backdrop-blur-sm text-white font-semibold text-base shadow-soft hover:bg-white/20 hover:border-white hover:shadow-[0_0_30px_rgba(255,255,255,0.35)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-300 overflow-hidden cursor-pointer"
             >
               {/* Animated Light Sweep Shimmer Effect */}
               <span

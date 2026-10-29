@@ -109,9 +109,22 @@ p, body, .fluid-body {
   line-height: 1.6;
 }
 
-/* Content typography: Merriweather across all content elements, chips, spans, articles, and paragraphs */
+/* Universal Base Typography: Merriweather everywhere by default */
+input,
+select,
+textarea,
 p,
-span:not(.font-heading):not(.font-accent):not(.font-lora):not(.font-poppins),
+span,
+div,
+a,
+li,
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 article,
 .prose,
 .content-font,
@@ -119,18 +132,34 @@ article,
   font-family: var(--font-merriweather), Georgia, serif;
 }
 
-/* UI Elements & Controls: Poppins */
-header nav,
-header nav *,
-button,
-input,
-select,
-textarea {
-  font-family: var(--font-poppins), sans-serif;
+/* Headings with font-heading keep Playfair Display */
+.font-heading,
+.font-heading * {
+  font-family: HeadingAmpersand, var(--font-playfair), serif !important;
 }
 
-header .font-heading {
-  font-family: HeadingAmpersand, var(--font-playfair), serif !important;
+/* Accent script keeps Caveat */
+.font-accent,
+.font-accent * {
+  font-family: var(--font-caveat), cursive !important;
+}
+
+/* Stats counters keep Lora */
+.font-lora,
+.font-lora * {
+  font-family: var(--font-lora), serif !important;
+}
+
+/* Buttons explicitly retain Poppins */
+button,
+button *,
+[role="button"],
+[role="button"] *,
+.btn,
+.btn *,
+.font-poppins,
+.font-poppins * {
+  font-family: var(--font-poppins), sans-serif !important;
 }
 
 /* Explicitly preserve Poppins everywhere in the footer */
