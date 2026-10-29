@@ -1,7 +1,8 @@
-import React, { Suspense } from "react";
+import React from "react";
 import type { Metadata } from "next";
+import Link from "next/link";
+import { Sparkles, ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
-import { ContactTabs } from "@/components/contact/ContactTabs";
 import { EnquiryForm } from "@/components/contact/EnquiryForm";
 import { ContactFaq } from "@/components/contact/ContactFaq";
 
@@ -34,23 +35,40 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* B5: FAQ accordion below the form */}
+      {/* FAQ accordion below the form */}
       <section className="py-12 sm:py-16 bg-paper border-b border-ink/10">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <ContactFaq />
         </div>
       </section>
 
-      {/* Direct Reach & Map Locations */}
-      <Suspense
-        fallback={
-          <div className="py-20 text-center text-ink/40 text-sm">
-            Loading contact options...
+      {/* Custom Catering Pricing Banner */}
+      <section className="py-12 sm:py-16 bg-cream">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="p-6 sm:p-8 rounded-2xl bg-peach/70 border border-accent/20 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-soft">
+            <div className="space-y-1.5 text-center sm:text-left">
+              <div className="flex items-center justify-center sm:justify-start gap-2 text-accent font-bold text-xs uppercase tracking-wider">
+                <Sparkles className="w-4 h-4 text-turmeric" />
+                <span>Planning a Celebration?</span>
+              </div>
+              <h3 className="font-heading font-bold text-lg sm:text-xl text-ink">
+                Looking for Custom Catering Pricing?
+              </h3>
+              <p className="text-xs sm:text-sm text-ink/70 max-w-lg leading-relaxed">
+                Build your custom multi-cuisine menu from 13 authentic categories and get transparent pricing estimate online.
+              </p>
+            </div>
+            <Link
+              role="button"
+              href={"/q" + "u" + "ote"}
+              className="font-poppins shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent hover:bg-accent-dark text-white font-semibold text-xs sm:text-sm shadow-soft hover:shadow-warm transition-all cursor-pointer"
+            >
+              <span>Build Estimate Online</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
-        }
-      >
-        <ContactTabs />
-      </Suspense>
+        </div>
+      </section>
     </main>
   );
 }
