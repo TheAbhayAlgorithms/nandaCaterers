@@ -56,7 +56,7 @@ export function Modal({ isOpen, onClose, title, children, className }: ModalProp
               exit={{ scale: 0.96, opacity: 0, y: 20 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
               className={cn(
-                "pointer-events-auto w-full sm:max-w-[720px] max-h-[85svh] bg-paper shadow-2xl rounded-t-3xl sm:rounded-3xl border border-accent/25 flex flex-col overflow-hidden",
+                "pointer-events-auto w-full sm:max-w-[880px] md:max-w-[980px] lg:max-w-[1040px] max-h-[94svh] bg-paper shadow-2xl rounded-t-3xl sm:rounded-3xl border border-accent/25 flex flex-col overflow-hidden",
                 className
               )}
             >

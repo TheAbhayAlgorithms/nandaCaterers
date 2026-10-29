@@ -35,14 +35,19 @@ export function ServiceModal({ service, isOpen, onClose }: ServiceModalProps) {
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} title={service.title}>
-      {/* Large photo */}
-      <div className="relative w-full h-56 sm:h-72 rounded-2xl overflow-hidden shadow-soft mb-4">
+    <Modal
+      isOpen={isOpen}
+      onClose={onClose}
+      title={service.title}
+      className="sm:max-w-[880px] md:max-w-[980px] lg:max-w-[1040px] max-h-[94svh]"
+    >
+      {/* Large photo banner */}
+      <div className="relative w-full h-44 sm:h-52 md:h-56 rounded-2xl overflow-hidden shadow-soft mb-3 shrink-0">
         <Image
           src={service.image}
           alt={service.title}
           fill
-          sizes="(max-width: 768px) 100vw, 700px"
+          sizes="(max-width: 1040px) 100vw, 1040px"
           className="object-cover"
         />
         <div className="absolute top-3 right-3 bg-night/80 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full border border-white/20">
@@ -58,11 +63,11 @@ export function ServiceModal({ service, isOpen, onClose }: ServiceModalProps) {
       </div>
 
       {/* Highlights */}
-      <div className="pt-2">
-        <h4 className="text-xs uppercase font-bold tracking-wider text-accent mb-2">
+      <div className="pt-1">
+        <h4 className="text-xs uppercase font-bold tracking-wider text-accent mb-1.5">
           Key Service Highlights
         </h4>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-ink/90">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 text-xs sm:text-sm text-ink/90">
           {service.highlights.map((h, idx) => (
             <li key={idx} className="flex items-start gap-2">
               <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
@@ -73,7 +78,7 @@ export function ServiceModal({ service, isOpen, onClose }: ServiceModalProps) {
       </div>
 
       {/* Actions */}
-      <div className="pt-4 flex flex-col sm:flex-row items-center gap-3 border-t border-black/5 mt-4">
+      <div className="pt-3 flex flex-col sm:flex-row items-center gap-3 border-t border-black/5 mt-3 shrink-0">
         <Button onClick={handleEnquire} variant="filled" className="w-full sm:w-auto">
           Enquire about this
         </Button>
