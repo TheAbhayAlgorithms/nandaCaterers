@@ -2,10 +2,10 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Divider } from "@/components/shape/Divider";
 import { TornEdge } from "@/components/shape/TornEdge";
-import { Button } from "@/components/ui/Button";
 
 export function Hero() {
   return (
@@ -70,21 +70,34 @@ export function Hero() {
           Wedding catering with new ideas, served in our own style.
         </motion.p>
 
-        {/* Outlined pill button "Explore Menu" */}
+        {/* Outlined pill button "Explore Menu" with shimmer effect */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.45 }}
           className="flex justify-center"
         >
-          <Button
-            href="/menu"
-            variant="on-dark"
-            size="lg"
-            aria-label="Explore food menu"
-          >
-            Explore Menu
-          </Button>
+          <div className="relative inline-flex items-center justify-center group">
+            {/* Ambient radiant glow behind button */}
+            <span
+              aria-hidden="true"
+              className="absolute -inset-1 rounded-full bg-white/25 opacity-30 blur-md group-hover:opacity-80 transition-opacity duration-300"
+            />
+
+            <Link
+              href="/menu"
+              aria-label="Explore food menu"
+              className="relative inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-white/80 bg-white/10 backdrop-blur-sm text-white font-semibold text-base shadow-soft hover:bg-white/20 hover:border-white hover:shadow-[0_0_30px_rgba(255,255,255,0.35)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-300 overflow-hidden cursor-pointer"
+            >
+              {/* Animated Light Sweep Shimmer Effect */}
+              <span
+                aria-hidden="true"
+                className="absolute inset-0 w-1/3 h-full bg-gradient-to-r from-transparent via-white/40 to-transparent animate-shimmer pointer-events-none"
+              />
+
+              <span className="relative z-10 tracking-wide">Explore Menu</span>
+            </Link>
+          </div>
         </motion.div>
       </div>
 
