@@ -12,7 +12,7 @@ export function Eyebrow({ children, text, className, color = "text-accent" }: Ey
   return (
     <span
       className={cn(
-        "inline-block text-[11px] sm:text-xs uppercase font-bold tracking-[0.14em] mb-2 select-none",
+        "font-poppins inline-block text-[11px] sm:text-xs uppercase font-bold tracking-[0.14em] mb-2 select-none",
         color,
         className
       )}

@@ -15,18 +15,18 @@ export function Hero() {
         initial={{ scale: 1 }}
         animate={{ scale: 1.05 }}
         transition={{ duration: 12, ease: "easeOut" }}
-        className="absolute inset-0 w-full h-full pointer-events-none origin-top"
+        className="absolute inset-0 w-full h-full pointer-events-none origin-center"
       >
         <Image
-          src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&crop=top&w=1920&h=750&q=85"
-          alt="Lavish top-down table of catering dishes"
+          src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=1920&q=85"
+          alt="Lavish multi-dish Indian wedding catering feast"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-top"
+          className="object-cover object-center"
         />
-        {/* Dark overlay: 45% maroon-black */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-[#451213]/60 to-black/75" />
+        {/* Dark overlay: 50% maroon-black */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-[#451213]/60 to-black/75" />
       </motion.div>
 
       {/* Centred Content Stack */}
@@ -36,7 +36,7 @@ export function Hero() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-[11px] sm:text-xs uppercase font-bold tracking-[0.2em] text-white/80 mb-2 select-none"
+          className="font-poppins text-[11px] sm:text-xs uppercase font-bold tracking-[0.2em] text-white/80 mb-2 select-none"
         >
           WELCOME TO
         </motion.p>

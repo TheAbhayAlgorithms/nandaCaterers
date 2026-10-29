@@ -15,7 +15,7 @@ export function OfferBand() {
       {/* Dark full-bleed food photo background with heavy dark overlay */}
       <div className="absolute inset-0 w-full h-full pointer-events-none">
         <Image
-          src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=1920&q=80"
+          src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1920&q=80"
           alt="Warm Indian catering banquet"
           fill
           sizes="100vw"

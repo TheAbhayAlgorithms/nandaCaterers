@@ -109,7 +109,7 @@ p, body, .fluid-body {
   line-height: 1.6;
 }
 
-/* Universal Base Typography: Merriweather everywhere by default */
+/* Universal Base Typography: Merriweather for body copy, paragraphs, and content */
 input,
 select,
 textarea,
@@ -121,10 +121,6 @@ li,
 label,
 h1,
 h2,
-h3,
-h4,
-h5,
-h6,
 article,
 .prose,
 .content-font,
@@ -150,7 +146,21 @@ article,
   font-family: var(--font-lora), serif !important;
 }
 
-/* Buttons explicitly retain Poppins */
+/* Subheadings, Eyebrows & Buttons explicitly retain Poppins */
+h3:not(.font-heading),
+h3:not(.font-heading) *,
+h4:not(.font-heading),
+h4:not(.font-heading) *,
+h5:not(.font-heading),
+h5:not(.font-heading) *,
+h6:not(.font-heading),
+h6:not(.font-heading) *,
+.eyebrow,
+.eyebrow *,
+.subheading,
+.subheading *,
+.font-subheading,
+.font-subheading *,
 button,
 button *,
 [role="button"],

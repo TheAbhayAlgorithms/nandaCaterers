@@ -2,8 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { ArrowLeft, ArrowRight, Search, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Search, X } from "lucide-react";
 import { MenuCategory, menuCategories, Dish } from "@/data/menu";
 import { SubTabs } from "./SubTabs";
 import { DishList } from "./DishList";
@@ -55,8 +54,6 @@ export function CategoryView({ category }: CategoryViewProps) {
     return allDishes;
   }, [category.sections, searchQuery]);
 
-  const router = useRouter();
-
   // Previous & Next cuisine navigation
   const currentIndex = menuCategories.findIndex((c) => c.slug === category.slug);
   const prevCategory =
@@ -67,38 +64,6 @@ export function CategoryView({ category }: CategoryViewProps) {
     currentIndex < menuCategories.length - 1
       ? menuCategories[currentIndex + 1]
       : menuCategories[0];
-
-  // Section navigation (Previous / Next)
-  const currentSectionIndex = category.sections.findIndex(
-    (s) => s.title === activeSectionTitle
-  );
-  const hasPrevSection = currentSectionIndex > 0;
-  const hasNextSection = currentSectionIndex < category.sections.length - 1;
-
-  const handlePrev = () => {
-    setSearchQuery("");
-    if (hasPrevSection) {
-      setActiveSectionTitle(category.sections[currentSectionIndex - 1].title);
-    } else {
-      router.push(`/menu/${prevCategory.slug}`);
-    }
-  };
-
-  const handleNext = () => {
-    setSearchQuery("");
-    if (hasNextSection) {
-      setActiveSectionTitle(category.sections[currentSectionIndex + 1].title);
-    } else {
-      router.push(`/menu/${nextCategory.slug}`);
-    }
-  };
-
-  const prevLabel = hasPrevSection
-    ? category.sections[currentSectionIndex - 1].title
-    : prevCategory.title;
-  const nextLabel = hasNextSection
-    ? category.sections[currentSectionIndex + 1].title
-    : nextCategory.title;
 
   return (
     <div className="w-full bg-cream/40">
@@ -157,33 +122,9 @@ export function CategoryView({ category }: CategoryViewProps) {
           <div>
             <div className="text-center mb-6 sm:mb-8">
               <Eyebrow text={category.title.toUpperCase()} />
-              
-              <div className="flex items-center justify-center gap-2.5 sm:gap-6 mt-1.5 mb-1">
-                <button
-                  type="button"
-                  onClick={handlePrev}
-                  aria-label={`Previous: ${prevLabel}`}
-                  title={`Previous: ${prevLabel}`}
-                  className="group/btn p-2 sm:p-2.5 rounded-full border border-ink/15 bg-paper text-ink/75 hover:text-accent hover:border-accent hover:bg-peach/30 transition-all shadow-xs active:scale-95 cursor-pointer shrink-0"
-                >
-                  <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 group-hover/btn:-translate-x-0.5 transition-transform" />
-                </button>
-
-                <h2 className="font-heading font-bold text-2xl sm:text-3xl lg:text-4xl text-ink leading-tight">
-                  {activeSection?.title}
-                </h2>
-
-                <button
-                  type="button"
-                  onClick={handleNext}
-                  aria-label={`Next: ${nextLabel}`}
-                  title={`Next: ${nextLabel}`}
-                  className="group/btn p-2 sm:p-2.5 rounded-full border border-ink/15 bg-paper text-ink/75 hover:text-accent hover:border-accent hover:bg-peach/30 transition-all shadow-xs active:scale-95 cursor-pointer shrink-0"
-                >
-                  <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 group-hover/btn:translate-x-0.5 transition-transform" />
-                </button>
-              </div>
-
+              <h2 className="font-heading font-bold text-2xl sm:text-3xl text-ink mt-1">
+                {activeSection?.title}
+              </h2>
               <Divider align="center" className="my-2" />
               <p className="text-xs text-ink/60">
                 {activeSection?.dishes.length} hand-crafted delicacies prepared fresh
