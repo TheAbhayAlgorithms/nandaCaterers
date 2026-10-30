@@ -22,51 +22,52 @@ export function buildWhatsAppLink(details?: CateringWhatsAppDetails): string {
   }
 
   const lines: string[] = [
-    "*NEW CATERING ENQUIRY - NANDA CATERERS*",
-    "=====================================",
+    "--------------------------------------------------",
+    "*NANDA CATERERS - CATERING ENQUIRY*",
+    "--------------------------------------------------",
   ];
 
   if (details.firstName || details.lastName) {
     const fullName = [details.firstName, details.lastName].filter(Boolean).join(" ");
-    lines.push(`*Client Name:* ${fullName}`);
+    lines.push(`>> *Client Name:* ${fullName}`);
   }
   if (details.phone) {
-    lines.push(`*Contact Number:* ${details.phone}`);
+    lines.push(`>> *Contact Phone:* ${details.phone}`);
   }
   if (details.email) {
-    lines.push(`*Email:* ${details.email}`);
+    lines.push(`>> *Email Address:* ${details.email}`);
   }
   const srv = details.service || details.serviceType;
   if (srv) {
-    lines.push(`*Occasion / Service:* ${srv}`);
+    lines.push(`>> *Catering Service:* ${srv}`);
   }
   if (details.eventDate) {
-    lines.push(`*Event Date:* ${details.eventDate}`);
+    lines.push(`>> *Event Date:* ${details.eventDate}`);
   }
   if (details.guestCount) {
-    lines.push(`*Expected Guests:* ${details.guestCount}`);
+    lines.push(`>> *Expected Guests:* ${details.guestCount}`);
   }
   if (details.location) {
-    lines.push(`*Event Location / Venue:* ${details.location}`);
+    lines.push(`>> *Event Venue:* ${details.location}`);
   }
 
   if (details.selectedDishes && details.selectedDishes.length > 0) {
     lines.push("");
     lines.push(`*Selected Menu Dishes (${details.selectedDishes.length}):*`);
     details.selectedDishes.forEach((dish) => {
-      lines.push(` - ${dish}`);
+      lines.push(`   * ${dish}`);
     });
   }
 
   const msg = details.message || details.customMessage;
   if (msg) {
     lines.push("");
-    lines.push(`*Special Requests / Notes:*`);
-    lines.push(`${msg}`);
+    lines.push(`*Special Notes & Dietary Preferences:*`);
+    lines.push(`"${msg}"`);
   }
 
-  lines.push("=====================================");
-  lines.push("_Sent via nandacaterers.com_");
+  lines.push("--------------------------------------------------");
+  lines.push("_Submitted via nandacaterers.com_");
 
   return `https://wa.me/${baseNumber}?text=${encodeURIComponent(lines.join("\n"))}`;
 }
