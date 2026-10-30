@@ -43,7 +43,7 @@ const cuisineTeaserItems = [
   {
     name: "Sweets",
     slug: "sweets",
-    image: "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=400&q=80",
+    image: "/images/sweets.jpg",
   },
   {
     name: "Desserts & Ice Cream",

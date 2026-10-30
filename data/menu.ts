@@ -729,7 +729,7 @@ export const menuCategories: MenuCategory[] = [
     title: "Sweets",
     group: "Mains & Sweets",
     tagline: "Dry fruit delicacies, slow-cooked desi ghee halwas, Bengali mithai, warm jalebis, and rabdi.",
-    image: "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/sweets.jpg",
     sections: [
       {
         title: "Dry Fruit Sweets",
@@ -1030,7 +1030,7 @@ export function getFeaturedDishes(): { name: string; category: string; descripti
       name: "Kesar Rasmalai",
       category: "Cold & Bengali Sweets",
       description: "Delicate cottage cheese discs steeped in thick saffron-pistachio infused milk.",
-      image: "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=600&q=80",
+      image: "/images/sweets.jpg",
     },
     {
       name: "Malai Mava Kulfi",

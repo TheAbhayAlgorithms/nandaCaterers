@@ -37,7 +37,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "gal-5",
-    src: "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=1200&q=80",
+    src: "/images/sweets.jpg",
     alt: "Assorted Indian Wedding Sweets & Mithai",
     title: "Traditional Mithai & Halwa Counter",
     category: "Food",

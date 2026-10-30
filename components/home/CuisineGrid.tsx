@@ -61,7 +61,7 @@ const cuisineList: CuisineCardItem[] = [
   {
     title: "Sweets",
     href: "/menu/sweets",
-    image: "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=800&q=80",
+    image: "/images/sweets.jpg",
     subtitle: "Dry fruit mithai, halwa, Bengali sweets & rabdi",
     itemsCount: "98 Dishes",
   },

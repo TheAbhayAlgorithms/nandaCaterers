@@ -135,7 +135,7 @@ export function AboutContent() {
                   </div>
                   <div className="relative aspect-square rounded-3xl overflow-hidden shadow-warm">
                     <Image
-                      src="https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=400&q=80"
+                      src="/images/sweets.jpg"
                       alt="Traditional sweets"
                       fill
                       className="object-cover"

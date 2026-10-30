@@ -38,7 +38,7 @@ const featuredDishes: FeaturedDish[] = [
     name: "Rasmalai",
     category: "Festive Sweet",
     desc: "Soft cottage cheese patties soaked in saffron-infused chilled sweet milk with pistachio slivers.",
-    image: "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=600&q=80",
+    image: "/images/sweets.jpg",
   },
 ];
 

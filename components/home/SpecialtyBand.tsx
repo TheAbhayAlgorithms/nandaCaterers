@@ -119,7 +119,7 @@ export function SpecialtyBand() {
                 {/* Image 4: Traditional Sweets (Bottom Middle) */}
                 <div className="relative col-span-2 row-span-2 rounded-2xl overflow-hidden shadow-warm">
                   <Image
-                    src="https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=400&q=80"
+                    src="/images/sweets.jpg"
                     alt="Traditional Indian Sweets"
                     fill
                     sizes="(max-width: 1024px) 30vw, 200px"
