@@ -107,6 +107,25 @@ export function QuoteForm({ initialService, initialDishes, className }: QuoteFor
       setSubmittedData(data);
       setIsSuccess(true);
       triggerMarigoldConfetti();
+
+      // Automatically open WhatsApp with all filled details
+      const waLink = buildWhatsAppLink({
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        phone: data.phone,
+        service: data.service,
+        location: data.location,
+        eventDate: data.eventDate,
+        guestCount: data.guests,
+        message: data.message,
+        selectedDishes: activeDishes,
+      });
+
+      if (typeof window !== "undefined") {
+        window.open(waLink, "_blank", "noopener,noreferrer");
+      }
+
       reset();
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : "Something went wrong. Please call us directly.";
