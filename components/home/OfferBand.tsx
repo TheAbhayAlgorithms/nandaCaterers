@@ -15,14 +15,14 @@ export function OfferBand() {
       {/* Dark full-bleed food photo background with heavy dark overlay */}
       <div className="absolute inset-0 w-full h-full pointer-events-none">
         <Image
-          src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1920&q=80"
-          alt="Warm Indian catering banquet"
+          src="/images/catering-feast-banner.jpg"
+          alt="Royal Indian wedding catering banquet feast"
           fill
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-center"
         />
-        {/* Heavy dark overlay: 88% night */}
-        <div className="absolute inset-0 bg-night/88 backdrop-blur-[2px]" />
+        {/* Rich dark overlay to keep text crisp while revealing royal feast */}
+        <div className="absolute inset-0 bg-night/85 backdrop-blur-[1px]" />
       </div>
 
       {/* Content Container: Centered on all viewports */}
