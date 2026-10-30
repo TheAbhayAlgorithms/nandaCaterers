@@ -22,51 +22,52 @@ export function buildWhatsAppLink(details?: CateringWhatsAppDetails): string {
   }
 
   const lines: string[] = [
-    "*--- NANDA CATERERS | CATERING ENQUIRY ---*",
-    "--------------------------------------------------",
+    "*NEW CATERING ENQUIRY*",
+    "*Nanda Caterers - Mumbai*",
+    "____________________________________",
   ];
 
   if (details.firstName || details.lastName) {
     const fullName = [details.firstName, details.lastName].filter(Boolean).join(" ");
-    lines.push(`[Name] ${fullName}`);
+    lines.push(`*Name:* ${fullName}`);
   }
   if (details.phone) {
-    lines.push(`[Phone] ${details.phone}`);
+    lines.push(`*Phone:* ${details.phone}`);
   }
   if (details.email) {
-    lines.push(`[Email] ${details.email}`);
+    lines.push(`*Email:* ${details.email}`);
   }
   const srv = details.service || details.serviceType;
   if (srv) {
-    lines.push(`[Service] ${srv}`);
+    lines.push(`*Occasion:* ${srv}`);
   }
   if (details.eventDate) {
-    lines.push(`[Date] ${details.eventDate}`);
+    lines.push(`*Event Date:* ${details.eventDate}`);
   }
   if (details.guestCount) {
-    lines.push(`[Guests] ${details.guestCount}`);
+    lines.push(`*Estimated Guests:* ${details.guestCount}`);
   }
   if (details.location) {
-    lines.push(`[Location] ${details.location}`);
+    lines.push(`*Venue / City:* ${details.location}`);
   }
 
   if (details.selectedDishes && details.selectedDishes.length > 0) {
     lines.push("");
-    lines.push(`[Menu Dishes Selected - ${details.selectedDishes.length} items]:`);
+    lines.push(`*Selected Dishes (${details.selectedDishes.length}):*`);
     details.selectedDishes.forEach((dish) => {
-      lines.push(`  + ${dish}`);
+      lines.push(`• ${dish}`);
     });
   }
 
   const msg = details.message || details.customMessage;
   if (msg) {
     lines.push("");
-    lines.push(`[Special Notes]:`);
-    lines.push(`"${msg}"`);
+    lines.push(`*Special Notes:*`);
+    lines.push(`_${msg}_`);
   }
 
-  lines.push("--------------------------------------------------");
-  lines.push("_Sent via nandacaterers.com_");
+  lines.push("____________________________________");
+  lines.push("_Sent from nandacaterers.com_");
 
   return `https://wa.me/${baseNumber}?text=${encodeURIComponent(lines.join("\n"))}`;
 }

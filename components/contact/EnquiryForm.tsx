@@ -117,25 +117,26 @@ export function EnquiryForm({ className = "" }: { className?: string }) {
   // Build the exact WhatsApp text
   const buildMessageText = () => {
     const lines = [
-      "*--- NANDA CATERERS | CATERING ENQUIRY ---*",
-      "--------------------------------------------------",
-      `[Name] ${formData.name.trim() || "Guest"}`,
-      `[Phone] ${formData.phone.trim()}`,
-      `[Service] ${formData.eventType}`,
-      `[Menu] ${formData.menuPreference}`,
-      `[Date] ${effectiveDate}`,
-      `[Guests] ${effectiveGuests}`,
-      `[Location] ${formData.city.trim() || "Mumbai"}`,
+      "*NEW CATERING ENQUIRY*",
+      "*Nanda Caterers - Mumbai*",
+      "____________________________________",
+      `*Name:* ${formData.name.trim() || "Guest"}`,
+      `*Phone:* ${formData.phone.trim()}`,
+      `*Occasion:* ${formData.eventType}`,
+      `*Menu Preference:* ${formData.menuPreference}`,
+      `*Event Date:* ${effectiveDate}`,
+      `*Estimated Guests:* ${effectiveGuests}`,
+      `*Venue / City:* ${formData.city.trim() || "Mumbai"}`,
     ];
 
     if (formData.specialRequests && formData.specialRequests.trim()) {
       lines.push("");
-      lines.push(`[Special Notes]:`);
-      lines.push(`"${formData.specialRequests.trim()}"`);
+      lines.push(`*Special Notes:*`);
+      lines.push(`_${formData.specialRequests.trim()}_`);
     }
 
-    lines.push("--------------------------------------------------");
-    lines.push("_Sent via nandacaterers.com_");
+    lines.push("____________________________________");
+    lines.push("_Sent from nandacaterers.com_");
     return lines.join("\n");
   };
 
