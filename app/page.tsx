@@ -6,7 +6,6 @@ import { ServicesTeaser } from "@/components/home/ServicesTeaser";
 import { HomeTestimonials } from "@/components/home/HomeTestimonials";
 import { GalleryCarousel } from "@/components/home/GalleryCarousel";
 import { MenuTeaser } from "@/components/home/MenuTeaser";
-import { PackagesTeaser } from "@/components/home/PackagesTeaser";
 import { OfferBand } from "@/components/home/OfferBand";
 import { getPublicMenuCategories, getPublicGalleryImages } from "@/lib/supabase/data";
 
@@ -51,9 +50,6 @@ export default async function HomePage() {
 
       {/* 5. Menu Teaser */}
       <MenuTeaser items={menuItems} />
-
-      {/* B4. Packages Teaser */}
-      <PackagesTeaser />
 
       {/* Offer / Enquiry Band */}
       <OfferBand />

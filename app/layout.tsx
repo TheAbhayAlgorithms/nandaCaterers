@@ -9,6 +9,7 @@ import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { QuoteTray } from "@/components/layout/QuoteTray";
 import { QuoteSheetModal } from "@/components/layout/QuoteSheetModal";
 import { SplashLoader } from "@/components/layout/SplashLoader";
+import { RefreshRedirect } from "@/components/layout/RefreshRedirect";
 import { PublicLayoutWrapper } from "@/components/layout/PublicLayoutWrapper";
 import { QuoteSelectionProvider } from "@/context/QuoteSelectionContext";
 import { siteConfig } from "@/data/site";
@@ -151,6 +152,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased selection:bg-saffron selection:text-charcoal">
         <QuoteSelectionProvider>
+          <RefreshRedirect />
           <PublicLayoutWrapper>
             {/* Top Scroll Progress Indicator */}
             <ScrollProgress />

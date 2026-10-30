@@ -97,6 +97,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
                   <Link
                     key={link.name}
                     href={link.href}
+                    prefetch={true}
                     onClick={onClose}
                     className={cn(
                       "group flex items-center justify-between p-3 rounded-2xl font-lora font-semibold text-lg transition-all duration-200 cursor-pointer",

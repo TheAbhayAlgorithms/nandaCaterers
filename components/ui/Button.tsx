@@ -70,6 +70,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       return (
         <Link
           href={href}
+          prefetch={true}
           className={cn(baseStyles, !isTextVariant && sizeClasses[size], variantClasses[variant], className)}
         >
           {content}

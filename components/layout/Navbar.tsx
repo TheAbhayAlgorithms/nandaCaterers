@@ -69,6 +69,7 @@ export function Navbar() {
                   <Link
                     key={link.name}
                     href={link.href}
+                    prefetch={true}
                     className={cn(
                       "inline-flex items-center py-1 transition-colors hover:text-accent relative",
                       isActive
