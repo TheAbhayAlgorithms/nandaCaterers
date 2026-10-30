@@ -22,52 +22,51 @@ export function buildWhatsAppLink(details?: CateringWhatsAppDetails): string {
   }
 
   const lines: string[] = [
-    "--------------------------------------------------",
-    "*NANDA CATERERS - CATERING ENQUIRY*",
-    "--------------------------------------------------",
+    "✨ *NANDA CATERERS - CATERING ENQUIRY* ✨",
+    "━━━━━━━━━━━━━━━━━━━━━━",
   ];
 
   if (details.firstName || details.lastName) {
     const fullName = [details.firstName, details.lastName].filter(Boolean).join(" ");
-    lines.push(`>> *Client Name:* ${fullName}`);
+    lines.push(`👤 *Name:* ${fullName}`);
   }
   if (details.phone) {
-    lines.push(`>> *Contact Phone:* ${details.phone}`);
+    lines.push(`📞 *Phone:* ${details.phone}`);
   }
   if (details.email) {
-    lines.push(`>> *Email Address:* ${details.email}`);
+    lines.push(`✉️ *Email:* ${details.email}`);
   }
   const srv = details.service || details.serviceType;
   if (srv) {
-    lines.push(`>> *Catering Service:* ${srv}`);
+    lines.push(`🎉 *Event / Service:* ${srv}`);
   }
   if (details.eventDate) {
-    lines.push(`>> *Event Date:* ${details.eventDate}`);
+    lines.push(`📅 *Date:* ${details.eventDate}`);
   }
   if (details.guestCount) {
-    lines.push(`>> *Expected Guests:* ${details.guestCount}`);
+    lines.push(`👥 *Guests:* ${details.guestCount}`);
   }
   if (details.location) {
-    lines.push(`>> *Event Venue:* ${details.location}`);
+    lines.push(`📍 *Location:* ${details.location}`);
   }
 
   if (details.selectedDishes && details.selectedDishes.length > 0) {
     lines.push("");
-    lines.push(`*Selected Menu Dishes (${details.selectedDishes.length}):*`);
+    lines.push(`🍽️ *Selected Menu Dishes (${details.selectedDishes.length}):*`);
     details.selectedDishes.forEach((dish) => {
-      lines.push(`   * ${dish}`);
+      lines.push(`  ▫️ ${dish}`);
     });
   }
 
   const msg = details.message || details.customMessage;
   if (msg) {
     lines.push("");
-    lines.push(`*Special Notes & Dietary Preferences:*`);
-    lines.push(`"${msg}"`);
+    lines.push(`💬 *Special Notes:*`);
+    lines.push(`   ${msg}`);
   }
 
-  lines.push("--------------------------------------------------");
-  lines.push("_Submitted via nandacaterers.com_");
+  lines.push("━━━━━━━━━━━━━━━━━━━━━━");
+  lines.push("_Sent via nandacaterers.com_");
 
   return `https://wa.me/${baseNumber}?text=${encodeURIComponent(lines.join("\n"))}`;
 }
