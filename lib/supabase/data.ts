@@ -167,13 +167,24 @@ export async function getPublicGalleryImages(): Promise<GalleryImage[]> {
       return galleryImages;
     }
 
-    return dbImages.map((img) => ({
-      id: img.id,
-      src: img.image_url,
-      alt: img.alt_text || "Nanda Caterers Banquet Celebration",
-      title: img.caption || "Celebration Feast",
-      category: (img.category as GalleryImage["category"]) || "Weddings",
-    }));
+    return dbImages.map((img) => {
+      let src = img.image_url;
+      if (
+        src?.includes("1599488615731-7e5c2823ff28") ||
+        img.caption?.toLowerCase().includes("mithai") ||
+        img.caption?.toLowerCase().includes("halwa") ||
+        img.caption?.toLowerCase().includes("sweet")
+      ) {
+        src = "/images/sweets.jpg";
+      }
+      return {
+        id: img.id,
+        src: src || "/images/sweets.jpg",
+        alt: img.alt_text || "Nanda Caterers Banquet Celebration",
+        title: img.caption || "Celebration Feast",
+        category: (img.category as GalleryImage["category"]) || "Weddings",
+      };
+    });
   } catch (err) {
     console.error("Error fetching public gallery images:", err);
     return galleryImages;
