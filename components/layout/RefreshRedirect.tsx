@@ -1,38 +1,55 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
 /**
- * Ensures that whenever a visitor manually reloads / refreshes a page (NavigationTiming type 'reload'),
- * they are seamlessly redirected back to the Home page ('/').
- * Avoids interfering with admin dashboard routes.
+ * Handles reloading behavior:
+ * If a user manually reloads the browser while on a sub-page,
+ * redirect them to the home page once on that initial page load.
+ * Subsequent client-side transitions (e.g. clicking 'Food Menu')
+ * will NOT be blocked or bounced back to home.
  */
 export function RefreshRedirect() {
   const pathname = usePathname();
   const router = useRouter();
+  const hasChecked = useRef(false);
 
   useEffect(() => {
-    if (typeof window === "undefined" || pathname === "/" || pathname?.startsWith("/admin")) {
+    // Only check ONCE on initial window load
+    if (hasChecked.current || typeof window === "undefined") {
+      return;
+    }
+    hasChecked.current = true;
+
+    // Do not redirect if already on home or in admin
+    if (pathname === "/" || pathname?.startsWith("/admin")) {
       return;
     }
 
     try {
       const navigationEntries = performance.getEntriesByType("navigation");
+      let isReload = false;
+
       if (navigationEntries && navigationEntries.length > 0) {
         const navEntry = navigationEntries[0] as PerformanceNavigationTiming;
-        if (navEntry.type === "reload") {
-          router.replace("/");
-        }
+        isReload = navEntry.type === "reload";
       } else if (
-        // Fallback for older browsers
         (performance as any).navigation &&
         (performance as any).navigation.type === 1
       ) {
+        isReload = true;
+      }
+
+      if (isReload) {
+        // Clear navigation entries to prevent re-triggering on subsequent client transitions
+        if (performance.clearResourceTimings) {
+          performance.clearResourceTimings();
+        }
         router.replace("/");
       }
     } catch {
-      // Safe fallback if performance navigation is unavailable
+      // Safe fallback
     }
   }, [pathname, router]);
 
