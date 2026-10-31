@@ -8,14 +8,11 @@ import { Logo } from "@/components/ui/Logo";
 import { MobileDrawer } from "./MobileDrawer";
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/cn";
-import { useQuoteSelection } from "@/context/QuoteSelectionContext";
 
 export function Navbar() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState(false);
-
-  const { openQuoteSheet } = useQuoteSelection();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,25 +91,23 @@ export function Navbar() {
                 <span>{siteConfig.phone.display}</span>
               </a>
 
-              <button
-                type="button"
-                onClick={() => openQuoteSheet("Wedding")}
+              <Link
+                href="/connect"
                 className="rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider bg-accent text-white shadow-soft hover:bg-accent-dark transition-all active:scale-95 cursor-pointer"
               >
                 Connect
-              </button>
+              </Link>
             </div>
           </div>
 
           {/* Mobile: logo + hamburger, opens full-screen drawer */}
           <div className="flex items-center gap-2 lg:hidden">
-            <button
-              type="button"
-              onClick={() => openQuoteSheet("Wedding")}
+            <Link
+              href="/connect"
               className="rounded-full px-3.5 py-1.5 text-xs font-bold bg-accent text-white shadow-sm cursor-pointer"
             >
               Connect
-            </button>
+            </Link>
 
             <button
               type="button"

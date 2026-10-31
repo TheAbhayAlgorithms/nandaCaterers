@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import { useRouter } from "next/navigation";
 
 interface QuoteSelectionContextType {
   selectedDishes: string[];
@@ -22,6 +23,7 @@ const QuoteSelectionContext = createContext<QuoteSelectionContextType | undefine
 const STORAGE_KEY = "nanda_caterers_selected_dishes";
 
 export function QuoteSelectionProvider({ children }: { children: ReactNode }) {
+  const router = useRouter();
   const [selectedDishes, setSelectedDishes] = useState<string[]>([]);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isQuoteSheetOpen, setIsQuoteSheetOpen] = useState(false);
@@ -69,7 +71,8 @@ export function QuoteSelectionProvider({ children }: { children: ReactNode }) {
 
   const openQuoteSheet = (service?: string) => {
     if (service) setPreselectedService(service);
-    setIsQuoteSheetOpen(true);
+    const target = service ? `/connect?service=${encodeURIComponent(service)}` : "/connect";
+    router.push(target);
   };
 
   return (
