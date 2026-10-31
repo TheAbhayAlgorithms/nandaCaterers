@@ -124,7 +124,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
               {/* CTA Button with hover animations */}
               <div className="pt-3">
                 <Link
-                  href="/quote"
+                  href="/connect"
                   onClick={onClose}
                   className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-2xl bg-gold-gradient text-charcoal font-semibold shadow-warm text-base hover:shadow-warm-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer"
                 >

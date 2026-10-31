@@ -93,9 +93,9 @@ export function Navbar() {
 
               <Link
                 href="/connect"
-                className="rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider bg-accent text-white shadow-soft hover:bg-accent-dark transition-all active:scale-95 cursor-pointer"
+                className="inline-flex items-center justify-center text-center font-poppins rounded-full px-5 py-2.5 text-xs font-bold uppercase tracking-wider bg-accent text-white shadow-soft hover:bg-accent-dark transition-all active:scale-95 cursor-pointer leading-none"
               >
-                Connect
+                <span>Connect</span>
               </Link>
             </div>
           </div>
@@ -104,9 +104,9 @@ export function Navbar() {
           <div className="flex items-center gap-2 lg:hidden">
             <Link
               href="/connect"
-              className="rounded-full px-3.5 py-1.5 text-xs font-bold bg-accent text-white shadow-sm cursor-pointer"
+              className="inline-flex items-center justify-center text-center font-poppins rounded-full px-3.5 py-2 text-xs font-bold uppercase tracking-wider bg-accent text-white shadow-sm cursor-pointer leading-none"
             >
-              Connect
+              <span>Connect</span>
             </Link>
 
             <button
