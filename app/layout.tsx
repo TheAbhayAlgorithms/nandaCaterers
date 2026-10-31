@@ -104,8 +104,13 @@ export const metadata: Metadata = {
     ],
   },
   icons: {
-    icon: "/icon.svg",
-    apple: "/icon.svg",
+    icon: [
+      { url: "/favicon.png", sizes: "64x64", type: "image/png" },
+      { url: "/logo-transparent.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [
+      { url: "/logo-transparent.png", sizes: "180x180", type: "image/png" },
+    ],
   },
 };
 

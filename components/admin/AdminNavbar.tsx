@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   Utensils,
@@ -46,8 +47,14 @@ export function AdminNavbar() {
             href="/admin"
             className="flex items-center gap-2.5 font-heading font-extrabold text-lg sm:text-xl text-white hover:text-[#C9A227] transition-colors"
           >
-            <div className="w-8 h-8 rounded-lg bg-[#C9A227] text-[#1B1210] flex items-center justify-center font-bold text-sm shadow-xs">
-              NC
+            <div className="w-8 h-8 rounded-full bg-white p-0.5 shadow-xs flex items-center justify-center overflow-hidden shrink-0">
+              <Image
+                src="/logo-transparent.png"
+                alt="Nanda Admin"
+                width={32}
+                height={32}
+                className="object-contain w-full h-full"
+              />
             </div>
             <span>Nanda Admin</span>
           </Link>
