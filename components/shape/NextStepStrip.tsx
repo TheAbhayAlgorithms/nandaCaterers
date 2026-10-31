@@ -2,7 +2,6 @@
 
 import React from "react";
 import { Button } from "@/components/ui/Button";
-import { useQuoteSelection } from "@/context/QuoteSelectionContext";
 
 interface NextStepStripProps {
   headline?: string;
@@ -25,15 +24,11 @@ export function NextStepStrip({
   onPrimaryClick,
   serviceCategory = "Wedding",
 }: NextStepStripProps) {
-  const { openQuoteSheet } = useQuoteSelection();
-
-  const handlePrimary = () => {
-    if (onPrimaryClick) {
-      onPrimaryClick();
-    } else {
-      openQuoteSheet(serviceCategory);
-    }
-  };
+  const targetHref =
+    primaryHref ||
+    (serviceCategory
+      ? `/connect?service=${encodeURIComponent(serviceCategory)}`
+      : "/connect");
 
   return (
     <div className="w-full bg-peach/70 border-t border-b border-accent/15 py-10 sm:py-12 px-4 text-center my-8">
@@ -42,12 +37,12 @@ export function NextStepStrip({
           {headline}
         </h3>
         <div className="flex flex-wrap items-center justify-center gap-3">
-          {primaryHref ? (
-            <Button variant="filled" size="md" href={primaryHref}>
+          {onPrimaryClick ? (
+            <Button variant="filled" size="md" onClick={onPrimaryClick}>
               {primaryButtonText}
             </Button>
           ) : (
-            <Button variant="filled" size="md" onClick={handlePrimary}>
+            <Button variant="filled" size="md" href={targetHref}>
               {primaryButtonText}
             </Button>
           )}
