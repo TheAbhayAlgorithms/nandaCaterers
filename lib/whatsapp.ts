@@ -1,7 +1,6 @@
 export interface CateringWhatsAppDetails {
   firstName?: string;
   lastName?: string;
-  email?: string;
   phone?: string;
   location?: string;
   service?: string;

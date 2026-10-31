@@ -3,10 +3,6 @@
 export const SITE_URL =
   process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || "https://nandacaterers.com";
 
-// Email: published as info@nandacateres.com (looks like a typo of "caterers"). Keep in ONE constant.
-// TODO: confirm correct email
-export const CONTACT_EMAIL = "info@nandacaterers.com";
-
 export const siteConfig = {
   name: "Nanda Caterers",
   legalName: "Nanda Caterers Mumbai",
@@ -31,8 +27,6 @@ export const siteConfig = {
   whatsappUrl: "https://wa.me/919967894979",
   hours: "MON-SAT: 9 AM - 9 PM",
   mapDirectionsUrl: "https://maps.google.com/?q=Nanda+Caterers+Bandra+East+Mumbai",
-
-  email: CONTACT_EMAIL,
 
   workingHours: {
     days: "Monday to Saturday",

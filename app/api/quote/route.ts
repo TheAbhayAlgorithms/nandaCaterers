@@ -6,7 +6,6 @@ const phoneRegex = /^(?:(?:\+|0{0,2})91(\s*[-]\s*)?|[0]?)?[6789]\d{9}$/;
 const quoteApiSchema = z.object({
   firstName: z.string().min(2),
   lastName: z.string().min(1),
-  email: z.string().optional(),
   phone: z.string().regex(phoneRegex),
   service: z.string(),
   location: z.string().optional(),
@@ -47,7 +46,7 @@ export async function POST(request: NextRequest) {
 New Catering Enquiry from ${data.firstName} ${data.lastName}
 
 Phone: ${data.phone}
-${data.email ? `Email: ${data.email}\n` : ""}Service: ${data.service}
+Service: ${data.service}
 Event Date: ${data.eventDate || "Not specified"}
 Guests: ${data.guests || "Not specified"}
 Location: ${data.location || "Not specified"}

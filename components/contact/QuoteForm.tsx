@@ -15,7 +15,6 @@ const phoneRegex = /^(?:(?:\+|0{0,2})91(\s*[-]\s*)?|[0]?)?[6789]\d{9}$/;
 const quoteSchema = z.object({
   firstName: z.string().min(2, "First name must be at least 2 characters"),
   lastName: z.string().min(1, "Last name is required"),
-  email: z.string().optional(),
   phone: z.string().regex(phoneRegex, "Please enter a valid 10-digit Indian phone number"),
   service: z.enum(["Wedding", "Corporate Event", "General Event", "Party / Function", "Others"], {
     errorMap: () => ({ message: "Please select a catering service type" }),
@@ -55,7 +54,6 @@ export function QuoteForm({ initialService, initialDishes, className }: QuoteFor
     defaultValues: {
       firstName: "",
       lastName: "",
-      email: "",
       phone: "",
       service: (initialService as QuoteFormData["service"]) || "Wedding",
       location: "",
