@@ -1,13 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { Plus, Check, Sparkles, ChevronDown } from "lucide-react";
+import { Plus, Check, Sparkles } from "lucide-react";
 import { useQuoteSelection } from "@/context/QuoteSelectionContext";
 import { Dish } from "@/data/menu";
 import { getSoupDemoDescription } from "@/data/siteContent";
 import { cn } from "@/lib/cn";
-import { Button } from "@/components/ui/Button";
 
 interface DishListProps {
   dishes: Dish[];
@@ -18,6 +17,7 @@ interface DishListProps {
 export function DishList({ dishes, searchQuery, sectionTitle }: DishListProps) {
   const [visibleCount, setVisibleCount] = useState(18);
   const { isDishSelected, toggleDish } = useQuoteSelection();
+  const sentinelRef = useRef<HTMLDivElement | null>(null);
 
   // Reset pagination when section changes
   useEffect(() => {
@@ -27,9 +27,25 @@ export function DishList({ dishes, searchQuery, sectionTitle }: DishListProps) {
   const visibleDishes = dishes.slice(0, visibleCount);
   const hasMore = visibleCount < dishes.length;
 
-  const handleShowMore = () => {
-    setVisibleCount((prev) => prev + 18);
-  };
+  // Infinite scroll: automatically load more dishes as user scrolls down
+  useEffect(() => {
+    if (!hasMore) return;
+
+    const el = sentinelRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisibleCount((prev) => Math.min(prev + 18, dishes.length));
+        }
+      },
+      { rootMargin: "350px" }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [hasMore, dishes.length]);
 
   const renderHighlightedName = (text: string, query?: string) => {
     if (!query || query.trim() === "") return text;
@@ -168,24 +184,19 @@ export function DishList({ dishes, searchQuery, sectionTitle }: DishListProps) {
         })}
       </div>
 
-      {/* Progressive Disclosure Pagination */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-ink/10 text-xs text-ink/60">
-        <span>
-          Showing {Math.min(visibleCount, dishes.length)} of {dishes.length} dishes
-        </span>
+      {/* Infinite Scroll Sentinel: triggers automatic loading as user scrolls down */}
+      {hasMore && (
+        <div ref={sentinelRef} className="flex justify-center py-6 w-full">
+          <div className="flex items-center gap-2 text-xs text-ink/60 font-medium">
+            <span className="w-4 h-4 border-2 border-accent/30 border-t-accent rounded-full animate-spin" />
+            <span>Loading more dishes...</span>
+          </div>
+        </div>
+      )}
 
-        {hasMore && (
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
-            onClick={handleShowMore}
-            className="flex items-center gap-1.5"
-          >
-            <span>Show more dishes ({dishes.length - visibleCount} remaining)</span>
-            <ChevronDown className="w-4 h-4" />
-          </Button>
-        )}
+      {/* Item count status */}
+      <div className="pt-4 border-t border-ink/10 text-xs text-ink/60 text-center sm:text-left">
+        Showing {Math.min(visibleCount, dishes.length)} of {dishes.length} dishes
       </div>
     </div>
   );

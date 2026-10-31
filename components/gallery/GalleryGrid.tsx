@@ -1,11 +1,9 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import Image from "next/image";
-import { ChevronDown } from "lucide-react";
 import { galleryImages, GalleryImage } from "@/data/gallery";
 import { Lightbox } from "@/components/ui/Lightbox";
-import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 
 const FILTER_CHIPS = ["All", "Weddings", "Corporate", "Decor", "Food"] as const;
@@ -15,6 +13,7 @@ export function GalleryGrid({ images = galleryImages }: { images?: GalleryImage[
   const [activeCategory, setActiveCategory] = useState<FilterChip>("All");
   const [visibleCount, setVisibleCount] = useState<number>(12);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const sentinelRef = useRef<HTMLDivElement | null>(null);
 
   const filteredImages = useMemo(() => {
     if (activeCategory === "All") return images;
@@ -29,9 +28,25 @@ export function GalleryGrid({ images = galleryImages }: { images?: GalleryImage[
     setVisibleCount(12);
   };
 
-  const handleLoadMore = () => {
-    setVisibleCount((prev) => prev + 12);
-  };
+  // Infinite scroll: auto-load more photos as user scrolls down
+  useEffect(() => {
+    if (!hasMore) return;
+
+    const el = sentinelRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisibleCount((prev) => Math.min(prev + 12, filteredImages.length));
+        }
+      },
+      { rootMargin: "350px" }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [hasMore, filteredImages.length]);
 
   return (
     <div className="space-y-10">
@@ -111,19 +126,13 @@ export function GalleryGrid({ images = galleryImages }: { images?: GalleryImage[
         })}
       </div>
 
-      {/* "Load more" button for the next 12 per Section 6.7 */}
+      {/* Infinite Scroll Sentinel: triggers automatic loading as user scrolls down */}
       {hasMore && (
-        <div className="flex justify-center pt-6">
-          <Button
-            type="button"
-            variant="outline"
-            size="md"
-            onClick={handleLoadMore}
-            className="flex items-center gap-2"
-          >
-            <span>Load More Photos</span>
-            <ChevronDown className="w-4 h-4" />
-          </Button>
+        <div ref={sentinelRef} className="flex justify-center py-8 w-full">
+          <div className="flex items-center gap-2 text-xs text-ink/60 font-medium">
+            <span className="w-4 h-4 border-2 border-accent/30 border-t-accent rounded-full animate-spin" />
+            <span>Loading more photos...</span>
+          </div>
         </div>
       )}
 
