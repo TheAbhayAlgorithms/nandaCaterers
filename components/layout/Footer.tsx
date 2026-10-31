@@ -21,9 +21,9 @@ export function Footer() {
 
   return (
     <footer className="w-full bg-night text-white/80 border-t border-accent/20">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        {/* Brand Bar */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-8 mb-8 border-b border-white/10 gap-4">
+      {/* Brand Bar Container */}
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-8">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <Logo theme="light" />
 
           {/* Social Icons: Facebook, X, Instagram, WhatsApp in original brand colors with circular UI */}
@@ -81,9 +81,15 @@ export function Footer() {
             </a>
           </div>
         </div>
+      </div>
 
+      {/* Full-width Divider Line 1 (30% transparency) */}
+      <div className="w-full border-t border-white/30" />
+
+      {/* Main Columns Container */}
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
         {/* Desktop: Compact 3 columns (Contact, Working hours, Quick links) */}
-        <div className="hidden md:grid md:grid-cols-3 gap-8 pb-12">
+        <div className="hidden md:grid md:grid-cols-3 gap-8">
           {/* Column 1: Contact */}
           <div className="space-y-3">
             <h4 className="text-xs uppercase font-bold tracking-widest text-accent">
@@ -150,7 +156,7 @@ export function Footer() {
         </div>
 
         {/* Mobile: Accordion for 3 sections */}
-        <div className="md:hidden divide-y divide-white/10 border-b border-white/10 mb-8">
+        <div className="md:hidden divide-y divide-white/20 border-b border-white/30 mb-4">
           {/* Contact Mobile */}
           <div>
             <button
@@ -205,22 +211,24 @@ export function Footer() {
             )}
           </div>
         </div>
+      </div>
 
-        {/* Bottom Row */}
-        <div className="pt-6 mt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs leading-none">
-          <p className="text-xs text-gray-300 m-0 p-0 leading-none relative -top-[1.5px]">
+      {/* Full-width Divider Line 2 (30% transparency) */}
+      <div className="w-full border-t border-white/30">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs leading-none">
+          <p className="text-xs text-white/70 m-0 p-0 leading-none">
             © 2026 Nanda Caterers. All rights reserved.
           </p>
           <div className="flex items-center gap-5 text-xs m-0 p-0 leading-none">
             <Link
               href="/privacy"
-              className="text-gray-300 hover:text-white hover:underline transition-colors leading-none"
+              className="text-white/70 hover:text-white hover:underline transition-colors leading-none"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="text-gray-300 hover:text-white hover:underline transition-colors leading-none"
+              className="text-white/70 hover:text-white hover:underline transition-colors leading-none"
             >
               Terms & Conditions
             </Link>
