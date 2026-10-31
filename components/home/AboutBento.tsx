@@ -7,9 +7,6 @@ import { Divider } from "@/components/shape/Divider";
 import { Button } from "@/components/ui/Button";
 import { BentoGrid } from "@/components/shape/BentoGrid";
 import { BentoTile } from "@/components/shape/BentoTile";
-import { ClocheIcon } from "@/components/services/ServiceIcons";
-import { siteConfig } from "@/data/site";
-import { Clock, Phone } from "lucide-react";
 
 export function AboutBento() {
   return (
@@ -42,59 +39,35 @@ export function AboutBento() {
           </Button>
         </div>
 
-        {/* Right Bento (2x2 grid, checkerboard: photo, accent, accent, photo) */}
+        {/* Right Bento (2x2 grid of 4 catering feast photos) */}
         <div className="lg:col-span-6 w-full flex justify-center">
           <BentoGrid>
-            {/* Tile 1: Photo tile (top-left: event buffet / platter) */}
+            {/* Tile 1: Top-Left - Event buffet banquet arrangement */}
             <BentoTile
               type="photo"
-              imageSrc="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=600&q=80"
-              imageAlt="Luxury wedding buffet arrangement"
+              imageSrc="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=800&q=80"
+              imageAlt="Luxury wedding banquet buffet arrangement"
             />
 
-            {/* Tile 2: Accent tile (top-right: Fresh, Hygienic, Always -> /about#story) */}
-            <BentoTile
-              type="accent"
-              href="/about#story"
-              className="bg-accent text-white"
-            >
-              <div className="w-10 h-10 rounded-full bg-white/15 flex items-center justify-center mb-2.5">
-                <ClocheIcon className="w-6 h-6 text-white" />
-              </div>
-              <span className="font-heading font-bold text-base sm:text-lg leading-tight text-white mb-1">
-                Fresh, Hygienic, Always
-              </span>
-              <span className="text-[11px] text-white/80 uppercase tracking-wider font-semibold font-poppins">
-                Taste Guarantee →
-              </span>
-            </BentoTile>
-
-            {/* Tile 3: Accent tile (bottom-left: Opening Hours + click-to-call) */}
-            <BentoTile
-              type="accent"
-              href={`tel:${siteConfig.phone.raw}`}
-              className="bg-accent text-white"
-            >
-              <div className="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center mb-2">
-                <Clock className="w-4 h-4 text-white" />
-              </div>
-              <span className="text-[10px] uppercase tracking-wider font-bold text-white/80">
-                Opening Hours
-              </span>
-              <span className="font-bold text-xs sm:text-sm text-white my-0.5">
-                MON-SAT: 9 AM - 9 PM
-              </span>
-              <div className="flex items-center gap-1 text-[11px] text-white/90 underline font-medium mt-1">
-                <Phone className="w-3 h-3 text-white" />
-                <span>Call {siteConfig.phone.display}</span>
-              </div>
-            </BentoTile>
-
-            {/* Tile 4: Photo tile (bottom-right: chafing dishes / live counter) */}
+            {/* Tile 2: Top-Right - Tandoori starters & skewers live counter */}
             <BentoTile
               type="photo"
-              imageSrc="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80"
-              imageAlt="Live counter and warm chafing dishes"
+              imageSrc="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80"
+              imageAlt="Tandoori live counter and appetizers"
+            />
+
+            {/* Tile 3: Bottom-Left - Royal biryani & wedding feast handis */}
+            <BentoTile
+              type="photo"
+              imageSrc="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80"
+              imageAlt="Royal Indian wedding biryani and feast handis"
+            />
+
+            {/* Tile 4: Bottom-Right - Royal wedding banquet dinner setup */}
+            <BentoTile
+              type="photo"
+              imageSrc="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
+              imageAlt="Grand royal wedding banquet dinner setup"
             />
           </BentoGrid>
         </div>
