@@ -77,11 +77,14 @@ export function GalleryGrid({ images = galleryImages }: { images?: GalleryImage[
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
 
+              {/* Darkening hover overlay: turns blackish on hover */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/45 transition-colors duration-300 z-[1]" />
+
               {/* Gradient overlay for bottom caption */}
-              <div className="absolute inset-0 bg-gradient-to-t from-night/85 via-night/25 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
+              <div className="absolute inset-0 bg-gradient-to-t from-night/85 via-night/25 to-transparent opacity-85 group-hover:opacity-95 transition-opacity z-[2]" />
 
               {/* Category chip top left */}
-              <div className="absolute top-3 left-3">
+              <div className="absolute top-3 left-3 z-[3]">
                 <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-night/75 backdrop-blur-md text-white border border-white/10">
                   {img.category}
                 </span>
@@ -95,7 +98,7 @@ export function GalleryGrid({ images = galleryImages }: { images?: GalleryImage[
               </div>
 
               {/* Caption at bottom */}
-              <div className="absolute bottom-3 inset-x-3 text-left">
+              <div className="absolute bottom-3 inset-x-3 text-left z-[3]">
                 <h3 className="font-heading font-semibold text-sm text-white group-hover:text-accent transition-colors line-clamp-1">
                   {img.title}
                 </h3>
