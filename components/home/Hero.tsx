@@ -18,8 +18,8 @@ export function Hero() {
         className="absolute inset-0 w-full h-full pointer-events-none origin-center"
       >
         <Image
-          src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=1920&q=85"
-          alt="Lavish multi-dish Indian wedding catering feast"
+          src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1920&q=85"
+          alt="Royal wedding catering buffet feast and gourmet food banquet"
           fill
           priority
           sizes="100vw"
