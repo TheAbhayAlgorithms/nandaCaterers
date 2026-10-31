@@ -79,7 +79,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "gal-11",
-    src: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1200&q=80",
+    src: "/images/live-pasta-station.jpg",
     alt: "Live Italian Pasta and Continental Station",
     title: "Live Continental Pasta Station",
     category: "Food",
@@ -129,7 +129,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "gal-18",
-    src: "https://images.unsplash.com/photo-1544077960-604201fe74bc?auto=format&fit=crop&w=1200&q=80",
+    src: "/images/gujarati-kathiyawadi.jpg",
     alt: "Traditional Gujarati Thali Plating",
     title: "Royal Gujarati Kathiyawadi Spread",
     category: "Food",
@@ -164,7 +164,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "gal-23",
-    src: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80",
+    src: "/images/signature-mocktails.jpg",
     alt: "Executive Cocktail & Mocktail Evening Bar",
     title: "Signature Mocktails & Welcome Drinks",
     category: "Corporate",

@@ -98,6 +98,7 @@ function TiltCard({ item }: { item: CuisineCardItem }) {
   return (
     <Link
       href={item.href}
+      prefetch={true}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{

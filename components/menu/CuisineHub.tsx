@@ -27,6 +27,7 @@ export function CuisineHub({ categories = menuCategories }: CuisineHubProps) {
             <Link
               key={category.slug}
               href={`/menu/${category.slug}`}
+              prefetch={true}
               className="group rounded-2xl overflow-hidden bg-paper border border-accent/15 shadow-soft hover:shadow-warm transition-all duration-300 flex flex-col justify-between"
             >
               <div className="relative aspect-[16/11] overflow-hidden">

@@ -176,6 +176,26 @@ export async function getPublicGalleryImages(): Promise<GalleryImage[]> {
         img.caption?.toLowerCase().includes("sweet")
       ) {
         src = "/images/sweets.jpg";
+      } else if (
+        img.caption?.toLowerCase().includes("pasta") ||
+        img.alt_text?.toLowerCase().includes("pasta")
+      ) {
+        src = "/images/live-pasta-station.jpg";
+      } else if (
+        img.caption?.toLowerCase().includes("mocktail") ||
+        img.caption?.toLowerCase().includes("cocktail") ||
+        img.caption?.toLowerCase().includes("welcome drink") ||
+        src?.includes("1470225620780")
+      ) {
+        src = "/images/signature-mocktails.jpg";
+      } else if (
+        img.caption?.toLowerCase().includes("gujarati") ||
+        img.caption?.toLowerCase().includes("kathiyawadi") ||
+        img.alt_text?.toLowerCase().includes("gujarati") ||
+        img.alt_text?.toLowerCase().includes("thali") ||
+        src?.includes("1544077960")
+      ) {
+        src = "/images/gujarati-kathiyawadi.jpg";
       }
       return {
         id: img.id,

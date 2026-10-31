@@ -78,6 +78,7 @@ export function MenuTeaser({ items = cuisineTeaserItems }: { items?: MenuTeaserI
           <Link
             key={item.slug}
             href={`/menu/${item.slug}`}
+            prefetch={true}
             className="group relative snap-start shrink-0 w-28 sm:w-auto flex flex-col items-center text-center p-3 sm:p-4 rounded-2xl bg-paper shadow-soft border border-ink/10 hover:border-accent hover:shadow-warm-lg hover:scale-[1.03] hover:z-10 active:scale-98 transition-all duration-300 transform cursor-pointer select-none"
           >
             <div className="relative w-16 h-16 sm:w-18 sm:h-18 rounded-full overflow-hidden mb-2.5 border-2 border-accent/20 group-hover:border-accent group-hover:ring-4 group-hover:ring-accent/15 transition-all duration-300">
