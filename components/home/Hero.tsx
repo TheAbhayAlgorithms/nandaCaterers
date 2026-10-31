@@ -22,7 +22,7 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-top sm:object-center"
+          className="object-cover object-center"
         />
         {/* Dark overlay: 50% maroon-black */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-[#451213]/60 to-black/75" />
