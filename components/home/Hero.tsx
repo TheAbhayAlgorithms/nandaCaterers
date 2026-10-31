@@ -4,7 +4,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Divider } from "@/components/shape/Divider";
 import { TornEdge } from "@/components/shape/TornEdge";
 
 export function Hero() {
@@ -46,35 +45,16 @@ export function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-heading font-extrabold text-white text-3xl sm:text-5xl md:text-6xl lg:text-[4rem] leading-[1.12] tracking-tight mb-2 max-w-3xl"
+          className="font-heading font-extrabold text-white text-3xl sm:text-5xl md:text-6xl lg:text-[4rem] leading-[1.12] tracking-tight mb-6 max-w-3xl"
         >
           A Perfect Blend of <span className="italic text-accent">Sensational</span> Food
         </motion.h1>
-
-        {/* Small ornamental divider */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 0.5, delay: 0.25 }}
-        >
-          <Divider color="bg-accent" className="my-3" />
-        </motion.div>
-
-        {/* Sub-line */}
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.35 }}
-          className="text-sm sm:text-base md:text-lg text-white/90 max-w-xl mb-6 font-medium"
-        >
-          Wedding catering with new ideas, served in our own style.
-        </motion.p>
 
         {/* Outlined pill button "Explore Menu" with shimmer effect */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.45 }}
+          transition={{ duration: 0.5, delay: 0.25 }}
           className="flex justify-center"
         >
           <div className="relative inline-flex items-center justify-center group">
