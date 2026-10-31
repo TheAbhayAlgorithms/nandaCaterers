@@ -13,58 +13,58 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main className="w-full min-h-screen">
+    <main className="w-full min-h-screen bg-cream/20">
       <PageHero
         title="Privacy Policy"
         breadcrumb="Privacy Policy"
       />
 
-      <SectionShell className="py-12 sm:py-16 max-w-3xl">
-        <div className="p-8 sm:p-10 rounded-2xl bg-paper border border-ink/10 shadow-card space-y-6 text-ink">
-          <section className="space-y-2">
+      <SectionShell className="py-12 sm:py-16">
+        <div className="max-w-4xl mx-auto w-full p-8 sm:p-12 md:p-14 rounded-2xl sm:rounded-3xl bg-paper border border-ink/10 shadow-card space-y-8 text-ink font-poppins">
+          <section className="space-y-3">
             <h2 className="font-heading font-bold text-xl sm:text-2xl text-ink">
               1. Information We Collect
             </h2>
-            <p className="text-xs sm:text-sm text-ink/80 leading-relaxed">
+            <p className="text-sm sm:text-base text-ink/80 leading-relaxed">
               When you submit an enquiry through our website or contact us via WhatsApp, we collect details such as your name, phone number, event date, guest count, and catering menu selections.
             </p>
           </section>
 
-          <section className="space-y-2">
+          <section className="space-y-3">
             <h2 className="font-heading font-bold text-xl sm:text-2xl text-ink">
               2. How We Use Your Details
             </h2>
-            <p className="text-xs sm:text-sm text-ink/80 leading-relaxed">
+            <p className="text-sm sm:text-base text-ink/80 leading-relaxed">
               Your information is exclusively used to draft personalized catering estimates, discuss dietary specifications (such as Jain or Swaminarayan requirements), coordinate tasting sessions, and finalize banquet logistics. We never sell, lease, or share your contact info with third parties.
             </p>
           </section>
 
-          <section className="space-y-2">
+          <section className="space-y-3">
             <h2 className="font-heading font-bold text-xl sm:text-2xl text-ink">
               3. Communication & Consent
             </h2>
-            <p className="text-xs sm:text-sm text-ink/80 leading-relaxed">
+            <p className="text-sm sm:text-base text-ink/80 leading-relaxed">
               By submitting an enquiry, you consent to being contacted by Nanda Caterers via telephone or WhatsApp solely regarding your event proposal.
             </p>
           </section>
 
-          <section className="space-y-2">
+          <section className="space-y-3">
             <h2 className="font-heading font-bold text-xl sm:text-2xl text-ink">
               4. Contact Us
             </h2>
-            <p className="text-xs sm:text-sm text-ink/80 leading-relaxed">
+            <p className="text-sm sm:text-base text-ink/80 leading-relaxed">
               For any questions regarding our privacy practices, please contact us at{" "}
-              <a href={siteConfig.phoneTel} className="text-accent font-semibold underline">
+              <a href={siteConfig.phoneTel} className="text-accent font-semibold underline hover:text-accent-hover transition-colors">
                 {siteConfig.phone.display}
               </a>
               .
             </p>
           </section>
 
-          <div className="pt-4 border-t border-ink/10">
+          <div className="pt-6 border-t border-ink/10 flex items-center justify-between">
             <Link
               href="/contact"
-              className="text-xs font-bold text-accent uppercase tracking-wider hover:underline"
+              className="text-xs sm:text-sm font-bold text-accent uppercase tracking-wider hover:underline"
             >
               ← Back to Contact Page
             </Link>

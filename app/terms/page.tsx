@@ -13,16 +13,16 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <main className="w-full min-h-screen">
+    <main className="w-full min-h-screen bg-cream/20">
       <PageHero
         title="Terms of Service"
         breadcrumb="Terms of Service"
       />
 
-      <SectionShell className="py-12 sm:py-16 max-w-4xl">
-        <div className="p-8 sm:p-10 rounded-2xl bg-paper border border-ink/10 shadow-card space-y-8 text-xs sm:text-sm text-ink/80 leading-relaxed">
-          <section className="space-y-2">
-            <h2 className="font-heading font-bold text-xl text-ink">
+      <SectionShell className="py-12 sm:py-16">
+        <div className="max-w-4xl mx-auto w-full p-8 sm:p-12 md:p-14 rounded-2xl sm:rounded-3xl bg-paper border border-ink/10 shadow-card space-y-8 text-sm sm:text-base text-ink/80 leading-relaxed font-poppins">
+          <section className="space-y-3">
+            <h2 className="font-heading font-bold text-xl sm:text-2xl text-ink">
               1. Dietary and Quality Assurance
             </h2>
             <p>
@@ -30,25 +30,25 @@ export default function TermsPage() {
             </p>
           </section>
 
-          <section className="space-y-2">
-            <h2 className="font-heading font-bold text-xl text-ink">
+          <section className="space-y-3">
+            <h2 className="font-heading font-bold text-xl sm:text-2xl text-ink">
               2. Booking & Payment Schedule
             </h2>
-            <ul className="list-disc pl-5 space-y-1.5">
+            <ul className="list-disc pl-5 space-y-2">
               <li>
-                <strong>Date Lock:</strong> A 25% advance deposit confirms and locks your event date on our master kitchen schedule.
+                <strong className="text-ink">Date Lock:</strong> A 25% advance deposit confirms and locks your event date on our master kitchen schedule.
               </li>
               <li>
-                <strong>Pre-Event Balance:</strong> 50% is due 7 days prior to the event date following the final guest count and menu lock.
+                <strong className="text-ink">Pre-Event Balance:</strong> 50% is due 7 days prior to the event date following the final guest count and menu lock.
               </li>
               <li>
-                <strong>Event Completion:</strong> The remaining 25% final balance is cleared on the event date upon successful service delivery.
+                <strong className="text-ink">Event Completion:</strong> The remaining 25% final balance is cleared on the event date upon successful service delivery.
               </li>
             </ul>
           </section>
 
-          <section className="space-y-2">
-            <h2 className="font-heading font-bold text-xl text-ink">
+          <section className="space-y-3">
+            <h2 className="font-heading font-bold text-xl sm:text-2xl text-ink">
               3. Guest Count Adjustments
             </h2>
             <p>
@@ -56,8 +56,8 @@ export default function TermsPage() {
             </p>
           </section>
 
-          <section className="space-y-2">
-            <h2 className="font-heading font-bold text-xl text-ink">
+          <section className="space-y-3">
+            <h2 className="font-heading font-bold text-xl sm:text-2xl text-ink">
               4. Service Inclusions
             </h2>
             <p>
@@ -65,10 +65,10 @@ export default function TermsPage() {
             </p>
           </section>
 
-          <div className="pt-4 border-t border-ink/10">
+          <div className="pt-6 border-t border-ink/10 flex items-center justify-between">
             <Link
               href="/contact"
-              className="text-xs font-bold text-accent uppercase tracking-wider hover:underline"
+              className="text-xs sm:text-sm font-bold text-accent uppercase tracking-wider hover:underline"
             >
               ← Back to Contact Page
             </Link>
