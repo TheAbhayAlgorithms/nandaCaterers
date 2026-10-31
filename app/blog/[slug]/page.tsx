@@ -123,7 +123,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
 
         {/* Article Paragraphs */}
-        <div className="space-y-6 text-sm sm:text-base text-charcoal/85 leading-relaxed font-merriweather">
+        <div className="space-y-6 text-sm sm:text-base text-charcoal/85 leading-relaxed font-poppins">
           {post.content.map((paragraph, idx) => (
             <p key={idx} className="leading-relaxed">
               {paragraph}

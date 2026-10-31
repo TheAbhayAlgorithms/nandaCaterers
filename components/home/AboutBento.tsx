@@ -64,7 +64,7 @@ export function AboutBento() {
               <span className="font-heading font-bold text-base sm:text-lg leading-tight text-white mb-1">
                 Fresh, Hygienic, Always
               </span>
-              <span className="text-[11px] text-white/80 uppercase tracking-wider font-semibold font-merriweather">
+              <span className="text-[11px] text-white/80 uppercase tracking-wider font-semibold font-poppins">
                 Taste Guarantee →
               </span>
             </BentoTile>

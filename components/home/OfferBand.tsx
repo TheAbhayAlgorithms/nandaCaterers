@@ -47,13 +47,13 @@ export function OfferBand() {
             {/* Ambient radiant glow behind button */}
             <span
               aria-hidden="true"
-              className="absolute -inset-1 rounded-full bg-gradient-to-r from-accent via-saffron to-accent opacity-60 blur-lg group-hover:opacity-100 transition-opacity duration-300"
+              className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-accent via-saffron to-accent opacity-15 blur-sm group-hover:opacity-30 transition-opacity duration-300"
             />
 
             <Link
               role="button"
               href="/menu"
-              className="font-poppins relative inline-flex items-center gap-3 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-accent via-[#C8401E] to-accent text-white font-bold text-base sm:text-lg shadow-warm-lg hover:shadow-[0_12px_45px_rgba(184,57,27,0.7)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-300 overflow-hidden cursor-pointer"
+              className="font-poppins relative inline-flex items-center gap-3 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-accent via-[#C8401E] to-accent text-white font-bold text-base sm:text-lg shadow-md hover:shadow-lg hover:shadow-accent/25 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-300 overflow-hidden cursor-pointer"
             >
               {/* Animated Light Sweep Shimmer Effect */}
               <span
