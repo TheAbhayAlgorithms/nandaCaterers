@@ -34,9 +34,6 @@ export function buildWhatsAppLink(details?: CateringWhatsAppDetails): string {
   if (details.phone) {
     lines.push(`*Phone:* ${details.phone}`);
   }
-  if (details.email) {
-    lines.push(`*Email:* ${details.email}`);
-  }
   const srv = details.service || details.serviceType;
   if (srv) {
     lines.push(`*Occasion:* ${srv}`);

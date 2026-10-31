@@ -120,7 +120,6 @@ export default function RootLayout({
     name: "Nanda Caterers",
     image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
     telephone: "+91 99678 94979",
-    email: siteConfig.email,
     url: "https://nandacaterers.com",
     address: {
       "@type": "PostalAddress",

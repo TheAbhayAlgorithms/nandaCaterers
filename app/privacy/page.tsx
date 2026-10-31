@@ -26,7 +26,7 @@ export default function PrivacyPage() {
               1. Information We Collect
             </h2>
             <p className="text-xs sm:text-sm text-ink/80 leading-relaxed">
-              When you submit an enquiry through our website or contact us via WhatsApp, we collect details such as your name, phone number, email address, event date, guest count, and catering menu selections.
+              When you submit an enquiry through our website or contact us via WhatsApp, we collect details such as your name, phone number, event date, guest count, and catering menu selections.
             </p>
           </section>
 
@@ -44,7 +44,7 @@ export default function PrivacyPage() {
               3. Communication & Consent
             </h2>
             <p className="text-xs sm:text-sm text-ink/80 leading-relaxed">
-              By submitting an enquiry, you consent to being contacted by Nanda Caterers via telephone, email, or WhatsApp solely regarding your event proposal.
+              By submitting an enquiry, you consent to being contacted by Nanda Caterers via telephone or WhatsApp solely regarding your event proposal.
             </p>
           </section>
 
@@ -53,11 +53,7 @@ export default function PrivacyPage() {
               4. Contact Us
             </h2>
             <p className="text-xs sm:text-sm text-ink/80 leading-relaxed">
-              For any questions regarding our privacy practices, contact us at{" "}
-              <a href={`mailto:${siteConfig.email}`} className="text-accent font-semibold underline">
-                {siteConfig.email}
-              </a>{" "}
-              or call{" "}
+              For any questions regarding our privacy practices, please contact us at{" "}
               <a href={siteConfig.phoneTel} className="text-accent font-semibold underline">
                 {siteConfig.phone.display}
               </a>

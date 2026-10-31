@@ -115,11 +115,6 @@ export function ContactContent({ initialService, initialDishes }: ContactContent
                         {siteConfig.phone.display}
                       </a>
                     </p>
-                    <p>
-                      <a href={`mailto:${siteConfig.email}`} className="hover:text-turmeric transition-colors">
-                        {siteConfig.email}
-                      </a>
-                    </p>
                     <div className="flex items-center gap-1.5 text-xs text-turmeric pt-1">
                       <Clock className="w-3.5 h-3.5" />
                       <span>{siteConfig.workingHours.days}: {siteConfig.workingHours.time}</span>

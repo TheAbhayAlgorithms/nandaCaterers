@@ -72,7 +72,6 @@ export function QuoteWizard() {
   // Contact info
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
   const [notes, setNotes] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
@@ -107,7 +106,6 @@ export function QuoteWizard() {
   const whatsappHref = buildWhatsAppLink({
     firstName: fullName,
     phone,
-    email,
     location,
     service: `${eventType} (${currentPkg.name})`,
     eventDate: eventDate ? `${eventDate} (${mealSlot})` : mealSlot,
@@ -530,18 +528,6 @@ export function QuoteWizard() {
                 />
               </div>
 
-              <div className="sm:col-span-2">
-                <label className="block text-xs font-bold uppercase tracking-wider text-charcoal mb-2">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  placeholder="rajesh@example.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-charcoal/20 bg-white text-sm text-charcoal focus:outline-none focus:border-maroon"
-                />
-              </div>
 
               <div className="sm:col-span-2">
                 <label className="block text-xs font-bold uppercase tracking-wider text-charcoal mb-2">

@@ -15,7 +15,7 @@ const phoneRegex = /^(?:(?:\+|0{0,2})91(\s*[-]\s*)?|[0]?)?[6789]\d{9}$/;
 const quoteSchema = z.object({
   firstName: z.string().min(2, "First name must be at least 2 characters"),
   lastName: z.string().min(1, "Last name is required"),
-  email: z.string().email("Please enter a valid email address"),
+  email: z.string().optional(),
   phone: z.string().regex(phoneRegex, "Please enter a valid 10-digit Indian phone number"),
   service: z.enum(["Wedding", "Corporate Event", "General Event", "Party / Function", "Others"], {
     errorMap: () => ({ message: "Please select a catering service type" }),
@@ -112,7 +112,6 @@ export function QuoteForm({ initialService, initialDishes, className }: QuoteFor
       const waLink = buildWhatsAppLink({
         firstName: data.firstName,
         lastName: data.lastName,
-        email: data.email,
         phone: data.phone,
         service: data.service,
         location: data.location,
@@ -137,7 +136,6 @@ export function QuoteForm({ initialService, initialDishes, className }: QuoteFor
     const whatsappLink = buildWhatsAppLink({
       firstName: submittedData.firstName,
       lastName: submittedData.lastName,
-      email: submittedData.email,
       phone: submittedData.phone,
       service: submittedData.service,
       location: submittedData.location,
@@ -285,48 +283,25 @@ export function QuoteForm({ initialService, initialDishes, className }: QuoteFor
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {/* Email */}
-        <div>
-          <label htmlFor="email" className="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1">
-            Email Address <span className="text-chilli">*</span>
-          </label>
-          <input
-            id="email"
-            type="email"
-            {...register("email")}
-            aria-invalid={errors.email ? "true" : "false"}
-            aria-describedby={errors.email ? "email-error" : undefined}
-            placeholder="e.g. ramesh@example.com"
-            className="w-full px-4 py-2.5 rounded-xl border border-charcoal/20 bg-white text-sm text-charcoal focus:outline-none focus:ring-2 focus:ring-saffron"
-          />
-          {errors.email && (
-            <p id="email-error" className="text-xs text-chilli mt-1">
-              {errors.email.message}
-            </p>
-          )}
-        </div>
-
-        {/* Contact Number */}
-        <div>
-          <label htmlFor="phone" className="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1">
-            Contact Number <span className="text-chilli">*</span>
-          </label>
-          <input
-            id="phone"
-            type="tel"
-            {...register("phone")}
-            aria-invalid={errors.phone ? "true" : "false"}
-            aria-describedby={errors.phone ? "phone-error" : undefined}
-            placeholder="10-digit Mobile (e.g. 9820012345)"
-            className="w-full px-4 py-2.5 rounded-xl border border-charcoal/20 bg-white text-sm text-charcoal focus:outline-none focus:ring-2 focus:ring-saffron"
-          />
-          {errors.phone && (
-            <p id="phone-error" className="text-xs text-chilli mt-1">
-              {errors.phone.message}
-            </p>
-          )}
-        </div>
+      {/* Contact Number */}
+      <div>
+        <label htmlFor="phone" className="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-1">
+          Contact Number <span className="text-chilli">*</span>
+        </label>
+        <input
+          id="phone"
+          type="tel"
+          {...register("phone")}
+          aria-invalid={errors.phone ? "true" : "false"}
+          aria-describedby={errors.phone ? "phone-error" : undefined}
+          placeholder="10-digit Mobile (e.g. 9820012345)"
+          className="w-full px-4 py-2.5 rounded-xl border border-charcoal/20 bg-white text-sm text-charcoal focus:outline-none focus:ring-2 focus:ring-saffron"
+        />
+        {errors.phone && (
+          <p id="phone-error" className="text-xs text-chilli mt-1">
+            {errors.phone.message}
+          </p>
+        )}
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

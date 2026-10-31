@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Phone, Mail, MapPin, Clock, ChevronDown } from "lucide-react";
+import { Phone, MapPin, Clock, ChevronDown } from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
 import { siteConfig } from "@/data/site";
 
@@ -89,23 +89,17 @@ export function Footer() {
             <h4 className="text-xs uppercase font-bold tracking-widest text-accent">
               Contact
             </h4>
-            <div className="space-y-2 text-xs sm:text-sm text-white/70">
-              <p className="flex items-start gap-2">
+            <div className="space-y-3 text-xs sm:text-sm text-white/70">
+              <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-accent shrink-0 mt-0.5" />
-                <span>{siteConfig.offices[0].address}</span>
-              </p>
-              <p className="flex items-center gap-2">
+                <span className="leading-relaxed">{siteConfig.offices[0].address}</span>
+              </div>
+              <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-accent shrink-0" />
                 <a href={`tel:${siteConfig.phone.raw}`} className="hover:text-white transition-colors">
                   {siteConfig.phone.display}
                 </a>
-              </p>
-              <p className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-accent shrink-0" />
-                <a href={`mailto:${siteConfig.email}`} className="hover:text-white transition-colors">
-                  {siteConfig.email}
-                </a>
-              </p>
+              </div>
             </div>
           </div>
 
@@ -114,14 +108,16 @@ export function Footer() {
             <h4 className="text-xs uppercase font-bold tracking-widest text-accent">
               Working Hours
             </h4>
-            <div className="space-y-2 text-xs sm:text-sm text-white/70">
-              <p className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-accent shrink-0" />
-                <span>{siteConfig.workingHours.days}</span>
-              </p>
-              <p className="font-semibold text-white/90 pl-6">
-                {siteConfig.workingHours.time}
-              </p>
+            <div className="space-y-3 text-xs sm:text-sm text-white/70">
+              <div className="flex items-start gap-2.5">
+                <Clock className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                <div>
+                  <p>{siteConfig.workingHours.days}</p>
+                  <p className="font-semibold text-white/90 mt-0.5">
+                    {siteConfig.workingHours.time}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -168,7 +164,6 @@ export function Footer() {
               <div className="pb-4 space-y-2 text-xs text-white/70">
                 <p>{siteConfig.offices[0].address}</p>
                 <p>Phone: {siteConfig.phone.display}</p>
-                <p>Email: {siteConfig.email}</p>
               </div>
             )}
           </div>

@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Phone, Mail, MapPin, ChevronRight } from "lucide-react";
+import { X, Phone, MapPin, ChevronRight } from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/cn";
@@ -142,13 +142,6 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
               >
                 <Phone className="w-4 h-4 text-saffron" />
                 <span>{siteConfig.phone.display}</span>
-              </a>
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className="flex items-center gap-2 text-charcoal hover:text-maroon transition-colors"
-              >
-                <Mail className="w-4 h-4 text-saffron" />
-                <span>{siteConfig.email}</span>
               </a>
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-saffron shrink-0 mt-0.5" />

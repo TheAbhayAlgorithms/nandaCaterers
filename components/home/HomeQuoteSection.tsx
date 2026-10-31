@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Phone, Mail, MapPin, Clock, Sparkles } from "lucide-react";
+import { Phone, MapPin, Clock, Sparkles } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { QuoteForm } from "@/components/contact/QuoteForm";
@@ -58,18 +58,6 @@ export function HomeQuoteSection() {
                       </div>
                     </a>
 
-                    <a
-                      href={`mailto:${siteConfig.email}`}
-                      className="flex items-center gap-3 text-cream hover:text-turmeric transition-colors"
-                    >
-                      <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                        <Mail className="w-4 h-4 text-turmeric" />
-                      </div>
-                      <div>
-                        <span className="text-xs text-cream/60 block">Official Enquiries</span>
-                        <span className="font-semibold text-white">{siteConfig.email}</span>
-                      </div>
-                    </a>
 
                     <div className="flex items-start gap-3">
                       <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
