@@ -29,7 +29,7 @@ export function OfferBand() {
       <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
         <div className="max-w-2xl flex flex-col items-center text-center">
           {/* Small uppercase eyebrow */}
-          <p className="text-[11px] sm:text-xs uppercase font-bold tracking-[0.2em] text-accent mb-3 select-none">
+          <p className="text-[11px] sm:text-xs uppercase font-bold tracking-[0.2em] text-white mb-3 select-none">
             PLANNING AN EVENT?
           </p>
 
