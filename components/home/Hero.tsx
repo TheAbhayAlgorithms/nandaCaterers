@@ -17,12 +17,12 @@ export function Hero() {
         className="absolute inset-0 w-full h-full pointer-events-none origin-center"
       >
         <Image
-          src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1920&q=85"
+          src="/images/hero-wedding-feast.jpg"
           alt="Royal wedding catering buffet feast and gourmet food banquet"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-cover object-top sm:object-center"
         />
         {/* Dark overlay: 50% maroon-black */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-[#451213]/60 to-black/75" />
